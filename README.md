@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Scalable Boilerplate (i18n + Shadcn UI)
 
-## Getting Started
+This is a modern [Next.js](https://nextjs.org) project optimized for scalability, internationalization, and component-driven development. It features a strict folder structure and commit convention to ensure long-term maintainability.
 
-First, run the development server:
+## 🛠 Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Components:** Shadcn UI (Radix Primitives)
+- **Internationalization:** `next-intl` (Supports English, Burmese, Thai)
+- **Linting:** ESLint + Prettier
+
+---
+
+## 🚀 Getting Started
+
+First, install the dependencies:
 
 ```bash
-npm run dev
+npm install
 # or
-yarn dev
+yarn
 # or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000 with your browser. The app handles locale redirection automatically (e.g., visiting / redirects to /en).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📂 Project Structure
+We follow a modular "Domain-Driven" inspired structure where routes are strictly separated from logic and components.
 
-## Learn More
+```bash
+.
+├── app/
+│   ├── [locale]/           # 🌍 All pages live here (Dynamic Routing)
+│   │   ├── layout.tsx      # Root Layout (Server Component)
+│   │   └── page.tsx        # Homepage
+│   └── globals.css         # 🎨 Global styles & Theme Variables
+├── components/
+│   └── ui/                 # 🧩 Shared Shadcn UI components (Button, Input)
+├── i18n/                   # ⚙️ i18n Configuration
+│   ├── request.ts          # Server-side message loading
+│   └── routing.ts          # Locale definitions (en, my, th)
+├── messages/               # 🗣 Translation JSON files
+│   ├── en.json
+│   ├── my.json
+│   └── th.json
+├── lib/                    # 🧰 Utility functions (cn, formatters)
+├── middleware.ts           # 🚦 Locale redirection middleware
+└── next.config.ts          # Next.js config with i18n plugin
+```
 
-To learn more about Next.js, take a look at the following resources:
+⚠️ Critical Development Notes
+Routes: Do not create pages directly in app/. All routes must be inside app/[locale]/.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Async Params: Since this project uses Next.js 15, route parameters are asynchronous. You must await params in your pages and layouts:
+```bash
+// Correct usage in Layout/Page
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  // ...
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📝 Development Guidelines
+To maintain a clean history and codebase, please adhere to the following rules.
 
-## Deploy on Vercel
+1. Commit ConventionWe follow the Conventional Commits specification.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Format: type(scope): description
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Allowed TypesType
+| Type | Meaning | Example |
+| :--- | :--- | :--- |
+| **feat** | A new feature | `feat(ui): add dark mode toggle` |
+| **fix** | A bug fix | `fix(auth): resolve login redirect loop` |
+| **chore** | Maintenance/Config | `chore(deps): upgrade next-intl` |
+| **style** | UI/CSS changes (no logic) | `style(home): adjust hero padding` |
+| **refactor** | Code change (no feature/fix) | `refactor(utils): simplify date format` |
+| **docs** | Documentation only | `docs: update readme rules` |
+| **ci** | CI/CD changes | `ci: update vercel build settings` |
