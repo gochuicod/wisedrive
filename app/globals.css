@@ -15,6 +15,7 @@
     --color-primary: #193cb8;
     --color-nav: #364153;
     --color-wd-blue: #d6e1f9;
+    --color-wd-orange: #ff9f01;
 
     /* --- 📐 LAYOUT VARIABLES (Mobile Default) --- */
     --padding-x-relaxed: 40px;
@@ -161,12 +162,6 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
-}
-
-@layer components {
-  .text-tag-style {
-    @apply text-tagText text-tag font-heading uppercase;
   }
 }
 

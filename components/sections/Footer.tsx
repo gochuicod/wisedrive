@@ -41,7 +41,7 @@ export default function Footer() {
               'flex lg:flex-row flex-col',
               'lg:gap-8',
               'justify-end items-center',
-              'mt-4',
+              'lg:mt-0 mt-4',
             )}
           >
             {/* Socials */}
@@ -61,11 +61,11 @@ export default function Footer() {
             <span
               className={cn(
                 'lg:w-[45%] md:w-[70%] w-full',
-                'text-[#D6E1F9]',
+                'text-wdBlue',
                 'font-normal',
                 'font-gilroy',
                 'text-lg',
-                'mt-4',
+                'lg:mt-0 mt-4',
                 'lg:text-start md:text-center text-start',
               )}
             >
@@ -98,10 +98,10 @@ export default function Footer() {
               {/* Category Title (e.g., Products) */}
               <h4
                 className={cn(
-                  'text-tag',
+                  'text-wdOrange',
+                  'text-xl',
                   'font-bold',
                   'tracking-tight',
-                  'text-tag-style',
                 )}
               >
                 {t(category)}
@@ -114,7 +114,7 @@ export default function Footer() {
                     <Link
                       href={link.href}
                       className={cn(
-                        'text-[#D6E1F9]',
+                        'text-wdBlue',
                         'text-sm',
                         'hover:text-white',
                         'transition-colors',
@@ -139,7 +139,7 @@ export default function Footer() {
             'flex',
             'justify-center',
             'mt-4',
-            'border-t border-[#5F85DC]',
+            'border-t border-wd-blue',
           )}
         >
           <p

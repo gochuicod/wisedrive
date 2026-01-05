@@ -5,12 +5,13 @@ const config: Config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    "./styles/**/*.{js,ts,jsx,tsx,mdx}",
+    './styles/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
         wdBlue: 'var(--color-wd-blue)',
+        wdOrange: 'var(--color-wd-orange)',
         header: {
           DEFAULT: 'var(--color-header)',
           accent: 'var(--color-header-accent)',
