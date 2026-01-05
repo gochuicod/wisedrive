@@ -61,6 +61,11 @@
   --tag-height: 19.2px;
   --tag-spacing: 19.2px;
   --tag-letter-spacing: 0px; 
+
+  /* --- LAYOUT / PADDING (Mobile Default) --- */
+  --padding-x-relaxed: 40px; 
+  --padding-x-tight: 16px;
+  --padding-y-hero: 40px;
 }
 
 /* --- TABLET BREAKPOINT (~768px) --- */
@@ -85,6 +90,11 @@
     
     /* Tag Tablet - Only Letter Spacing changes */
     --tag-letter-spacing: 2px;
+
+    /* --- LAYOUT / PADDING (Tablet) --- */
+    --padding-x-relaxed: 56px;
+    --padding-x-tight: 16px;
+    --padding-y-hero: 72px;
   }
 }
 
@@ -135,6 +145,11 @@
     --tag-height: 24px;
     --tag-spacing: 24px;
     --tag-letter-spacing: 4px;
+
+    /* Relaxed (Desktop: 80px) */
+    --padding-x-relaxed: 80px;
+    --padding-x-tight: 32px;
+    --padding-y-hero: 88px;
   }
 }
 
@@ -242,4 +257,21 @@ h6 {
   line-height: var(--tag-height);
   margin-bottom: var(--tag-spacing);
   letter-spacing: var(--tag-letter-spacing);
+}
+
+.section-relaxed {
+  padding-left: var(--padding-x-relaxed);
+  padding-right: var(--padding-x-relaxed);
+  width: 100%;
+}
+
+.section-tight {
+  padding-left: var(--padding-x-tight);
+  padding-right: var(--padding-x-tight);
+  width: 100%;
+}
+
+.section-hero {
+  padding-top: var(--padding-y-hero);
+  padding-bottom: var(--padding-y-hero);
 }
