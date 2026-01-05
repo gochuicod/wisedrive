@@ -21,6 +21,7 @@ const containerBase = `
   rounded-lg
   transition-all duration-300 ease-in-out
   cursor-pointer
+  overflow-hidden
 `;
 
 // State-Specific Styles
@@ -44,24 +45,24 @@ const sizes: Record<
   DropDownSize,
   { root: string; titleSize: string; content: string }
 > = {
-  // Large: 501px
+  // Large
   lg: {
-    root: 'w-[501px]',
+    root: 'w-full',
     titleSize: 'text-[16px] leading-[19px]',
     content: 'font-body font-normal text-[16px] leading-[19px] text-[#364153]',
   },
 
-  // Medium: 348px
+  // Medium
   md: {
-    root: 'w-[348px]',
+    root: 'w-full',
     titleSize: 'text-[14px] leading-[17px]',
     content:
       'font-body font-normal text-[14px] leading-[17px] text-[#364153] text-justify',
   },
 
-  // Small: 358px
+  // Small
   sm: {
-    root: 'w-[358px]',
+    root: 'w-full',
     titleSize: 'text-[14px] leading-[17px]',
     content:
       'font-body font-normal text-[14px] leading-[17px] text-[#364153] text-justify',

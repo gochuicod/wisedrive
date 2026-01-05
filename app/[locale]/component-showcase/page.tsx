@@ -291,45 +291,51 @@ const ComponentShowcase = () => {
           DropDowns (Accordions)
         </h2>
 
-        <div className="flex flex-wrap items-start justify-center gap-12 bg-white p-4">
+        <div className="flex flex-col gap-8 bg-white">
           {/* 1. Large Variation (501px) */}
-          <div className="flex flex-col gap-2">
+          <div className="w-full flex flex-col gap-2">
             <span className="text-xs text-gray-400 font-mono mb-2">
               Size: LG (501px)
             </span>
-            <DropDown
-              size="lg"
-              title="What is the inspection process?"
-              defaultOpen={true}
-            >
-              Our engineers conduct a comprehensive 200-point inspection
-              covering the engine, suspension, interior, and exterior to ensure
-              the car is in perfect condition before listing.
-            </DropDown>
+            <div className="w-full max-w-[501px]">
+              <DropDown
+                size="lg"
+                title="What is the inspection process?"
+                defaultOpen={true}
+              >
+                Our engineers conduct a comprehensive 200-point inspection
+                covering the engine, suspension, interior, and exterior to ensure
+                the car is in perfect condition before listing.
+              </DropDown>
+            </div>
           </div>
 
           {/* 2. Medium Variation (348px) */}
-          <div className="flex flex-col gap-2">
+          <div className="w-full flex flex-col gap-2">
             <span className="text-xs text-gray-400 font-mono mb-2">
               Size: MD (348px) | Justified
             </span>
-            <DropDown size="md" title="Is there a warranty?" defaultOpen={true}>
-              Yes, all our cars come with a standard 6-month warranty that
-              covers major mechanical and electrical components, ensuring you
-              have peace of mind with your purchase.
-            </DropDown>
+            <div className="w-full max-w-[348px]">
+              <DropDown size="md" title="Is there a warranty?" defaultOpen={true}>
+                Yes, all our cars come with a standard 6-month warranty that
+                covers major mechanical and electrical components, ensuring you
+                have peace of mind with your purchase.
+              </DropDown>
+            </div>
           </div>
 
           {/* 3. Small Variation (358px) */}
-          <div className="flex flex-col gap-2">
+          <div className="w-full flex flex-col gap-2">
             <span className="text-xs text-gray-400 font-mono mb-2">
               Size: SM (358px) | Justified
             </span>
-            <DropDown size="sm" title="How does financing work?">
-              We partner with multiple banks to provide you with the best
-              interest rates. The process is paperless and approvals are
-              typically received within 24 hours.
-            </DropDown>
+            <div className="w-full max-w-[358px]">
+              <DropDown size="sm" title="How does financing work?">
+                We partner with multiple banks to provide you with the best
+                interest rates. The process is paperless and approvals are
+                typically received within 24 hours.
+              </DropDown>
+            </div>
           </div>
         </div>
       </div>
