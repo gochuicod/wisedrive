@@ -4,16 +4,12 @@ import React, { useState } from "react";
 import { BaseDropDown, DropDownSize } from "@/styles/dropdown";
 
 // --- Definition Types ---
-export interface DropDownProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface DropDownProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title' | 'onToggle'> {
   size?: DropDownSize;
   title: string;
-  /**
-   * The content to be displayed inside the collapsible area.
-   */
+  // The content to be displayed inside the collapsible area.
   children: React.ReactNode;
-  /**
-   * Optional: If true, the dropdown starts open.
-   */
+  // Optional: If true, the dropdown starts open.
   defaultOpen?: boolean;
 }
 

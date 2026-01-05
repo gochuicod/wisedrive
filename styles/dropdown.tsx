@@ -3,7 +3,8 @@ import React from "react";
 // --- Styling Types ---
 export type DropDownSize = "sm" | "md" | "lg";
 
-interface BaseDropDownProps extends React.HTMLAttributes<HTMLDivElement> {
+interface BaseDropDownProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onClick" | "onToggle"> {
   size?: DropDownSize;
   title: string;
   isOpen: boolean;
