@@ -35,8 +35,14 @@ const config: Config = {
 
       // 👇 3. Keep your Typography
       fontSize: {
+        // Usage: className="text-h1"
         h1: ['var(--text-h1-size)', { lineHeight: 'var(--text-h1-height)' }],
-        // ... add h2, h3, body-lg mappings here ...
+        h2: ['var(--text-h2-size)', { lineHeight: 'var(--text-h2-height)' }],
+        h3: ['var(--text-h3-size)', { lineHeight: 'var(--text-h3-height)' }],
+        'body-lg': [
+          'var(--body-lg-size)',
+          { lineHeight: 'var(--body-lg-height)' },
+        ],
       },
     },
   },
