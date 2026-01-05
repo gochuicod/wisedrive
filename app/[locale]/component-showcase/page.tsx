@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 // --- Types ---
 
@@ -18,7 +18,7 @@ interface ComponentWrapperProps {
 const ComponentWrapper: React.FC<ComponentWrapperProps> = ({
   title,
   children,
-  className = "",
+  className = '',
 }) => (
   <div className="p-8 my-8 border rounded-lg bg-white shadow">
     <h2 className="text-2xl font-bold mb-4 text-gray-800">{title}</h2>
