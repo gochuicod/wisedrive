@@ -6,9 +6,10 @@
     "inspection_plan": "Inspection Plan",
     "faqs": "FAQs"
   },
-  "HomePage": {
-    "title": "Hello World",
-    "description": "Welcome to my scalable app"
+  "OurBrands": {
+    "badge_text": "Our Brands",
+    "heading": "Expertise Across Every Make",
+    "description": "From Proton and Perodua to imports, we are trained for the cars you drive."
   },
   "Footer": {
     "address": "Suite 5.03 Level 5 Block B, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
