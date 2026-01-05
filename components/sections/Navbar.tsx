@@ -13,18 +13,12 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet';
 
+import { NAV_LINKS } from '@/constants';
+
 export default function Navbar() {
   const t = useTranslations('Navigation');
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { href: '/', label: t('home') },
-    { href: '/#about', label: t('about') },
-    { href: '/#features', label: t('features') },
-    { href: '/#inspection_plan', label: t('inspection_plan') },
-    { href: '/#faqs', label: t('faqs') },
-  ];
 
   return (
     <nav className="lg:px-relaxed px-tight py-navbar flex flex-row justify-between items-center sticky top-0 z-50 bg-white">
@@ -42,7 +36,7 @@ export default function Navbar() {
 
       {/* 2. DESKTOP MENU (Hidden on Mobile/Tablet) */}
       <div className="hidden lg:flex flex-row items-center gap-8">
-        {navLinks.map((link) => {
+        {NAV_LINKS.map((link) => {
           const isActive = pathname === link.href;
           return (
             <Link
@@ -50,7 +44,7 @@ export default function Navbar() {
               href={link.href}
               className={`text-h6 ${isActive ? 'font-bold' : 'font-normal'}`}
             >
-              {link.label}
+              {t(link.label)}
             </Link>
           );
         })}
@@ -86,7 +80,7 @@ export default function Navbar() {
             </SheetDescription>
 
             <div className="flex flex-col gap-6 mt-10">
-              {navLinks.map((link) => {
+              {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link

@@ -1,9 +1,13 @@
 export const NAV_LINKS = [
-  { href: '/', key: 'home' },
-  { href: '/#about', key: 'about' },
-  { href: '/#features', key: 'features' },
-  { href: '/#inspection_plan', key: 'inspection_plan' },
-  { href: '/#faqs', key: 'faqs' },
+  { href: '/', key: 'home', label: 'home' },
+  { href: '/#about', key: 'about', label: 'about' },
+  { href: '/#features', key: 'features', label: 'features' },
+  {
+    href: '/#inspection_plan',
+    key: 'inspection_plan',
+    label: 'inspection_plan',
+  },
+  { href: '/#faqs', key: 'faqs', label: 'faqs' },
 ];
 
 export const FOOTER_LINKS = {
