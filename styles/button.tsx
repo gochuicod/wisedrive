@@ -1,7 +1,7 @@
 import React from "react";
 
 // --- Styling Types ---
-export type ButtonVariant = "default" | "glass";
+export type ButtonVariant = "default" | "glass" | "secondary";
 export type ButtonSize = "sm" | "md" | "lg";
 
 interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,14 +13,16 @@ interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 // --- Style Definitions ---
 
 // Common logic: Flex container, Font Poppins, White text, Gap 8px
-const baseStyles = "flex items-center justify-center font-body text-white gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed";
+const baseStyles = "flex items-center justify-center font-body gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed";
 
 const variants: Record<ButtonVariant, string> = {
   // Gradient: 132.85deg, #2BA3FF to #374EFF
-  default: "bg-[linear-gradient(132.85deg,#2BA3FF_0%,#374EFF_99.57%)] hover:shadow-lg hover:brightness-110",
+  default: "bg-[linear-gradient(132.85deg,#2BA3FF_0%,#374EFF_99.57%)] text-white hover:shadow-lg hover:brightness-110",
   
   // Glass: rgba(255, 255, 255, 0.2)
-  glass: "bg-white/20 hover:bg-white/30 backdrop-blur-sm",
+  glass: "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm",
+  
+  secondary: "border-2 border-white text-white hover:bg-primary/5",
 };
 
 const sizes: Record<ButtonSize, string> = {

@@ -3,6 +3,7 @@
 import { AppButton } from "@/components/AppButton";
 import { IconBox } from "@/components/IconBox";
 import { Badge } from "@/components/Badge";
+import { DropDown } from "@/components/DropDown";
 
 import Image from "next/image";
 
@@ -36,62 +37,81 @@ const ComponentShowcase = () => {
           SECTION 1: BUTTONS
       ========================================= */}
       
-      {/* --- Variant 1: Default (Gradient) --- */}
       <div className="mb-12 p-8 bg-white rounded-xl shadow-sm border border-gray-200">
-        <h2 className="text-xl font-bold mb-6 text-gray-700 border-b pb-2">Buttons: Default (Gradient)</h2>
-        <div className="flex flex-col gap-6 items-start">
-          
-          {/* Large */}
-          <div className="flex items-center gap-6">
-            <AppButton variant="default" size="lg" leftIcon={<CalendarIcon />}>
-              Button Label (LG)
-            </AppButton>
-            <span className="text-sm text-gray-400 font-mono">Size: LG | H: 56px | Text: 20px</span>
-          </div>
-
-          {/* Medium */}
-          <div className="flex items-center gap-6">
-             <AppButton variant="default" size="md" leftIcon={<CalendarIcon />}>
-              Button Label (MD)
-            </AppButton>
-            <span className="text-sm text-gray-400 font-mono">Size: MD | H: 56px | Text: 16px</span>
-          </div>
-
-           {/* Small */}
-           <div className="flex items-center gap-6">
-             <AppButton variant="default" size="sm" leftIcon={<CalendarIcon />}>
-              Button Label (SM)
-            </AppButton>
-            <span className="text-sm text-gray-400 font-mono">Size: SM | H: 32px | Text: 14px</span>
+        <h2 className="text-xl font-bold mb-6 text-gray-700 border-b pb-2">Buttons: All Variants</h2>
+        
+        {/* Default Variant */}
+        <div className="mb-8 p-6 rounded-lg bg-gray-300">
+          <h3 className="text-lg font-semibold text-white mb-4">Glass</h3>
+          <div className="flex flex-row gap-6 items-center flex-wrap">
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="default" size="lg" rightIcon={<ArrowRightIcon />}>
+                Default (LG)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">LG</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="default" size="md" rightIcon={<ArrowRightIcon />}>
+                Default (MD)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">MD</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="default" size="sm" rightIcon={<ArrowRightIcon />}>
+                Default (SM)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">SM</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* --- Variant 2: Glass --- */}
-      <div className="mb-12 p-8 rounded-xl shadow-lg bg-[linear-gradient(132.85deg,#1e1e2e_0%,#4a4a6a_100%)]">
-        <h2 className="text-xl font-bold mb-6 text-white border-b border-gray-500 pb-2">Buttons: Glass</h2>
-        <div className="flex flex-col gap-6 items-start">
-          
-          {/* Large */}
-          <div className="flex items-center gap-6">
-            <AppButton variant="glass" size="lg" rightIcon={<ArrowRightIcon />}>
-              Glass Action (LG)
-            </AppButton>
-             <span className="text-sm text-gray-300 font-mono">Opacity 20% | Backdrop Blur</span>
+        {/* Glass Variant */}
+        <div className="mb-8 p-6 rounded-lg bg-[linear-gradient(132.85deg,#1e1e2e_0%,#4a4a6a_100%)]">
+          <h3 className="text-lg font-semibold text-white mb-4">Glass</h3>
+          <div className="flex flex-row gap-6 items-center flex-wrap">
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="glass" size="lg" rightIcon={<ArrowRightIcon />}>
+                Glass (LG)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">LG</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="glass" size="md" rightIcon={<ArrowRightIcon />}>
+                Glass (MD)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">MD</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="glass" size="sm" rightIcon={<ArrowRightIcon />}>
+                Glass (SM)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">SM</span>
+            </div>
           </div>
+        </div>
 
-          {/* Medium */}
-          <div className="flex items-center gap-6">
-             <AppButton variant="glass" size="md" rightIcon={<ArrowRightIcon />}>
-              Glass Action (MD)
-            </AppButton>
-          </div>
-
-           {/* Small */}
-           <div className="flex items-center gap-6">
-             <AppButton variant="glass" size="sm" rightIcon={<ArrowRightIcon />}>
-              Glass Action (SM)
-            </AppButton>
+        {/* Secondary Variant */}
+        <div className="mb-8 p-6 rounded-lg bg-[linear-gradient(132.85deg,#2BA3FF_0%,#374EFF_99.57%)]">
+          <h3 className="text-lg font-semibold text-white mb-4">Secondary (Outlined)</h3>
+          <div className="flex flex-row gap-6 items-center flex-wrap">
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="secondary" size="lg" rightIcon={<ArrowRightIcon />}>
+                Secondary (LG)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">LG</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="secondary" size="md" rightIcon={<ArrowRightIcon />}>
+                Secondary (MD)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">MD</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <AppButton variant="secondary" size="sm" rightIcon={<ArrowRightIcon />}>
+                Secondary (SM)
+              </AppButton>
+              <span className="text-xs text-gray-300 font-mono">SM</span>
+            </div>
           </div>
         </div>
       </div>
@@ -129,7 +149,7 @@ const ComponentShowcase = () => {
           </div>
 
           {/* 3. Small Variation */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 ">
             <IconBox 
               size="sm"
               title="Fast"
@@ -166,6 +186,52 @@ const ComponentShowcase = () => {
            <div className="flex flex-col gap-2">
             <Badge size="sm">Our Brands</Badge>
             <span className="text-xs text-gray-400 font-mono">Size: SM | 16px | Tracking Normal</span>
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================
+          SECTION 4: DROPDOWNS
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-white rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">DropDowns (Accordions)</h2>
+        
+        <div className="flex flex-wrap items-start justify-center gap-12 bg-white p-4">
+          
+          {/* 1. Large Variation (501px) */}
+          <div className="flex flex-col gap-2">
+            <span className="text-xs text-gray-400 font-mono mb-2">Size: LG (501px)</span>
+            <DropDown 
+              size="lg"
+              title="What is the inspection process?"
+              defaultOpen={true}
+            >
+              Our engineers conduct a comprehensive 200-point inspection covering the engine, suspension, interior, and exterior to ensure the car is in perfect condition before listing.
+            </DropDown>
+          </div>
+
+          {/* 2. Medium Variation (348px) */}
+          <div className="flex flex-col gap-2">
+            <span className="text-xs text-gray-400 font-mono mb-2">Size: MD (348px) | Justified</span>
+            <DropDown 
+              size="md"
+              title="Is there a warranty?"
+              defaultOpen={true}
+            >
+              Yes, all our cars come with a standard 6-month warranty that covers major mechanical and electrical components, ensuring you have peace of mind with your purchase.
+            </DropDown>
+          </div>
+
+          {/* 3. Small Variation (358px) */}
+          <div className="flex flex-col gap-2">
+             <span className="text-xs text-gray-400 font-mono mb-2">Size: SM (358px) | Justified</span>
+            <DropDown 
+              size="sm"
+              title="How does financing work?"
+            >
+              We partner with multiple banks to provide you with the best interest rates. The process is paperless and approvals are typically received within 24 hours.
+            </DropDown>
           </div>
 
         </div>
