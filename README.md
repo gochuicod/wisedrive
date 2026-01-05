@@ -83,5 +83,9 @@ Allowed TypesType
 | **chore** | Maintenance/Config | `chore(deps): upgrade next-intl` |
 | **style** | UI/CSS changes (no logic) | `style(home): adjust hero padding` |
 | **refactor** | Code change (no feature/fix) | `refactor(utils): simplify date format` |
+| **test** | Adding or fixing tests | `test(auth): add unit tests for login` |
+| **perf** | Performance improvements | `perf(image): optimize logo loading` |
+| **perf** | Build system/dependency updates | `build(npm): update lockfile` |
+| **revert** | Reverting a previous commit | `revert: restore previous navbar layout` |
 | **docs** | Documentation only | `docs: update readme rules` |
 | **ci** | CI/CD changes | `ci: update vercel build settings` |
