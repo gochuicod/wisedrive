@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
-import { Menu } from 'lucide-react';
 
 import {
   Sheet,
@@ -28,7 +27,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="lg:px-relaxed px-tight py-navbar flex flex-row justify-between items-center sticky top-0 z-50">
+    <nav className="lg:px-relaxed px-tight py-navbar flex flex-row justify-between items-center sticky top-0 z-50 bg-white">
       {/* 1. LOGO (Always Visible) */}
       <Link href="/">
         <Image
