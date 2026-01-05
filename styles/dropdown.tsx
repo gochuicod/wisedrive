@@ -16,21 +16,22 @@ interface BaseDropDownProps
 
 // Common Layout: Flex col, px-24px (6), py-16px (4), Radius 8px
 const containerBase = `
-  flex flex-col justify-center items-start
+  flex flex-col justify-start items-start
   px-6 py-4
   rounded-lg
   transition-all duration-300 ease-in-out
   cursor-pointer
   overflow-hidden
+  w-full
 `;
 
 // State-Specific Styles
-// Active: #E9EEFC, Shadow, Gap 24px (between title and content)
+// Active: #E9EEFC, Shadow
 const activeStyle =
-  'bg-[#E9EEFC] shadow-[2px_2px_4px_rgba(25,33,61,0.06)] gap-6';
+  'bg-[#E9EEFC] shadow-[2px_2px_4px_rgba(25,33,61,0.06)]';
 
-// Inactive: #F9FAFB (Gray/50), No Shadow, No Gap (since content is hidden)
-const inactiveStyle = 'bg-[#F9FAFB] gap-0';
+// Inactive: #F9FAFB (Gray/50), No Shadow
+const inactiveStyle = 'bg-[#F9FAFB]';
 
 // Header Row: Space between, aligned center
 const headerBase =
@@ -128,7 +129,7 @@ export const BaseDropDown: React.FC<BaseDropDownProps> = ({
 
       {/* Content Row */}
       {isOpen && (
-        <div className={`w-full animate-fadeIn ${styles.content}`}>
+        <div className={`w-full animate-fadeIn ${styles.content} mt-4`}>
           {children}
         </div>
       )}
