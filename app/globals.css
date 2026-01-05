@@ -7,29 +7,52 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
-    /* ✅ These variables MUST be here for your config to work */
+    /* --- 🎨 COLOR TOKENS (From Image) --- */
+
+    /* Semantic Colors */
+    --color-header: #1f2937; /* gray/800 */
+    --color-header-accent: #1a40b2; /* 👈 Exact hex from image */
+    --color-body: #374151; /* gray/700 */
+    --color-tag: #a76106; /* 👈 Exact hex from image */
+
+    /* Semantic / Shared */
+    --color-primary: #1e40af; /* blue/800 */
+    --color-nav: #374151; /* gray/700 */
+
+    /* --- 📐 LAYOUT VARIABLES --- */
     --padding-x-relaxed: 40px;
     --padding-x-tight: 16px;
     --padding-y-hero: 40px;
     --padding-y-navbar: 8px;
 
-    /* Typography variables ... */
+    /* --- ✍️ TYPOGRAPHY VARIABLES --- */
     --text-h1-size: 36px;
     --text-h1-height: 43.2px;
-    /* (Add the rest of your typography variables here) */
+    /* Add the rest of your H2-H6/Body variables here... */
   }
 
+  /* Tablet Overrides */
   @media (min-width: 768px) {
     :root {
       --padding-x-relaxed: 56px;
-      /* ... other tablet overrides ... */
+      --padding-y-hero: 72px;
+
+      --text-h1-size: 48px;
+      --text-h1-height: 48px;
+      /* ... other tablet text sizes ... */
     }
   }
 
+  /* Desktop Overrides */
   @media (min-width: 1024px) {
     :root {
       --padding-x-relaxed: 80px;
-      /* ... other desktop overrides ... */
+      --padding-x-tight: 32px;
+      --padding-y-hero: 88px;
+
+      --text-h1-size: 60px;
+      --text-h1-height: 72px;
+      /* ... other desktop text sizes ... */
     }
   }
 }
