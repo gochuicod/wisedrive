@@ -7,52 +7,85 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
-    /* --- 🎨 COLOR TOKENS (From Image) --- */
+    /* --- 🎨 COLOR TOKENS --- */
+    --color-header: #1f2937;
+    --color-header-accent: #1a40b2;
+    --color-body: #374151;
+    --color-tag: #a76106;
+    --color-primary: #1e40af;
+    --color-nav: #374151;
 
-    /* Semantic Colors */
-    --color-header: #1f2937; /* gray/800 */
-    --color-header-accent: #1a40b2; /* 👈 Exact hex from image */
-    --color-body: #374151; /* gray/700 */
-    --color-tag: #a76106; /* 👈 Exact hex from image */
-
-    /* Semantic / Shared */
-    --color-primary: #1e40af; /* blue/800 */
-    --color-nav: #374151; /* gray/700 */
-
-    /* --- 📐 LAYOUT VARIABLES --- */
+    /* --- 📐 LAYOUT VARIABLES (Mobile Default) --- */
     --padding-x-relaxed: 40px;
     --padding-x-tight: 16px;
     --padding-y-hero: 40px;
     --padding-y-navbar: 8px;
 
-    /* --- ✍️ TYPOGRAPHY VARIABLES --- */
-    --text-h1-size: 36px;
-    --text-h1-height: 43.2px;
-    /* Add the rest of your H2-H6/Body variables here... */
+    /* --- ✍️ TYPOGRAPHY VARIABLES (Mobile Default) --- */
+    
+    /* Headings */
+    --text-h1-size: 36px;   --text-h1-height: 43.2px;
+    --text-h2-size: 32px;   --text-h2-height: 40px;
+    --text-h3-size: 32px;   --text-h3-height: 40px;
+    --text-h4-size: 24px;   --text-h4-height: 28.8px;
+    --text-h5-size: 24px;   --text-h5-height: 28px;
+    --text-h6-size: 16px;   --text-h6-height: 20px;
+
+    /* Body */
+    --body-lg-size: 16px;   --body-lg-height: 19.2px;
+    --body-md-size: 14px;   --body-md-height: 16.8px;
+    --body-sm-size: 14px;   --body-sm-height: 16.8px;
+
+    /* UI Elements */
+    --caption-size: 12px;   --caption-height: 16px;
+    --tag-size: 16px;       --tag-height: 19.2px;
+    --tag-letter-spacing: 0px;
+
+    /* Font Families (Match these in layout.tsx) */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-caption: 'Poppins', sans-serif;
   }
 
-  /* Tablet Overrides */
+  /* --- TABLET OVERRIDES (~768px) --- */
   @media (min-width: 768px) {
     :root {
+      /* Layout */
       --padding-x-relaxed: 56px;
       --padding-y-hero: 72px;
 
-      --text-h1-size: 48px;
-      --text-h1-height: 48px;
-      /* ... other tablet text sizes ... */
+      /* Typography Updates */
+      --text-h1-size: 48px;   --text-h1-height: 48px;
+      --text-h2-size: 40px;   --text-h2-height: 48px;
+      /* H3-H6 stay same as mobile on tablet per design */
+      
+      /* Tag Spacing Update */
+      --tag-letter-spacing: 2px;
     }
   }
 
-  /* Desktop Overrides */
+  /* --- DESKTOP OVERRIDES (~1024px) --- */
   @media (min-width: 1024px) {
     :root {
+      /* Layout */
       --padding-x-relaxed: 80px;
       --padding-x-tight: 32px;
       --padding-y-hero: 88px;
 
-      --text-h1-size: 60px;
-      --text-h1-height: 72px;
-      /* ... other desktop text sizes ... */
+      /* Typography Updates */
+      --text-h1-size: 60px;   --text-h1-height: 72px;
+      --text-h2-size: 48px;   --text-h2-height: 56px;
+      --text-h3-size: 40px;   --text-h3-height: 48px;
+      --text-h4-size: 32px;   --text-h4-height: 40px;
+      --text-h6-size: 20px;   --text-h6-height: 24px;
+
+      /* Body Updates */
+      --body-lg-size: 20px;   --body-lg-height: 24px;
+      --body-md-size: 16px;   --body-md-height: 19.2px;
+
+      /* UI Updates */
+      --tag-size: 20px;       --tag-height: 24px;
+      --tag-letter-spacing: 4px;
     }
   }
 }
