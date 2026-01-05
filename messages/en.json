@@ -1,4 +1,11 @@
 {
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "features": "Features",
+    "inspection_plan": "Inspection Plan",
+    "faqs": "FAQs"
+  },
   "HomePage": {
     "title": "Hello World",
     "description": "Welcome to my scalable app"
