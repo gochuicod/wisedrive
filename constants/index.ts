@@ -39,7 +39,37 @@ export const SOCIALS = {
   whatsapp: 'https://wa.me/1234567890',
 };
 
-export const CONTACT_INFO = {
-  address:
-    'Suite 5.03 Level 5 Block B, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor',
-};
+export const OUR_BRANDS_CARS = [
+  {
+    key: 'bmw',
+    image: '/brands/bmw.webp',
+  },
+  {
+    key: 'honda',
+    image: '/brands/honda.webp',
+  },
+  {
+    key: 'mazda',
+    image: '/brands/mazda.webp',
+  },
+  {
+    key: 'mercedez',
+    image: '/brands/mercedez.webp',
+  },
+  {
+    key: 'nissan',
+    image: '/brands/nissan.webp',
+  },
+  {
+    key: 'perodua',
+    image: '/brands/perodua.webp',
+  },
+  {
+    key: 'proton',
+    image: '/brands/proton.webp',
+  },
+  {
+    key: 'toyota',
+    image: '/brands/toyota.webp',
+  },
+];
