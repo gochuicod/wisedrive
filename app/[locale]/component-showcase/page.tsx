@@ -2,6 +2,7 @@
 
 import { AppButton } from "@/components/AppButton";
 import { IconBox } from "@/components/IconBox";
+import { Badge } from "@/components/Badge";
 
 import Image from "next/image";
 
@@ -136,6 +137,35 @@ const ComponentShowcase = () => {
               icon={<Image src="/icons/iconBox/clock.svg" alt="Fast Processing" width={96} height={96} />}
             />
             <span className="text-xs text-blue-500 font-mono mt-4">Size: SM (162px)</span>
+          </div>
+
+        </div>
+      </div>
+
+      {/* =========================================
+          SECTION 3: BADGES (Text Tags)
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-white rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-6 text-gray-700 border-b pb-2">Badges / Text Tags</h2>
+        <div className="flex flex-col gap-8 items-start">
+          
+          {/* Large */}
+          <div className="flex flex-col gap-2">
+            <Badge size="lg">Our Brands</Badge>
+            <span className="text-xs text-gray-400 font-mono">Size: LG | 20px | Tracking 4px</span>
+          </div>
+
+          {/* Medium */}
+          <div className="flex flex-col gap-2">
+            <Badge size="md">Our Brands</Badge>
+            <span className="text-xs text-gray-400 font-mono">Size: MD | 16px | Tracking 2px</span>
+          </div>
+
+           {/* Small */}
+           <div className="flex flex-col gap-2">
+            <Badge size="sm">Our Brands</Badge>
+            <span className="text-xs text-gray-400 font-mono">Size: SM | 16px | Tracking Normal</span>
           </div>
 
         </div>
