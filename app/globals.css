@@ -3,6 +3,139 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* --- TYPOGRAPHY VARIABLES (Mobile First) --- */
+  
+  /* H1 - Mobile */
+  --text-h1-size: 36px;
+  --text-h1-height: 43.2px;
+  --text-h1-spacing: 43.2px;
+
+  /* H2 - Mobile */
+  --text-h2-size: 32px;
+  --text-h2-height: 40px;
+  --text-h2-spacing: 48px;
+
+  /* H3 - Mobile */
+  --text-h3-size: 32px;
+  --text-h3-height: 40px;
+  --text-h3-spacing: 40px;
+
+  /* H4 - Mobile */
+  --text-h4-size: 24px;
+  --text-h4-height: 28.8px;
+  --text-h4-spacing: 28.8px;
+
+  /* H5 - Mobile */
+  --text-h5-size: 24px;
+  --text-h5-height: 28px;
+  --text-h5-spacing: 28px;
+
+  /* H6 - Mobile */
+  --text-h6-size: 16px;
+  --text-h6-height: 20px;
+  --text-h6-spacing: 20px;
+
+  /* Body LG - Mobile */
+  --body-lg-size: 16px;
+  --body-lg-height: 19.2px;
+  --body-lg-spacing: 19.2px;
+
+  /* Body MD - Mobile */
+  --body-md-size: 14px;
+  --body-md-height: 16.8px;
+  --body-md-spacing: 16.8px;
+
+  /* Body SM - Mobile */
+  --body-sm-size: 14px;
+  --body-sm-height: 16.8px;
+  --body-sm-spacing: 16.8px;
+
+  /* Caption - Mobile */
+  --caption-size: 12px;
+  --caption-height: 16px;
+  --caption-spacing: 16px;
+
+  /* Tag - Mobile */
+  --tag-size: 16px;
+  --tag-height: 19.2px;
+  --tag-spacing: 19.2px;
+  --tag-letter-spacing: 0px; 
+}
+
+/* --- TABLET BREAKPOINT (~768px) --- */
+@media (min-width: 768px) {
+  :root {
+    /* H1 Tablet */
+    --text-h1-size: 48px;
+    --text-h1-height: 48px;
+    --text-h1-spacing: 56px;
+
+    /* H2 Tablet */
+    --text-h2-size: 40px;
+    --text-h2-height: 48px;
+    --text-h2-spacing: 48px;
+
+    /* H3 Tablet */
+    --text-h3-size: 32px;
+    --text-h3-height: 40px;
+    --text-h3-spacing: 40px;
+
+    /* H4, H5, H6, Body, Caption are same as Mobile on Tablet in your Figma */
+    
+    /* Tag Tablet - Only Letter Spacing changes */
+    --tag-letter-spacing: 2px;
+  }
+}
+
+/* --- DESKTOP BREAKPOINT (~1024px) --- */
+@media (min-width: 1024px) {
+  :root {
+    /* H1 Desktop */
+    --text-h1-size: 60px;
+    --text-h1-height: 72px;
+    --text-h1-spacing: 72px;
+
+    /* H2 Desktop */
+    --text-h2-size: 48px;
+    --text-h2-height: 56px;
+    --text-h2-spacing: 56px;
+
+    /* H3 Desktop */
+    --text-h3-size: 40px;
+    --text-h3-height: 48px;
+    --text-h3-spacing: 48px;
+
+    /* H4 Desktop */
+    --text-h4-size: 32px;
+    --text-h4-height: 40px;
+    --text-h4-spacing: 40px;
+
+    /* H5 Desktop (No change from mobile/tablet in size, but included for safety) */
+    
+    /* H6 Desktop */
+    --text-h6-size: 20px;
+    --text-h6-height: 24px;
+    --text-h6-spacing: 24px;
+
+    /* Body LG Desktop */
+    --body-lg-size: 20px;
+    --body-lg-height: 24px;
+    --body-lg-spacing: 24px;
+
+    /* Body MD Desktop */
+    --body-md-size: 16px;
+    --body-md-height: 19.2px;
+    --body-md-spacing: 19.2px;
+
+    /* Body SM Desktop (No change from mobile) */
+
+    /* Tag Desktop */
+    --tag-size: 20px;
+    --tag-height: 24px;
+    --tag-spacing: 24px;
+    --tag-letter-spacing: 4px;
+  }
 }
 
 @theme inline {
@@ -10,6 +143,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Fonts from Figma */
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-caption: 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +157,89 @@
   }
 }
 
+/* --- Base Elements --- */
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  /* Default to Body MD settings */
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700; /* Assuming bold for headers */
+}
+
+h1 {
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-height);
+  margin-bottom: var(--text-h1-spacing);
+}
+
+h2 {
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-height);
+  margin-bottom: var(--text-h2-spacing);
+}
+
+h3 {
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-height);
+  margin-bottom: var(--text-h3-spacing);
+}
+
+h4 {
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-height);
+  margin-bottom: var(--text-h4-spacing);
+}
+
+h5 {
+  font-size: var(--text-h5-size);
+  line-height: var(--text-h5-height);
+  margin-bottom: var(--text-h5-spacing);
+}
+
+h6 {
+  font-size: var(--text-h6-size);
+  line-height: var(--text-h6-height);
+  margin-bottom: var(--text-h6-spacing);
+}
+
+/* --- Utility Classes for Body / Tag / Caption --- */
+
+.text-body-lg {
+  font-size: var(--body-lg-size);
+  line-height: var(--body-lg-height);
+  margin-bottom: var(--body-lg-spacing);
+}
+
+.text-body-md {
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-height);
+  margin-bottom: var(--body-md-spacing);
+}
+
+.text-body-sm {
+  font-size: var(--body-sm-size);
+  line-height: var(--body-sm-height);
+  margin-bottom: var(--body-sm-spacing);
+}
+
+.text-caption {
+  font-family: var(--font-caption);
+  font-size: var(--caption-size);
+  line-height: var(--caption-height);
+  margin-bottom: var(--caption-spacing);
+}
+
+.text-tag {
+  font-family: var(--font-heading); /* Assuming Tag uses heading font, adjust if Body */
+  font-size: var(--tag-size);
+  line-height: var(--tag-height);
+  margin-bottom: var(--tag-spacing);
+  letter-spacing: var(--tag-letter-spacing);
 }
