@@ -11,15 +11,17 @@
     --color-header: #1f2937;
     --color-header-accent: #1a40b2;
     --color-body: #374151;
-    --color-tag: #a76106;
+    --color-tag: #ff9f01;
     --color-primary: #193cb8;
     --color-nav: #364153;
+    --color-wd-blue: #d6e1f9;
 
     /* --- 📐 LAYOUT VARIABLES (Mobile Default) --- */
     --padding-x-relaxed: 40px;
     --padding-x-tight: 16px;
     --padding-y-hero: 40px;
     --padding-y-navbar: 8px;
+    --padding-y-footer: 48px;
 
     /* --- ✍️ TYPOGRAPHY VARIABLES (Mobile Default) --- */
 
@@ -57,6 +59,7 @@
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Poppins', sans-serif;
     --font-caption: 'Poppins', sans-serif;
+    --font-gilroy: 'Gilroy', sans-serif;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -158,6 +161,12 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+}
+
+@layer components {
+  .text-tag-style {
+    @apply text-tagText text-tag font-heading uppercase;
   }
 }
 

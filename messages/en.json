@@ -9,5 +9,28 @@
   "HomePage": {
     "title": "Hello World",
     "description": "Welcome to my scalable app"
+  },
+  "Footer": {
+    "address": "Suite 5.03 Level 5 Block B, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+    "products": "Products",
+    "car_inspections": "Car Inspections",
+    "luxury_inspection": "Luxury Car Inspection",
+    "car_service": "Car Service & Maintenance (coming soon)",
+    "car_repairs": "Car Repairs & Maintenance (coming soon)",
+    "company": "Company",
+    "about_us": "About Us",
+    "how_it_works": "How It Works",
+    "contact_us": "Contact Us",
+    "resources": "Resources",
+    "sample_report": "Sample Report",
+    "faqs": "Help Centre / FAQs",
+    "coverage_areas": "Coverage Areas",
+    "customer_reviews": "Customer Reviews",
+    "policies": "Policies & Terms",
+    "inspection_terms": "Inspection Terms & Conditions",
+    "refund_policy": "Cancellation & Refund Policy",
+    "terms_conditions": "Terms & Conditions",
+    "privacy_policy": "Privacy Policy",
+    "copyright": "© Wisedrive Technologies (M) Sdn. Bhd. All rights reserved {year}"
   }
 }

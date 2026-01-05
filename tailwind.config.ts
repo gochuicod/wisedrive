@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        wdBlue: 'var(--color-wd-blue)',
         header: {
           DEFAULT: 'var(--color-header)',
           accent: 'var(--color-header-accent)',
@@ -62,12 +63,14 @@ const config: Config = {
         relaxed: 'var(--padding-x-relaxed)',
         tight: 'var(--padding-x-tight)',
         navbar: 'var(--padding-y-navbar)',
+        footer: 'var(--padding-y-footer)',
         hero: 'var(--padding-y-hero)',
       },
       spacing: {
         relaxed: 'var(--padding-x-relaxed)',
         tight: 'var(--padding-x-tight)',
         navbar: 'var(--padding-y-navbar)',
+        footer: 'var(--padding-y-footer)',
         hero: 'var(--padding-y-hero)',
       },
       fontSize: {
@@ -131,7 +134,7 @@ const config: Config = {
             lineHeight: 'var(--caption-height)',
           },
         ],
-        tag: [
+        tagText: [
           'var(--tag-size)',
           {
             lineHeight: 'var(--tag-height)',
@@ -143,6 +146,7 @@ const config: Config = {
         heading: ['var(--font-heading)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
         caption: ['var(--font-caption)', 'sans-serif'],
+        gilroy: ['var(--font-gilroy)', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

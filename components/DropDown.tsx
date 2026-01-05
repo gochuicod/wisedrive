@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { BaseDropDown, DropDownSize } from "@/styles/dropdown";
+import React, { useState } from 'react';
+import { BaseDropDown, DropDownSize } from '@/styles/dropdown';
 
 // --- Definition Types ---
 export interface DropDownProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title' | 'onToggle'> {
@@ -32,7 +32,7 @@ export const DropDown: React.FC<DropDownProps> = ({
       size={size}
       title={title}
       isOpen={isOpen}
-      onToggle={handleToggle}
+      onOpenChange={handleToggle}
       {...props}
     >
       {children}
