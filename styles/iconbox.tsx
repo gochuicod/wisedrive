@@ -51,7 +51,7 @@ const sizes: Record<
   // W: 288px, H: 214px | Icon Area: 106x100
   lg: {
     root: "w-[288px]",
-    icon: "w-[106.63px] h-[100px]",
+    icon: "w-full h-[100px]",
     title: "text-h6",
     desc: "text-body",
   },
