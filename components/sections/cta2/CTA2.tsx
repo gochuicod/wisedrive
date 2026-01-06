@@ -3,7 +3,7 @@
 import { AppButton } from '@/components/AppButton';
 import { FunnelCard } from '@/components/FunnelCard';
 import { useEffect, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, MessageSquareText } from 'lucide-react';
 
 const CTA1 = () => {
   const [isLarge, setIsLarge] = useState(false);
@@ -31,7 +31,7 @@ const CTA1 = () => {
                 className='px-4 py-2 lg:px-2'
 
                 >
-                Book Your Inspection
+                Partner With Us
                 </AppButton>
           </FunnelCard>
         </div>
@@ -61,12 +61,12 @@ const CTA1 = () => {
             <div className="flex flex-col gap-2 md:gap-4">
             <AppButton
                 onClick={() => alert('Button Clicked')}
-                leftIcon={<ExternalLink className="text-white" size={16} />}
+                leftIcon={<MessageSquareText className="text-white" size={16} />}
                 variant="glass"
                 size={isLarge ? "lg" : "sm"}
-                className="px-4 py-2 md:px-6 md:py-3"
+                className="px-4 py-2 md:px-6 md:py-3 lg:text-base md:text-xl"
             >
-                Speak to an expert
+                Request Free Callback
             </AppButton>
             </div>
         </div>
