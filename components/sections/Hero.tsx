@@ -14,7 +14,7 @@ export default function Hero() {
         'bg-black',
         'xl:min-h-[848px] md:min-h-[584px] min-h-[600px]',
         'm-tight',
-        'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
+        'xl:rounded-5xl md:rounded-[24px] rounded-[16px]',
         'overflow-hidden',
       )}
     >
@@ -24,7 +24,7 @@ export default function Hero() {
           "bg-[url('/b2cHero/b2c_hero_bg_image.webp')]",
           'bg-bottom',
           'bg-no-repeat',
-          'xl:bg-[length:100%_auto] md:bg-[length:100%_65%] bg-[length:180%_auto]',
+          'xl:bg-[length:100%_auto] md:bg-[length:100%_80%] bg-[length:180%_auto]',
           '[mask-image:linear-gradient(to_top,black_40%,transparent)]',
         )}
       />
@@ -111,7 +111,7 @@ export default function Hero() {
         {/* Bottom Part */}
         <div
           className={cn(
-            'flex lg:flex-row flex-col justify-center items-center w-full mb-3 rounded-2xl px-6 py-4',
+            'flex lg:flex-row flex-col justify-center items-center w-full mb-3 px-6 py-4 md:rounded-[16px] rounded-[14px]',
             'shadow-[0px_1px_24px_-1px_rgba(0,0,0,0.01)]',
             'backdrop-blur-[5px]',
             'relative overflow-hidden',
@@ -123,7 +123,7 @@ export default function Hero() {
           }}
         >
           {/* glossy highlight overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-white/5 to-white/0 pointer-events-none rounded-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-white/5 to-white/0 pointer-events-none md:rounded-[16px] rounded-[14px]" />
 
           <span className="font-body font-bold lg:text-md text-body-sm">
             {t('counter_text_1')}
