@@ -5,6 +5,9 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 
+import { AppButton } from '@/components/AppButton';
+import { CircleCheck } from 'lucide-react';
+
 import {
   Sheet,
   SheetContent,
@@ -40,7 +43,7 @@ export default function Navbar() {
           const isActive = pathname === link.href;
           return (
             <Link
-              key={link.href}
+              key={link.key}
               href={link.href}
               className={`text-h6 ${isActive ? 'font-bold' : 'font-normal'}`}
             >
@@ -48,6 +51,13 @@ export default function Navbar() {
             </Link>
           );
         })}
+        <AppButton
+          variant="default"
+          size="sm"
+          leftIcon={<CircleCheck className="size-4" />}
+        >
+          {t('inspect_with_confidence_button')}
+        </AppButton>
       </div>
 
       {/* 3. MOBILE MENU (Visible only on Mobile/Tablet) */}
@@ -84,12 +94,12 @@ export default function Navbar() {
                 const isActive = pathname === link.href;
                 return (
                   <Link
-                    key={link.href}
+                    key={link.key}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={`text-h6 ${isActive ? 'font-bold' : 'font-normal'}`}
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 );
               })}
