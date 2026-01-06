@@ -20,7 +20,7 @@ const variants: Record<ButtonVariant, string> = {
   default: "bg-[linear-gradient(132.85deg,#2BA3FF_0%,#374EFF_99.57%)] text-white hover:shadow-lg hover:brightness-110",
   
   // Glass: rgba(255, 255, 255, 0.2)
-  glass: "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm",
+  glass: "bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:bg-white/30 hover:border-white/30",
   
   secondary: "border-2 border-white text-white hover:bg-primary/5",
 };

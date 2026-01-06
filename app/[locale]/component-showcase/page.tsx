@@ -5,25 +5,23 @@ import { IconBox } from '@/components/IconBox';
 import { Badge } from '@/components/Badge';
 import { DropDown } from '@/components/DropDown';
 import { HighlightedHeading, Highlight } from '@/components/HighlightedHeading';
+import { FunnelCard } from '@/components/FunnelCard';
 
 import Image from 'next/image';
 
-// --- Icons (Simple SVG placeholders) ---
-const CalendarIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+const ExternalLinkIcon = ({ className }: { className?: string }) => (
+  <svg 
+    width="16" 
+    height="16" 
+    viewBox="0 0 16 16" 
+    fill="none" 
+    className={className} 
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" />
-    <path d="M16 2V6" />
-    <path d="M8 2V6" />
-    <path d="M3 10H21" />
+    <path 
+      d="M13.3333 13.3333H2.66667V2.66667H8V1.33333H2.66667C1.92667 1.33333 1.33333 1.93333 1.33333 2.66667V13.3333C1.33333 14.0667 1.92667 14.6667 2.66667 14.6667H13.3333C14.0667 14.6667 14.6667 14.0667 14.6667 13.3333V8H13.3333V13.3333ZM9.33333 1.33333V2.66667H12.3933L4.98 10.08L5.92 11.02L13.3333 3.60667V6.66667H14.6667V1.33333H9.33333Z" 
+      fill="currentColor"
+    />
   </svg>
 );
 
@@ -352,6 +350,44 @@ const ComponentShowcase = () => {
         </div>
       </div>
 
+{/* =========================================
+          SECTION 5: FUNNEL CARDS
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-white rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">Funnel Cards (CTA)</h2>
+        
+        <div className="flex flex-col md:flex-col lg:flex-row w-full gap-8 mx-auto">
+          {/* Card 1: Dealership */}
+          <div className="w-full md:w-full lg:w-4/5">
+            <FunnelCard 
+              title="Representing a Dealership or Bank? "
+              backgroundImage="/assets/dealership-bg.jpg"
+            >
+              <AppButton 
+                onClick={() => alert('Clicked Dealership')}
+                rightIcon={<ExternalLinkIcon className="text-white" />}
+              >
+                Join Partner Network
+              </AppButton>
+            </FunnelCard>
+          </div>
+          {/* Card 2: Individual */}
+          <div className="w-full md:w-full lg:w-1/5">
+            <FunnelCard 
+              title="Representing a Dealership or Bank? "
+              backgroundImage="/assets/dealership-bg.jpg"
+            >
+              <AppButton 
+                onClick={() => alert('Clicked Individual')}
+                rightIcon={<ExternalLinkIcon className="text-white" />}
+              >
+                Join Network
+              </AppButton>
+            </FunnelCard>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
