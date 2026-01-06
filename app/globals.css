@@ -18,30 +18,30 @@
     --color-wd-orange: #ff9f01;
 
     /* Primary Blue Colors */
-    --primary-50:  #E9EEFC;
-    --primary-100: #D3DCF8;
-    --primary-200: #A6B9F2;
-    --primary-300: #7A96EB;
-    --primary-400: #4D73E5;
-    --primary-500: #122C7B;
-    --primary-600: #1A40B2;
+    --primary-50: #e9eefc;
+    --primary-100: #d3dcf8;
+    --primary-200: #a6b9f2;
+    --primary-300: #7a96eb;
+    --primary-400: #4d73e5;
+    --primary-500: #122c7b;
+    --primary-600: #1a40b2;
     --primary-700: #143085;
-    --primary-800: #0D2059;
-    --primary-900: #07102C;
+    --primary-800: #0d2059;
+    --primary-900: #07102c;
     --primary-950: #030816;
 
     /* Accent Colors */
-    --accent-50:  #FFF8E5;
-    --accent-100: #FFF1CC;
-    --accent-200: #FFE499;
-    --accent-300: #FFD666;
-    --accent-400: #FFC933;
-    --accent-500: #F0B000;
-    --accent-600: #CC9600;
+    --accent-50: #fff8e5;
+    --accent-100: #fff1cc;
+    --accent-200: #ffe499;
+    --accent-300: #ffd666;
+    --accent-400: #ffc933;
+    --accent-500: #f0b000;
+    --accent-600: #cc9600;
     --accent-700: #997000;
-    --accent-800: #664B00;
+    --accent-800: #664b00;
     --accent-900: #332500;
-    --accent-950: #1A1300;
+    --accent-950: #1a1300;
 
     /* --- 📐 LAYOUT VARIABLES (Mobile Default) --- */
     --padding-x-relaxed: 40px;
@@ -109,7 +109,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 2.5rem;
   }
 
   /* --- TABLET OVERRIDES (~768px) --- */
