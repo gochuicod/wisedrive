@@ -191,6 +191,14 @@
   }
 }
 
+/* --- DESKTOP OVERRIDES (~1920px) --- */
+@media (min-width: 1920px) {
+  :root {
+    /* Layout */
+    --padding-x-relaxed: 336px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -34,7 +34,7 @@ export default function Hero() {
           'text-white',
           'font-body',
           'xl:pt-[88px] md:pt-[72px] pt-[40px]',
-          'xl:px-12 px-4',
+          '3xl:px-[304px] xl:px-12 px-4',
           'flex flex-col',
           'justify-between items-center',
           'xl:min-h-[848px] md:min-h-[584px] min-h-[600px]',
@@ -111,7 +111,7 @@ export default function Hero() {
         {/* Bottom Part */}
         <div
           className={cn(
-            'flex lg:flex-row flex-col justify-center items-center 3xl:w-[75%] w-full mb-3 rounded-2xl px-6 py-4',
+            'flex lg:flex-row flex-col justify-center items-center w-full mb-3 rounded-2xl px-6 py-4',
             'shadow-[0px_1px_24px_-1px_rgba(0,0,0,0.01)]',
             'backdrop-blur-[5px]',
             'relative overflow-hidden',
