@@ -85,7 +85,7 @@ Allowed TypesType
 | **refactor** | Code change (no feature/fix) | `refactor(utils): simplify date format` |
 | **test** | Adding or fixing tests | `test(auth): add unit tests for login` |
 | **perf** | Performance improvements | `perf(image): optimize logo loading` |
-| **perf** | Build system/dependency updates | `build(npm): update lockfile` |
+| **build** | Build system/dependency updates | `build(npm): update lockfile` |
 | **revert** | Reverting a previous commit | `revert: restore previous navbar layout` |
 | **docs** | Documentation only | `docs: update readme rules` |
 | **ci** | CI/CD changes | `ci: update vercel build settings` |
