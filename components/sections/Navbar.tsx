@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/sheet';
 
 import { NAV_LINKS } from '@/constants';
+import { cn } from '@/lib/utils';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
@@ -24,7 +25,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="lg:px-relaxed px-tight py-navbar flex flex-row justify-between items-center sticky top-0 z-50 bg-white">
+    <nav
+      className={cn(
+        'px-relaxed py-navbar',
+        'flex flex-row',
+        'justify-between items-center',
+        'sticky top-0 z-50',
+        'bg-white',
+      )}
+    >
       {/* 1. LOGO (Always Visible) */}
       <Link href="/">
         <Image
@@ -38,7 +47,9 @@ export default function Navbar() {
       </Link>
 
       {/* 2. DESKTOP MENU (Hidden on Mobile/Tablet) */}
-      <div className="hidden lg:flex flex-row items-center gap-8">
+      <div
+        className={cn('hidden', 'lg:flex flex-row', 'items-center', 'gap-8')}
+      >
         {NAV_LINKS.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -89,7 +100,7 @@ export default function Navbar() {
               Mobile navigation links
             </SheetDescription>
 
-            <div className="flex flex-col gap-6 mt-10">
+            <div className={cn('flex flex-col', 'gap-6 mt-10', 'text-center')}>
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -103,6 +114,13 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+              <AppButton
+                variant="default"
+                size="sm"
+                leftIcon={<CircleCheck className="size-4" />}
+              >
+                {t('inspect_with_confidence_button')}
+              </AppButton>
             </div>
           </SheetContent>
         </Sheet>
