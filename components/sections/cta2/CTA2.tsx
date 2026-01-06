@@ -2,24 +2,19 @@
 
 import { AppButton } from '@/components/AppButton';
 import { FunnelCard } from '@/components/FunnelCard';
-
-const ExternalLinkIcon = ({ className }: { className?: string }) => (
-  <svg 
-    width="16" 
-    height="16" 
-    viewBox="0 0 16 16" 
-    fill="none" 
-    className={className} 
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path 
-      d="M13.3333 13.3333H2.66667V2.66667H8V1.33333H2.66667C1.92667 1.33333 1.33333 1.93333 1.33333 2.66667V13.3333C1.33333 14.0667 1.92667 14.6667 2.66667 14.6667H13.3333C14.0667 14.6667 14.6667 14.0667 14.6667 13.3333V8H13.3333V13.3333ZM9.33333 1.33333V2.66667H12.3933L4.98 10.08L5.92 11.02L13.3333 3.60667V6.66667H14.6667V1.33333H9.33333Z" 
-      fill="currentColor"
-    />
-  </svg>
-);
+import { useEffect, useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 
 const CTA1 = () => {
+  const [isLarge, setIsLarge] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => setIsLarge(window.innerWidth >= 1024);
+    checkSize();
+    window.addEventListener('resize', checkSize);
+    return () => window.removeEventListener('resize', checkSize);
+  }, []);
+
   return (
     <div className="flex flex-col items-center w-full px-relaxed py-relaxed gap-8 mx-auto">
       <div className="flex flex-col md:flex-col lg:flex-row w-full gap-8 lg:max-w-6xl mx-auto">
@@ -31,7 +26,7 @@ const CTA1 = () => {
           >
             <AppButton 
                 onClick={() => alert('Button Clicked')}
-                rightIcon={<ExternalLinkIcon className="text-white" />}
+                rightIcon={<ExternalLink className="text-white" size={16} />}
                 size='sm'
                 className='px-4 py-2 lg:px-2'
 
@@ -66,10 +61,10 @@ const CTA1 = () => {
             <div className="flex flex-col gap-2 md:gap-4">
             <AppButton
                 onClick={() => alert('Button Clicked')}
-                leftIcon={<ExternalLinkIcon className="text-white" />}
+                leftIcon={<ExternalLink className="text-white" size={16} />}
                 variant="glass"
-                size="lg"
-                className="px-4 py-2"
+                size={isLarge ? "lg" : "sm"}
+                className="px-4 py-2 md:px-6 md:py-3"
             >
                 Speak to an expert
             </AppButton>
