@@ -75,7 +75,7 @@ To maintain a clean history and codebase, please adhere to the following rules.
 
 Format: type(scope): description
 
-Allowed TypesType
+Allowed Types
 | Type | Meaning | Example |
 | :--- | :--- | :--- |
 | **feat** | A new feature | `feat(ui): add dark mode toggle` |
@@ -89,3 +89,10 @@ Allowed TypesType
 | **revert** | Reverting a previous commit | `revert: restore previous navbar layout` |
 | **docs** | Documentation only | `docs: update readme rules` |
 | **ci** | CI/CD changes | `ci: update vercel build settings` |
+| **types** | TypeScript-only changes | `types(auth): tighten user session types` |
+| **i18n** | Translation / localization changes | `i18n(home): add Thai hero translations` |
+| **ui** | Component-level UI changes | `ui(form): add reusable form field wrapper` |
+| **security** | Security-related changes | `security(auth): prevent session fixation` |
+| **config** | Project configuration changes | `config(tailwind): extend color palette` |
+| **deps** | Dependency updates | `deps(next): upgrade to 15.1.0` |
+| **dx** | Developer experience improvements | `dx(dev): add lint-staged hooks` |

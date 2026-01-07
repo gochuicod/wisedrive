@@ -47,10 +47,10 @@ export default function Counter({
       digitPadding: 'px-2 py-[1.78px]',
     },
     md: {
-      fontSize: 'text-h4',
+      fontSize: 'lg:text-h4 md:text-h5 text-h5',
       containerPadding: 'px-1.5 py-px',
-      currencyPadding: 'xl:px-2 md:px-0 px-px py-[1.78px]',
-      digitPadding: 'xl:px-2 md:px-[3px] px-1.5 py-[1.78px]',
+      currencyPadding: 'lg:px-2 md:px-0 px-px py-[1.78px]',
+      digitPadding: 'lg:px-2 md:px-[3px] px-1.5 py-[1.78px]',
     },
     lg: {
       fontSize: 'text-h3',
@@ -112,17 +112,8 @@ export default function Counter({
       {/* Digits */}
       <div className="flex">
         {digits.map((char, index) => {
-          const isSeparator = char === ',';
-
           return (
-            <span
-              key={index}
-              className={
-                isSeparator
-                  ? `${currentSize.fontSize} px-1 opacity-60 text-center`
-                  : digitClasses
-              }
-            >
+            <span key={index} className={digitClasses}>
               {char}
             </span>
           );
