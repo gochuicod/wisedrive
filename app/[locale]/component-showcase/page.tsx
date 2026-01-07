@@ -7,6 +7,7 @@ import { DropDown } from '@/components/DropDown';
 import { HighlightedHeading, Highlight } from '@/components/HighlightedHeading';
 import { FunnelCard } from '@/components/FunnelCard';
 import { GoogleRatingCard } from '@/components/GoogleRatingCard';
+import { ReviewCard } from '@/components/ReviewCard';
 
 import Image from 'next/image';
 
@@ -403,6 +404,40 @@ const ComponentShowcase = () => {
             buttonLabel="See Reviews"
             onButtonClick={() => alert('Opening Reviews...')}
           />
+        </div>
+      </div>
+
+       {/* =========================================
+          SECTION 7: REVIEW CARDS
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-gray-50 rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">Review Cards</h2>
+        
+        <div className="flex flex-wrap items-start justify-center gap-8">
+          
+          {/* Variant 1 (Tall) */}
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-xs font-mono text-gray-400">Variant 1 (H: 354px)</span>
+            <ReviewCard 
+              variant="v1"
+              reviewText="Perkhidmatan pemeriksaan Wisedrive benar-benar mengubah pengalaman saya! Saya melihat sebuah kereta terpakai yang kelihatan sempurna, tetapi pemeriksaan menyeluruh mereka mendedahkan beberapa masalah tersembunyi."
+              reviewerName="Ali Z."
+              reviewDate="August 28, 2025"
+            />
+          </div>
+
+          {/* Variant 2 (Short) */}
+          <div className="flex flex-col items-center gap-2">
+             <span className="text-xs font-mono text-gray-400">Variant 2 (H: 314px)</span>
+            <ReviewCard 
+              variant="v2"
+              reviewText="Proses yang sangat mudah dan pantas. Laporan yang diterima sangat teliti dan membantu saya membuat keputusan yang tepat."
+              reviewerName="Sarah L."
+              reviewDate="Sept 12, 2025"
+            />
+          </div>
+
         </div>
       </div>
     </div>
