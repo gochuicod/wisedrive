@@ -6,6 +6,7 @@ import Hero from '@/components/sections/Hero';
 import FAQSection from '@/components/sections/faq/FAQSection';
 import Reviews from '@/components/sections/reviews/Reviews';
 import Advantage from '@/components/sections/advantage/Advantage';
+import Steps from '@/components/sections/steps/Steps';
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Advantage />
       <Highlights />
       <CTA1 />
+      <Steps />
       <FAQSection />
       <Reviews />
       <CTA2 />

@@ -8,6 +8,7 @@ import { HighlightedHeading, Highlight } from '@/components/HighlightedHeading';
 import { FunnelCard } from '@/components/FunnelCard';
 import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 import { ReviewCard } from '@/components/ReviewCard';
+import { StepCard } from '@/components/StepCard';
 
 import Image from 'next/image';
 
@@ -437,6 +438,33 @@ const ComponentShowcase = () => {
               reviewDate="Sept 12, 2025"
             />
           </div>
+        </div>
+      </div>
+
+      {/* =========================================
+          SECTION 8: PROCESS STEPS (Dark Mode)
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-gray-900 rounded-xl shadow-sm border border-gray-800">
+        <h2 className="text-xl font-bold mb-10 text-white border-b border-gray-700 pb-2">Process Step Cards</h2>
+        
+        <div className="flex flex-wrap items-start justify-center gap-12">
+          
+          {/* Step 1 */}
+          <StepCard heading="01. DISCOVERY">
+            <p>We analyze market trends and identify the best value vehicles currently available.</p>
+          </StepCard>
+
+          {/* Step 2 */}
+          <StepCard heading="02. VETTING">
+            <p>Our team verifies the service history and ensures the documentation is authentic.</p>
+          </StepCard>
+
+          {/* Step 3 (From your Figma Data) */}
+          <StepCard heading="03. INSPECTION">
+            <p>Physical checks + OBD-II/ECM/BCM scans + photo-AI exterior review.</p>
+            <p>We call out critical faults, repair estimates, and fair price guidance.</p>
+          </StepCard>
 
         </div>
       </div>
