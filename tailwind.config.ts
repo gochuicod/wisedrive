@@ -27,6 +27,7 @@ const config: Config = {
           950: 'var(--primary-950)',
           DEFAULT: 'hsl(var(--primary))', // fallback
           foreground: 'hsl(var(--primary-foreground))',
+          semantic: 'var(--color-primary)',
         },
         accent: {
           50: 'var(--accent-50)',

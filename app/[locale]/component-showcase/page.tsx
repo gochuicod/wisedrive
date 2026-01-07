@@ -6,6 +6,7 @@ import { Badge } from '@/components/Badge';
 import { DropDown } from '@/components/DropDown';
 import { HighlightedHeading, Highlight } from '@/components/HighlightedHeading';
 import { FunnelCard } from '@/components/FunnelCard';
+import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 
 import Image from 'next/image';
 
@@ -362,7 +363,7 @@ const ComponentShowcase = () => {
           <div className="w-full md:w-full lg:w-4/5">
             <FunnelCard 
               title="Representing a Dealership or Bank? "
-              backgroundImage="/assets/dealership-bg.jpg"
+              backgroundImage="/cta/wd-cta-1-bg.webp"
             >
               <AppButton 
                 onClick={() => alert('Clicked Dealership')}
@@ -376,7 +377,7 @@ const ComponentShowcase = () => {
           <div className="w-full md:w-full lg:w-1/5">
             <FunnelCard 
               title="Representing a Dealership or Bank? "
-              backgroundImage="/assets/dealership-bg.jpg"
+              backgroundImage="/cta/wd-funnel-cta.webp"
             >
               <AppButton 
                 onClick={() => alert('Clicked Individual')}
@@ -386,6 +387,22 @@ const ComponentShowcase = () => {
               </AppButton>
             </FunnelCard>
           </div>
+        </div>
+      </div>
+
+      {/* =========================================
+          SECTION 6: SOCIAL PROOF / RATING CARD
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-white rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">Google Rating Card</h2>
+        
+        <div className="flex justify-center">
+          <GoogleRatingCard 
+            rating="4.8"
+            buttonLabel="See Reviews"
+            onButtonClick={() => alert('Opening Reviews...')}
+          />
         </div>
       </div>
     </div>
