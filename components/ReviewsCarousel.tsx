@@ -47,18 +47,72 @@ const reviewsData = [
     reviewDate: "2 months ago",
     rating: 5,
   },
+  {
+    id: 7,
+    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
+    reviewerName: "George Bugwak",
+    reviewDate: "2 months ago",
+    rating: 3,
+  },
+  {
+    id: 8,
+    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
+    reviewerName: "Wisedrive",
+    reviewDate: "2 months ago",
+    rating: 4,
+  },
+  {
+    id: 9,
+    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
+    reviewerName: "Bangalore",
+    reviewDate: "2 months ago",
+    rating: 4,
+  },      
 ];
 
 export const ReviewsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [screenSize, setScreenSize] = useState('lg'); // 'mobile', 'tablet', 'lg'
+
+  // Detect screen size and set cards to display
+  React.useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setScreenSize('mobile');
+      } else if (width < 1024) {
+        setScreenSize('tablet');
+      } else {
+        setScreenSize('lg');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Determine cards per view based on screen size
+  const cardsPerView = screenSize === 'mobile' ? 1 : screenSize === 'tablet' ? 2 : 4;
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % reviewsData.length);
+    setCurrentIndex((prev) => {
+      const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
+      const nextIndex = prev + cardsPerView;
+      return nextIndex > maxIndex ? 0 : nextIndex;
+    });
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + reviewsData.length) % reviewsData.length);
+    setCurrentIndex((prev) => {
+      const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
+      return prev === 0 ? maxIndex : prev - cardsPerView;
+    });
   };
+
+  // Calculate number of groups
+  const totalGroups = Math.ceil(reviewsData.length / cardsPerView);
+  const currentGroup = Math.floor(currentIndex / cardsPerView);
 
   // Display 4 cards at a time (or adjust based on your layout needs)
   const visibleCards = [
@@ -97,20 +151,22 @@ export const ReviewsCarousel = () => {
           aria-label="Previous"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-6 md:h-6">
-            <path d="M15 18L9 12L15 6" stroke="#1E2939" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M15 18L9 12L15 6" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
 
         {/* Carousel Indicators */}
         <div className="flex gap-1 md:gap-2 justify-center">
-          {reviewsData.map((_, index) => (
+          {Array.from({ length: totalGroups }).map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => setCurrentIndex(index * cardsPerView)}
               className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-primary' : 'bg-gray-300'
+                index === currentGroup 
+                  ? 'bg-[var(--color-primary)]' 
+                  : 'border border-[var(--color-primary)] bg-transparent'
               }`}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Go to group ${index + 1}`}
             />
           ))}
         </div>
@@ -122,7 +178,7 @@ export const ReviewsCarousel = () => {
           aria-label="Next"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-6 md:h-6">
-            <path d="M9 18L15 12L9 6" stroke="#1E2939" strokeWidth="2"  strokeLinejoin="round" />
+            <path d="M9 18L15 12L9 6" stroke="var(--color-primary)" strokeWidth="2" strokeLinejoin="round" />
           </svg>
         </button>
       </div>

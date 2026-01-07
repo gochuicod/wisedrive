@@ -14,9 +14,9 @@ const WiseDriveAdvantage = () => (
 
 export const FAQSection = () => {
   return (
-    <section className="w-full px-relaxed py-relaxed mx-auto items-center justify-center">
+    <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center">
       {/* Outer container */}
-      <div className="w-full flex flex-col items-center gap-6 px-4">
+      <div className="w-full max-w-[1248px] flex flex-col items-center justify-center gap-6 px-4">
         {/* Heading */}
         <div className="w-full flex flex-col lg:flex-row gap-8 items-center ">          
          {/* Left Wrapper - Badge & Heading */}
