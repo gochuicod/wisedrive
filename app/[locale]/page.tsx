@@ -3,6 +3,7 @@ import Highlights from '@/components/sections/highlights/Highlights';
 import CTA1 from '@/components/sections/cta1/CTA1';
 import CTA2 from '@/components/sections/cta2/CTA2';
 import Hero from '@/components/sections/Hero';
+import FAQSection from '@/components/sections/faq/FAQSection';
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <OurBrands />
       <Highlights />
       <CTA1 />
+      <FAQSection />
       <CTA2 />
 
     </div>

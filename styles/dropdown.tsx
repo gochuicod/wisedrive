@@ -18,7 +18,6 @@ interface BaseDropDownProps
 const containerBase = `
   flex flex-col justify-start items-start
   px-6 py-4
-  rounded-lg
   transition-all duration-300 ease-in-out
   cursor-pointer
   overflow-hidden
