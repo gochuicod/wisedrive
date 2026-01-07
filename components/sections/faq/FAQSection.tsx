@@ -7,15 +7,15 @@ export const FAQSection = () => {
   return (
     <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center">
       {/* Outer container */}
-      <div className="w-full max-w-[1248px] flex flex-col items-center gap-6 px-4">
+      <div className="w-full flex flex-col items-center gap-6 px-4">
         
         {/* Heading */}
-        <div className="w-full max-w-[1034px] flex flex-col md:flex-row gap-8">          
+        <div className="w-full flex flex-col md:flex-row gap-8">          
          {/* Left Wrapper - Badge & Heading */}
           <div className="flex-1 flex flex-col items-start gap-1 flex-grow">
             <Badge size="lg">FAQs</Badge>
             <HighlightedHeading className="text-h4 font-heading font-bold">
-              Got Questions about our <Highlight>inspection?</Highlight>
+              Got Questions about our <br/> <Highlight>inspection?</Highlight>
             </HighlightedHeading>
           </div>
 
@@ -28,7 +28,7 @@ export const FAQSection = () => {
         </div>
 
         {/* Content */}
-        <div className="w-full max-w-[1034px] flex flex-col md:flex-row gap-8">
+        <div className="w-full flex flex-col md:flex-row gap-8">
           
           {/* Column 1 */}
           <div className="flex-1 border border-[#D1D5DC] rounded-2xl overflow-hidden flex flex-col h-fit">

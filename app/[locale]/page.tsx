@@ -4,6 +4,7 @@ import CTA1 from '@/components/sections/cta1/CTA1';
 import CTA2 from '@/components/sections/cta2/CTA2';
 import Hero from '@/components/sections/Hero';
 import FAQSection from '@/components/sections/faq/FAQSection';
+import Reviews from '@/components/sections/reviews/Reviews';
 
 export default function HomePage() {
   return (
@@ -13,8 +14,8 @@ export default function HomePage() {
       <Highlights />
       <CTA1 />
       <FAQSection />
+      <Reviews />
       <CTA2 />
-
     </div>
   );
 }
