@@ -9,6 +9,7 @@ import { FunnelCard } from '@/components/FunnelCard';
 import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 import { ReviewCard } from '@/components/ReviewCard';
 import { StepCard } from '@/components/StepCard';
+import { FeatureStat } from '@/components/FeatureStat';
 
 import Image from 'next/image';
 
@@ -465,6 +466,46 @@ const ComponentShowcase = () => {
             <p>Physical checks + OBD-II/ECM/BCM scans + photo-AI exterior review.</p>
             <p>We call out critical faults, repair estimates, and fair price guidance.</p>
           </StepCard>
+
+        </div>
+      </div>
+
+      {/* =========================================
+          SECTION 9: FEATURE STAT (Glass Dial)
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-gray-100 rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">Feature Stat Cards</h2>
+        
+        <div className="flex flex-wrap items-center justify-center gap-12 bg-gray-50 p-10">
+          
+          {/* Card 1: Engine */}
+          <FeatureStat 
+            value="20x"
+            label="more accurate engine analysis"
+            image="/featurestat/image.png" // Replace with your actual asset
+          />
+
+          {/* Card 2: No Image (Gradient only) */}
+          <FeatureStat 
+            value="95%"
+            label="reduction in human error"
+            image='/featurestat/image.png'
+          />
+
+           {/* Card 3: Variant Data */}
+           <FeatureStat 
+            value="75%"
+            label="faster reporting"
+            image="/featurestat/image.png" 
+          />
+
+          {/* Card 4: Variant Data */}
+           <FeatureStat 
+            value="99%"
+            label="diagnostic accuracy"
+            image="/featurestat/image.png" 
+          />
 
         </div>
       </div>
