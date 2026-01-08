@@ -13,8 +13,6 @@ interface BaseDropDownProps
 }
 
 // --- Style Definitions ---
-
-// Common Layout: Flex col, px-24px (6), py-16px (4), Radius 8px
 const containerBase = `
   flex flex-col justify-start items-start
   px-6 py-4
@@ -24,19 +22,10 @@ const containerBase = `
   w-full
 `;
 
-// State-Specific Styles
-// Active: #E9EEFC, Shadow
 const activeStyle =
   'bg-[#E9EEFC] shadow-[2px_2px_4px_rgba(25,33,61,0.06)]';
-
-// Inactive: #F9FAFB (Gray/50), No Shadow
 const inactiveStyle = 'bg-[#F9FAFB]';
-
-// Header Row: Space between, aligned center
-const headerBase =
-  'flex flex-row justify-between items-center w-full select-none';
-
-// Arrow Button Wrapper: 29.33px square, rounded, flex center
+const headerBase = 'flex flex-row justify-between items-center w-full select-none';
 const arrowBtnBase =
   'flex items-center justify-center w-[29.33px] h-[29.33px] rounded-[5.33px] transition-transform duration-300';
 
@@ -45,22 +34,17 @@ const sizes: Record<
   DropDownSize,
   { root: string; titleSize: string; content: string }
 > = {
-  // Large
   lg: {
     root: 'w-full',
     titleSize: 'text-[16px] leading-[19px]',
     content: 'font-body font-normal text-[16px] leading-[19px] text-[#364153]',
   },
-
-  // Medium
   md: {
     root: 'w-full',
     titleSize: 'text-[14px] leading-[17px]',
     content:
       'font-body font-normal text-[14px] leading-[17px] text-[#364153] text-justify',
   },
-
-  // Small
   sm: {
     root: 'w-full',
     titleSize: 'text-[14px] leading-[17px]',

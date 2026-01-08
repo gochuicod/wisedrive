@@ -1,18 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import { IconBox } from "@/components/IconBox"; // Adjust path to where your IconBox is located
+import { IconBox } from "@/components/IconBox"; 
 
 const HIGHLIGHT_ITEMS = [
   {
     id: 1,
-    title: "AI-Powered", // Placeholder based on 'data' icon
+    title: "AI-Powered",
     description: "Our AI sees and hears what most might miss, saving you from expensive repairs",
     iconSrc: "/icons/iconBox/data.svg",
     alt: "AI-Powered Icon",
   },
   {
     id: 2,
-    title: "Fast Inspection", // Placeholder based on 'clock' icon
+    title: "Fast Inspection", 
     description: "A complete 200+ point audit just under 90 mins, speeding up your buying decision.",
     iconSrc: "/icons/iconBox/clock.svg",
     alt: "Inspection Icon",

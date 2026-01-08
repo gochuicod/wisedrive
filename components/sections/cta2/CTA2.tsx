@@ -57,7 +57,6 @@ const CTA1 = () => {
             </div>
 
             {/* Action button wrapper */}
-            
             <div className="flex flex-col gap-2 md:gap-4">
             <AppButton
                 onClick={() => alert('Button Clicked')}

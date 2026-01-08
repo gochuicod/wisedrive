@@ -14,10 +14,6 @@ interface BaseReviewCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 // --- Style Definitions ---
-
-// Container Changes:
-// 1. Changed 'justify-end' to 'justify-between' so Avatar stays top, Stars stay bottom.
-// 2. Kept fixed width.
 const containerBase = `
   box-border
   flex flex-col justify-between items-center 
@@ -29,8 +25,6 @@ const containerBase = `
   transition-all duration-300 ease-in-out
 `;
 
-// Height Variants
-// CHANGED: used 'h-' instead of 'max-h-' to strictly force the jagged look.
 const heights: Record<ReviewCardVariant, string> = {
   v1: "h-[354px]", // Tall
   v2: "h-[314px]", // Short
@@ -47,7 +41,6 @@ const textWrapper = "flex flex-col items-center justify-center flex-grow w-full"
 const reviewParagraph = "font-body font-normal text-[13.26px] leading-[20px] text-center text-[#1E2939] line-clamp-6";
 
 // --- Assets ---
-
 const StarIcon = () => (
   <Image
     src="/icons/componentIcons/star.svg" // Ensure this path is correct or use inline SVG

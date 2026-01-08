@@ -3,17 +3,8 @@ import { BaseGoogleRatingCard } from "@/styles/googlecardrating";
 
 // --- Definition Types ---
 export interface GoogleRatingCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * The numerical rating to display (e.g. "4.8")
-   */
   rating: string;
-  /**
-   * Label for the bottom action button (e.g. "See Reviews")
-   */
   buttonLabel: string;
-  /**
-   * Handler for button click
-   */
   onButtonClick?: () => void;
 }
 

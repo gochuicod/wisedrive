@@ -7,11 +7,7 @@ interface BaseStepCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 // --- Style Definitions ---
-
-// Container:
-// Flex Col, Gap 20px (gap-5), Width 288px
 const containerBase = "flex flex-col items-start gap-5 w-[288px] max-w-[288px]";
-
 const headingBase = "font-bold text-[20px] leading-[24px] tracking-[0.04em] uppercase";
 const headingNumber = "text-accent-500 font-bold text-[20px] leading-[24px] tracking-[0.04em] uppercase font-heading";
 const headingText = "text-white font-heading";

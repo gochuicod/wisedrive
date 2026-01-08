@@ -1,4 +1,3 @@
-import React from "react";
 import { DropDown } from "@/components/DropDown";
 import { HighlightedHeading, Highlight } from "@/components/HighlightedHeading";
 import { Badge } from "@/components/Badge";

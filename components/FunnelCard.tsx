@@ -4,13 +4,7 @@ import { BaseFunnelCard, funnelCardStyles } from "@/styles/funnelcard";
 // --- Definition Types ---
 export interface FunnelCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
-  /**
-   * The URL for the background image.
-   */
   backgroundImage: string;
-  /**
-   * Content to render inside the card (e.g., button).
-   */
   children?: React.ReactNode;
 }
 

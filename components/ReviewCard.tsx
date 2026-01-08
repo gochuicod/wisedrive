@@ -3,7 +3,6 @@ import { BaseReviewCard, ReviewCardVariant } from "@/styles/reviewcard";
 
 // --- Definition Types ---
 export interface ReviewCardProps extends React.HTMLAttributes<HTMLDivElement> {
-
   variant?: ReviewCardVariant;
   reviewText: string;
   reviewerName: string;

@@ -6,7 +6,7 @@ import { Calendar, MessageSquareText, ExternalLink } from 'lucide-react';
 
 const CTA1 = () => {
   return (
-    <div className="flex flex-col items-center w-full px-relaxed py-relaxed gap-8 mx-auto">
+    <section className="flex flex-col items-center w-full px-relaxed py-relaxed gap-8 mx-auto">
       <div className="flex flex-col md:flex-col lg:flex-row w-full gap-8 max-w-6xl mx-auto">
         {/* Card 1: Dealership */}
         <div
@@ -72,7 +72,7 @@ const CTA1 = () => {
           </FunnelCard>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
