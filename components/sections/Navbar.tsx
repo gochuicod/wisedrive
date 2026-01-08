@@ -18,6 +18,7 @@ import {
 
 import { NAV_LINKS } from '@/constants';
 import { cn } from '@/lib/utils';
+import { WisedriveLogo } from '../icons/WiseDriveLogo';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
@@ -35,14 +36,15 @@ export default function Navbar() {
       )}
     >
       {/* 1. LOGO (Always Visible) */}
-      <Link href="/">
-        <Image
-          src="/logo_wisedrive.webp"
-          alt="WiseDrive Logo"
-          width={140}
-          height={42}
-          priority
-          className="w-[120px] md:w-[167px] h-auto"
+      <Link 
+        href="/" 
+        className="relative block w-32 lg:w-40 shrink-0" 
+      >
+        <WisedriveLogo
+          className={cn(
+            'text-[#003CC5]',
+            'w-full h-auto'
+          )}
         />
       </Link>
 

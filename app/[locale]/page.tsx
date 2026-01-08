@@ -1,4 +1,4 @@
-import OurBrands from '@/components/sections/homepage/OurBrands';
+import OurBrands from '@/components/sections/brands/OurBrands';
 import Highlights from '@/components/sections/highlights/Highlights';
 import CTA1 from '@/components/sections/cta1/CTA1';
 import CTA2 from '@/components/sections/cta2/CTA2';
