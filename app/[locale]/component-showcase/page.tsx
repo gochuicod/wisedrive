@@ -4,7 +4,7 @@ import { AppButton } from '@/components/AppButton';
 import { IconBox } from '@/components/IconBox';
 import { Badge } from '@/components/Badge';
 import { DropDown } from '@/components/DropDown';
-import { HighlightedHeading, Highlight } from '@/components/HighlightedHeading';
+import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { FunnelCard } from '@/components/FunnelCard';
 import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 import { ReviewCard } from '@/components/ReviewCard';
@@ -348,9 +348,11 @@ const ComponentShowcase = () => {
           Badges / Text Tags
         </h2>
         <div className="flex flex-col gap-8 items-start">
-          <HighlightedHeading align="center">
-            Where Human Expertise Meets <Highlight>AI technology</Highlight>
-          </HighlightedHeading>
+          <HighlightedHeading
+            text='Where Human Expertise Meets AI technology'
+            highlight='AI technology'
+            align='center'
+          />
         </div>
       </div>
 

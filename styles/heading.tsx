@@ -10,7 +10,7 @@ interface BaseHeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 
 // --- Style Definitions ---
 const baseStyles = "text-h4 font-bold uppercase text-[#1E2939]";
-export const highlightSpanStyles = "text-[#193CB8]"; 
+export const highlightSpanStyles = "text-[#193CB8]";
 
 const alignments: Record<HeadingAlign, string> = {
   left: "text-left",
@@ -27,7 +27,6 @@ export const BaseHeading: React.FC<BaseHeadingProps> = ({
 }) => {
   const combinedClasses = `${baseStyles} ${alignments[align]} ${className}`;
 
-  // We use h4 because the Figma layer was named "heading/h4"
   return (
     <h4 className={combinedClasses} {...props}>
       {children}

@@ -1,11 +1,15 @@
 'use client';
 
-import { HighlightedHeading, Highlight } from "@/components/HighlightedHeading";
+import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { Badge } from "@/components/Badge";
 import { GoogleRatingCard } from "@/components/GoogleRatingCard";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 
+import { useTranslations } from "next-intl";
+
 export const Reviews = () => {
+  const t = useTranslations("Reviews")
+
   return (
     <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-clip">
       {/* Outer container */}
@@ -16,10 +20,14 @@ export const Reviews = () => {
          {/* Left Wrapper - Badge & Heading */}
           <div className="flex flex-col md:items-start items-center gap-2 flex-grow">
             <Badge size="lg">Our Reviews</Badge>
-            <HighlightedHeading className="text-h4 font-heading font-bold">
-              Drive Away <Highlight>Happy</Highlight>
-            </HighlightedHeading>
-            <p className="md:text-left text-center">Join thousands of satisfied customers who bought their vehicle with total peace of mind. </p>
+            <HighlightedHeading
+              text={t("heading")}
+              highlight={t("heading_highlighted_word")}
+              className="text-h4 font-heading font-bold"
+            />
+            <p className="md:text-left text-center">
+              {t("description")}
+            </p>
           </div>
 
           {/* Right Wrapper - Subtitle */}
@@ -34,7 +42,7 @@ export const Reviews = () => {
 
         {/* Content */}
         <div className="w-full flex items-center justify-center">
-                <ReviewsCarousel />
+          <ReviewsCarousel />
         </div>
       </div>
     </section>

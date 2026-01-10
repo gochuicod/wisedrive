@@ -8,16 +8,18 @@ import Reviews from '@/components/sections/reviews/Reviews';
 import Advantage from '@/components/sections/advantage/Advantage';
 import Steps from '@/components/sections/steps/Steps';
 import HighlightPill from '@/components/sections/highlightpill/HighlightPill';
+import Inspection from '@/components/sections/inspection/Inspection';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <Hero />
       <OurBrands />
       <Advantage />
       <Highlights />
       <CTA1 />
       <HighlightPill />
+      <Inspection />
       <Steps />
       <FAQSection />
       <Reviews />

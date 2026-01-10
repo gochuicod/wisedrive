@@ -9,8 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "inspection-card-glow": '4px 6px 10px rgba(0, 60, 197, 0.2), inset 0 0 20px rgba(106, 200, 255, 0.2)',
+      },
       screens: {
         '3xl': '1920px',
+        md: '768px',
+        lg: '1440px',
+        xl: '1920px'
       },
       colors: {
         primary: {
@@ -53,6 +59,8 @@ const config: Config = {
         nav: 'var(--color-nav)',
         wdBlue: 'var(--color-wd-blue)',
         wdOrange: 'var(--color-wd-orange)',
+        cbGreen: 'var(--color-cb-green)',
+        cmGreen: 'var(--color-cm-green)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -177,6 +185,8 @@ const config: Config = {
       },
       borderRadius: {
         '5xl': 'var(--radius)',
+        '4xl': 'calc(var(--radius) - 24px)',
+        '3xl': 'calc(var(--radius) - 26px)',
         '2xl': 'calc(var(--radius) - 28px)',
         xl: 'calc(var(--radius) - 30px)',
         lg: 'calc(var(--radius) - 32px)',
