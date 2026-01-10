@@ -4,7 +4,7 @@ import { HighlightedHeading } from "@/components/HighlightedHeading";
 
 export const TechStack = () => {
   return (
-    <section className="w-full flex px-tight py-relaxed mx-auto items-center justify-center">
+    <section className="w-full flex px-tight py-relaxed mx-auto items-center justify-center overflow-clip">
       {/* Outer container */}
       <div className="w-full max-w-[1248px] flex flex-col items-center gap-6 aspect-auto">
         
@@ -14,6 +14,7 @@ export const TechStack = () => {
           <div className="flex-1 flex flex-col items-center gap-2">
               <HighlightedHeading
                 text="The Wisedrive Tech Stack: How We Validate Assets"
+                className="font-heading text-center"
               />
               <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px] text-center">
               Beyond simple visual checks. We use proprietary technology to uncover the mechanical and financial reality of every asset.
@@ -60,7 +61,7 @@ export const TechStack = () => {
               alt="Tech Stack Visualization"
               width={1920}
               height={1080}
-              className="absolute overflow-visible lg:-right-[180px] lg:-top-[200px] md:-right-[140px] md:-top-[180px] -right-14  object-cover lg:w-[900px] lg:h-[600px] md:w-[650px] md:h-[350px] w-[320px] h-[220px]"
+              className="absolute overflow-visible lg:-right-[180px] lg:-top-[200px] md:-right-[140px] md:-top-[180px] -right-14  object-cover lg:w-[400px] lg:h-[600px] md:w-[650px] md:h-[350px] w-[320px] h-[220px]"
             />
           </div>
 
