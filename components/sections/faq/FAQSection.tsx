@@ -1,8 +1,12 @@
 import { DropDown } from "@/components/DropDown";
-import { HighlightedHeading, Highlight } from "@/components/HighlightedHeading";
+import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { Badge } from "@/components/Badge";
 
+import { useTranslations } from "next-intl";
+
 export const FAQSection = () => {
+  const t = useTranslations("FAQSection");
+
   return (
     <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center">
       {/* Outer container */}
@@ -13,15 +17,16 @@ export const FAQSection = () => {
          {/* Left Wrapper - Badge & Heading */}
           <div className="flex-1 flex flex-col items-start gap-1 flex-grow">
             <Badge size="lg">FAQs</Badge>
-            <HighlightedHeading className="text-h4 font-heading font-bold">
-              Got Questions about our <br/> <Highlight>inspection?</Highlight>
-            </HighlightedHeading>
+            <HighlightedHeading
+              text={t("heading")}
+              highlight={t("heading_highlighted_word")}
+            />
           </div>
 
           {/* Right Wrapper - Subtitle */}
           <div className="flex-1 flex items-center flex-grow">
             <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px]">
-              Find answers to your questions about our AI-powered inspections and how we protect you from costly, hidden repairs.
+              {t("subtitle")}
             </p>
           </div>
         </div>

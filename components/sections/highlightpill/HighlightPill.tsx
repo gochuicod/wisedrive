@@ -1,7 +1,11 @@
-import { HighlightedHeading, Highlight } from "@/components/HighlightedHeading";
+import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { FeatureStat } from "@/components/FeatureStat";
 
+import { useTranslations } from "next-intl";
+
 export const FAQSection = () => {
+  const t = useTranslations("HighlightPills")
+
   return (
     <section className="w-full flex px-tight py-relaxed mx-auto items-center justify-center">
       {/* Outer container */}
@@ -9,9 +13,11 @@ export const FAQSection = () => {
         
         {/* Heading */}
           <div className="flex flex-col items-center gap-1 flex-grow">
-            <HighlightedHeading className="md:text-h4 font-heading font-bold text-center">
-              Wisedrive is the new standard of <Highlight>trust & accuracy?</Highlight>
-            </HighlightedHeading>
+            <HighlightedHeading
+              text={t("heading")}
+              highlight={t("heading_highlighted_word")}
+              className="md:text-h4 font-heading font-bold text-center"
+            />
           </div>
 
         {/* Content */}

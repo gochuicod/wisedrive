@@ -1,8 +1,12 @@
-import { HighlightedHeading, Highlight } from "@/components/HighlightedHeading";
+import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { StepCard } from "@/components/StepCard";
 import { Disclaimer } from "@/components/Disclaimer";
 
+import { useTranslations } from "next-intl";
+
 export const Steps = () => {
+  const t = useTranslations("Steps");
+
   return (
     <section 
       className="w-full flex flex-col px-tight lg:py-tight py-relaxed mx-auto items-center justify-center bg-cover bg-center"
@@ -10,24 +14,30 @@ export const Steps = () => {
     >
       {/* Outer container */}
       <div className="w-full max-w-[1248px] flex flex-col items-center justify-center gap-6 px-4">
-               {/* Heading */}
-                <div className="w-full flex flex-col md:flex-row gap-8">          
-                  {/* Left Wrapper - Badge & Heading */}
-                  <div className="flex-1 flex flex-col md:items-start items-center gap-2 flex-grow">
-                    <HighlightedHeading className="text-h4 font-heading font-bold text-center md:text-left text-white">
-                      Buy Your Car <br/> With Total <Highlight className="text-accent-500" >Confidence</Highlight>
-                    </HighlightedHeading>
-                    <Disclaimer />
-                  </div>                  {/* Right Wrapper - Subtitle */}
-                  <div className="flex-1 flex flex-col md:items-start items-center flex-grow text-center md:text-left gap-4">
-                    <p className="font-poppins text-[16px] text-white leading-[19px]">
-                      Have questions or ready to book? 
-                    </p>
-                     <p className="font-poppins text-[16px] text-white leading-[19px]">
-                      Send “Hi” to <span className="text-accent-500 font-bold">+60 12 255 9610</span> on WhatsApp. Our experts are ready to schedule your inspection or assist you with your purchase.
-                    </p>
-                  </div>
-                </div>
+        {/* Heading */}
+        <div className="w-full flex flex-col md:flex-row gap-8">          
+          {/* Left Wrapper - Badge & Heading */}
+          <div className="flex-1 flex flex-col md:items-start items-center gap-2 flex-grow">
+            <HighlightedHeading
+              text={t("heading")}
+              textClassName="text-white"
+              highlight={t("heading_highlighted_word")}
+              highlightClassName="text-accent-500"
+              className="text-h4 font-heading font-bold text-center md:text-left"
+            />
+            <Disclaimer>
+              {t("disclaimer_text")}
+            </Disclaimer>
+          </div>                  {/* Right Wrapper - Subtitle */}
+          <div className="flex-1 flex flex-col md:items-start items-center flex-grow text-center md:text-left gap-4">
+            <p className="font-poppins text-[16px] text-white leading-[19px]">
+              Have questions or ready to book? 
+            </p>
+              <p className="font-poppins text-[16px] text-white leading-[19px]">
+              Send “Hi” to <span className="text-accent-500 font-bold">+60 12 255 9610</span> on WhatsApp. Our experts are ready to schedule your inspection or assist you with your purchase.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-wrap md:flex-row items-start justify-center gap-6 mt-8 w-full mx-auto md:flex-nowrap">
