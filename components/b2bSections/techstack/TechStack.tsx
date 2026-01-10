@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { DropDown } from "@/components/DropDown";
-import { HighlightedHeading, Highlight } from "@/components/HighlightedHeading";
+import { HighlightedHeading } from "@/components/HighlightedHeading";
 
 export const TechStack = () => {
   return (
@@ -12,9 +12,9 @@ export const TechStack = () => {
         <div className="w-full flex flex-col md:flex-row gap-8">          
          {/* Left Wrapper - Badge & Heading */}
           <div className="flex-1 flex flex-col items-center gap-2">
-            <HighlightedHeading className="text-h4 font-heading font-bold text-center">
-              The Wisedrive Tech Stack: How We Validate Assets
-            </HighlightedHeading>
+              <HighlightedHeading
+                text="The Wisedrive Tech Stack: How We Validate Assets"
+              />
               <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px] text-center">
               Beyond simple visual checks. We use proprietary technology to uncover the mechanical and financial reality of every asset.
             </p>
