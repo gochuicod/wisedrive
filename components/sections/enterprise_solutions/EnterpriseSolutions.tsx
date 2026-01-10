@@ -78,6 +78,7 @@ export default function EnterpriseSolutions () {
             />
             {/* CTA Button */}
             <AppButton
+                href="/enterprise-solutions"
                 variant="default"
                 size="md"
                 leftIcon={<SquareArrowOutUpRight className="size-4" />}

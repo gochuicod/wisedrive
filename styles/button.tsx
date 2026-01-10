@@ -1,17 +1,20 @@
 import React from "react";
+// 👇 CHANGE THIS LINE: Import Link from your specific routing file
+import { Link } from "@/i18n/routing"; 
 
 // --- Styling Types ---
 export type ButtonVariant = "default" | "glass" | "secondary" | "tertiary";
 export type ButtonSize = "sm" | "md" | "lg";
 
-interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isLoading?: boolean;
+  href?: string; 
 }
 
 // --- Style Definitions ---
-const baseStyles = "flex items-center justify-center font-body gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed";
+const baseStyles = "inline-flex items-center justify-center font-body gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed no-underline";
 
 const variants: Record<ButtonVariant, string> = {
   default: "bg-[linear-gradient(132.85deg,#2BA3FF_0%,#374EFF_99.57%)] text-white hover:shadow-lg hover:brightness-110",
@@ -32,16 +35,35 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
   variant = "default",
   size = "md", 
   isLoading = false,
+  href,
   children,
   ...props
 }) => {
   const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
 
+  if (href) {
+    return (
+      // This uses your routing.ts logic
+      // It automatically prepends /en, /my, or /th based on the current user session
+      <Link 
+        href={href} 
+        className={combinedClasses}
+        // We cast props because 'next-intl' Link types might conflict slightly with 'HTMLButtonElement' props
+        {...(props as any)} 
+      >
+        {isLoading && (
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+        )}
+        {children}
+      </Link>
+    );
+  }
+
   return (
     <button className={combinedClasses} disabled={isLoading || props.disabled} {...props}>
-      {isLoading ? (
+      {isLoading && (
         <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-      ) : null}
+      )}
       {children}
     </button>
   );
