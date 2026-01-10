@@ -15,6 +15,12 @@
     "counter_text_1": "Wisedrive inspections saved",
     "counter_text_2": "from car buyers so far..."
   },
+  "B2BHero": {
+    "heading": "Secure Your Automotive Portfolio with Verified Data",
+    "description": "Whether you are an insurer managing risk, a financier securing collateral, or an OEM managing certified pre-owned inventory, the biggest variable is the asset itself. Wisedrive secures your portfolio with AI-augmented technical inspections, real-time ECU analysis, and fraud detection algorithms—integrated directly into your enterprise workflow.",
+    "partner_with_button": "Partner With Us",
+    "view_enterprise_solution_button": "View Enterprise Solutions"
+  },
   "Inspection": {
     "heading": "The only inspection you'll ever need",
     "heading_highlighted_word": "inspection",
@@ -22,7 +28,6 @@
     "book_your_inspection_button": "Book your inspection",
     "speak_to_an_expert_button": "Speak to an Expert",
     "checkbox_items_text": "200+ inspection checkpoints|Advanced OBD2 scanner test|Roadworthiness & safety evaluation|AI-generated diagnostics and repair indicators|Free consultation with inspection expert"
-
   },
   "Advantage": {
     "badge_text": "The Wisedrive Advantage",
