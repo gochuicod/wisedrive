@@ -12,9 +12,9 @@ export default function Hero() {
       className={cn(
         'relative',
         'bg-black',
-        'xl:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+        'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
         'm-tight',
-        'xl:rounded-5xl md:rounded-[24px] rounded-[16px]',
+        'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
         'overflow-hidden',
       )}
     >
@@ -24,7 +24,7 @@ export default function Hero() {
           "bg-[url('/b2cHero/b2c_hero_bg_image.webp')]",
           'bg-bottom',
           'bg-no-repeat',
-          'xl:bg-[length:100%_auto] md:bg-[length:100%_80%] bg-[length:180%_auto]',
+          'lg:bg-[length:100%_auto] md:bg-[length:100%_80%] bg-[length:180%_auto]',
           '[mask-image:linear-gradient(to_top,black_40%,transparent)]',
         )}
       />
@@ -33,18 +33,18 @@ export default function Hero() {
           'relative z-10',
           'text-white',
           'font-body',
-          'xl:pt-[88px] md:pt-[72px] pt-[40px]',
-          '3xl:px-[304px] xl:px-12 px-4',
+          'lg:pt-[88px] md:pt-[72px] pt-[40px]',
+          '3xl:px-[304px] lg:px-12 px-4',
           'flex flex-col',
           'justify-between items-center',
-          'xl:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+          'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
         )}
       >
         {/* Top Part */}
         <div
           className={cn(
             'flex',
-            'xl:flex-row flex-col',
+            'lg:flex-row flex-col',
             'justify-between items-end',
             'w-full',
           )}
@@ -54,7 +54,7 @@ export default function Hero() {
             className={cn(
               'flex flex-col',
               'items-start',
-              'xl:w-[821px] md:w-auto',
+              'lg:w-[821px] md:w-auto',
               'gap-4',
             )}
           >
@@ -64,7 +64,7 @@ export default function Hero() {
                 'uppercase',
                 'font-heading',
                 'font-semibold',
-                'xl:text-start text-center',
+                'lg:text-start text-center',
                 'md:w-full w-[50%] md:mx-0 mx-auto',
               )}
             >
@@ -73,7 +73,7 @@ export default function Hero() {
             <p
               className={cn(
                 'font-body lg:text-base text-body-sm',
-                'xl:text-start text-center',
+                'lg:text-start text-center',
               )}
             >
               {t('description')}
@@ -82,11 +82,11 @@ export default function Hero() {
           {/* Buttons on right */}
           <div
             className={cn(
-              'flex xl:flex-col md:flex-row flex-col',
-              'xl:justify-end justify-center',
-              'xl:w-[288px] md:w-full w-[75%]',
+              'flex lg:flex-col md:flex-row flex-col',
+              'lg:justify-end justify-center',
+              'lg:w-[288px] md:w-full w-[75%]',
               'gap-4',
-              'xl:mt-0 mt-4',
+              'lg:mt-0 mt-4',
               'md:mx-0 mx-auto',
             )}
           >
