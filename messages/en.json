@@ -15,9 +15,46 @@
     "counter_text_1": "Wisedrive inspections saved",
     "counter_text_2": "from car buyers so far..."
   },
+  "Inspection": {
+    "heading": "The only inspection you'll ever need",
+    "heading_highlighted_word": "inspection",
+    "description": "Our AI analyses over 200 inspection points so you know exactly what you're buying.",
+    "book_your_inspection_button": "Book your inspection",
+    "speak_to_an_expert_button": "Speak to an Expert",
+    "checkbox_items_text": "200+ inspection checkpoints|Advanced OBD2 scanner test|Roadworthiness & safety evaluation|AI-generated diagnostics and repair indicators|Free consultation with inspection expert"
+
+  },
+  "Advantage": {
+    "badge_text": "The Wisedrive Advantage",
+    "heading": "Where Human Expertise Meets AI technology",
+    "heading_highlighted_word": "AI technology",
+    "description": "Our inspection is powered by the expertise of our professional inspectors backed by AI technology built from over one million data points. Together, Wisedrive gives you a report you can completely trust"
+  },
+  "FAQSection": {
+    "badge_text": "FAQs",
+    "heading": "Got Questions about our inspection?",
+    "heading_highlighted_word": "inspection?",
+    "subtitle": "Find answers to your questions about our AI-powered inspections and how we protect you from costly, hidden repairs."
+  },
+  "HighlightPills": {
+    "heading": "Wisedrive is the new standard of trust & accuracy",
+    "heading_highlighted_word": "trust & accuracy"
+  },
+  "Reviews": {
+    "heading": "Drive Away Happy",
+    "heading_highlighted_word": "Happy",
+    "description": "Join thousands of satisfied customers who bought their vehicle with total peace of mind."
+  },
+  "Steps": {
+    "heading": "Buy your car with total confidence",
+    "heading_highlighted_word": "confidence",
+    "disclaimer_text": "Steps may change for enterprise plans",
+    "subtitle_question": "Have questions or ready to book"
+  },
   "OurBrands": {
     "badge_text": "Our Brands",
     "heading": "Expertise Across Every Make",
+    "heading_highlighted_word": "",
     "description": "From Proton and Perodua to imports, we are trained for the cars you drive."
   },
   "Footer": {

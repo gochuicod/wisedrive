@@ -59,6 +59,8 @@ const config: Config = {
         nav: 'var(--color-nav)',
         wdBlue: 'var(--color-wd-blue)',
         wdOrange: 'var(--color-wd-orange)',
+        cbGreen: 'var(--color-cb-green)',
+        cmGreen: 'var(--color-cm-green)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
