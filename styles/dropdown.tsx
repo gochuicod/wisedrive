@@ -2,10 +2,12 @@ import React from 'react';
 
 // --- Styling Types ---
 export type DropDownSize = 'sm' | 'md' | 'lg';
+export type DropDownVariant = 'default' | 'gradient';
 
 interface BaseDropDownProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "onClick" | "onToggle"> {
   size?: DropDownSize;
+  variant?: DropDownVariant;
   title: string;
   isOpen: boolean;
   onOpenChange: () => void;
@@ -25,6 +27,16 @@ const containerBase = `
 const activeStyle =
   'bg-[#E9EEFC] shadow-[2px_2px_4px_rgba(25,33,61,0.06)]';
 const inactiveStyle = 'bg-[#F9FAFB]';
+
+// Gradient variant styles
+const gradientStyle = `
+  bg-gradient-to-r from-white to-[rgba(228,247,255,0.6)]
+  shadow-[inset_-8px_-8px_24px_rgba(0,183,255,0.08)]
+  backdrop-blur-[2px]
+  rounded-lg
+  max-w-[500px]
+`;
+
 const headerBase = 'flex flex-row justify-between items-center w-full select-none';
 const arrowBtnBase =
   'flex items-center justify-center w-[29.33px] h-[29.33px] rounded-[5.33px] transition-transform duration-300';
@@ -79,6 +91,7 @@ const ChevronDownIcon = ({ className }: { className?: string }) => (
 // --- Base Component ---
 export const BaseDropDown: React.FC<BaseDropDownProps> = ({
   size = 'lg',
+  variant = 'default',
   title,
   isOpen,
   onOpenChange,
@@ -88,8 +101,11 @@ export const BaseDropDown: React.FC<BaseDropDownProps> = ({
 }) => {
   const styles = sizes[size];
 
-  // Dynamic Classes based on isOpen state
-  const containerClasses = `${containerBase} ${styles.root} ${isOpen ? activeStyle : inactiveStyle} ${className}`;
+  // Dynamic Classes based on isOpen state and variant
+  const variantClasses = variant === 'gradient' 
+    ? gradientStyle 
+    : (isOpen ? activeStyle : inactiveStyle);
+  const containerClasses = `${containerBase} ${styles.root} ${variantClasses} ${className}`;
 
   // Title Logic: Bold (700) when Open, Regular (400) when Closed
   const titleWeight = isOpen ? 'font-bold' : 'font-normal';
