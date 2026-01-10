@@ -9,6 +9,7 @@ import Advantage from '@/components/sections/advantage/Advantage';
 import Steps from '@/components/sections/steps/Steps';
 import HighlightPill from '@/components/sections/highlightpill/HighlightPill';
 import Inspection from '@/components/sections/inspection/Inspection';
+import EnterpriseSolutions from '@/components/sections/enterprise_solutions/EnterpriseSolutions';
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Advantage />
       <Highlights />
       <CTA1 />
+      <EnterpriseSolutions />
       <HighlightPill />
       <Inspection />
       <Steps />
