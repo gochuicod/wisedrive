@@ -6,7 +6,7 @@ export const TechStack = () => {
   return (
     <section className="w-full flex px-tight py-relaxed mx-auto items-center justify-center">
       {/* Outer container */}
-      <div className="w-full max-w-[1248px] flex flex-col items-center gap-6">
+      <div className="w-full max-w-[1248px] flex flex-col items-center gap-6 aspect-auto">
         
         {/* Heading */}
         <div className="w-full flex flex-col md:flex-row gap-8">          
