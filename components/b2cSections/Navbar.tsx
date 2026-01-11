@@ -22,6 +22,7 @@ import {
 import { NAV_LINKS } from '@/constants';
 
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import Image from 'next/image';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
@@ -51,7 +52,7 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'px-relaxed py-navbar',
+        'px-tight py-navbar',
         'flex flex-row',
         'justify-between items-center',
         'sticky top-0 z-50',
@@ -64,7 +65,14 @@ export default function Navbar() {
         onClick={(e) => scrollTo(e, '/')}
         className="relative block w-32 lg:w-40 shrink-0"
       >
-        <WisedriveLogo className={cn('text-[#003CC5]', 'w-full h-auto')} />
+        <Image
+          src="/logo_wisedrive.png"
+          alt="Wisedrive"
+          width={1920}
+          height={1080}
+          className="w-full h-auto"
+        />
+        {/*<WisedriveLogo className={cn('text-[#003CC5]', 'w-full h-auto')} />*/}
       </Link>
 
       {/* 2. DESKTOP MENU (Hidden on Mobile/Tablet) */}

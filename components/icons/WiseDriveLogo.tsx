@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId } from 'react';
 
 interface WisedriveLogoProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
@@ -23,14 +23,17 @@ export const WisedriveLogo = ({ className, ...props }: WisedriveLogoProps) => {
       {/* MASK 0 */}
       <mask
         id={`${id}-mask0`}
-        style={{ maskType: "luminance" }}
+        style={{ maskType: 'luminance' }}
         maskUnits="userSpaceOnUse"
         x="125"
         y="19"
         width="6"
         height="6"
       >
-        <path d="M125.785 19.7426H130.66V24.6176H125.785V19.7426Z" fill="white" />
+        <path
+          d="M125.785 19.7426H130.66V24.6176H125.785V19.7426Z"
+          fill="white"
+        />
       </mask>
       <g mask={`url(#${id}-mask0)`}>
         <path
@@ -44,14 +47,17 @@ export const WisedriveLogo = ({ className, ...props }: WisedriveLogoProps) => {
       {/* MASK 1 */}
       <mask
         id={`${id}-mask1`}
-        style={{ maskType: "luminance" }}
+        style={{ maskType: 'luminance' }}
         maskUnits="userSpaceOnUse"
         x="131"
         y="19"
         width="6"
         height="6"
       >
-        <path d="M131.641 19.7426H136.516V24.6176H131.641V19.7426Z" fill="white" />
+        <path
+          d="M131.641 19.7426H136.516V24.6176H131.641V19.7426Z"
+          fill="white"
+        />
       </mask>
       <g mask={`url(#${id}-mask1)`}>
         <path
@@ -107,17 +113,23 @@ export const WisedriveLogo = ({ className, ...props }: WisedriveLogoProps) => {
       {/* MASK 2 */}
       <mask
         id={`${id}-mask2`}
-        style={{ maskType: "luminance" }}
+        style={{ maskType: 'luminance' }}
         maskUnits="userSpaceOnUse"
         x="38"
         y="17"
         width="85"
         height="10"
       >
-        <path d="M122.825 17.7177H38.8652V26.3844H122.825V17.7177Z" fill="white" />
+        <path
+          d="M122.825 17.7177H38.8652V26.3844H122.825V17.7177Z"
+          fill="white"
+        />
       </mask>
       <g mask={`url(#${id}-mask2)`}>
-        <path d="M39.7039 19.3228V24.4284H40.2138V19.3228H39.7039Z" fill="currentColor" />
+        <path
+          d="M39.7039 19.3228V24.4284H40.2138V19.3228H39.7039Z"
+          fill="currentColor"
+        />
         <path
           d="M43.0149 20.6938C42.4965 20.6938 42.0733 20.8906 41.7898 21.3498V20.7806H41.3074V24.4284H41.7898V22.5178C41.7898 21.5402 42.3294 21.1615 42.9705 21.1615C43.6053 21.1615 43.9628 21.5402 43.9628 22.1898V24.4284H44.4453V22.1898C44.4453 21.2778 43.9057 20.6938 43.0149 20.6938Z"
           fill="currentColor"
@@ -130,14 +142,17 @@ export const WisedriveLogo = ({ className, ...props }: WisedriveLogoProps) => {
         {/* MASK 3 */}
         <mask
           id={`${id}-mask3`}
-          style={{ maskType: "luminance" }}
+          style={{ maskType: 'luminance' }}
           maskUnits="userSpaceOnUse"
           x="48"
           y="20"
           width="5"
           height="7"
         >
-          <path d="M48.6152 20.426H52.9486V26.3188H48.6152V20.426Z" fill="white" />
+          <path
+            d="M48.6152 20.426H52.9486V26.3188H48.6152V20.426Z"
+            fill="white"
+          />
         </mask>
         <g mask={`url(#${id}-mask3)`}>
           <path
@@ -177,7 +192,10 @@ export const WisedriveLogo = ({ className, ...props }: WisedriveLogoProps) => {
           d="M84.533 21.2482V20.7806H83.4814V19.7607L83.0011 19.9067V20.7806H82.2351V21.2482H83.0011V23.4594C83.0011 24.3332 83.547 24.5744 84.533 24.4284V24.0053C83.8242 24.0349 83.4814 24.0857 83.4814 23.4594V21.2482H84.533Z"
           fill="currentColor"
         />
-        <path d="M86.1363 23.8085H85.5544L85.2625 25.4504H85.7004L86.1363 23.8085Z" fill="currentColor" />
+        <path
+          d="M86.1363 23.8085H85.5544L85.2625 25.4504H85.7004L86.1363 23.8085Z"
+          fill="currentColor"
+        />
         <path
           d="M90.8635 20.6939C90.214 20.6939 89.6977 21.007 89.3909 21.4958V19.3228H88.9084V24.4284H89.3909V23.7133C89.6977 24.202 90.214 24.5152 90.8635 24.5152C91.8919 24.5152 92.7467 23.6836 92.7467 22.6045C92.7467 21.5254 91.8919 20.6939 90.8635 20.6939ZM90.8276 24.0497C90.0172 24.0497 89.3909 23.4149 89.3909 22.6045C89.3909 21.7963 90.0172 21.1615 90.8276 21.1615C91.638 21.1615 92.2643 21.7963 92.2643 22.6045C92.2643 23.4149 91.638 24.0497 90.8276 24.0497Z"
           fill="currentColor"
@@ -190,14 +208,17 @@ export const WisedriveLogo = ({ className, ...props }: WisedriveLogoProps) => {
         {/* MASK 4 */}
         <mask
           id={`${id}-mask4`}
-          style={{ maskType: "luminance" }}
+          style={{ maskType: 'luminance' }}
           maskUnits="userSpaceOnUse"
           x="96"
           y="20"
           width="6"
           height="7"
         >
-          <path d="M96.8242 20.426H101.158V26.3188H96.8242V20.426Z" fill="white" />
+          <path
+            d="M96.8242 20.426H101.158V26.3188H96.8242V20.426Z"
+            fill="white"
+          />
         </mask>
         <g mask={`url(#${id}-mask4)`}>
           <path
