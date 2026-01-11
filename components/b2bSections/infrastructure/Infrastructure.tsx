@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from "react";
+import { use, useState, useEffect } from "react";
 import { Coins, Aperture, Workflow, Store } from "lucide-react";
 import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { AppButton } from "@/components/AppButton";
@@ -8,6 +8,17 @@ import { InfrastructureCard } from "@/components/InfrastructureCard";
 
 export const Infrastructure = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const cards = [
     {
@@ -48,7 +59,7 @@ export const Infrastructure = () => {
       <div className="w-full max-w-[1248px] flex flex-col items-center gap-12">
         
         {/* Header Section */}
-        <div className="w-full flex flex-col gap-8 items-center justify-center">          
+        <div className="w-full md:max-w-[686px] lg:md:max-w-[1248px] flex flex-col gap-8 items-center justify-center">          
           <div className="flex-1 flex flex-col items-center gap-2">
             <HighlightedHeading
               text="Infrastructure for the Automotive Ecosystem"
@@ -60,11 +71,12 @@ export const Infrastructure = () => {
           </div>
           
           {/* Navigation Buttons */}
-          <div className="flex flex-row gap-4 flex-wrap justify-center items-center max-w-[1000px]">
+          <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-center items-center max-w-[1000px]">
             {buttons.map((button, index) => (
               <AppButton 
                 key={index}
                 variant={activeTab === index ? "default" : "tertiary"}
+                size={isMobile ? "sm" : "lg"}
                 onClick={() => setActiveTab(index)}
                 leftIcon={button.icon}
               >
@@ -75,7 +87,7 @@ export const Infrastructure = () => {
         </div>
 
         {/* Content Section - The Card */}
-        <div className="w-full flex justify-center mt-4">
+        <div className="w-full max-w-[1248px] flex justify-center mt-4">
 
            <InfrastructureCard 
              title={cards[activeTab].title}
