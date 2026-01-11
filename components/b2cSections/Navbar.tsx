@@ -9,7 +9,6 @@ import { AppButton } from '@/components/AppButton';
 import { DropdownButton } from '@/components/DropdownButton';
 
 import { CircleCheck, HeartHandshake } from 'lucide-react';
-import { WisedriveLogo } from '../icons/WiseDriveLogo';
 
 import {
   Sheet,
@@ -72,7 +71,6 @@ export default function Navbar() {
           height={1080}
           className="w-full h-auto"
         />
-        {/*<WisedriveLogo className={cn('text-[#003CC5]', 'w-full h-auto')} />*/}
       </Link>
 
       {/* 2. DESKTOP MENU (Hidden on Mobile/Tablet) */}
