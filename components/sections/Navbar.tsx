@@ -107,7 +107,7 @@ export default function Navbar() {
 
       {/* 3. MOBILE MENU (Visible only on Mobile/Tablet) */}
       <div className="flex lg:hidden">
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <Sheet open={isOpen} onOpenChange={setIsOpen} modal={false}>
           <SheetTrigger asChild>
             <button className="p-2 text-header">
               <svg
@@ -127,13 +127,21 @@ export default function Navbar() {
             </button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+          <SheetContent
+            side="right"
+            className={cn(
+              'sm:w-[350px] w-[300px]',
+              'max-h-[360px]',
+              'mt-4 me-4',
+              'rounded-3xl shadow-lg',
+            )}
+          >
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <SheetDescription className="sr-only">
               Mobile navigation links
             </SheetDescription>
 
-            <div className={cn('flex flex-col', 'gap-6 mt-10', 'text-center')}>
+            <div className={cn('flex flex-col', 'gap-3 mt-10', 'text-start')}>
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -151,7 +159,7 @@ export default function Navbar() {
                 variant="default"
                 size="sm"
                 leftIcon={<CircleCheck className="size-4" />}
-                className="w-fit mx-auto"
+                className="w-full"
               >
                 {t('inspect_with_confidence_button')}
               </AppButton>
@@ -159,7 +167,7 @@ export default function Navbar() {
                 variant="tertiary"
                 size="sm"
                 leftIcon={<HeartHandshake className="size-4" />}
-                className="w-fit mx-auto"
+                className="w-full"
               >
                 {t('partner_with_us_button')}
               </AppButton>
@@ -170,7 +178,7 @@ export default function Navbar() {
                 size="sm"
                 items={languageItems}
                 menuAlign="right"
-                className="w-fit mx-auto"
+                className="w-fit self-end"
               >
                 {/* Dynamic Label based on current locale */}
                 {localeLabels[locale] || 'EN'}
