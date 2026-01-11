@@ -15,7 +15,7 @@ const baseStyles = "font-heading font-semibold text-tag uppercase inline-block";
 const sizes: Record<BadgeSize, string> = {
   sm: "text-[16px] leading-[19px] tracking-normal",
   md: "text-[16px] leading-[19px] tracking-[2px]",
-  lg: "text-tag",
+  lg: "text-tagText",
 };
 
 export const BaseBadge: React.FC<BaseBadgeProps> = ({

@@ -13,7 +13,7 @@ export default function EnterpriseSolutions () {
             "flex flex-col",
             "w-full",
             "gap-4",
-            "my-relaxed"
+            "my-relaxed py-relaxed"
         )}>
             {/* Heading and description */}
             <div className={cn(
