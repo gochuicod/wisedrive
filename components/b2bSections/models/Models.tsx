@@ -9,18 +9,18 @@ const modelsData = [
   {
     id: 1,
     title: "Volume License / Enterprise Subscription",
-    subtitle: "Best for: Banks, Insurers, OEMs, and Large Dealer Groups",
+    subtitle: "<strong>Best for:</strong> Banks, Insurers, OEMs, and Large Dealer Groups",
     image: "/model_card/model-card-1.webp",
-    buttonText: "Expand"
+    content: "A contracted monthly arrangement designed for high-volume stability. Includes volume-tiered pricing for inspections, dedicated account management, and SLA-backed turnaround times."
   },
   {
     id: 2,
     title: "API & White Label Integration",
-    subtitle: "Best for: Superapps, Fintechs, and Major Marketplaces",
+    subtitle: "<strong>Best for:</strong> Superapps, Fintechs, and Major Marketplaces",
     image: "/model_card/model-card-2.webp",
-    buttonText: "Expand"
+    content: "A flexible integration model offering API access and white-label solutions. Ideal for businesses seeking to embed our services seamlessly into their platforms with customizable branding and user experience."
   }
-];
+  ];
 
 export const Models = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -80,7 +80,7 @@ export const Models = () => {
         alt="Background Image"
         width={1920}
         height={1080}
-        className="object-cover overflow-visible translate-x-10 -translate-y-16 md:translate-x-0 md:translate-y-20 lg:translate-x-0 lg:-translate-y-0"
+        className="object-cover overflow-visible translate-x-10 -translate-y-16 md:translate-x-0 md:translate-y-20 lg:translate-x-0 lg:-translate-y-0 md:scale-[1] sm:scale-[0.75] sm:translate-x-40 sm:-translate-y-24"
       />
     </div>
 
@@ -103,7 +103,7 @@ export const Models = () => {
             title={model.title}
             subtitle={model.subtitle}
             image={model.image}
-            buttonText={model.buttonText}
+            content={model.content}
           />
         ))}
       </div>

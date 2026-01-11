@@ -1,14 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { AppButton } from "@/components/AppButton";
-import { ChevronsDown } from "lucide-react";
 
 interface BaseModelCardProps {
   title: string;
   subtitle: string;
   imageSrc: string;
-  buttonText: string;
-  onButtonClick?: () => void;
+  content: string;
   className?: string;
 }
 
@@ -16,14 +13,13 @@ export const BaseModelCard: React.FC<BaseModelCardProps> = ({
   title,
   subtitle,
   imageSrc,
-  buttonText,
-  onButtonClick,
+  content,
   className = "",
 }) => {
   return (
     <div
       className={`
-        w-full max-w-[398px] min-h-[370px]
+        w-full md:max-w-[398px] min-h-[370px]
         p-4 gap-4
         
         flex flex-col items-center
@@ -36,22 +32,12 @@ export const BaseModelCard: React.FC<BaseModelCardProps> = ({
       `}
     >
       {/* --- Image Section --- */}
-      <div className="relative w-full aspect-[358/180] shrink-0 rounded-3xl overflow-hidden bg-[#050717]">
+      <div className="relative w-full aspect-[358/180] shrink-0 rounded-3xl overflow-hidden">
         <Image
           src={imageSrc}
           alt={title}
           fill
           className="object-cover"
-        />
-
-        {/* Gradient Overlays (Rectangles 1048 & 1050) */}
-        <div 
-          className="absolute inset-x-0 bottom-[-20%] top-[75%] bg-gradient-to-b from-[#003CC500] to-[#001D5F] mix-blend-multiply opacity-80" 
-          aria-hidden="true"
-        />
-        <div 
-          className="absolute inset-x-0 bottom-[-19%] top-[75%] bg-gradient-to-b from-[#2165FF00] to-[#0037B6] opacity-90" 
-          aria-hidden="true"
         />
       </div>
 
@@ -67,19 +53,16 @@ export const BaseModelCard: React.FC<BaseModelCardProps> = ({
             </p>
             
             {/* Subtitle */}
-            <p className="text-body-sm" dangerouslySetInnerHTML={{ __html: subtitle }} />
+            <p className="text-body-sm text-center" dangerouslySetInnerHTML={{ __html: subtitle }} />
+
+            {/* Content */}
+            <p className="text-body-sm text-center">
+              {content}
+            </p>
           </div>
 
-          {/* Button */}
-          <AppButton
-            variant="tertiary"
-            size="sm"
-            onClick={onButtonClick}
-            rightIcon={<ChevronsDown size={16} />}
-            leftIcon={<ChevronsDown size={16} />}
-          >
-            {buttonText}
-          </AppButton>
+
+          
         </div>
       </div>
     </div>

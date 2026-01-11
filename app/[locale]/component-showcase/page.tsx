@@ -520,15 +520,14 @@ const ComponentShowcase = () => {
                 title="Volume License / Enterprise Subscription"
                 subtitle="<strong>Best for:</strong> Banks, Insurers, OEMs, and Large Dealer Groups"
                 image="/model_card/model-card-1.webp"
-                buttonText="Expand"
-                onAction={() => console.log("Clicked")}
+                content='test content'
               />
               <ModelCard 
                 title="API & White Label Integration"
                 subtitle="<strong>Best for:</strong> Superapps, Fintechs, and Major Marketplaces"
                 image="/model_card/model-card-2.webp"
-                buttonText="Expand"
-                onAction={() => console.log("Clicked")}
+                content='test content'
+
               />
           </div>
       </div>
