@@ -99,7 +99,7 @@ export default function Footer() {
                 className={cn(
                   'flex flex-col',
                   'gap-2',
-                  'lg:w-[288px] w-[162px] w-full',
+                  'lg:w-[288px] w-[162px]',
                   'lg:min-h-[158px] min-h-[95px]',
                 )}
               >
