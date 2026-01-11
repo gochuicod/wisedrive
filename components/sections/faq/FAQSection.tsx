@@ -15,17 +15,18 @@ export const FAQSection = () => {
         {/* Heading */}
         <div className="w-full flex flex-col md:flex-row gap-8">          
          {/* Left Wrapper - Badge & Heading */}
-          <div className="flex-1 flex flex-col items-start gap-1 flex-grow">
+          <div className="flex-1 flex flex-col md:items-start items-center gap-1 flex-grow">
             <Badge size="lg">FAQs</Badge>
             <HighlightedHeading
               text={t("heading")}
               highlight={t("heading_highlighted_word")}
+              className="font-heading md:text-start text-center"
             />
           </div>
 
           {/* Right Wrapper - Subtitle */}
           <div className="flex-1 flex items-center flex-grow">
-            <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px]">
+            <p className="text-body md:text-start text-center">
               {t("subtitle")}
             </p>
           </div>

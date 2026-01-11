@@ -190,7 +190,7 @@ export default function WhyChooseUsCarousel({
         <HighlightedHeading
           text={headingText}
           highlight={headingTextHighlight}
-          className="lg:text-end text-center"
+          className="font-heading lg:text-end text-center"
         />
       </div>
     </div>

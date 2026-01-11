@@ -10,7 +10,7 @@ interface BaseBadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 
 // --- Style Definitions ---
 
-const baseStyles = "font-heading font-semibold text-tag uppercase inline-block";
+const baseStyles = "font-heading font-semibold text-tagText text-tag uppercase inline-block";
 
 const sizes: Record<BadgeSize, string> = {
   sm: "text-[16px] leading-[19px] tracking-normal",

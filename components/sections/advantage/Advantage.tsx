@@ -26,16 +26,16 @@ export const FAQSection = () => {
          {/* Left Wrapper - Badge & Heading */}
           <div className="flex-1 flex flex-col lg:items-start items-center gap-2 flex-grow">
             <div className="flex flex-col gap-1 lg:items-start items-center">
-             <Badge size="lg">
+             <Badge>
               {t("badge_text")}
              </Badge>
               <HighlightedHeading
                 text={t("heading")}
                 highlight={t("heading_highlighted_word")}
-                className="text-h4 font-heading font-bold text-center lg:text-left max-w-[22ch] lg:max-w-none"
+                className=" text-center lg:text-left md:max-w-none lg:max-w-none max-w-[358px]"
               />
             </div>
-            <p>
+            <p className="md:max-w-[528px] text-center lg:text-left text-body">
               {t("description")}
             </p>
           </div>

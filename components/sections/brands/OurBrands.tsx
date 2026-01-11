@@ -21,7 +21,7 @@ export default function OurBrands() {
         'gap-px',
       )}
     >
-      <Badge size="md" className={cn('font-heading')}>
+      <Badge>
         {t('badge_text')}
       </Badge>
       <HighlightedHeading
@@ -30,7 +30,7 @@ export default function OurBrands() {
         className="md:text-h4 font-heading font-bold text-center"
       />
       <p
-        className={cn('text-nav', 'font-body-md', 'font-normal', 'text-center')}
+        className={cn('text-body', 'text-center')}
       >
         {t('description')}
       </p>

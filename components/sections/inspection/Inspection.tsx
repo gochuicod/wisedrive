@@ -62,7 +62,7 @@ export default function Inspection () {
                         <HighlightedHeading
                             text={t("heading")}
                             highlight={t("heading_highlighted_word")}
-                            className={cn("lg:w-[70%] w-full", "md:text-start text-center")}
+                            className={cn("lg:w-[60%] md:w-[70%] w-full", "md:text-start text-center font-heading")}
                         />
                         <span
                             className={cn(
