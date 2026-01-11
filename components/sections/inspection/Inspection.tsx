@@ -27,7 +27,6 @@ export default function Inspection () {
                 )}
             >
                 {/* Top part */}
-                {/* Top part */}
                 <div
                     className={cn(
                         "w-full",
