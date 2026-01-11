@@ -1,113 +1,128 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
 import { AppButton } from '@/components/AppButton';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowDown, Calendar } from 'lucide-react';
 
 export default function Hero() {
   const t = useTranslations('B2BHero');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div
-      className={cn(
-        'relative',
-        'bg-primary-100',
-        'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
-        'm-tight',
-        'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
-        'overflow-hidden',
-      )}
-    >
+    <section className={cn("w-full px-tight my-4")}>
       <div
         className={cn(
-          'absolute inset-0 w-full h-full',
-          "bg-[url('/b2b_hero/b2b-hero.webp')]",
-          'bg-bottom',
-          'bg-no-repeat',
-          'lg:bg-[length:100%_auto] md:bg-[length:100%_80%] bg-[length:180%_auto]',
-          '[mask-image:linear-gradient(to_top,black_40%,transparent)]',
-        )}
-      />
-      <div
-        className={cn(
-          'relative z-10',
-          'text-header',
-          'font-body',
-          'lg:pt-[88px] md:pt-[72px] pt-[40px]',
-          '3xl:px-[304px] lg:px-12 px-4',
-          'flex flex-col',
-          'justify-between items-center',
+          'relative',
+          'bg-[#DBEAFE]',
+          'w-full',
           'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+          "md:max-h-auto max-h-[800px]",
+          'aspect-[9/16] md:aspect-[16/9] lg:aspect-[21/9]',
+          'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
+          'overflow-hidden',
+          'flex flex-col justify-center items-center'
         )}
       >
-        {/* Top Part */}
+        {/* ================= BACKGROUND STACK ================= */}
+        <div className="absolute inset-0 z-0">
+          {/* Hero image */}
+          <div
+            className="
+              absolute inset-0 w-full h-full
+              bg-[url('/b2b_hero/hero-b2b.webp')]
+              bg-contain bg-bottom bg-no-repeat
+
+              /* Subtle zoom for small screens */
+              scale-[2.5]        /* mobile */
+              md:scale-[1]     /* tablet */
+              lg:scale-[1]     /* laptop */
+              origin-bottom
+            "
+          />
+
+
+
+          {/* Blue fade (gradient) */}
+          <div
+            className="
+              absolute
+              left-0 right-0
+              xl:top-[370px] lg:top-[450px] md:top-[400px] top-[670px]
+              h-[100px]
+              bg-gradient-to-t from-[#2C99FF] to-transparent
+              -z-10
+            "
+          />
+        </div>
+
+        {/* Content Overlay */}
         <div
           className={cn(
-            'flex',
-            'lg:flex-row flex-col',
-            'justify-between items-end',
-            'w-full',
+            'relative z-10',
+            'w-full h-full',
+            'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+            "md:max-h-auto max-w-[1284px]",
+            'flex flex-col justify-between items-center',
+            'text-header',
+            'p-tight'
           )}
         >
-          {/* Text on left */}
-          <div
-            className={cn(
-              'flex flex-col',
-              'items-start',
-              'lg:w-[821px] md:w-auto',
-              'gap-4',
-            )}
-          >
-            <h1
-              className={cn(
-                'text-h1',
-                'uppercase',
-                'font-heading',
-                'font-semibold',
-                'lg:text-start text-center',
-                'md:w-full w-[50%] md:mx-0 mx-auto',
-              )}
-            >
-              {t('heading')}
-            </h1>
-            <p
-              className={cn(
-                'font-body lg:text-base text-body-sm',
-                'lg:text-start text-center',
-              )}
-            >
-              {t('description')}
-            </p>
-          </div>
-          {/* Buttons on right */}
-          <div
-            className={cn(
-              'flex lg:flex-col md:flex-row flex-col',
-              'lg:justify-end justify-center',
-              'lg:w-[288px] md:w-full w-[75%]',
-              'gap-4',
-              'lg:mt-0 mt-4',
-              'md:mx-0 mx-auto',
-            )}
-          >
-            <AppButton
-              variant="default"
-              size="lg"
-              leftIcon={<Calendar className="size-6" />}
-              className="capitalize"
-            >
-              {t('partner_with_button')}
-            </AppButton>
-            <AppButton
-              variant="tertiary"
-              size="lg"
-              className="capitalize"
-              rightIcon={<ArrowRight className="size-6" />}
-            >
-              {t('view_enterprise_solution_button')}
-            </AppButton>
+          {/* Top Content Group */}
+          <div className={cn(
+            'flex lg:flex-row flex-col',
+            'justify-between',
+            'lg:items-end items-center',
+            'mb-12',
+            'gap-4',
+            'py-12'
+          )}>
+            {/* Left Text */}
+            <div className="flex flex-col gap-4 lg:max-w-[905px]">
+              <h1 className={cn(
+                'lg:text-h1 md:text-h2 text-h3 uppercase font-heading font-semibold',
+                'text-center lg:text-left'
+              )}>
+                {t('heading')}
+              </h1>
+              <p className="text-body-sm md:text-body-md lg:max-w-[800px] lg:text-start text-center">
+                {t('description')}
+              </p>
+            </div>
+
+            {/* Right Buttons */}
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:w-auto md:w-full w-fit shrink-0 lg:justify-end justify-center">
+              <AppButton
+                variant="default"
+                size={isMobile ? "sm" : "md"}
+                leftIcon={<Calendar className="size-5" />}
+                className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+              >
+                {t('partner_with_button')}
+              </AppButton>
+              <AppButton
+                variant="tertiary"
+                size={isMobile ? "sm" : "md"}
+                rightIcon={<ArrowDown className="size-5" />}
+                className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+              >
+                {t('view_enterprise_solution_button')}
+              </AppButton>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
