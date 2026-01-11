@@ -89,7 +89,9 @@ export default function WhyChooseUsCarousel({
   return (
     <div
       className={cn(
-        'max-w-[1034px] mx-auto lg:my-relaxed my-[144px]',
+        'max-w-[1034px] mx-auto',
+        'lg:mt-[104px] mt-[64px]',
+        'lg:mb-auto mb-[164px]',
         'flex lg:flex-row flex-col-reverse',
         'lg:px-0 px-relaxed relative',
       )}
@@ -188,6 +190,7 @@ export default function WhyChooseUsCarousel({
         <HighlightedHeading
           text={headingText}
           highlight={headingTextHighlight}
+          className="lg:text-end text-center"
         />
       </div>
     </div>
