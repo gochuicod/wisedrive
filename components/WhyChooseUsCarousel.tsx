@@ -1,4 +1,3 @@
-// @/components/WhyChooseUsCarousel.tsx
 'use client';
 
 import Image from 'next/image';
@@ -33,6 +32,34 @@ const NextSlideButton = ({
     >
       {text}
     </AppButton>
+  );
+};
+
+// Helper to render dots that control the swiper
+const CarouselPagination = ({
+  total,
+  current,
+}: {
+  total: number;
+  current: number;
+}) => {
+  const swiper = useSwiper();
+  return (
+    <div className="flex items-center gap-2">
+      {Array.from({ length: total }).map((_, idx) => (
+        <button
+          key={idx}
+          onClick={() => swiper.slideToLoop(idx)} // slideToLoop handles loop mode better
+          className={cn(
+            'rounded-full transition-all duration-300',
+            current === idx
+              ? 'w-[15px] h-[15px] bg-primary-semantic'
+              : 'w-[10px] h-[10px] border-2 border-primary-semantic',
+          )}
+          aria-label={`Go to slide ${idx + 1}`}
+        />
+      ))}
+    </div>
   );
 };
 
@@ -74,11 +101,11 @@ export default function WhyChooseUsCarousel({
           effect="fade"
           fadeEffect={{ crossFade: true }}
           loop={true}
-          speed={700}
+          speed={500}
           autoplay={{ delay: 5000, disableOnInteraction: true }}
           className="!overflow-visible"
         >
-          {slides.map((slide) => (
+          {slides.map((slide, index) => (
             <SwiperSlide key={slide.id}>
               {/* Image Container */}
               <div
@@ -96,7 +123,7 @@ export default function WhyChooseUsCarousel({
                   height={1080}
                   className={cn(
                     'absolute left-1/2 -translate-x-1/2 -top-[50px]',
-                    'w-full h-full object-cover scale-[190%]',
+                    'w-full h-full object-cover scale-[200%]',
                   )}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0037B6]/40 to-[#2165FF]/5 z-0" />
@@ -110,6 +137,7 @@ export default function WhyChooseUsCarousel({
                   'left-1/2 -translate-x-1/2 lg:left-0',
                   'lg:translate-x-[85%]',
                   'lg:w-auto w-[85%] lg:mx-0 mx-auto',
+                  'md:top-auto top-[65%]',
                 )}
               >
                 <div
@@ -131,11 +159,17 @@ export default function WhyChooseUsCarousel({
                     {slide.panelText}
                   </span>
 
-                  {/* Navigation Button */}
-                  <NextSlideButton
-                    text={slide.buttonText}
-                    className="w-fit lg:self-end self-center mt-auto lg:text-body-lg text-body-md"
-                  />
+                  {/* --- NEW: Control Row (Pagination + Button) --- */}
+                  <div className="flex md:flex-row flex-col-reverse w-full items-center justify-between gap-4 md:mt-0 mt-8">
+                    {/* Pagination on the left */}
+                    <CarouselPagination total={slides.length} current={index} />
+
+                    {/* Button on the right */}
+                    <NextSlideButton
+                      text={slide.buttonText}
+                      className="lg:text-body-lg text-body-md"
+                    />
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
