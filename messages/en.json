@@ -8,6 +8,32 @@
     "inspect_with_confidence_button": "Inspect with confidence",
     "partner_with_us_button": "Partner with us"
   },
+  "Highlights": {
+    "highlight_1": {
+      "title": "ai-powered",
+      "description": "Our AI sees and hears what most might miss, saving you from expensive repairs"
+    },
+    "highlight_2": {
+      "title": "Fast Inspection",
+      "description": "A complete 200+ point audit just under 90 mins, speeding up your buying decision."
+    },
+    "highlight_3": {
+      "title": "Instant Report",
+      "description": "Your detailed, easy-to-read report is ready the moment we're done."
+    },
+    "highlight_4": {
+      "title": "200+ Point Audit",
+      "description": "A rigorous, unbiased protocol, ensuring consistent results you can trust."
+    },
+    "highlight_5": {
+      "title": "Fraud Protection",
+      "description": "We verify mileage and data to protect you from tampering and false claims."
+    },
+    "highlight_6": {
+      "title": "Objective Image Data",
+      "description": "AI scans photos for hidden repairs, giving you undeniable visual proof."
+    }
+  },
   "EnterpriseSolutions": {
     "heading": "We power the industry, not just buyers.",
     "description": "Join the network of insurers, banks, and dealerships using Wisedrive to prevent fraud, protect your car portfolio, and automate inspections.",

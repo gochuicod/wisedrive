@@ -8,6 +8,32 @@
     "inspect_with_confidence_button": "Periksa dengan yakin",
     "partner_with_us_button": "Jadi Rakan Kongsi Kami"
   },
+  "Highlights": {
+    "highlight_1": {
+      "title": "Dikuasakan AI",
+      "description": "AI kami melihat dan mendengar perkara yang sering terlepas pandang, membantu anda mengelakkan kos pembaikan yang mahal"
+    },
+    "highlight_2": {
+      "title": "Pemeriksaan Pantas",
+      "description": "Audit lengkap lebih 200 titik dalam masa kurang 90 minit, mempercepatkan keputusan pembelian anda."
+    },
+    "highlight_3": {
+      "title": "Laporan Serta-Merta",
+      "description": "Laporan terperinci dan mudah difahami tersedia sebaik sahaja pemeriksaan selesai."
+    },
+    "highlight_4": {
+      "title": "Audit 200+ Titik",
+      "description": "Protokol ketat dan bebas bias bagi memastikan keputusan yang konsisten dan boleh dipercayai."
+    },
+    "highlight_5": {
+      "title": "Perlindungan Penipuan",
+      "description": "Kami mengesahkan perbatuan dan data kenderaan untuk melindungi anda daripada manipulasi dan tuntutan palsu."
+    },
+    "highlight_6": {
+      "title": "Data Imej Objektif",
+      "description": "AI mengimbas foto untuk mengesan pembaikan tersembunyi, memberikan bukti visual yang tidak dapat disangkal."
+    }
+  },
   "EnterpriseSolutions": {
     "heading": "Kami memperkasa industri, bukan hanya pembeli.",
     "description": "Sertai rangkaian syarikat insurans, bank, dan pengedar yang menggunakan Wisedrive untuk mencegah penipuan, melindungi portfolio kereta anda, dan mengautomasikan pemeriksaan.",
