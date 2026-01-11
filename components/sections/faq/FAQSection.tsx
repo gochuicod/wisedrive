@@ -1,25 +1,27 @@
-import { DropDown } from "@/components/DropDown";
-import { HighlightedHeading } from "@/components/HighlightedHeading";
-import { Badge } from "@/components/Badge";
+import { DropDown } from '@/components/DropDown';
+import { HighlightedHeading } from '@/components/HighlightedHeading';
+import { Badge } from '@/components/Badge';
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 
 export const FAQSection = () => {
-  const t = useTranslations("FAQSection");
+  const t = useTranslations('FAQSection');
 
   return (
-    <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center">
+    <section
+      className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center"
+      id="faqs"
+    >
       {/* Outer container */}
       <div className="w-full max-w-[1248px] flex flex-col items-center gap-6 px-4">
-        
         {/* Heading */}
-        <div className="w-full flex flex-col md:flex-row gap-8">          
-         {/* Left Wrapper - Badge & Heading */}
+        <div className="w-full flex flex-col md:flex-row gap-8">
+          {/* Left Wrapper - Badge & Heading */}
           <div className="flex-1 flex flex-col md:items-start items-center gap-1 flex-grow">
             <Badge size="lg">FAQs</Badge>
             <HighlightedHeading
-              text={t("heading")}
-              highlight={t("heading_highlighted_word")}
+              text={t('heading')}
+              highlight={t('heading_highlighted_word')}
               className="font-heading md:text-start text-center"
             />
           </div>
@@ -27,19 +29,22 @@ export const FAQSection = () => {
           {/* Right Wrapper - Subtitle */}
           <div className="flex-1 flex items-center flex-grow">
             <p className="text-body md:text-start text-center">
-              {t("subtitle")}
+              {t('subtitle')}
             </p>
           </div>
         </div>
 
         {/* Content */}
         <div className="w-full flex flex-col md:flex-row gap-8">
-          
           {/* Column 1 */}
           <div className="flex-1 border border-[#D1D5DC] rounded-2xl overflow-hidden flex flex-col h-fit">
-            <DropDown title="What does an AI-powered inspection include?" defaultOpen>
+            <DropDown
+              title="What does an AI-powered inspection include?"
+              defaultOpen
+            >
               <p className="font-poppins text-[16px] text-[#364153]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is placeholder text for the expanded FAQ content.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is
+                placeholder text for the expanded FAQ content.
               </p>
             </DropDown>
 
@@ -88,7 +93,6 @@ export const FAQSection = () => {
               </p>
             </DropDown>
           </div>
-
         </div>
       </div>
     </section>

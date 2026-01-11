@@ -3,11 +3,13 @@
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl'; // Added useLocale
 import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { cn } from '@/lib/utils';
 
 import { AppButton } from '@/components/AppButton';
 import { DropdownButton } from '@/components/DropdownButton';
 
 import { CircleCheck, HeartHandshake } from 'lucide-react';
+import { WisedriveLogo } from '../icons/WiseDriveLogo';
 
 import {
   Sheet,
@@ -18,8 +20,8 @@ import {
 } from '@/components/ui/sheet';
 
 import { NAV_LINKS } from '@/constants';
-import { cn } from '@/lib/utils';
-import { WisedriveLogo } from '../icons/WiseDriveLogo';
+
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
@@ -27,6 +29,7 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const scrollTo = useSmoothScroll();
 
   // Map locale codes to display labels
   const localeLabels: Record<string, string> = {
@@ -56,7 +59,11 @@ export default function Navbar() {
       )}
     >
       {/* 1. LOGO (Always Visible) */}
-      <Link href="/" className="relative block w-32 lg:w-40 shrink-0">
+      <Link
+        href="/"
+        onClick={(e) => scrollTo(e, '/')}
+        className="relative block w-32 lg:w-40 shrink-0"
+      >
         <WisedriveLogo className={cn('text-[#003CC5]', 'w-full h-auto')} />
       </Link>
 
@@ -70,6 +77,7 @@ export default function Navbar() {
             <Link
               key={link.key}
               href={link.href}
+              onClick={(e) => scrollTo(e, link.href, () => setIsOpen(false))}
               className={`text-h6 ${isActive ? 'font-bold' : 'font-normal'}`}
             >
               {t(link.label)}

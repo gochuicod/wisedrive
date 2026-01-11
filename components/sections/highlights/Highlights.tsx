@@ -18,7 +18,10 @@ export const Highlights: React.FC = () => {
   const t = useTranslations('Highlights');
 
   return (
-    <section className="flex flex-col items-center w-full px-tight lg:mx-auto">
+    <section
+      className="flex flex-col items-center w-full px-tight lg:mx-auto"
+      id="features"
+    >
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-10 w-full md:w-fit lg:w-fit justify-items-center">
         {HIGHLIGHT_ITEMS.map((item) => {
           // Dynamic translation lookup
