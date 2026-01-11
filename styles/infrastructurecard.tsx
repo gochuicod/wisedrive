@@ -21,8 +21,9 @@ export const BaseInfrastructureCard: React.FC<BaseInfrastructureCardProps> = ({
       className={`
         /* Frame 1000008688 - Main Container */
         flex flex-col items-center
+        lg:flex-row lg:items-end lg:justify-center
         xl:flex-row xl:items-end xl:justify-center
-        w-full max-w-[358px] md:max-w-[720px] xl:max-w-[1248px]
+        w-full md:max-w-[720px] lg:max-w-[1248px] xl:max-w-[1248px]
         relative
         ${className}
       `}
@@ -33,18 +34,20 @@ export const BaseInfrastructureCard: React.FC<BaseInfrastructureCardProps> = ({
         className={`
           relative shrink-0
           /* Responsive Widths */
-          w-[358px] h-[280px]
+          w-full h-[280px]
           md:w-[720px] md:h-[336px]
+          lg:w-[720px] lg:h-[440px]
           xl:w-[720px] xl:h-[440px]
           
           /* Border Radius */
-          rounded-2xl xl:rounded-[24px]
+          rounded-2xl lg:rounded-[24px] xl:rounded-[24px]
           overflow-hidden
           
           /* Overlap Margins */
           /* Mobile/Tablet: Pull card UP (margin-bottom negative) */
           /* Desktop: Pull card LEFT (margin-right negative) */
           mb-[-75px] z-0
+          lg:mb-0 lg:mr-[-75px]
           xl:mb-0 xl:mr-[-75px]
         `}
       >
@@ -76,10 +79,12 @@ export const BaseInfrastructureCard: React.FC<BaseInfrastructureCardProps> = ({
           flex flex-col items-center justify-center
           
           /* Container Sizing & Padding */
-          py-4 xl:py-4
+          py-4 lg:py-4 xl:py-4
+          px-4
           
           /* Widths */
           w-full
+          lg:w-auto lg:h-auto
           xl:w-auto xl:h-auto
         `}
       >
@@ -88,32 +93,32 @@ export const BaseInfrastructureCard: React.FC<BaseInfrastructureCardProps> = ({
             /* Card Style (Glassmorphism) */
             bg-gradient-to-r from-[rgba(255,255,255,0.7)] to-[rgba(228,247,255,0.9)]
             backdrop-blur-[20px]
-            rounded-lg md:rounded-2xl
+            rounded-lg md:rounded-2xl lg:rounded-2xl xl:rounded-2xl
             
             /* Dimensions */
-            w-[326px] md:w-[608px] xl:w-[603px]
-            min-h-[264px] md:min-h-[196px] xl:min-h-[228px]
+            w-full md:w-[608px] lg:w-[603px] xl:w-[603px]
+            min-h-[264px] md:min-h-[196px] lg:min-h-[228px] xl:min-h-[228px]
             
             /* Spacing inside card */
-            p-4 md:p-6 xl:p-6
-            flex flex-col gap-4 md:gap-8
+            p-4 md:p-6 lg:p-6 xl:p-6
+            flex flex-col gap-4 md:gap-8 lg:gap-8 xl:gap-8
             
             /* Alignment */
-            items-center xl:items-end
+            items-center lg:items-end xl:items-end
           `}
         >
           {/* Content Wrapper */}
-          <div className="flex flex-col gap-2 md:gap-4 xl:gap-6 w-full max-w-[294px] md:max-w-[576px] xl:max-w-[555px]">
+          <div className="flex flex-col gap-2 md:gap-4 xl:gap-6 w-full md:max-w-[576px] xl:max-w-[555px]">
             
             {/* Title */}
-            <h5 className="font-heading font-bold text-[24px] leading-[28px] tracking-[0.04em] uppercase text-[#002476] text-center xl:text-left">
+            <h5 className="font-heading font-bold text-[24px] leading-[28px] tracking-[0.04em] uppercase text-[#002476] text-center lg:text-left xl:text-left">
               {title}
             </h5>
 
             {/* Tag & Desc Wrapper */}
             <div className="flex flex-col gap-2 w-full">
               {/* Tag */}
-              <span className="font-heading font-semibold text-[16px] md:text-[16px] xl:text-[20px] leading-[24px] tracking-[2px] xl:tracking-[4px] uppercase text-[#1E2939] text-center xl:text-justify">
+              <span className="font-heading font-semibold text-[16px] md:text-[16px] lg:text-[20px] xl:text-[20px] leading-[24px] tracking-[2px] lg:tracking-[4px] xl:tracking-[4px] uppercase text-[#1E2939] text-center lg:text-justify xl:text-justify">
                 {tag}
               </span>
               

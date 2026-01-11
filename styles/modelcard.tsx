@@ -23,7 +23,7 @@ export const BaseModelCard: React.FC<BaseModelCardProps> = ({
   return (
     <div
       className={`
-        min-w-[398px] min-h-[370px]
+        w-full max-w-[398px] min-h-[370px]
         p-4 gap-4
         
         flex flex-col items-center
@@ -36,7 +36,7 @@ export const BaseModelCard: React.FC<BaseModelCardProps> = ({
       `}
     >
       {/* --- Image Section --- */}
-      <div className="relative w-[358px] h-[180px] shrink-0 rounded-3xl overflow-hidden bg-[#050717]">
+      <div className="relative w-full aspect-[358/180] shrink-0 rounded-3xl overflow-hidden bg-[#050717]">
         <Image
           src={imageSrc}
           alt={title}
