@@ -1,0 +1,177 @@
+{
+  "Navigation": {
+    "home": "Laman Utama",
+    "about": "Tentang Kami",
+    "features": "Ciri-ciri",
+    "inspection_plan": "Pelan Pemeriksaan",
+    "faqs": "Soalan Lazim",
+    "inspect_with_confidence_button": "Periksa dengan yakin",
+    "partner_with_us_button": "Jadi Rakan Kongsi Kami"
+  },
+  "EnterpriseSolutions": {
+    "heading": "Kami memperkasa industri, bukan hanya pembeli.",
+    "description": "Sertai rangkaian syarikat insurans, bank, dan pengedar yang menggunakan Wisedrive untuk mencegah penipuan, melindungi portfolio kereta anda, dan mengautomasikan pemeriksaan.",
+    "cta_button_text": "Lihat Solusi Perusahaan",
+    "pills": {
+      "pill_1_text": "Rangkaian Pengedar & OEM",
+      "pill_2_text": "Syarikat Insurans",
+      "pill_3_text": "Bank & Pembiaya",
+      "pill_4_text": "Pasaran & Platform"
+    }
+  },
+  "WhyChooseUs": {
+    "badge_text": "Kenapa Pilih Kami?",
+    "heading": "apa yang ai kami lakukan untuk anda",
+    "heading_highlighted_word": "ai",
+    "slides": {
+      "slide_1": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_1.webp",
+        "image_alt_text": "Sound AI",
+        "panel_heading": "Sound AI",
+        "panel_text": "Mengesan kerosakan dalaman enjin dan kehausan yang tidak dapat didengar oleh telinga manusia, mencegah kerosakan di masa hadapan",
+        "button_text": "Visual AI",
+        "button_link": "/why_choose_us/slide_2"
+      },
+      "slide_2": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_2.webp",
+        "image_alt_text": "Visual AI",
+        "panel_heading": "Visual AI",
+        "panel_text": "Mengesan ketidakpadanan cat, karat tersembunyi, dan pembaikan akibat kemalangan yang mungkin anda sendiri terlepas pandang",
+        "button_text": "Visual AI",
+        "button_link": "/why_choose_us/slide_2"
+      },
+      "slide_3": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_3.webp",
+        "image_alt_text": "Price Prediction AI",
+        "panel_heading": "Price Prediction AI",
+        "panel_text": "Mengira nilai pasaran sebenar kereta berdasarkan keadaan sebenarnya supaya anda tidak membayar lebih.",
+        "button_text": "Price Prediction AI",
+        "button_link": "/why_choose_us/slide_2"
+      },
+      "slide_4": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_4.webp",
+        "image_alt_text": "Verified by an independent expert",
+        "panel_heading": "Disahkan oleh pakar bebas",
+        "panel_text": "Memberikan keputusan jelas sama ada untuk 'Berunding' atau 'Tarik Diri', satu kejelasan mutlak untuk keputusan terbesar anda.",
+        "button_text": "Sound AI",
+        "button_link": "/why_choose_us/slide_2"
+      }
+    }
+  },
+  "B2CHero": {
+    "heading": "Sedang membeli kereta terpakai?",
+    "description": "Anda berhak mengetahui dengan tepat apa yang anda beli. Wisedrive menggabungkan kuasa teknologi AI dan kepakaran manusia untuk memeriksa 200+ titik pemeriksaan pada kenderaan. Kami memberikan ketenangan fikiran yang disokong bukti supaya anda boleh membeli dengan keyakinan penuh dan tanpa risau.",
+    "book_your_inspection_button": "Tempah pemeriksaan anda",
+    "how_it_works_button": "Cara ia berfungsi",
+    "counter_text_1": "Pemeriksaan Wisedrive telah menjimatkan",
+    "counter_text_2": "daripada pembeli kereta setakat ini..."
+  },
+  "B2BHero": {
+    "heading": "Lindungi Portfolio Automotif Anda dengan Data Yang Disahkan",
+    "description": "Sama ada anda penanggung insurans yang menguruskan risiko, pembiaya yang menjamin cagaran, atau OEM yang menguruskan inventori terpakai yang disahkan, pembolehubah terbesar adalah aset itu sendiri. Wisedrive melindungi portfolio anda dengan pemeriksaan teknikal yang diperkasa AI, analisis ECU masa nyata, dan algoritma pengesanan penipuan—diintegrasikan terus ke dalam aliran kerja perusahaan anda.",
+    "partner_with_button": "Bekerjasama Dengan Kami",
+    "view_enterprise_solution_button": "Lihat Solusi Perusahaan"
+  },
+  "Inspection": {
+    "heading": "Satu-satunya pemeriksaan yang anda perlukan",
+    "heading_highlighted_word": "pemeriksaan",
+    "description": "AI kami menganalisis lebih daripada 200 titik pemeriksaan supaya anda tahu dengan tepat apa yang anda beli.",
+    "book_your_inspection_button": "Tempah pemeriksaan anda",
+    "speak_to_an_expert_button": "Bercakap dengan Pakar",
+    "checkbox_items_text": "200+ titik pemeriksaan|Ujian pengimbas OBD2 lanjutan|Penilaian kelayakan jalan raya & keselamatan|Diagnostik janaan AI dan penunjuk pembaikan|Konsultasi percuma dengan pakar pemeriksaan"
+  },
+  "Advantage": {
+    "badge_text": "Kelebihan Wisedrive",
+    "heading": "Di mana Kepakaran Manusia Bertemu Teknologi AI",
+    "heading_highlighted_word": "Teknologi AI",
+    "description": "Pemeriksaan kami diperkasakan oleh kepakaran pemeriksa profesional kami yang disokong oleh teknologi AI yang dibina daripada lebih satu juta titik data. Bersama-sama, Wisedrive memberikan anda laporan yang boleh dipercayai sepenuhnya"
+  },
+  "FAQSection": {
+    "badge_text": "Soalan Lazim",
+    "heading": "Ada soalan mengenai pemeriksaan kami?",
+    "heading_highlighted_word": "pemeriksaan kami?",
+    "subtitle": "Cari jawapan kepada soalan anda mengenai pemeriksaan berkuasa AI kami dan bagaimana kami melindungi anda daripada pembaikan tersembunyi yang mahal."
+  },
+  "HighlightPills": {
+    "heading": "Wisedrive adalah standard baharu kepercayaan & ketepatan",
+    "heading_highlighted_word": "kepercayaan & ketepatan",
+    "pills": {
+      "pill_1": {
+        "value": "20x",
+        "label": "analisis enjin lebih tepat"
+      },
+      "pill_2": {
+        "value": "95%",
+        "label": "pengurangan kesilapan manusia"
+      },
+      "pill_3": {
+        "value": "75%",
+        "label": "laporan lebih pantas"
+      },
+      "pill_4": {
+        "value": "99%",
+        "label": "ketepatan diagnostik"
+      }
+    }
+  },
+  "Reviews": {
+    "heading": "Pandu Pulang dengan Gembira",
+    "heading_highlighted_word": "Gembira",
+    "description": "Sertai ribuan pelanggan berpuas hati yang membeli kenderaan mereka dengan ketenangan fikiran sepenuhnya."
+  },
+  "Steps": {
+    "heading": "Beli kereta anda dengan keyakinan penuh",
+    "heading_highlighted_word": "keyakinan",
+    "disclaimer_text": "Langkah-langkah mungkin berubah untuk pelan perusahaan",
+    "subtitle_question": "Ada soalan atau sedia untuk menempah",
+    "subtitle_heading": "Hantar “Hi” ke +60 12 255 9610 di WhatsApp. Pakar kami sedia untuk menjadualkan pemeriksaan anda atau membantu pembelian anda.",
+    "subtitle_heading_highlighted_word": "+60 12 255 9610",
+    "steps": {
+      "step_1": {
+        "heading": "01. Beli pelan",
+        "description": "Bayar dalam talian dalam beberapa minit."
+      },
+      "step_2": {
+        "heading": "02. Jadualkan",
+        "description": "Pilih masa/tempat (rumah, pengedar, lokasi penjual) melalui web atau WhatsApp."
+      },
+      "step_3": {
+        "heading": "03. Pemeriksaan",
+        "description": "Pemeriksaan fizikal + imbasan OBD-II/ECM/BCM + semakan luaran foto-AI. Kami mengenal pasti kerosakan kritikal, anggaran pembaikan, dan panduan harga yang adil."
+      },
+      "step_4": {
+        "heading": "04. Laporan",
+        "description": "Dapatkan pautan mesra mudah alih dengan foto, diagnostik, dan langkah seterusnya. Kereta yang lulus akan mendapat Pensijilan Wisedrive."
+      }
+    }
+  },
+  "OurBrands": {
+    "badge_text": "Jenama Kami",
+    "heading": "Kepakaran Merentas Setiap Jenama",
+    "heading_highlighted_word": "",
+    "description": "Dari Proton dan Perodua hingga kereta import, kami terlatih untuk kereta yang anda pandu."
+  },
+  "Footer": {
+    "address": "Suite 5.03 Level 5 Block B, Bangunan Pan Global, 1A, Jln Tandang, Seksyen 51, 46050 Petaling Jaya, Selangor",
+    "products": "Produk",
+    "car_inspections": "Pemeriksaan Kereta",
+    "luxury_inspection": "Pemeriksaan Kereta Mewah",
+    "car_service": "Servis & Penyelenggaraan Kereta (akan datang)",
+    "car_repairs": "Pembaikan & Penyelenggaraan Kereta (akan datang)",
+    "company": "Syarikat",
+    "about_us": "Tentang Kami",
+    "how_it_works": "Cara Ia Berfungsi",
+    "contact_us": "Hubungi Kami",
+    "resources": "Sumber",
+    "sample_report": "Contoh Laporan",
+    "faqs": "Pusat Bantuan / Soalan Lazim",
+    "coverage_areas": "Kawasan Liputan",
+    "customer_reviews": "Ulasan Pelanggan",
+    "policies": "Polisi & Terma",
+    "inspection_terms": "Terma & Syarat Pemeriksaan",
+    "refund_policy": "Polisi Pembatalan & Bayaran Balik",
+    "terms_conditions": "Terma & Syarat",
+    "privacy_policy": "Polisi Privasi",
+    "copyright": "© Wisedrive Technologies (M) Sdn. Bhd. Hak cipta terpelihara {year}"
+  }
+}

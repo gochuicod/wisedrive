@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/routing';
+import { useTranslations, useLocale } from 'next-intl'; // Added useLocale
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 
 import { AppButton } from '@/components/AppButton';
-import { CircleCheck } from 'lucide-react';
+import { DropdownButton } from '@/components/DropdownButton';
+
+import { CircleCheck, HeartHandshake } from 'lucide-react';
 
 import {
   Sheet,
@@ -22,8 +23,27 @@ import { WisedriveLogo } from '../icons/WiseDriveLogo';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
+  const locale = useLocale(); // Get current locale
+  const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Map locale codes to display labels
+  const localeLabels: Record<string, string> = {
+    en: 'EN',
+    my: 'BM',
+  };
+
+  const languageItems = [
+    {
+      label: 'English',
+      onClick: () => router.replace(pathname, { locale: 'en' }),
+    },
+    {
+      label: 'Bahasa Melayu',
+      onClick: () => router.replace(pathname, { locale: 'my' }),
+    },
+  ];
 
   return (
     <nav
@@ -36,16 +56,8 @@ export default function Navbar() {
       )}
     >
       {/* 1. LOGO (Always Visible) */}
-      <Link 
-        href="/" 
-        className="relative block w-32 lg:w-40 shrink-0" 
-      >
-        <WisedriveLogo
-          className={cn(
-            'text-[#003CC5]',
-            'w-full h-auto'
-          )}
-        />
+      <Link href="/" className="relative block w-32 lg:w-40 shrink-0">
+        <WisedriveLogo className={cn('text-[#003CC5]', 'w-full h-auto')} />
       </Link>
 
       {/* 2. DESKTOP MENU (Hidden on Mobile/Tablet) */}
@@ -64,13 +76,33 @@ export default function Navbar() {
             </Link>
           );
         })}
-        <AppButton
-          variant="default"
-          size="sm"
-          leftIcon={<CircleCheck className="size-4" />}
-        >
-          {t('inspect_with_confidence_button')}
-        </AppButton>
+        <div className="flex flex-row gap-4">
+          <AppButton
+            variant="default"
+            size="sm"
+            leftIcon={<CircleCheck className="size-4" />}
+          >
+            {t('inspect_with_confidence_button')}
+          </AppButton>
+          <AppButton
+            variant="tertiary"
+            size="sm"
+            leftIcon={<HeartHandshake className="size-4" />}
+          >
+            {t('partner_with_us_button')}
+          </AppButton>
+
+          {/* UPDATED DROPDOWN BUTTON */}
+          <DropdownButton
+            variant="tertiary"
+            size="sm"
+            items={languageItems}
+            menuAlign="right"
+          >
+            {/* Dynamic Label based on current locale */}
+            {localeLabels[locale] || 'EN'}
+          </DropdownButton>
+        </div>
       </div>
 
       {/* 3. MOBILE MENU (Visible only on Mobile/Tablet) */}
@@ -78,7 +110,6 @@ export default function Navbar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <button className="p-2 text-header">
-              {/* Hamburger Icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
