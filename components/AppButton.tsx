@@ -1,5 +1,5 @@
-import React from "react";
-import { BaseButton, ButtonVariant, ButtonSize } from "@/styles/button";
+import React from 'react';
+import { BaseButton, ButtonVariant, ButtonSize } from '@/styles/button';
 
 export interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -18,14 +18,16 @@ export const AppButton: React.FC<AppButtonProps> = ({
   variant,
   size,
   href,
+  type = 'button', // 👈 DEFAULT HERE
   ...props
 }) => {
   return (
-    <BaseButton 
-      className={className} 
-      variant={variant} 
-      size={size} 
+    <BaseButton
+      className={className}
+      variant={variant}
+      size={size}
       href={href}
+      type={type}
       {...props}
     >
       {leftIcon && <span className="flex-none">{leftIcon}</span>}
