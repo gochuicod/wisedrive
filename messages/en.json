@@ -7,6 +7,17 @@
     "faqs": "FAQs",
     "inspect_with_confidence_button": "Inspect with confidence"
   },
+  "EnterpriseSolutions": {
+    "heading": "We power the industry, not just buyers.",
+    "description": "Join the network of insurers, banks, and dealerships using Wisedrive to prevent fraud, protect your car portfolio, and automate inspections.",
+    "cta_button_text": "Explore Enterprise Solutions",
+    "pills": {
+      "pill_1_text": "Dealership Networks & OEMs",
+      "pill_2_text": "Insurance Companies",
+      "pill_3_text": "Bank & Financiers",
+      "pill_4_text": "Marketplaces & Platforms"
+    }
+  },
   "WhyChooseUs": {
     "badge_text": "Why Choose Us?",
     "heading": "what our ai does for you",
@@ -82,7 +93,25 @@
   },
   "HighlightPills": {
     "heading": "Wisedrive is the new standard of trust & accuracy",
-    "heading_highlighted_word": "trust & accuracy"
+    "heading_highlighted_word": "trust & accuracy",
+    "pills": {
+      "pill_1": {
+        "value": "20x",
+        "label": "more accurate engine analysis"
+      },
+      "pill_2": {
+        "value": "95%",
+        "label": "reduction in human error"
+      },
+      "pill_3": {
+        "value": "75%",
+        "label": "faster reporting"
+      },
+      "pill_4": {
+        "value": "99%",
+        "label": "diagnostic accuracy"
+      }
+    }
   },
   "Reviews": {
     "heading": "Drive Away Happy",
@@ -93,7 +122,27 @@
     "heading": "Buy your car with total confidence",
     "heading_highlighted_word": "confidence",
     "disclaimer_text": "Steps may change for enterprise plans",
-    "subtitle_question": "Have questions or ready to book"
+    "subtitle_question": "Have questions or ready to book",
+    "subtitle_heading": "Send “Hi” to +60 12 255 9610 on WhatsApp. Our experts are ready to schedule your inspection or assist you with your purchase.",
+    "subtitle_heading_highlighted_word": "+60 12 255 9610",
+    "steps": {
+      "step_1": {
+        "heading": "01. Buy the plan",
+        "description": "Pay online in minutes."
+      },
+      "step_2": {
+        "heading": "02. Schedule",
+        "description": "Pick a time/place (home, dealer, seller’s location) via web or WhatsApp."
+      },
+      "step_3": {
+        "heading": "03. Inspection",
+        "description": "Physical checks + OBD-II/ECM/BCM scans + photo-AI exterior review. We call out critical faults, repair estimates, and fair price guidance."
+      },
+      "step_4": {
+        "heading": "04. Report",
+        "description": "Get a mobile-friendly link with photos, diagnostics, and next steps. Cars that pass get Wisedrive-Certified."
+      }
+    }
   },
   "OurBrands": {
     "badge_text": "Our Brands",
