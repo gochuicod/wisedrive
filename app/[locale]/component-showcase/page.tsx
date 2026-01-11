@@ -10,6 +10,7 @@ import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 import { ReviewCard } from '@/components/ReviewCard';
 import { StepCard } from '@/components/StepCard';
 import { FeatureStat } from '@/components/FeatureStat';
+import { ModelCard } from '@/components/ModelCard';
 
 import Image from 'next/image';
 
@@ -510,6 +511,26 @@ const ComponentShowcase = () => {
           />
 
         </div>
+      </div>
+
+      <div className="mb-12 p-8 bg-gray-100 rounded-xl shadow-sm border border-gray-200">
+          <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">Feature Stat Cards</h2>
+        <div className="flex flex-wrap items-center justify-center gap-12 bg-gray-50 p-10">
+              <ModelCard 
+                title="Volume License / Enterprise Subscription"
+                subtitle="<strong>Best for:</strong> Banks, Insurers, OEMs, and Large Dealer Groups"
+                image="/model_card/model-card-1.webp"
+                buttonText="Expand"
+                onAction={() => console.log("Clicked")}
+              />
+              <ModelCard 
+                title="API & White Label Integration"
+                subtitle="<strong>Best for:</strong> Superapps, Fintechs, and Major Marketplaces"
+                image="/model_card/model-card-2.webp"
+                buttonText="Expand"
+                onAction={() => console.log("Clicked")}
+              />
+          </div>
       </div>
     </div>
   );
