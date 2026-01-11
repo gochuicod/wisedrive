@@ -197,7 +197,8 @@
 @media (min-width: 1920px) {
   :root {
     /* Layout */
-    --padding-x-relaxed: 336px;
+    --padding-x-relaxed: 80px;
+    --padding-x-tight: 48px;
   }
 }
 
