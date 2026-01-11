@@ -24,7 +24,7 @@ export default function EnterpriseSolutions () {
             )}>
                 <HighlightedHeading
                     text="We power the industry, not just buyers."
-                    className="text-center"
+                    className="font-heading text-center"
                 />
                 <p className={cn(
                     "md:w-[45%] w-full",

@@ -18,8 +18,8 @@ export const HighlightedHeading: React.FC<HighlightedHeadingProps> = ({
   align,
   text,
   highlight,
-  textClassName = "text-header",            // default class for normal text
-  highlightClassName = "text-header-accent", // default class for highlighted text
+  textClassName = "text-header font-heading",            // default class for normal text
+  highlightClassName = "text-header-accent font-heading", // default class for highlighted text
   className,
   ...props
 }) => {
