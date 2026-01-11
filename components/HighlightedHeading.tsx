@@ -23,7 +23,7 @@ export const HighlightedHeading: React.FC<HighlightedHeadingProps> = ({
   highlight,
   textClassName = 'text-header',
   highlightClassName = 'text-header-accent',
-  leading, // <--- 2. Destructure prop
+  leading,
   className,
   ...props
 }) => {

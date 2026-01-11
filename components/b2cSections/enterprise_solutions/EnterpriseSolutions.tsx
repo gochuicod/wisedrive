@@ -77,7 +77,7 @@ export default function EnterpriseSolutions() {
     <div className={cn('flex flex-col w-full gap-4 my-relaxed py-relaxed')}>
       {/* Heading and description */}
       <div className={cn('flex flex-col items-center gap-px px-relaxed')}>
-        <HighlightedHeading text={t('heading')} className="text-center" />
+        <HighlightedHeading text={t('heading')} className="text-center font-heading" />
         <p className={cn('md:w-[45%] w-full text-center')}>
           {t('description')}
         </p>

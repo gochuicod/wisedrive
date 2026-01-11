@@ -23,7 +23,7 @@ export const Reviews = () => {
             <HighlightedHeading
               text={t("heading")}
               highlight={t("heading_highlighted_word")}
-              className="text-h4 font-heading font-bold"
+              className="text-h4 font-heading font-bold text-center" 
             />
             <p className="md:text-left text-center">
               {t("description")}

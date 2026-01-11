@@ -33,7 +33,7 @@ export const FAQSection = () => {
               <HighlightedHeading
                 text={t('heading')}
                 highlight={t('heading_highlighted_word')}
-                className=" text-center lg:text-left md:max-w-none lg:max-w-none max-w-[358px]"
+                className="font-heading text-center lg:text-left md:max-w-none lg:max-w-none max-w-[358px]"
               />
             </div>
             <p className="md:max-w-[528px] text-center lg:text-left text-body">

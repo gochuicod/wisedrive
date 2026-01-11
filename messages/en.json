@@ -137,7 +137,63 @@
     "badge_text": "FAQs",
     "heading": "Got Questions about our inspection?",
     "heading_highlighted_word": "inspection?",
-    "subtitle": "Find answers to your questions about our AI-powered inspections and how we protect you from costly, hidden repairs."
+    "subtitle": "Find answers to your questions about our inspections and warranty services.",
+    "q1": {
+      "question": "What services does Wisedrive offer for used car inspections?",
+      "answer": "Wisedrive offers comprehensive used car inspections covering critical components such as the engine, transmission, brakes, and electrical systems."
+    },
+    "q2": {
+      "question": "How can I book an appointment for car inspections?",
+      "answer": "You can book an inspection through our website or mobile app by selecting your preferred package and scheduling an appointment."
+    },
+    "q3": {
+      "question": "What is included in a Wisedrive used car inspection?",
+      "answer": "Our inspections cover over 200 checkpoints, including mechanical, electrical, and safety systems."
+    },
+    "q4": {
+      "question": "How does the inspection process work?",
+      "answer": "A certified technician will inspect your car at your location or a partner garage, providing a detailed report afterward."
+    },
+    "q5": {
+      "question": "How long does a typical car inspection take?",
+      "answer": "An inspection usually takes about 1-2 hours, depending on the vehicle's condition and the package chosen."
+    },
+    "q6": {
+      "question": "Can I request an inspection for any type of vehicle?",
+      "answer": "We inspect most types of vehicles, including sedans, SUVs, and trucks."
+    },
+    "q7": {
+      "question": "What is the cost of a used car inspection?",
+      "answer": "The cost varies based on the package selected. Detailed pricing is available on our website."
+    },
+    "q8": {
+      "question": "What types of warranties does Wisedrive offer?",
+      "answer": "We offer various warranty plans that cover different aspects of vehicle maintenance and repairs."
+    },
+    "q9": {
+      "question": "How do I purchase a warranty with my inspection?",
+      "answer": "You can add a warranty to your inspection package during the booking process on our website or app."
+    },
+    "q10": {
+      "question": "What does the Wisedrive warranty cover?",
+      "answer": "Coverage varies by plan but generally includes major components such as the engine, transmission, and electrical systems."
+    },
+    "q11": {
+      "question": "Are there any exclusions in the warranty coverage?",
+      "answer": "Yes, some exclusions apply. Please refer to the specific warranty terms and conditions for details."
+    },
+    "q12": {
+      "question": "How do I claim warranty repairs with Wisedrive?",
+      "answer": "Contact our support team to file a claim, and we will guide you through the process and direct you to an authorised service centre."
+    },
+    "q13": {
+      "question": "Can I transfer my warranty to a new owner if I sell my car?",
+      "answer": "Yes, warranties can be transferred to new owners, ensuring continued coverage."
+    },
+    "q14": {
+      "question": "What is the validity period of your warranties?",
+      "answer": "Warranty periods vary by package and can range from 6 months to several years."
+    }
   },
   "HighlightPills": {
     "heading": "Wisedrive is the new standard of trust & accuracy",

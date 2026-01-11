@@ -137,7 +137,63 @@
     "badge_text": "Soalan Lazim",
     "heading": "Ada soalan mengenai pemeriksaan kami?",
     "heading_highlighted_word": "pemeriksaan kami?",
-    "subtitle": "Cari jawapan kepada soalan anda mengenai pemeriksaan berkuasa AI kami dan bagaimana kami melindungi anda daripada pembaikan tersembunyi yang mahal."
+    "subtitle": "Cari jawapan kepada soalan anda mengenai pemeriksaan kami dan perkhidmatan waranti.",
+    "q1": {
+      "question": "Apakah perkhidmatan yang ditawarkan Wisedrive untuk pemeriksaan kereta terpakai?",
+      "answer": "Wisedrive menawarkan pemeriksaan kereta terpakai yang komprehensif meliputi komponen kritikal seperti enjin, transmisi, brek, dan sistem elektrik."
+    },
+    "q2": {
+      "question": "Bagaimana cara saya menempah janji untuk pemeriksaan kereta?",
+      "answer": "Anda boleh menempah pemeriksaan melalui laman web atau aplikasi mudah alih kami dengan memilih pakej pilihan anda dan menjadualkan janji temu."
+    },
+    "q3": {
+      "question": "Apakah yang disertakan dalam pemeriksaan kereta terpakai Wisedrive?",
+      "answer": "Pemeriksaan kami meliputi lebih 200 titik pemeriksaan, termasuk sistem mekanikal, elektrik, dan keselamatan."
+    },
+    "q4": {
+      "question": "Bagaimana proses pemeriksaan berfungsi?",
+      "answer": "Seorang juruteknik bersertifikat akan memeriksa kereta anda di lokasi anda atau bengkel mitra, memberikan laporan terperinci selepas itu."
+    },
+    "q5": {
+      "question": "Berapa lama masa yang diambil untuk pemeriksaan kereta biasa?",
+      "answer": "Pemeriksaan biasanya mengambil masa kira-kira 1-2 jam, bergantung pada keadaan kenderaan dan pakej yang dipilih."
+    },
+    "q6": {
+      "question": "Bolehkah saya meminta pemeriksaan untuk sebarang jenis kenderaan?",
+      "answer": "Kami memeriksa kebanyakan jenis kenderaan, termasuk sedan, SUV, dan lori."
+    },
+    "q7": {
+      "question": "Berapakah kos pemeriksaan kereta terpakai?",
+      "answer": "Kos berbeza-beza bergantung pada pakej yang dipilih. Penetapan harga terperinci tersedia di laman web kami."
+    },
+    "q8": {
+      "question": "Apakah jenis waranti yang ditawarkan Wisedrive?",
+      "answer": "Kami menawarkan pelbagai pelan waranti yang meliputi aspek berbeza penyelenggaraan dan pembaikan kenderaan."
+    },
+    "q9": {
+      "question": "Bagaimana cara saya membeli waranti dengan pemeriksaan saya?",
+      "answer": "Anda boleh menambah waranti ke pakej pemeriksaan anda semasa proses tempahan di laman web atau aplikasi kami."
+    },
+    "q10": {
+      "question": "Apakah yang dilindungi oleh waranti Wisedrive?",
+      "answer": "Perlindungan berbeza-beza mengikut pelan tetapi secara amnya meliputi komponen utama seperti enjin, transmisi, dan sistem elektrik."
+    },
+    "q11": {
+      "question": "Adakah pengecualian dalam perlindungan waranti?",
+      "answer": "Ya, beberapa pengecualian terpakai. Sila rujuk syarat dan ketentuan waranti khusus untuk butiran."
+    },
+    "q12": {
+      "question": "Bagaimana cara saya menuntut pembaikan waranti dengan Wisedrive?",
+      "answer": "Hubungi pasukan sokongan kami untuk memfailkan tuntutan, dan kami akan membimbing anda melalui proses dan mengarahkan anda ke pusat perkhidmatan yang diberi kuasa."
+    },
+    "q13": {
+      "question": "Bolehkah saya memindahkan waranti saya kepada pemilik baharu jika saya menjual kereta saya?",
+      "answer": "Ya, waranti boleh dipindahkan kepada pemilik baharu, memastikan perlindungan yang berterusan."
+    },
+    "q14": {
+      "question": "Apakah tempoh kesahihan waranti anda?",
+      "answer": "Tempoh waranti berbeza-beza mengikut pakej dan boleh berkisar antara 6 bulan hingga beberapa tahun."
+    }
   },
   "HighlightPills": {
     "heading": "Wisedrive adalah standard baharu kepercayaan & ketepatan",

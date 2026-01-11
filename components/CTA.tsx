@@ -83,15 +83,12 @@ const CTA = (props: CTAProps) => {
           <div className="flex flex-col md:items-start items-center text-center md:text-left">
             <HighlightedHeading
               text={heading}
-              textClassName="text-white font-body"
+              textClassName="font-heading text-white font-body"
               highlight={highlighted}
-              highlightClassName="text-accent-500"
+              highlightClassName="font-heading text-accent-500 "
               className="text-h5 md:text-start text-center"
             />
-            <HighlightedHeading
-              text={subheading}
-              textClassName="font-light md:text-base text-xs text-white font-heading normal-case tracking-wider md:text-start text-center"
-            />
+            <p className='text-body-md text-white'>{subheading}</p>
           </div>
 
           <div className="flex flex-col gap-2 md:gap-4 shrink-0">
