@@ -1,25 +1,28 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { Instagram, Linkedin, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FOOTER_LINKS } from '@/constants';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const t = useTranslations('Footer');
+  const pathname = usePathname();
+  const isEnterprisePage = pathname?.includes('/enterprise-solutions');
 
   return (
     <div
       className={cn(
         'bg-gradient-to-r from-[#122D7B] to-[#171F51]',
-        'min-h-[419px]',
+        !isEnterprisePage ? 'min-h-[419px]' : 'min-h-[263px]',
         'px-relaxed',
         'py-footer',
       )}
     >
-      <div
-        className={cn('flex flex-col', 'justify-center items-center', 'gap-8')}
-      >
+      <div className={cn('flex flex-col', 'justify-end items-center', 'gap-8')}>
         {/* Top section */}
         <div
           className={cn(
@@ -38,9 +41,11 @@ export default function Footer() {
           {/* Socials and address on right side */}
           <div
             className={cn(
-              'flex lg:flex-row flex-col',
+              'flex ',
+              !isEnterprisePage
+                ? 'lg:flex-row flex-col justify-end items-center'
+                : 'flex-col justify-end lg:items-end items-center',
               'lg:gap-8',
-              'justify-end items-center',
               'lg:mt-0 mt-4',
             )}
           >
@@ -66,7 +71,9 @@ export default function Footer() {
                 'font-gilroy',
                 'text-lg',
                 'lg:mt-0 mt-4',
-                'lg:text-start md:text-center text-start',
+                !isEnterprisePage
+                  ? 'lg:text-start md:text-center text-start'
+                  : 'lg:text-end text-center',
               )}
             >
               {t('address')}
@@ -74,63 +81,65 @@ export default function Footer() {
           </div>
         </div>
         {/* Middle section */}
-        <div
-          className={cn(
-            'flex',
-            'md:flex-row flex-col',
-            'gap-8',
-            'justify-between items-start',
-            'font-body',
-            'w-full',
-          )}
-        >
-          {/* First Column */}
-          {Object.entries(FOOTER_LINKS).map(([category, links]) => (
-            <div
-              key={category}
-              className={cn(
-                'flex flex-col',
-                'gap-2',
-                'lg:w-[288px] w-[162px] w-full',
-                'lg:min-h-[158px] min-h-[95px]',
-              )}
-            >
-              {/* Category Title (e.g., Products) */}
-              <h4
+        {!isEnterprisePage && (
+          <div
+            className={cn(
+              'flex',
+              'md:flex-row flex-col',
+              'gap-8',
+              'justify-between items-start',
+              'font-body',
+              'w-full',
+            )}
+          >
+            {/* First Column */}
+            {Object.entries(FOOTER_LINKS).map(([category, links]) => (
+              <div
+                key={category}
                 className={cn(
-                  'text-wdOrange',
-                  'text-xl',
-                  'font-bold',
-                  'tracking-tight',
+                  'flex flex-col',
+                  'gap-2',
+                  'lg:w-[288px] w-[162px] w-full',
+                  'lg:min-h-[158px] min-h-[95px]',
                 )}
               >
-                {t(category)}
-              </h4>
+                {/* Category Title (e.g., Products) */}
+                <h4
+                  className={cn(
+                    'text-wdOrange',
+                    'text-xl',
+                    'font-bold',
+                    'tracking-tight',
+                  )}
+                >
+                  {t(category)}
+                </h4>
 
-              {/* List of Links */}
-              <ul className={cn('flex flex-col', 'gap-2')}>
-                {links.map((link) => (
-                  <li key={link.key}>
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        'text-wdBlue',
-                        'text-sm',
-                        'hover:text-white',
-                        'transition-colors',
-                        'cursor-pointer',
-                        'font-normal',
-                      )}
-                    >
-                      {/* Use the key from constants to look up the translation */}
-                      {t(link.key)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+                {/* List of Links */}
+                <ul className={cn('flex flex-col', 'gap-2')}>
+                  {links.map((link) => (
+                    <li key={link.key}>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          'text-wdBlue',
+                          'text-sm',
+                          'hover:text-white',
+                          'transition-colors',
+                          'cursor-pointer',
+                          'font-normal',
+                        )}
+                      >
+                        {/* Use the key from constants to look up the translation */}
+                        {t(link.key)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
         {/* --- BOTTOM ROW: Copyright --- */}
         <div
           className={cn(
