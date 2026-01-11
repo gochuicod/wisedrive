@@ -151,9 +151,30 @@ export default function Navbar() {
                 variant="default"
                 size="sm"
                 leftIcon={<CircleCheck className="size-4" />}
+                className="w-fit mx-auto"
               >
                 {t('inspect_with_confidence_button')}
               </AppButton>
+              <AppButton
+                variant="tertiary"
+                size="sm"
+                leftIcon={<HeartHandshake className="size-4" />}
+                className="w-fit mx-auto"
+              >
+                {t('partner_with_us_button')}
+              </AppButton>
+
+              {/* UPDATED DROPDOWN BUTTON */}
+              <DropdownButton
+                variant="tertiary"
+                size="sm"
+                items={languageItems}
+                menuAlign="right"
+                className="w-fit mx-auto"
+              >
+                {/* Dynamic Label based on current locale */}
+                {localeLabels[locale] || 'EN'}
+              </DropdownButton>
             </div>
           </SheetContent>
         </Sheet>
