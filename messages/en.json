@@ -7,6 +7,45 @@
     "faqs": "FAQs",
     "inspect_with_confidence_button": "Inspect with confidence"
   },
+  "WhyChooseUs": {
+    "badge_text": "Why Choose Us?",
+    "heading": "what our ai does for you",
+    "heading_highlighted_word": "ai",
+    "slides": {
+      "slide_1": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_1.webp",
+        "image_alt_text": "Sound AI",
+        "panel_heading": "Sound AI",
+        "panel_text": "Detects internal engine faults and wear that are inaudible to the human ear, preventing future breakdowns",
+        "button_text": "Visual AI",
+        "button_link": "/why_choose_us/slide_2"
+      },
+      "slide_2": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_2.webp",
+        "image_alt_text": "Visual AI",
+        "panel_heading": "Visual AI",
+        "panel_text": "Spots paint mismatches, hidden rust, and accident repairs that even you yourself might miss",
+        "button_text": "Visual AI",
+        "button_link": "/why_choose_us/slide_2"
+      },
+      "slide_3": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_3.webp",
+        "image_alt_text": "Price Prediction AI",
+        "panel_heading": "Price Prediction AI",
+        "panel_text": "Calculates the car's true market value based on its actual condition so you never overpay.",
+        "button_text": "Price Prediction AI",
+        "button_link": "/why_choose_us/slide_2"
+      },
+      "slide_4": {
+        "image": "/why_choose_us/why_choose_us_carousel_image_4.webp",
+        "image_alt_text": "Verified by an independent expert",
+        "panel_heading": "Verified by an independent expert",
+        "panel_text": "Delivers a clear 'Negotiate' or 'Walk Away' verdict, a total clarity for your biggest decision.",
+        "button_text": "Sound AI",
+        "button_link": "/why_choose_us/slide_2"
+      }
+    }
+  },
   "B2CHero": {
     "heading": "Buying a used car?",
     "description": "You deserve to know exactly what you're buying. Wisedrive combines the power of AI technology and human expertise to inspect 200+ checkpoints on the vehicle. We give you an evidence-backed peace of mind so now you buy with full confidence and worry-free.",
@@ -22,7 +61,6 @@
     "book_your_inspection_button": "Book your inspection",
     "speak_to_an_expert_button": "Speak to an Expert",
     "checkbox_items_text": "200+ inspection checkpoints|Advanced OBD2 scanner test|Roadworthiness & safety evaluation|AI-generated diagnostics and repair indicators|Free consultation with inspection expert"
-
   },
   "Advantage": {
     "badge_text": "The Wisedrive Advantage",
