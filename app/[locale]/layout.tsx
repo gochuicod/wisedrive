@@ -1,8 +1,8 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Oswald, Poppins } from 'next/font/google';
-import Navbar from '@/components/sections/Navbar';
-import Footer from '@/components/sections/Footer';
+import Navbar from '@/components/b2cSections/Navbar';
+import Footer from '@/components/b2cSections/Footer';
 import '@/app/globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 

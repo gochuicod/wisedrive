@@ -8,6 +8,27 @@
     "inspect_with_confidence_button": "Periksa dengan yakin",
     "partner_with_us_button": "Jadi Rakan Kongsi Kami"
   },
+  "CTAs": {
+    "confidence": {
+      "heading": "Buy With Confidence, Avoid Regrets",
+      "highlighted": "Confidence",
+      "subheading": "Clear insights. Smart decisions. No surprises.",
+      "btn1": "Book Your Inspection",
+      "btn2": "Speak to an expert"
+    },
+    "consultation": {
+      "heading": "Having Doubts on a Car? Get a Free Consultation.",
+      "highlighted": "Free Consultation",
+      "subheading": "Get a free, no-obligation consultation to answer your questions instantly.",
+      "btn1": "Request Free Callback"
+    },
+    "secure": {
+      "heading": "See how wisedrive can secure your portfolio",
+      "highlighted": "secure",
+      "subheading": "Leverage AI-driven inspections to validate collateral accuracy and mitigate risk across your entire lending network.",
+      "btn1": "Explore Enterprise Solutions"
+    }
+  },
   "Highlights": {
     "highlight_1": {
       "title": "Dikuasakan AI",

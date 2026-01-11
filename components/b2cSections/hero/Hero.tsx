@@ -9,18 +9,18 @@ export default function Hero() {
   const t = useTranslations('B2CHero');
 
   return (
-    <section className={cn("w-full px-tight my-4")}>
+    <section className={cn('w-full px-tight my-4')}>
       <div
         className={cn(
           'relative',
           'bg-black',
           'w-full',
-          'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]', 
-          "md:max-h-auto max-h-[800px]",
+          'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+          'md:max-h-auto max-h-[800px]',
           'aspect-[9/16] md:aspect-[16/9] lg:aspect-[21/9]',
           'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
           'overflow-hidden',
-          'flex flex-col justify-end'
+          'flex flex-col justify-end',
         )}
       >
         {/* Hero Image */}
@@ -30,13 +30,13 @@ export default function Hero() {
           width={1920}
           height={1080}
           className={cn(
-            "absolute",
-            "md:bottom-0 bottom-[200px] left-0 right-0",
-            "w-full h-auto",
-            "object-cover",
-            "z-0",
+            'absolute',
+            'md:bottom-0 bottom-[200px] left-0 right-0',
+            'w-full h-auto',
+            'object-cover',
+            'z-0',
             '[mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]',
-            "md:scale-100 scale-[200%]"
+            'md:scale-100 scale-[200%]',
           )}
         />
 
@@ -45,28 +45,32 @@ export default function Hero() {
           className={cn(
             'relative z-10',
             'w-full h-full',
-            'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]', 
-            "md:max-h-auto max-h-[800px]",
+            'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+            'md:max-h-auto max-h-[800px]',
             'flex flex-col justify-between',
             'text-white',
-            'p-tight' 
+            'p-tight',
           )}
         >
           {/* Top Content Group */}
-          <div className={cn(
-            'flex lg:flex-row flex-col',
-            'justify-between',
-            'lg:items-end items-center',
-            'mb-12',
-            'gap-8',
-            'pt-14'
-          )}>
+          <div
+            className={cn(
+              'flex lg:flex-row flex-col',
+              'justify-between',
+              'lg:items-end items-center',
+              'mb-12',
+              'gap-8',
+              'pt-14',
+            )}
+          >
             {/* Left Text */}
             <div className="flex flex-col gap-4 lg:max-w-[60%] md:max-w-[95%]">
-              <h1 className={cn(
-                'text-h1 uppercase font-heading font-semibold',
-                'text-center lg:text-left'
-              )}>
+              <h1
+                className={cn(
+                  'text-h1 uppercase font-heading font-semibold',
+                  'text-center lg:text-left',
+                )}
+              >
                 {t('heading')}
               </h1>
               <p className="font-body lg:text-body-lg text-body-md text-center lg:text-left text-gray-200">
@@ -76,22 +80,22 @@ export default function Hero() {
 
             {/* Right Buttons */}
             <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:w-auto md:w-full w-fit shrink-0 lg:justify-end justify-center">
-               <AppButton
-                 variant="default"
-                 size="md"
-                 leftIcon={<Calendar className="size-5" />}
-                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
-               >
-                 {t('book_your_inspection_button')}
-               </AppButton>
-               <AppButton
-                 variant="glass"
-                 size="md"
-                 rightIcon={<ArrowRight className="size-5" />}
-                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
-               >
-                 {t('how_it_works_button')}
-               </AppButton>
+              <AppButton
+                variant="default"
+                size="md"
+                leftIcon={<Calendar className="size-5" />}
+                className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+              >
+                {t('book_your_inspection_button')}
+              </AppButton>
+              <AppButton
+                variant="glass"
+                size="md"
+                rightIcon={<ArrowRight className="size-5" />}
+                className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+              >
+                {t('how_it_works_button')}
+              </AppButton>
             </div>
           </div>
 
@@ -103,17 +107,17 @@ export default function Hero() {
               'py-4 px-6',
               'rounded-xl border border-white/10',
               'bg-white/5 backdrop-blur-md',
-              'text-center'
+              'text-center',
             )}
           >
-             <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent rounded-xl pointer-events-none" />
-             <span className="font-body font-bold text-sm md:text-base opacity-90">
-                {t('counter_text_1')}
-             </span>
-             <Counter currency="RM" amount={664002} />
-             <span className="font-body font-bold text-sm md:text-base opacity-90">
-                {t('counter_text_2')}
-             </span>
+            <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent rounded-xl pointer-events-none" />
+            <span className="font-body font-bold text-sm md:text-base opacity-90">
+              {t('counter_text_1')}
+            </span>
+            <Counter currency="RM" amount={664002} />
+            <span className="font-body font-bold text-sm md:text-base opacity-90">
+              {t('counter_text_2')}
+            </span>
           </div>
         </div>
       </div>

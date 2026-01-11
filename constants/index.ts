@@ -77,3 +77,30 @@ export const OUR_BRANDS_CARS = [
     image: '/brands/toyota.webp',
   },
 ];
+
+export const HOME_CTA_CONFIG = {
+  confidence: {
+    key: 'confidence',
+    buttons: true, // Now strictly true
+    button1Href: '/enterprise-solutions',
+    button1Variant: 'default',
+    button2Href: '/enterprise-solutions',
+    button2Variant: 'glass',
+  },
+  consultation: {
+    key: 'consultation',
+    buttons: false, // Now strictly false
+    button1Href: '/enterprise-solutions',
+    button1Variant: 'glass',
+    button1Size: 'md',
+  },
+  secure: {
+    key: 'secure',
+    buttons: false, // Now strictly false
+    button1Href: '/enterprise-solutions',
+    button1Variant: 'glass',
+    button1Size: 'md',
+    button1IconPosition: 'right',
+    invertedGradient: true,
+  },
+} as const; // <--- THIS FIXES THE ERROR
