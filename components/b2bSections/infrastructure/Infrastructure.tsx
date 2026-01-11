@@ -76,9 +76,7 @@ export const Infrastructure = () => {
 
         {/* Content Section - The Card */}
         <div className="w-full flex justify-center mt-4">
-           {/* This component now contains the Full Image + Overlapping Text Card layout.
-              It replaces the previous 2-column div structure.
-           */}
+
            <InfrastructureCard 
              title={cards[activeTab].title}
              tag={cards[activeTab].tag}
