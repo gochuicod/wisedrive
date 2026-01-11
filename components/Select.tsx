@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface SelectOption {
   label: string;
@@ -6,65 +7,57 @@ interface SelectOption {
 }
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
-  options: SelectOption[];
-  description?: string;
   label?: string;
+  options: SelectOption[];
   placeholder?: string;
+  description?: string;
+  error?: string;
 }
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ className, options, description, label, placeholder, ...props }, ref) => {
+  (
+    { className, options, label, placeholder, description, error, ...props },
+    ref,
+  ) => {
     return (
       <div className="flex flex-col items-start w-full">
-        {/* Optional Label */}
+        {/* Label */}
         {label && (
-          <label className="mb-1 font-['Poppins'] text-sm text-[#4D525C]">
+          <label className="mb-1 font-['Poppins'] text-sm font-bold text-[#4D525C]">
             {label}
           </label>
         )}
 
-        {/* Container for Select + Icon */}
+        {/* Select Wrapper */}
         <div className="relative w-full">
           <select
             ref={ref}
-            // FIX: Set default value here instead of 'selected' on option
             defaultValue=""
-            className={`
-              /* Reset default browser styles to allow custom icon */
+            className={cn(
+              `
               appearance-none
-              
-              /* Layout & Sizing */
-              w-full
-              px-4 py-2
-              
-              /* Borders & Background */
+              w-full px-4 py-2
               bg-white
-              border border-[#193CB8]
-              
-               text-sm md:text-body 
-              text-[#4D525C]
-              
-              /* Interactive States */
-              focus:outline-none 
-              focus:ring-2 
-              focus:ring-[#193CB8]/20
-              focus:border-[#122C7B]
-              
-              /* Placeholder logic (relies on required + empty value) */
+              rounded-[8px]
+              text-sm md:text-body
               invalid:text-[#99A1AF]
-              
-              ${className}
-            `}
+              focus:outline-none focus:ring-2
+            `,
+              error
+                ? 'border border-red-500 focus:ring-red-500/20'
+                : 'border border-[#193CB8] focus:ring-[#193CB8]/20 focus:border-[#122C7B]',
+              className,
+            )}
             {...props}
           >
-            {/* Placeholder Option */}
+            {/* Placeholder */}
             {placeholder && (
               <option value="" disabled hidden>
                 {placeholder}
               </option>
             )}
-            
-            {/* Map Options */}
+
+            {/* Options */}
             {options.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
@@ -72,7 +65,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </select>
 
-          {/* Custom Dropdown Icon (SVG) */}
+          {/* Dropdown Icon */}
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#193CB8]">
             <svg
               width="12"
@@ -92,28 +85,18 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           </div>
         </div>
 
-        {/* Description / Helper Text */}
-        {description && (
-          <div className="mt-1 w-full flex items-center justify-end">
-            <span
-              className="
-                font-['Inter']
-                font-normal
-                text-[12px]
-                leading-[14px]
-                text-right
-                text-[#4D525C]
-              "
-            >
-              {description}
-            </span>
-          </div>
+        {/* Error OR Description */}
+        {error ? (
+          <span className="mt-1 text-xs text-red-500">{error}</span>
+        ) : (
+          description && (
+            <span className="mt-1 text-xs text-[#4D525C]">{description}</span>
+          )
         )}
       </div>
     );
-  }
+  },
 );
 
 Select.displayName = 'Select';
-
 export default Select;

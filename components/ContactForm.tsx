@@ -1,8 +1,16 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Users } from 'lucide-react';
+
 import Input from './Input';
 import Select from './Select';
 import { AppButton } from './AppButton';
-import { Users } from 'lucide-react';
-
+import {
+  contactSchema,
+  ContactFormData,
+} from '@/lib/validators/contact.schema';
 
 const ContactForm = () => {
   const options = [
@@ -12,75 +20,68 @@ const ContactForm = () => {
     { label: 'Other', value: 'other' },
   ];
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      reset();
+      alert('Message sent successfully!');
+    } else {
+      alert('Something went wrong.');
+    }
+  };
+
   return (
-    <div 
-      className="flex flex-col w-full h-full" 
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col items-end gap-8 w-full"
     >
+      {/* Row 1 */}
+      <div className="flex flex-col md:flex-row gap-4 w-full">
+        <Input
+          label="Name"
+          placeholder="Input your full name"
+          {...register('name')}
+          error={errors.name?.message}
+        />
+        <Input
+          label="Company"
+          placeholder="Company Name"
+          {...register('company')}
+          error={errors.company?.message}
+        />
+      </div>
 
-      {/* Form Fields Container */}
-      <form className="flex flex-col items-end gap-8 w-full">
-        
-        {/* Row 1: Split Inputs */}
-        <div className="flex flex-col lg:flex-row md:flex-row items-start gap-4 w-full">
-          <div className="flex-1 w-full">
-            <Input 
-              label="Name" 
-              placeholder="Input your full name" 
-              className="w-full"
-              required
-            />
-          </div>
-          <div className="flex-1 w-full">
-            <Input 
-              label="Company" 
-              placeholder="Company Name" 
-              italicPlaceholder={true}
-              className="w-full"
-              required
-            />
-          </div>
-        </div>
+      {/* Business Type */}
+      <Select
+        label="Business Type"
+        options={options}
+        {...register('businessType')}
+        error={errors.businessType?.message}
+      />
 
-        {/* Row 2: Split Inputs */}
-        {/* <div className="flex flex-row items-start gap-4 w-full">
-         <div className="flex-1">
-            <Input 
-              label="Email" 
-              placeholder="example@email.com" 
-              className="w-full"
-              required
-            />
-          </div>
-          <div className="flex-1">
-            <Input 
-              label="Phone" 
-              placeholder="+60 123456789" 
-              className="w-full"
-              required
-            />
-          </div>
-        </div> */}
-
-        {/* Row 3: Full Width Select */}
-        <div className="w-full">
-          <Select 
-            label="Business Type" 
-            placeholder="Select a Business Type" 
-            options={options}
-            className="w-full"
-            required
-          />
-        </div>
-
-        {/* Submit Button */}
-        <AppButton
-          leftIcon={<Users size={24}/>}
-          className="text-body text-sm lg:text-base w-full md:w-fit"
-        >
-          Contact Enterprise Sales
-        </AppButton>
-      </form>
-    </div>
+      <AppButton
+        type="submit"
+        leftIcon={<Users size={20} />}
+        disabled={isSubmitting}
+        className="w-full md:w-fit"
+      >
+        Contact Enterprise Sales
+      </AppButton>
+    </form>
   );
 };
 

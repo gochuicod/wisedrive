@@ -1,13 +1,25 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  description?: string;
   label?: string;
+  description?: string;
   italicPlaceholder?: boolean;
+  error?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, description, label, italicPlaceholder = false, ...props }, ref) => {
+  (
+    {
+      className,
+      description,
+      label,
+      italicPlaceholder = false,
+      error,
+      ...props
+    },
+    ref,
+  ) => {
     return (
       <div className="flex flex-col items-start w-full">
         {label && (
@@ -16,61 +28,38 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
 
-        {/* The Input Field */}
         <input
           ref={ref}
-          className={`
-            /* Layout & Sizing */
-            flex flex-col justify-center items-center
-            w-full 
-            px-4 py-2
-            
-            /* Borders & Background */
+          className={cn(
+            `
+            w-full px-4 py-2
             bg-white
-            border border-[#193CB8]
-            rounded-[8px]
-            
-            text-sm md:text-body 
-            text-[#4D525C]
-            
-            /* Placeholder Styling */
+            border rounded-[8px]
+            text-sm md:text-body text-[#4D525C]
             placeholder:text-[#99A1AF]
-            ${italicPlaceholder ? 'placeholder:italic' : 'placeholder:font-normal'}
-            
-            /* Interactive States */
-            focus:outline-none 
-            focus:ring-2 
-            focus:ring-[#193CB8]/20
-            focus:border-[#122C7B]
-            
-            /* Merge any custom classes passed via props */
-            ${className}
-          `}
+            ${italicPlaceholder ? 'placeholder:italic' : ''}
+            focus:outline-none focus:ring-2
+          `,
+            error
+              ? 'border-red-500 focus:ring-red-500/20'
+              : 'border-[#193CB8] focus:ring-[#193CB8]/20 focus:border-[#122C7B]',
+            className,
+          )}
           {...props}
         />
 
-        {/* Description / Helper Text */}
-        {description && (
-          <div className="mt-1 w-full flex items-center justify-end">
-            <span
-              className="
-                font-['Inter']
-                font-normal
-                text-[12px]
-                leading-[14px]
-                text-right
-                text-[#4D525C]
-              "
-            >
-              {description}
-            </span>
-          </div>
+        {/* Error OR description */}
+        {error ? (
+          <span className="mt-1 text-xs text-red-500">{error}</span>
+        ) : (
+          description && (
+            <span className="mt-1 text-xs text-[#4D525C]">{description}</span>
+          )
         )}
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = 'Input';
-
 export default Input;
