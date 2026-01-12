@@ -16,7 +16,6 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
   const t = useTranslations("StickyBanner");
   const bannerData = getStickyBannerData(t);
   const [isVisible, setIsVisible] = useState(true);
-  const t = useTranslations("StickyBanner");
 
   if (!isVisible) return null;
 
