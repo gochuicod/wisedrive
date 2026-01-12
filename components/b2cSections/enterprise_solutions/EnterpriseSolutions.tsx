@@ -108,7 +108,7 @@ export default function EnterpriseSolutions() {
 
       {/* Highlight Image */}
       <Image
-        src="/enterprise_solutions/highlight_image.webp"
+        src="/enterprise_solutions/highlight-image-new.webp"
         alt="Enterprise solutions"
         width={1920}
         height={1080}
