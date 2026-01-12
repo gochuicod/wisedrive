@@ -133,6 +133,42 @@
     "heading_highlighted_word": "AI technology",
     "description": "Our inspection is powered by the expertise of our professional inspectors backed by AI technology built from over one million data points. Together, Wisedrive gives you a report you can completely trust"
   },
+  "Infrastructure": {
+    "heading": "Infrastructure for the Automotive Ecosystem",
+    "description": "Secure your assets and streamline operations with data infrastructure tailored to your sector.",
+    "cards": {
+      "card_1": {
+        "title": "Banks & Financiers",
+        "tag": "THE WISEDRIVE ADVANTAGE",
+        "description": "Secure your Loan-to-Value (LTV) ratios with hard technical data. We verify the true mileage and mechanical condition of collateral before approval. By detecting potential mechanical failures early, we reduce the risk of assets becoming Non-Performing Loans (NPLs) due to sudden depreciation or abandonment by the borrower.",
+        "image": "/infrastructure/banks.webp"
+      },
+      "card_2": {
+        "title": "Insurance Companies",
+        "tag": "THE WISEDRIVE ADVANTAGE",
+        "description": "Create a digital timestamp for asset condition. Our pre-inception audit documents every scratch, dent, and glass chip before policy issuance. This establishes an indisputable baseline that automatically filters out pre-existing damage claims and significantly lowers your loss ratio on used vehicle policies.",
+        "image": "/infrastructure/insurance-img.webp"
+      },
+      "card_3": {
+        "title": "Dealership Networks & OEMs",
+        "tag": "THE WISEDRIVE ADVANTAGE",
+        "description": "We act as your technical firewall. Our detailed mechanical reports expose hidden accident history and engine faults before you trade in. For OEMs, our \"Wisedrive Certified\" protocol provides the standardization required to launch and scale a Certified Pre-Owned (CPO) program across a fragmented dealer network.",
+        "image": "/infrastructure/dealership-img.webp"
+      },
+      "card_4": {
+        "title": "Marketplaces & Platforms",
+        "tag": "THE WISEDRIVE ADVANTAGE",
+        "description": "We bridge the trust gap in remote transactions. By acting as a neutral, third-party validator with standardized digital reports, we enable high-value transactions to occur entirely online. This increases Gross Merchandise Value (GMV) by giving remote buyers the technical confidence to purchase without a physical viewing.",
+        "image": "/infrastructure/marketplace-img.webp"
+      }
+    },
+    "button_labels": {
+      "btn_1": "Banks and Financiers",
+      "btn_2": "Insurance Companies",
+      "btn_3": "Dealership Networks & OEMs",
+      "btn_4": "Marketplaces & Platforms"
+    }
+  },
   "FAQSection": {
     "badge_text": "FAQs",
     "heading": "Got Questions about our inspection?",

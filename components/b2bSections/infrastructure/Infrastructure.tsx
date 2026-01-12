@@ -1,12 +1,40 @@
 "use client";
 
-import { use, useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Coins, Aperture, Workflow, Store } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { AppButton } from "@/components/AppButton";
 import { InfrastructureCard } from "@/components/InfrastructureCard";
 
+// Transform infrastructure cards data from i18n
+const transformCardsData = (cards: Record<string, { title: string; tag: string; description: string; image: string }>) => {
+  return Object.entries(cards).map(([key, card]) => ({
+    title: card.title,
+    tag: card.tag,
+    description: card.description,
+    image: card.image,
+  }));
+};
+
+// Transform button labels from i18n
+const transformButtonLabels = (labels: Record<string, string>) => {
+  return Object.entries(labels).map(([key, label]) => label);
+};
+
+// Get icon for button based on index
+const getButtonIcon = (index: number) => {
+  const icons = [
+    <Coins size={20} key="coins" />,
+    <Aperture size={20} key="aperture" />,
+    <Workflow size={20} key="workflow" />,
+    <Store size={20} key="store" />,
+  ];
+  return icons[index] || icons[0];
+};
+
 export const Infrastructure = () => {
+  const t = useTranslations();
   const [activeTab, setActiveTab] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -20,39 +48,21 @@ export const Infrastructure = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const cards = [
-    {
-      title: "Banks & Financiers",
-      tag: "THE WISEDRIVE ADVANTAGE",
-      description: "Secure your Loan-to-Value (LTV) ratios with hard technical data. We verify the true mileage and mechanical condition of collateral before approval. By detecting potential mechanical failures early, we reduce the risk of assets becoming Non-Performing Loans (NPLs) due to sudden depreciation or abandonment by the borrower.",
-      image: "/infrastructure/infrastructure1.webp",
-    },
-    {
-      title: "Insurance Companies",
-      tag: "THE WISEDRIVE ADVANTAGE",
-      description: "Reduce claim fraud and optimize premium calculations with verified vehicle data. Our technology detects odometer tampering and hidden mechanical issues before claims are filed, protecting your bottom line.",
-      image: "/infrastructure/infrastructure2.webp",
-    },
-    {
-      title: "Dealership Networks & OEMs",
-      tag: "THE WISEDRIVE ADVANTAGE",
-      description: "Enhance used vehicle inventory management and warranty claims processing. Verify true vehicle condition and maintenance history to improve customer satisfaction and reduce warranty costs.",
-      image: "/infrastructure/infrastructure3.webp",
-    },
-    {
-      title: "Marketplaces & Platforms",
-      tag: "THE WISEDRIVE ADVANTAGE",
-      description: "Build trust with buyers through transparent vehicle reports. Our technical data verification increases conversion rates and reduces post-purchase disputes on your platform.",
-      image: "/infrastructure/infrastructure4.webp",
-    },
-  ];
+  // Get data from translations
+  const infrastructureData = useMemo(() => {
+    const rawData = t.raw("Infrastructure");
+    return rawData;
+  }, [t]);
 
-  const buttons = [
-    { label: "Banks and Financiers", icon: <Coins size={20} /> },
-    { label: "Insurance Companies", icon: <Aperture size={20} /> },
-    { label: "Dealership Networks & OEMs", icon: <Workflow size={20} /> },
-    { label: "Marketplaces & Platforms", icon: <Store size={20} /> },
-  ];
+  const cards = useMemo(() => transformCardsData(infrastructureData.cards), [infrastructureData]);
+
+  const buttons = useMemo(() => {
+    const labels = transformButtonLabels(infrastructureData.button_labels);
+    return labels.map((label, index) => ({
+      label: label,
+      icon: getButtonIcon(index),
+    }));
+  }, [infrastructureData]);
   return (
     <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-hidden">
       {/* Outer container */}
@@ -62,11 +72,11 @@ export const Infrastructure = () => {
         <div className="w-full md:max-w-[686px] lg:md:max-w-[1248px] flex flex-col gap-8 items-center justify-center">          
           <div className="flex-1 flex flex-col items-center gap-2">
             <HighlightedHeading
-              text="Infrastructure for the Automotive Ecosystem"
+              text={infrastructureData.heading}
               className="font-heading text-center"
             />
             <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px] text-center">
-              Secure your assets and streamline operations with data infrastructure tailored to your sector.
+              {infrastructureData.description}
             </p>
           </div>
           
