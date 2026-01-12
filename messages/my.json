@@ -12,6 +12,22 @@
     "inspect_with_confidence_button": "Periksa dengan yakin",
     "partner_with_us_button": "Jadi Rakan Kongsi Kami"
   },
+  "PartnershipModels": {
+    "heading": "Model Perkongsian",
+    "subheading": "Model kerjasama bertaraf perusahaan yang direka untuk berskala besar.",
+    "cards": {
+      "card_1": {
+        "heading": "Lesen Pukal / Langganan Perusahaan",
+        "subheading": "Terbaik untuk: Bank, Syarikat Insurans, OEM, dan Kumpulan Pengedar Besar",
+        "description": "Pengaturan bulanan berkontrak yang direka untuk kestabilan volum tinggi. Termasuk harga bertingkat mengikut volum untuk pemeriksaan, pengurusan akaun khusus, dan masa pusingan yang disokong SLA."
+      },
+      "card_2": {
+        "heading": "Integrasi API & Label Putih",
+        "subheading": "Terbaik untuk: Aplikasi Super, Fintech, dan Pasaran Utama",
+        "description": "Model integrasi fleksibel yang menawarkan akses API dan solusi label putih. Ideal untuk perniagaan yang ingin menyepadukan perkhidmatan kami dengan lancar ke dalam platform mereka dengan penjenamaan dan pengalaman pengguna yang boleh disesuaikan."
+      }
+    }
+  },
   "CTAs": {
     "confidence": {
       "heading": "Beli Dengan Yakin, Elakkan Penyesalan",

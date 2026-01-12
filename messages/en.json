@@ -12,6 +12,22 @@
     "inspect_with_confidence_button": "Inspect with confidence",
     "partner_with_us_button": "Partner with us"
   },
+  "PartnershipModels": {
+    "heading": "Partnership Models",
+    "subheading": "Enterprise-grade engagement models designed for scale.",
+    "cards": {
+      "card_1": {
+        "heading": "Volume License / Enterprise Subscription",
+        "subheading": "Best for: Banks, Insurers, OEMs, and Large Dealer Groups",
+        "description": "A contracted monthly arrangement designed for high-volume stability. Includes volume-tiered pricing for inspections, dedicated account management, and SLA-backed turnaround times."
+      },
+      "card_2": {
+        "heading": "API & White Label Integration",
+        "subheading": "Best for: Superapps, Fintechs, and Major Marketplaces",
+        "description": "A flexible integration model offering API access and white-label solutions. Ideal for businesses seeking to embed our services seamlessly into their platforms with customizable branding and user experience."
+      }
+    }
+  },
   "CTAs": {
     "confidence": {
       "heading": "Buy With Confidence, Avoid Regrets",
