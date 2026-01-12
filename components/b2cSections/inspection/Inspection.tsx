@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { Calendar, MessageSquare } from 'lucide-react';
+import { Calendar, MessageSquare, Download } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Parallax } from '@/components/Parallax';
@@ -54,14 +54,14 @@ export default function Inspection() {
           />
         </div>
         {/* Bottom part */}
-        <div className={cn('flex md:flex-row flex-col', 'px-4', 'gap-4')}>
+        <div className={cn('flex md:flex-row flex-col', 'px-0 md:px-4', 'gap-4')}>
           {/* left part */}
           <div className={cn('flex flex-col', 'md:w-[50%] w-full', 'gap-4')}>
             <HighlightedHeading
               text={t('heading')}
               highlight={t('heading_highlighted_word')}
               className={cn(
-                'lg:w-[60%] md:w-[70%] w-full',
+                'md:max-w-[350px] w-full',
                 'md:text-start text-center font-heading',
               )}
             />
@@ -77,9 +77,8 @@ export default function Inspection() {
             <div
               className={cn(
                 'flex',
-                'lg:flex-row flex-col',
-                'w-fit',
-                'gap-4',
+                'flex-col',
+                'gap-2',
                 'md:mx-0 mx-auto',
               )}
             >
@@ -91,14 +90,27 @@ export default function Inspection() {
               >
                 {t('book_your_inspection_button')}
               </AppButton>
-              <AppButton
-                href="https://wa.me/60122559610"
-                variant="tertiary"
-                size="sm"
-                leftIcon={<MessageSquare className="size-4" />}
-              >
-                {t('speak_to_an_expert_button')}
-              </AppButton>
+              <div className="flex gap-2">
+                <AppButton
+                  href="/report/WiseDrive_Sample_Report.pdf"
+                  download
+                  variant="tertiary"
+                  className='w-full'
+                  size="sm"
+                  leftIcon={<Download className="size-4" />}
+                >
+                  {t('sample_report_button')}
+                </AppButton>
+                <AppButton
+                  href="https://wa.me/60122559610"
+                  variant="tertiary"
+                  className='w-full'
+                  size="sm"
+                  leftIcon={<MessageSquare className="size-4" />}
+                >
+                  {t('speak_to_an_expert_button')}
+                </AppButton>
+              </div>
             </div>
           </div>
           {/* right part */}
