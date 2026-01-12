@@ -23,13 +23,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={cn('w-full px-tight my-4')} id="overview">
+    <section className={cn('w-full px-tight py-4 flex justify-center items-center')} id="overview">
       <div
         className={cn(
           'relative',
           'bg-[#DBEAFE]',
           'w-full',
-          'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
+          'lg:min-h-[848px] lg:max-w-[1920px] md:min-h-[584px] min-h-[600px]',
           'md:max-h-auto max-h-[800px]',
           'aspect-[9/16] md:aspect-[16/9] lg:aspect-[21/9]',
           'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
@@ -73,7 +73,7 @@ export default function Hero() {
             'relative z-10',
             'w-full h-full',
             'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
-            'md:max-h-auto max-w-[1284px]',
+            'md:max-h-auto w-full lg:max-w-[1284px]',
             'flex flex-col justify-between items-center',
             'text-header',
             'p-tight',
