@@ -146,7 +146,7 @@ export default function WhyChooseUsCarousel({
                   className={cn(
                     'relative shadow-[0px_1px_24px_-1px_rgba(0,0,0,0.01)] backdrop-blur-[2px]',
                     'lg:max-w-[591px] min-h-[211px]',
-                    'p-8 flex flex-col rounded-2xl',
+                    'gap-2 md:p-8 p-4 flex flex-col rounded-2xl',
                   )}
                   style={{ background: 'rgba(255, 255, 255, 0.01)' }}
                 >
@@ -157,7 +157,7 @@ export default function WhyChooseUsCarousel({
                     {slide.panelHeading}
                   </span>
 
-                  <span className="mt-6 mb-4 lg:text-body-lg text-body-md lg:text-start text-center">
+                  <span className="md:mt-6 md:mb-4 lg:text-body-lg text-body-md lg:text-start text-center">
                     {slide.panelText}
                   </span>
 
