@@ -95,7 +95,7 @@ export default function Navbar() {
         className="relative block w-32 lg:w-40 shrink-0"
       >
         <Image
-          src="/logo_wisedrive.png"
+          src="/wd_logo.webp"
           alt="Wisedrive"
           width={1920}
           height={1080}

@@ -6,11 +6,11 @@ import { useTranslations } from 'next-intl';
 
 const WiseDriveAdvantage = () => (
   <Image
-    src="/advantage/wd-advantage.webp"
+    src="/advantage/wd-advantage-new.webp"
     alt="WiseDrive Advantage Image"
-    width={716}
-    height={490}
-    className="w-full h-full"
+    width={1920}
+    height={1020}
+    className="w-full h-full object-contain md:max-w-[600px] lg:max-w-[716px]"
   />
 );
 
@@ -19,11 +19,11 @@ export const FAQSection = () => {
 
   return (
     <section
-      className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center"
+      className="w-full flex px-tight py-relaxed mx-auto items-center justify-center"
       id="about"
     >
       {/* Outer container */}
-      <div className="w-full max-w-[1248px] flex flex-col items-center justify-center gap-6 px-4">
+      <div className="w-full lg:max-w-[1248px] md:max-w-[720px] flex flex-col items-center justify-center gap-6 px-4">
         {/* Heading */}
         <div className="w-full flex flex-col lg:flex-row gap-8 items-center ">
           {/* Left Wrapper - Badge & Heading */}
@@ -42,7 +42,7 @@ export const FAQSection = () => {
           </div>
 
           {/* Right Wrapper - Image */}
-          <div className="flex-1 flex items-center flex-grow w-full h-full">
+          <div className="flex-1 flex items-center justify-center flex-grow w-full h-full">
             <WiseDriveAdvantage />
           </div>
         </div>

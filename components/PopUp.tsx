@@ -72,7 +72,7 @@ export const PopUp: React.FC<PopUpProps> = ({
             flex items-center justify-center
             
             /* Styling */
-            rounded-lg hover:bg-gray-50 transition-colors z-20
+            rounded-lg transition-colors z-20
         `}
       >
         {/* Color #717680 from CSS */}
