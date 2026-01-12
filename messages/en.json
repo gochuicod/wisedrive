@@ -352,6 +352,54 @@
       }
     }
   },
+  "Contact": {
+    "heading": "Let's Engineer Your Asset Risk Solution.",
+    "subheading": "Every enterprise workflow involves different risk parameters. Tell us your requirements, and we will demonstrate how our data layer integrates to protect your bottom line.",
+    "image": {
+      "src": "/contact/contact.webp",
+      "alt": "Contact Image"
+    },
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Input your full name"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Company Name"
+        },
+        "businessType": {
+          "label": "Business Type",
+          "options": [
+            {
+              "label": "Risk Assessment",
+              "value": "risk"
+            },
+            {
+              "label": "Data Integration",
+              "value": "data"
+            },
+            {
+              "label": "Asset Protection",
+              "value": "asset"
+            },
+            {
+              "label": "Other",
+              "value": "other"
+            }
+          ]
+        }
+      },
+      "submitButton": {
+        "label": "Contact Enterprise Sales"
+      },
+      "messages": {
+        "success": "Message sent successfully!",
+        "error": "Something went wrong."
+      }
+    }
+  },
   "OurBrands": {
     "badge_text": "Our Brands",
     "heading": "Expertise Across Every Make",
