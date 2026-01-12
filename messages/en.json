@@ -17,6 +17,17 @@
     "ctaLabel": "Go to Enterprise Solutions",
     "ctaLink": "#enterprise-solutions"
   },
+  "PopUp": {
+    "title": "Scale your portfolio with data you can trust",
+    "description": "Wisedrive secures your portfolio with AI-augmented technical inspections, real-time ECU analysis, and fraud detection algorithms-integrated directly into your enterprise workflow.",
+    "features": [
+      "Banks & Financiers",
+      "Insurance Companies",
+      "Dealership Networks & OEMs",
+      "Marketplaces & Platforms"
+    ],
+    "ctaLabel": "Partner with Us"
+  },
   "PartnershipModels": {
     "heading": "Partnership Models",
     "subheading": "Enterprise-grade engagement models designed for scale.",

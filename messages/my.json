@@ -17,6 +17,17 @@
     "ctaLabel": "Pergi ke Solusi Perusahaan",
     "ctaLink": "#enterprise-solutions"
   },
+  "PopUp": {
+    "title": "Skala portfolio anda dengan data yang boleh dipercayai",
+    "description": "Wisedrive melindungi portfolio anda dengan pemeriksaan teknikal yang diperkasa AI, analisis ECU masa nyata, dan algoritma pengesanan penipuan—diintegrasikan terus ke dalam aliran kerja perusahaan anda.",
+    "features": [
+      "Bank & Pembiaya",
+      "Syarikat Insurans",
+      "Rangkaian Pengedar & OEM",
+      "Pasaran & Platform"
+    ],
+    "ctaLabel": "Bekerjasama Dengan Kami"
+  },
   "PartnershipModels": {
     "heading": "Model Perkongsian",
     "subheading": "Model kerjasama bertaraf perusahaan yang direka untuk berskala besar.",

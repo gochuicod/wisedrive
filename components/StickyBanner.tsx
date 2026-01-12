@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { ArrowRight, X } from "lucide-react";
+import { getStickyBannerData } from "@/constants";
+import { AppButton } from "@/components/AppButton";
 
 interface StickyBannerProps {
   className?: string;
@@ -11,6 +13,8 @@ interface StickyBannerProps {
 export const StickyBanner: React.FC<StickyBannerProps> = ({
   className = "",
 }) => {
+  const t = useTranslations("StickyBanner");
+  const bannerData = getStickyBannerData(t);
   const [isVisible, setIsVisible] = useState(true);
   const t = useTranslations("StickyBanner");
 
@@ -42,37 +46,18 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
         
         {/* Main Text */}
         <span className="font-poppins text-[14px] leading-[17px] font-normal text-white">
-          {t("text")}
+          {bannerData.text}
         </span>
 
         {/* CTA Button */}
-        <a
-          href={t("ctaLink")}
-          className={`
-            /* Box Model */
-            box-border h-[32px] px-4 py-2 gap-2
-            
-            /* Layout */
-            flex flex-row items-center justify-center
-            
-            /* Styling */
-            border border-white rounded-[4px]
-            
-            /* Typography */
-            font-poppins text-[16px] leading-[19px] font-normal text-white
-            
-            /* Interaction */
-            hover:bg-white hover:text-[#0D2059] transition-colors group
-          `}
+        <AppButton
+          href={bannerData.ctaLink}
+          variant="outline"
+          size="sm"
+          rightIcon={<ArrowRight size={16} />}
         >
-          <span>{t("ctaLabel")}</span>
-          
-          {/* Right Arrow Icon */}
-          <ArrowRight 
-            size={16} 
-            className="stroke-white group-hover:stroke-[#0D2059] transition-colors ml-2" 
-          />
-        </a>
+          {bannerData.ctaLabel}
+        </AppButton>
       </div>
 
       {/* --- Close Button (Absolute Positioned) --- */}
@@ -91,8 +76,8 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
           rounded hover:bg-white/10 transition-colors
         `}
       >
-        <X size={17} className="text-white" />
+        <X size={20} className="text-white" />
       </button>
     </div>
   );
-};
+}
