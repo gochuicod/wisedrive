@@ -23,8 +23,8 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
     <div
       className={`
         /* Layout & Positioning */
-        relative w-full z-50
-        flex flex-row justify-center items-center
+         relative w-full z-50
+        hidden md:flex flex-row justify-center items-center
         
         /* Padding & Gap */
         px-4 py-4 md:px-12 md:py-0
