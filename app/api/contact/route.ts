@@ -14,13 +14,16 @@ export async function POST(req: Request) {
     // Admin Email
     await resend.emails.send({
       from: 'Enterprise <no-reply@yourdomain.com>',
-      to: ['admin@yourdomain.com'],
+      to: ['zeke@infigroup.co'],
       subject: 'New Enterprise Contact Request',
       html: `
         <h2>New Contact Request</h2>
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Company:</strong> ${data.company}</p>
         <p><strong>Business Type:</strong> ${data.businessType}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Message:</strong> ${data.message}</p>
+
       `,
     });
 

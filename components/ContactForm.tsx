@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Check } from 'lucide-react';
 
 import Input from './Input';
 import Select from './Select';
@@ -12,10 +14,12 @@ import {
   contactSchema,
   ContactFormData,
 } from '@/lib/validators/contact.schema';
-import { email } from 'zod';
+import { email } from 'zod';  
 
 const ContactForm = () => {
   const t = useTranslations('Contact.form');
+  const [successMessage, setSuccessMessage] = useState(false);
+
 
   // Get form field data from translations
   const formFields = {
@@ -63,7 +67,8 @@ const ContactForm = () => {
 
     if (res.ok) {
       reset();
-      alert(t('messages.success'));
+      setSuccessMessage(true);
+      setTimeout(() => setSuccessMessage(false), 5000);
     } else {
       alert(t('messages.error'));
     }
@@ -126,11 +131,11 @@ const ContactForm = () => {
 
       <AppButton
         type="submit"
-        leftIcon={<Users size={20} />}
+        leftIcon={successMessage ? <Check size={20} /> : <Users size={20} />}
         disabled={isSubmitting}
-        className="w-full md:w-fit md:mt-8 mt-4"
+        variant={successMessage ? 'success' : 'default'}
       >
-        {t('submitButton.label')}
+        {successMessage ? t('messages.success') : t('submitButton.label')}
       </AppButton>
     </form>
   );

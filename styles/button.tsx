@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@/i18n/routing';
 
 // --- Styling Types ---
-export type ButtonVariant = 'default' | 'glass' | 'secondary' | 'tertiary' | 'outline';
+export type ButtonVariant = 'default' | 'glass' | 'secondary' | 'tertiary' | 'outline' | 'success';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -27,6 +27,8 @@ const variants: Record<ButtonVariant, string> = {
     'bg-transparent border border-primary-semantic text-primary-semantic rounded hover:bg-primary/10 transition-colors cursor-pointer',
   outline:
     'border border-white text-white bg-transparent hover:bg-white hover:text-[#0D2059] transition-colors',
+  success:
+    'bg-green-500 text-white hover:shadow-lg hover:brightness-110'
 };
 
 const sizes: Record<ButtonSize, string> = {
