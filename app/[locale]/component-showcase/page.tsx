@@ -11,6 +11,7 @@ import { ReviewCard } from '@/components/ReviewCard';
 import { StepCard } from '@/components/StepCard';
 import { FeatureStat } from '@/components/FeatureStat';
 import { ModelCard } from '@/components/ModelCard';
+import { PopUp } from '@/components/PopUp';
 
 import Image from 'next/image';
 
@@ -530,6 +531,30 @@ const ComponentShowcase = () => {
 
               />
           </div>
+      </div>
+
+      {/* =========================================
+          SECTION 10: POPUP BANNER
+      ========================================= */}
+      
+      <div className="mb-12 p-8 bg-white rounded-xl shadow-sm border border-gray-200">
+        <h2 className="text-xl font-bold mb-10 text-gray-700 border-b pb-2">PopUp Banner</h2>
+        
+        <div className="flex flex-wrap items-center justify-center gap-12 bg-gray-50 p-10 rounded-lg">
+          <PopUp 
+            title="Premium Check"
+            description="Get a detailed analysis of your vehicle with our advanced inspection system."
+            features={[
+              "Banks & Financiers",
+              "Insurance Companies",
+              "Dealership Networks & OEMs",
+              "Marketplaces & Platforms"
+            ]}
+            ctaLabel="Partner With Us"
+            onCtaClick={() => alert('PopUp CTA Clicked!')}
+            imageSrc="/icons/componentIcons/car-check.svg"
+          />
+        </div>
       </div>
     </div>
   );
