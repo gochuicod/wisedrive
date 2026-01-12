@@ -135,6 +135,7 @@ export default function Counter({
         className={digitClasses}
         style={{
           fontVariantNumeric: 'tabular-nums',
+          letterSpacing: '0.55em',
         }}
       />
     </div>
