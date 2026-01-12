@@ -15,7 +15,7 @@
   "StickyBanner": {
     "text": "Adakah anda seorang Pengedar, Penanggung Insurans, atau Pembiaya? Lihat bagaimana Wisedrive melindungi portfolio anda.",
     "ctaLabel": "Pergi ke Solusi Perusahaan",
-    "ctaLink": "#enterprise-solutions"
+    "ctaLink": "/enterprise-solutions"
   },
   "PopUp": {
     "title": "Skala portfolio anda dengan data yang boleh dipercayai",
