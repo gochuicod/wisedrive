@@ -2,35 +2,30 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { AppButton } from "./AppButton";
 import { X, ArrowUpRight } from "lucide-react";
+import { AppButton } from "./AppButton";
 import { HighlightedHeading } from "./HighlightedHeading";
+import { getPopUpData } from "@/constants";
+import { useTranslations } from "next-intl";
 
 interface PopUpProps {
-  title?: string;
-  description?: string;
-  features?: string[];
-  ctaLabel?: string;
   onClose?: () => void;
   onCtaClick?: () => void;
   imageSrc?: string;
+  ctaLink?: string;
   className?: string;
 }
 
 export const PopUp: React.FC<PopUpProps> = ({
-  description = "Detailed description text goes here. Explain the value proposition clearly to the user.",
-  features = [
-    "Feature Item One",
-    "Feature Item Two",
-    "Feature Item Three",
-    "Feature Item Four",
-  ],
-  ctaLabel = "Get Started",
   onClose,
   onCtaClick,
-  imageSrc = "/icons/componentIcons/car-icon.svg", 
+  imageSrc = "/icons/componentIcons/car-icon.svg",
+  ctaLink = "#",
   className = "",
 }) => {
+  const t = useTranslations("PopUp");
+  const popUpData = getPopUpData(t);
+  const { title, description, features, ctaLabel } = popUpData;
   const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
@@ -43,89 +38,100 @@ export const PopUp: React.FC<PopUpProps> = ({
   return (
     <div
       className={`
-        /* Layout & Dimensions */
-        relative flex flex-col items-center w-full
-        md:max-w-[280px] h-auto min-h-[509px]
-        p-4
+        /* Layout & Positioning (Fixed to screen bottom-left as per standard icky banner behavior) */
+        fixed bottom-8 left-4 md:left-12 xl:left-20 z-50
         
-        /* Styling */
+        /* Dimensions from CSS - full width on mobile, fixed on tablet+ */
+        w-[calc(100%-32px)] md:w-[315px]
+        
+        /* Styling (Card) */
         bg-white
-        rounded-2xl
+        rounded-[40px]
         shadow-[0px_4px_25px_rgba(44,87,241,0.3)]
         
-        /* Isolation */
-        z-50
+        /* Box Model */
+        flex flex-col items-center p-4
+        
+        /* Animation/Isolation */
+        isolate
         ${className}
       `}
     >
       {/* --- Close Button --- */}
       <button
         onClick={handleClose}
-        className="absolute right-[2px] top-[1px] w-[44px] h-[44px] flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors z-10"
         aria-label="Close"
+        className={`
+            /* Absolute Positioning from CSS */
+            absolute right-[2px] top-[1px]
+            
+            /* Sizing */
+            w-[44px] h-[44px]
+            
+            /* Layout */
+            flex items-center justify-center
+            
+            /* Styling */
+            rounded-lg hover:bg-gray-50 transition-colors z-20
+        `}
       >
+        {/* Color #717680 from CSS */}
         <X size={24} color="#717680" strokeWidth={2} />
       </button>
 
-      {/* --- Main Content Wrapper --- */}
-      <div className="flex flex-col items-center w-[248px] py-6 gap-0 z-0">
+      {/* --- Content Wrapper --- */}
+      <div className="flex flex-col items-center w-[283px] pt-2 pb-0 relative z-10">
         
-        {/* Image/Icon Section */}
-        <div className="relative w-[64px] h-[60px] shrink-0 mb-4">
-           {/* Using a placeholder div for the specific 'bg_removal' image in your CSS.
-             Replace 'src' with your actual asset.
-           */}
-           <div className="w-full h-full flex items-center justify-center">
-             <Image 
-               src={imageSrc} 
-               alt="Icon" 
-               width={64} 
-               height={60} 
-               className="object-contain"
-             />
-           </div>
+        {/* --- Image Section --- */}
+        <div className="relative flex-none mb-0">
+           <Image 
+             src={imageSrc} 
+             alt="Icon" 
+             width={1920} 
+             height={1080} 
+             className="object-cover w-[130px] h-[58px]"
+           />
         </div>
 
-        {/* Text & Features Wrapper */}
-        <div className="flex flex-col items-center gap-4 w-full">
-              <HighlightedHeading
-                text="Scale your portfolio with data you can trust"
-                className="font-heading text-base text-center md:max-w-none lg:max-w-none"
-              />
+        {/* --- Text & Features --- */}
+        <div className="flex flex-col items-center gap-2 w-full text-center mt-2">
+            
+            {/* Heading */}
+            <HighlightedHeading
+              text={title}
+              className="font-heading text-h5 text-center"
+            />
 
-          {/* Feature Pills List */}
-          <div className="flex flex-col items-center gap-2">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center bg-[#E9EEFC] rounded-lg py-2 px-2 w-fit"
-              >
-                <span className="text-body">
-                  {feature}
-                </span>
-              </div>
-            ))}
-          </div>
+            {/* Feature Pills (Recreating the wrapped layout) */}
+            <div className="flex flex-wrap justify-center content-center gap-1 w-full my-1">
+                {features.map((feature: string, index: number) => (
+                    <div 
+                        key={index} 
+                        className="flex flex-row justify-center items-center px-2 py-1 bg-[#E9EEFC] rounded-[4px]"
+                    >
+                        <span className="font-poppins font-normal text-[12px] leading-[16px] text-center text-[#364153]">
+                            {feature}
+                        </span>
+                    </div>
+                ))}
+            </div>
 
-          {/* Description Text */}
-          <p className="text-body text-center items-center justify-center">
-            {description}
-          </p>
-
+            {/* Description Text (Poppins Caption) */}
+            <p className="font-poppins font-normal text-[12px] leading-[16px] text-[#364153] px-2 mb-4 h-auto min-h-[32px] flex items-center justify-center">
+                {description}
+            </p>
         </div>
+
+        {/* --- CTA Button --- */}
+        <AppButton
+          onClick={onCtaClick}
+          variant="default"
+          size="sm"
+          rightIcon={<ArrowUpRight size={16} />}
+        >
+          {ctaLabel}
+        </AppButton>
       </div>
-
-      {/* --- CTA Button --- */}
-      <AppButton
-        onClick={onCtaClick}
-        variant="default"
-        size="sm"
-        rightIcon={<ArrowUpRight size={16} />}
-      >
-        {ctaLabel}
-      </AppButton>
     </div>
   );
 };
-
-// --- Icons (Using lucide-react) are now imported at the top ---

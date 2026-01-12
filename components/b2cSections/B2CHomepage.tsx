@@ -13,12 +13,10 @@ import EnterpriseSolutions from '@/components/b2cSections/enterprise_solutions/E
 import WhyChooseUs from '@/components/b2cSections/why_choose_us/WhyChooseUs';
 import CTA from '@/components/CTA';
 import { useHomeCTAs } from '@/hooks/useHomeCTAs';
-import { useFixedPopUp } from '@/hooks/useFixedPopUp';
 import { FixedPopUp } from '@/components/FixedPopUp';
 
 export default function B2CHomepage() {
   const ctas = useHomeCTAs();
-  const popUp = useFixedPopUp();
 
   return (
     <div className="min-h-screen overflow-hidden">
@@ -36,7 +34,7 @@ export default function B2CHomepage() {
       <FAQSection />
       <Reviews />
       <CTA {...ctas.secure} />
-      <FixedPopUp {...popUp.partner} />
+      <FixedPopUp />
     </div>
   );
 }

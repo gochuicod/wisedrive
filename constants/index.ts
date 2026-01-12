@@ -125,6 +125,12 @@ export const HOME_CTA_CONFIG = {
   },
 } as const;
 
+export const getStickyBannerData = (t: any) => ({
+  text: t('text'),
+  ctaLabel: t('ctaLabel'),
+  ctaLink: t('ctaLink'),
+});
+
 export const getModelsData = (t: any) => [
   {
     id: 1,
@@ -142,6 +148,13 @@ export const getModelsData = (t: any) => [
     content: t('cards.card_2.description'),
   },
 ];
+
+export const getPopUpData = (t: any) => ({
+  title: t('title'),
+  description: t('description'),
+  features: t.raw('features'),
+  ctaLabel: t('ctaLabel'),
+});
 
 export const cards = [
   {
