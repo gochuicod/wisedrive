@@ -11,7 +11,6 @@ export interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   isLoading?: boolean;
   href?: string;
   target?: string; // Added to allow opening in new tab
-  download?: boolean | string;
 }
 
 // --- Style Definitions ---
@@ -48,7 +47,6 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
   type = 'button',
   children,
   target,
-  download,
   ...props
 }) => {
   const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
@@ -68,7 +66,6 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
         className={combinedClasses}
         target={target || (href.startsWith('http') ? '' : undefined)}
         rel={target === '' ? 'noopener noreferrer' : undefined}
-        download={download}
         {...(props as any)}
       >
         {isLoading && (
@@ -86,7 +83,6 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
         href={href}
         className={combinedClasses}
         target={target}
-        download={download}
         {...(props as any)}
       >
         {isLoading && (

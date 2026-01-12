@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { Calendar, MessageSquare, Download } from 'lucide-react';
+import { Calendar, MessageSquare, Link } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Parallax } from '@/components/Parallax';
@@ -92,12 +92,11 @@ export default function Inspection() {
               </AppButton>
               <div className="flex gap-2">
                 <AppButton
-                  href="/report/WiseDrive_Sample_Report.pdf"
-                  download
+                  href="https://www.wisedrive.com/sample-report?fbclid=IwY2xjawPEGNZleHRuA2FlbQIxMABicmlkETFoM3RnRGp3c0tzWERqVXBVc3J0YwZhcHBfaWQPNTE0NzcxNTY5MjI4MDYxAAEewlEBYRS0NjrvAJZGhiWSTLGjXQY__YcOtT-NjPWTZU8pNWRMiajXgA8Kajc_aem_rxCefHFkquLt4YG3NHvtNA"
                   variant="tertiary"
                   className='w-full'
                   size="sm"
-                  leftIcon={<Download className="size-4" />}
+                  leftIcon={<Link className="size-4" />}
                 >
                   {t('sample_report_button')}
                 </AppButton>
