@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { OUR_BRANDS_CARS } from '@/constants';
 import Image from 'next/image';
+import { Parallax } from '@/components/Parallax';
 
 import { Badge } from '@/components/Badge';
 import { HighlightedHeading } from '@/components/HighlightedHeading';
@@ -11,7 +12,8 @@ export default function OurBrands() {
   const t = useTranslations('OurBrands');
 
   return (
-    <div
+    <Parallax speed={0.03}>
+      <div
       className={cn(
         'px-relaxed',
         'py-relaxed',
@@ -46,5 +48,6 @@ export default function OurBrands() {
         })}
       </Marquee>
     </div>
+    </Parallax>
   );
 }

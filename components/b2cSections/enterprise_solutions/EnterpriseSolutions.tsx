@@ -9,6 +9,7 @@ import {
   LucideIcon,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { Parallax } from '@/components/Parallax';
 
 import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { AppButton } from '@/components/AppButton';
@@ -74,7 +75,8 @@ export default function EnterpriseSolutions() {
   ];
 
   return (
-    <div className={cn('flex flex-col w-full gap-4 my-relaxed py-relaxed')}>
+    <Parallax speed={0.03}>
+      <div className={cn('flex flex-col w-full gap-4 my-relaxed py-relaxed')}>
       {/* Heading and description */}
       <div className={cn('flex flex-col items-center gap-px px-relaxed')}>
         <HighlightedHeading text={t('heading')} className="text-center font-heading" />
@@ -125,7 +127,8 @@ export default function EnterpriseSolutions() {
       >
         {t('cta_button_text')}
       </AppButton>
-    </div>
+      </div>
+    </Parallax>
   );
 }
 

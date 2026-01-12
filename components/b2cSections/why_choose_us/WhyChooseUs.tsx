@@ -1,5 +1,6 @@
 import WhyChooseUsCarousel from '@/components/WhyChooseUsCarousel';
 import { useTranslations } from 'next-intl';
+import { Parallax } from '@/components/Parallax';
 
 export default function WhyChooseUs() {
   const t = useTranslations('WhyChooseUs');
@@ -16,11 +17,13 @@ export default function WhyChooseUs() {
   }));
 
   return (
-    <WhyChooseUsCarousel
-      badgeText={t('badge_text')}
-      headingText={t('heading')}
-      headingTextHighlight={t('heading_highlighted_word')}
-      slides={slides}
-    />
+    <Parallax speed={0.05}>
+      <WhyChooseUsCarousel
+        badgeText={t('badge_text')}
+        headingText={t('heading')}
+        headingTextHighlight={t('heading_highlighted_word')}
+        slides={slides}
+      />
+    </Parallax>
   );
 }

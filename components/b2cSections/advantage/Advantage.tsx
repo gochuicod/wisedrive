@@ -1,6 +1,7 @@
 import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { Badge } from '@/components/Badge';
 import Image from 'next/image';
+import { Parallax } from '@/components/Parallax';
 
 import { useTranslations } from 'next-intl';
 
@@ -18,10 +19,11 @@ export const FAQSection = () => {
   const t = useTranslations('Advantage');
 
   return (
-    <section
-      className="w-full flex px-tight py-relaxed mx-auto items-center justify-center"
-      id="about"
-    >
+    <Parallax speed={0.04}>
+      <section
+        className="w-full flex px-tight py-relaxed mx-auto items-center justify-center"
+        id="about"
+      >
       {/* Outer container */}
       <div className="w-full lg:max-w-[1248px] md:max-w-[720px] flex flex-col items-center justify-center gap-6 px-4">
         {/* Heading */}
@@ -48,6 +50,7 @@ export const FAQSection = () => {
         </div>
       </div>
     </section>
+    </Parallax>
   );
 };
 

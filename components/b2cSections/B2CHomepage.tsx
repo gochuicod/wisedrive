@@ -14,44 +14,25 @@ import WhyChooseUs from '@/components/b2cSections/why_choose_us/WhyChooseUs';
 import CTA from '@/components/CTA';
 import { useHomeCTAs } from '@/hooks/useHomeCTAs';
 import { FixedPopUp } from '@/components/FixedPopUp';
-import { Parallax } from '@/components/Parallax';
 
 export default function B2CHomepage() {
   const ctas = useHomeCTAs();
 
   return (
     <div className="min-h-screen overflow-hidden">
-        <Hero />
-      <Parallax speed={0.03}>
-        <OurBrands />
-      </Parallax>
-      <Parallax speed={0.04}>
-        <Advantage />
-      </Parallax>
-      <Parallax speed={0.02}>
-        <Highlights />
-      </Parallax>
+      <Hero />
+      <OurBrands />
+      <Advantage />
+      <Highlights />
       <CTA {...ctas.confidence} />
-      <Parallax speed={0.05}>
-        <WhyChooseUs />
-      </Parallax>
-      <Parallax speed={0.03}>
-        <EnterpriseSolutions />
-      </Parallax>
-      <Parallax speed={0.04}>
-        <HighlightPill />
-      </Parallax>
-      <Parallax speed={0.03}>
-        <Inspection />
-      </Parallax>
-        <Steps />
+      <WhyChooseUs />
+      <EnterpriseSolutions />
+      <HighlightPill />
+      <Inspection />
+      <Steps />
       <CTA {...ctas.consultation} />
-      <Parallax speed={0.02}>
-        <FAQSection />
-      </Parallax>
-      <Parallax speed={0.04}>
-        <Reviews />
-      </Parallax>
+      <FAQSection />
+      <Reviews />
       <CTA {...ctas.secure} />
       <FixedPopUp />
     </div>

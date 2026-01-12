@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { HighlightedHeading } from "@/components/HighlightedHeading";
 import { AppButton } from "@/components/AppButton";
 import { InfrastructureCard } from "@/components/InfrastructureCard";
+import { Parallax } from "@/components/Parallax";
 
 // Transform infrastructure cards data from i18n
 const transformCardsData = (cards: Record<string, { title: string; tag: string; description: string; image: string }>) => {
@@ -63,52 +64,55 @@ export const Infrastructure = () => {
       icon: getButtonIcon(index),
     }));
   }, [infrastructureData]);
+  
   return (
-    <section
-      className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-hidden"
-      id="audience"
-    >
-      {/* Outer container */}
-      <div className="w-full max-w-[1248px] flex flex-col items-center gap-12">
-        {/* Header Section */}
-        <div className="w-full md:max-w-[686px] lg:md:max-w-[1248px] flex flex-col gap-8 items-center justify-center">
-          <div className="flex-1 flex flex-col items-center gap-2">
-            <HighlightedHeading
-              text={infrastructureData.heading}
-              className="font-heading text-center"
+    <Parallax speed={0.04}>
+      <section
+        className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-hidden"
+        id="audience"
+      >
+        {/* Outer container */}
+        <div className="w-full max-w-[1248px] flex flex-col items-center gap-12">
+          {/* Header Section */}
+          <div className="w-full md:max-w-[686px] lg:md:max-w-[1248px] flex flex-col gap-8 items-center justify-center">
+            <div className="flex-1 flex flex-col items-center gap-2">
+              <HighlightedHeading
+                text={infrastructureData.heading}
+                className="font-heading text-center"
+              />
+              <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px] text-center">
+                {infrastructureData.description}
+              </p>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-center items-center max-w-[1000px]">
+              {buttons.map((button, index) => (
+                <AppButton
+                  key={index}
+                  variant={activeTab === index ? "default" : "tertiary"}
+                  size={isMobile ? "sm" : "lg"}
+                  onClick={() => setActiveTab(index)}
+                  leftIcon={button.icon}
+                >
+                  {button.label}
+                </AppButton>
+              ))}
+            </div>
+          </div>
+
+          {/* Content Section - The Card */}
+          <div className="w-full max-w-[1248px] flex justify-center mt-4">
+            <InfrastructureCard
+              title={cards[activeTab].title}
+              tag={cards[activeTab].tag}
+              description={cards[activeTab].description}
+              image={cards[activeTab].image}
             />
-            <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px] text-center">
-              {infrastructureData.description}
-            </p>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-center items-center max-w-[1000px]">
-            {buttons.map((button, index) => (
-              <AppButton
-                key={index}
-                variant={activeTab === index ? "default" : "tertiary"}
-                size={isMobile ? "sm" : "lg"}
-                onClick={() => setActiveTab(index)}
-                leftIcon={button.icon}
-              >
-                {button.label}
-              </AppButton>
-            ))}
           </div>
         </div>
-
-        {/* Content Section - The Card */}
-        <div className="w-full max-w-[1248px] flex justify-center mt-4">
-          <InfrastructureCard
-            title={cards[activeTab].title}
-            tag={cards[activeTab].tag}
-            description={cards[activeTab].description}
-            image={cards[activeTab].image}
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </Parallax>
   );
 };
 

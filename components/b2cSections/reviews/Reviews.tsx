@@ -4,6 +4,7 @@ import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { Badge } from '@/components/Badge';
 import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
+import { Parallax } from '@/components/Parallax';
 
 import { useTranslations } from 'next-intl';
 
@@ -11,10 +12,11 @@ export const Reviews = () => {
   const t = useTranslations('Reviews');
 
   return (
-    <section
-      className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-clip"
-      id="reviews"
-    >
+    <Parallax speed={0.04}>
+      <section
+        className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-clip"
+        id="reviews"
+      >
       {/* Outer container */}
       <div className="w-full max-w-[1248px] flex flex-col items-center gap-10 px-4">
         {/* Heading */}
@@ -46,6 +48,7 @@ export const Reviews = () => {
         </div>
       </div>
     </section>
+    </Parallax>
   );
 };
 

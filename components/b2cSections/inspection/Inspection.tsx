@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import { Calendar, MessageSquare } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { Parallax } from '@/components/Parallax';
 
 import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { AppButton } from '@/components/AppButton';
@@ -12,7 +13,8 @@ export default function Inspection() {
   const items = t('checkbox_items_text').split('|');
 
   return (
-    <section className={cn('p-relaxed my-36')} id="inspection_plan">
+    <Parallax speed={0.04}>
+      <section className={cn('p-relaxed my-36')} id="inspection_plan">
       <div
         className={cn(
           'flex flex-col',
@@ -117,5 +119,6 @@ export default function Inspection() {
         </div>
       </div>
     </section>
+    </Parallax>
   );
 }
