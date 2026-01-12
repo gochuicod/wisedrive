@@ -81,6 +81,7 @@ export default function Hero() {
             {/* Right Buttons */}
             <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:w-auto md:w-full w-fit shrink-0 lg:justify-end justify-center">
               <AppButton
+                href="https://wisedrive.com/my/"
                 variant="default"
                 size="md"
                 leftIcon={<Calendar className="size-5" />}

@@ -82,6 +82,7 @@ export default function Inspection() {
               )}
             >
               <AppButton
+                href="https://wisedrive.com/my/"
                 variant="default"
                 size="sm"
                 leftIcon={<Calendar className="size-4" />}
