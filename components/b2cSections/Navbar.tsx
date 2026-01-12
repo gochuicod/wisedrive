@@ -148,6 +148,7 @@ export default function Navbar() {
           </AppButton>
           {!isEnterprisePage && (
             <AppButton
+              href="/enterprise-solutions"
               variant="tertiary"
               size="sm"
               leftIcon={<HeartHandshake className="size-4" />}

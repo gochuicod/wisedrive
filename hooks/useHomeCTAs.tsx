@@ -22,6 +22,7 @@ export const useHomeCTAs = () => {
       button1Href: 'https://wisedrive.com/my/',
       button2Text: t('confidence.btn2'),
       button2Icon: <MessageSquareMore className="size-6" />,
+      button2Href: '+60 12 255 9610',
     },
     consultation: {
       ...HOME_CTA_CONFIG.consultation,

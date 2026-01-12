@@ -1,5 +1,4 @@
 import React from 'react';
-// 👇 CHANGE THIS LINE: Import Link from your specific routing file
 import { Link } from '@/i18n/routing';
 
 // --- Styling Types ---
@@ -11,6 +10,7 @@ export interface BaseButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   size?: ButtonSize;
   isLoading?: boolean;
   href?: string;
+  target?: string; // Added to allow opening in new tab
 }
 
 // --- Style Definitions ---
@@ -40,16 +40,47 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
   size = 'md',
   isLoading = false,
   href,
-  type = 'button', // 👈 DEFAULT
+  type = 'button',
   children,
+  target,
   ...props
 }) => {
   const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  // LINK MODE (no type here)
+  // 1. Check if it's an external link, phone number, or email
+  const isExternal =
+    href &&
+    (href.startsWith('http') ||
+      href.startsWith('tel:') ||
+      href.startsWith('mailto:'));
+
+  // EXTERNAL LINK / PHONE / WHATSAPP MODE
+  if (isExternal && href) {
+    return (
+      <a
+        href={href}
+        className={combinedClasses}
+        target={target || (href.startsWith('http') ? '' : undefined)}
+        rel={target === '' ? 'noopener noreferrer' : undefined}
+        {...(props as any)}
+      >
+        {isLoading && (
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+        )}
+        {children}
+      </a>
+    );
+  }
+
+  // INTERNAL LINK MODE (Next-Intl)
   if (href) {
     return (
-      <Link href={href} className={combinedClasses} {...(props as any)}>
+      <Link
+        href={href}
+        className={combinedClasses}
+        target={target}
+        {...(props as any)}
+      >
         {isLoading && (
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
         )}
@@ -58,10 +89,10 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
     );
   }
 
-  // BUTTON MODE (type applies here)
+  // BUTTON MODE
   return (
     <button
-      type={type} // 👈 THIS IS THE KEY
+      type={type}
       className={combinedClasses}
       disabled={isLoading || props.disabled}
       {...props}
