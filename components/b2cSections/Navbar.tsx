@@ -124,7 +124,9 @@ export default function Navbar() {
               key={link.key}
               href={link.href}
               onClick={(e) => scrollTo(e, link.href, () => setIsOpen(false))}
-              className={`text-h6 ${isBold ? 'font-bold' : 'font-normal'}`}
+              className={`text-h6 transition-colors duration-200 ${
+                isBold ? 'font-semibold text-primary-600' : 'hover:text-primary-600'
+              }`}
             >
               {t(link.label)}
             </Link>
@@ -217,7 +219,9 @@ export default function Navbar() {
                     key={link.key}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-h6 ${isBold ? 'font-bold' : 'font-normal'}`}
+                    className={`text-h6 transition-colors duration-200 ${
+                      isBold ? 'font-bold text-[#003CC5] underline underline-offset-4 decoration-4' : 'font-normal hover:text-[#003CC5] hover:underline hover:underline-offset-4 hover:decoration-4'
+                    }`}
                   >
                     {t(link.label)}
                   </Link>
