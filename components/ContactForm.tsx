@@ -79,7 +79,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-end gap-2 w-full"
     >
-      <div className="flex flex-col items-end gap-2 w-full">
+      <div className="flex flex-col items-center md:items-end gap-2 w-full">
         {/* Row 1 */}
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <Input
@@ -134,6 +134,7 @@ const ContactForm = () => {
         leftIcon={successMessage ? <Check size={20} /> : <Users size={20} />}
         disabled={isSubmitting}
         variant={successMessage ? 'success' : 'default'}
+        className='mt-6'
       >
         {successMessage ? t('messages.success') : t('submitButton.label')}
       </AppButton>
