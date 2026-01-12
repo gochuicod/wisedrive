@@ -193,6 +193,27 @@ const config: Config = {
         md: 'calc(var(--radius) - 34px)',
         sm: 'calc(var(--radius) - 36px)',
       },
+      keyframes: {
+        'fade-up': {
+          'from': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          'to': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+      },
+      animation: {
+        'fade-up': 'fade-up 0.5s ease-out',
+        'fade-up-1': 'fade-up 0.5s ease-out 0s',
+        'fade-up-2': 'fade-up 0.5s ease-out 0.1s',
+        'fade-up-3': 'fade-up 0.5s ease-out 0.2s',
+        'fade-up-4': 'fade-up 0.5s ease-out 0.3s',
+        'fade-up-5': 'fade-up 0.5s ease-out 0.4s',
+        'fade-up-6': 'fade-up 0.5s ease-out 0.5s',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
