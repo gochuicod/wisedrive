@@ -16,23 +16,23 @@ export default function Hero() {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <section className={cn("w-full px-tight my-4")}>
+    <section className={cn('w-full px-tight my-4')} id="overview">
       <div
         className={cn(
           'relative',
           'bg-[#DBEAFE]',
           'w-full',
           'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
-          "md:max-h-auto max-h-[800px]",
+          'md:max-h-auto max-h-[800px]',
           'aspect-[9/16] md:aspect-[16/9] lg:aspect-[21/9]',
           'lg:rounded-5xl md:rounded-[24px] rounded-[16px]',
           'overflow-hidden',
-          'flex flex-col justify-center items-center'
+          'flex flex-col justify-center items-center',
         )}
       >
         {/* ================= BACKGROUND STACK ================= */}
@@ -51,8 +51,6 @@ export default function Hero() {
               origin-bottom
             "
           />
-
-
 
           {/* Blue fade (gradient) */}
           <div
@@ -73,27 +71,31 @@ export default function Hero() {
             'relative z-10',
             'w-full h-full',
             'lg:min-h-[848px] md:min-h-[584px] min-h-[600px]',
-            "md:max-h-auto max-w-[1284px]",
+            'md:max-h-auto max-w-[1284px]',
             'flex flex-col justify-between items-center',
             'text-header',
-            'p-tight'
+            'p-tight',
           )}
         >
           {/* Top Content Group */}
-          <div className={cn(
-            'flex lg:flex-row flex-col',
-            'justify-between',
-            'lg:items-end items-center',
-            'mb-12',
-            'gap-4',
-            'py-12'
-          )}>
+          <div
+            className={cn(
+              'flex lg:flex-row flex-col',
+              'justify-between',
+              'lg:items-end items-center',
+              'mb-12',
+              'gap-4',
+              'py-12',
+            )}
+          >
             {/* Left Text */}
             <div className="flex flex-col gap-4 lg:max-w-[905px]">
-              <h1 className={cn(
-                'lg:text-h1 md:text-h2 text-h3 uppercase font-heading font-semibold',
-                'text-center lg:text-left'
-              )}>
+              <h1
+                className={cn(
+                  'lg:text-h1 md:text-h2 text-h3 uppercase font-heading font-semibold',
+                  'text-center lg:text-left',
+                )}
+              >
                 {t('heading')}
               </h1>
               <p className="text-body-sm md:text-body-md lg:max-w-[800px] lg:text-start text-center">
@@ -105,7 +107,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:w-auto md:w-full w-fit shrink-0 lg:justify-end justify-center">
               <AppButton
                 variant="default"
-                size={isMobile ? "sm" : "md"}
+                size={isMobile ? 'sm' : 'md'}
                 leftIcon={<Calendar className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
               >
@@ -113,7 +115,7 @@ export default function Hero() {
               </AppButton>
               <AppButton
                 variant="tertiary"
-                size={isMobile ? "sm" : "md"}
+                size={isMobile ? 'sm' : 'md'}
                 rightIcon={<ArrowDown className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
               >

@@ -19,6 +19,7 @@ export const useHomeCTAs = () => {
       subheading: t('confidence.subheading'),
       button1Text: t('confidence.btn1'),
       button1Icon: <Calendar className="size-6" />,
+      button1Href: 'https://wisedrive.com/my/',
       button2Text: t('confidence.btn2'),
       button2Icon: <MessageSquareMore className="size-6" />,
     },

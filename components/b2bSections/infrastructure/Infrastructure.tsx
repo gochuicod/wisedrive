@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect, useMemo } from "react";
 import { Coins, Aperture, Workflow, Store } from "lucide-react";
@@ -44,8 +44,8 @@ export const Infrastructure = () => {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Get data from translations
@@ -64,12 +64,14 @@ export const Infrastructure = () => {
     }));
   }, [infrastructureData]);
   return (
-    <section className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-hidden">
+    <section
+      className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-hidden"
+      id="audience"
+    >
       {/* Outer container */}
       <div className="w-full max-w-[1248px] flex flex-col items-center gap-12">
-        
         {/* Header Section */}
-        <div className="w-full md:max-w-[686px] lg:md:max-w-[1248px] flex flex-col gap-8 items-center justify-center">          
+        <div className="w-full md:max-w-[686px] lg:md:max-w-[1248px] flex flex-col gap-8 items-center justify-center">
           <div className="flex-1 flex flex-col items-center gap-2">
             <HighlightedHeading
               text={infrastructureData.heading}
@@ -79,14 +81,14 @@ export const Infrastructure = () => {
               {infrastructureData.description}
             </p>
           </div>
-          
+
           {/* Navigation Buttons */}
           <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-center items-center max-w-[1000px]">
             {buttons.map((button, index) => (
-              <AppButton 
+              <AppButton
                 key={index}
-                variant={activeTab === index ? "default" : "tertiary"}
-                size={isMobile ? "sm" : "lg"}
+                variant={activeTab === index ? 'default' : 'tertiary'}
+                size={isMobile ? 'sm' : 'lg'}
                 onClick={() => setActiveTab(index)}
                 leftIcon={button.icon}
               >
@@ -98,15 +100,13 @@ export const Infrastructure = () => {
 
         {/* Content Section - The Card */}
         <div className="w-full max-w-[1248px] flex justify-center mt-4">
-
-           <InfrastructureCard 
-             title={cards[activeTab].title}
-             tag={cards[activeTab].tag}
-             description={cards[activeTab].description}
-             image={cards[activeTab].image}
-           />
+          <InfrastructureCard
+            title={cards[activeTab].title}
+            tag={cards[activeTab].tag}
+            description={cards[activeTab].description}
+            image={cards[activeTab].image}
+          />
         </div>
-
       </div>
     </section>
   );
