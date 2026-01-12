@@ -220,7 +220,29 @@
   "Reviews": {
     "heading": "Drive Away Happy",
     "heading_highlighted_word": "Happy",
-    "description": "Join thousands of satisfied customers who bought their vehicle with total peace of mind."
+    "description": "Join thousands of satisfied customers who bought their vehicle with total peace of mind.",
+    "reviews": {
+      "review_1": {
+        "customer_name": "Naduvinahalli Kariyappa",
+        "content": "The inspector from Wisedrive was friendly, professional, and very detailed. The report covered everything I needed to know, and the customer service was excellent. I felt reassured knowing I had all the information before buying."
+      },
+      "review_2": {
+        "customer_name": "Rudra Gowda",
+        "content": "Wisedrive is a must-have service if you're buying a used car. Their inspection report was detailed and easy to understand. The inspector went above and beyond to check every detail. I'm so glad I used them before making my purchase."
+      },
+      "review_3": {
+        "customer_name": "Dharmesh Soni",
+        "content": "I've used Wisedrive twice now, and both times they've delivered exceptional service. The inspectors are knowledgeable and don't rush through the process. The detailed reports helped me make informed decisions. Definitely a must-use service for used car buyers."
+      },
+      "review_4": {
+        "customer_name": "Rajat Chaudhry",
+        "content": "Wisedrive's inspection service is fantastic! They provided a detailed report that helped me negotiate a better price. The inspector was knowledgeable and answered all my questions. I'll definitely use them again for future car purchases."
+      },
+      "review_5": {
+        "customer_name": "Dilip Patel",
+        "content": "Wisedrive saved me from buying a bad car! The car looked great on the outside, but the inspector found several mechanical issues. Their service is worth every penny if you want to save yourself from fraud when buying a used car."
+      }
+    }
   },
   "Steps": {
     "heading": "Buy your car with total confidence",

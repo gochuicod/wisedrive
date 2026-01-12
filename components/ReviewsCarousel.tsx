@@ -1,78 +1,33 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { ReviewCard } from '@/components/ReviewCard';
+import { useTranslations } from 'next-intl';
 
-// Sample review data
-const reviewsData = [
-  {
-    id: 1,
-    reviewText: "The inspection was incredibly thorough and the AI-powered insights were eye-opening. I felt confident about my purchase decision.",
-    reviewerName: "Sarah Johnson",
-    reviewDate: "2 weeks ago",
-    rating: 5,
-  },
-  {
-    id: 2,
-    reviewText: "Amazing service! The detailed report helped me negotiate a better price. Highly recommended for anyone buying a home.",
-    reviewerName: "Michael Chen",
-    reviewDate: "1 month ago",
-    rating: 5,
-  },
-  {
-    id: 3,
-    reviewText: "Professional and efficient. They identified several issues that other inspectors missed. Worth every penny!",
-    reviewerName: "Jessica Martinez",
-    reviewDate: "3 weeks ago",
-    rating: 5,
-  },
-  {
-    id: 4,
-    reviewText: "The best inspection experience I've had. The team was knowledgeable and the AI analysis was spot on.",
-    reviewerName: "David Thompson",
-    reviewDate: "1 week ago",
-    rating: 5,
-  },
-  {
-    id: 5,
-    reviewText: "Exceeded my expectations. Got a comprehensive report with actionable recommendations. Fantastic!",
-    reviewerName: "Emily Rodriguez",
-    reviewDate: "10 days ago",
-    rating: 5,
-  },
-  {
-    id: 6,
-    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
-    reviewerName: "Robert Wilson",
-    reviewDate: "2 months ago",
-    rating: 5,
-  },
-  {
-    id: 7,
-    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
-    reviewerName: "George Bugwak",
-    reviewDate: "2 months ago",
-    rating: 3,
-  },
-  {
-    id: 8,
-    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
-    reviewerName: "Wisedrive",
-    reviewDate: "2 months ago",
-    rating: 4,
-  },
-  {
-    id: 9,
-    reviewText: "Professional, thorough, and trustworthy. This is the kind of inspection service everyone deserves.",
-    reviewerName: "Bangalore",
-    reviewDate: "2 months ago",
-    rating: 4,
-  },      
-];
+// Transform review data from i18n
+const transformReviewsData = (reviews: Record<string, { customer_name: string; content: string }>) => {
+  return Object.entries(reviews).map((entry, index) => {
+    const [key, review] = entry;
+    return {
+      id: index + 1,
+      reviewText: review.content,
+      reviewerName: review.customer_name,
+      reviewDate: "",
+      rating: 5,
+    };
+  });
+};
 
 export const ReviewsCarousel = () => {
+  const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [screenSize, setScreenSize] = useState('lg'); // 'mobile', 'tablet', 'lg'
+
+  // Get review data from translations
+  const reviewsData = useMemo(() => {
+    const reviewsObj = t.raw('Reviews.reviews');
+    return transformReviewsData(reviewsObj);
+  }, [t]);
 
   // Detect screen size and set cards to display
   React.useEffect(() => {

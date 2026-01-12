@@ -220,7 +220,29 @@
   "Reviews": {
     "heading": "Pandu Pulang dengan Gembira",
     "heading_highlighted_word": "Gembira",
-    "description": "Sertai ribuan pelanggan berpuas hati yang membeli kenderaan mereka dengan ketenangan fikiran sepenuhnya."
+    "description": "Sertai ribuan pelanggan berpuas hati yang membeli kenderaan mereka dengan ketenangan fikiran sepenuhnya.",
+    "reviews": {
+      "review_1": {
+        "customer_name": "Naduvinahalli Kariyappa",
+        "content": "Pemeriksa dari Wisedrive sangat mesra, profesional, dan terperinci. Laporan tersebut merangkumi semua yang saya perlu tahu, dan perkhidmatan pelanggan adalah cemerlang. Saya berasa tenteramkan kerana mengetahui bahawa saya mempunyai semua maklumat sebelum membeli."
+      },
+      "review_2": {
+        "customer_name": "Rudra Gowda",
+        "content": "Wisedrive adalah perkhidmatan yang mesti ada jika anda membeli kereta terpakai. Laporan pemeriksaan mereka terperinci dan mudah difahami. Pemeriksa melangkah lebih jauh untuk memeriksa setiap butiran. Saya sangat berpuas hati kerana menggunakan mereka sebelum membuat pembelian."
+      },
+      "review_3": {
+        "customer_name": "Dharmesh Soni",
+        "content": "Saya telah menggunakan Wisedrive dua kali sekarang, dan kedua-duanya mereka telah memberikan perkhidmatan yang luar biasa. Para pemeriksa berpengetahuan dan tidak tergesa-gesa dalam proses ini. Laporan terperinci membantu saya membuat keputusan yang tepat. Sememangnya perkhidmatan yang mesti digunakan untuk pembeli kereta terpakai."
+      },
+      "review_4": {
+        "customer_name": "Rajat Chaudhry",
+        "content": "Perkhidmatan pemeriksaan Wisedrive adalah fantastik! Mereka memberikan laporan terperinci yang membantu saya berunding untuk harga yang lebih baik. Pemeriksa berpengetahuan dan menjawab semua pertanyaan saya. Saya pasti akan menggunakan mereka lagi untuk pembelian kereta masa depan."
+      },
+      "review_5": {
+        "customer_name": "Dilip Patel",
+        "content": "Wisedrive menyelamatkan saya daripada membeli kereta yang buruk! Kereta kelihatan bagus dari luar, tetapi pemeriksa menemui beberapa isu mekanikal. Perkhidmatan mereka bernilai setiap sen jika anda ingin menyelamatkan diri daripada penipuan semasa membeli kereta terpakai."
+      }
+    }
   },
   "Steps": {
     "heading": "Beli kereta anda dengan keyakinan penuh",
