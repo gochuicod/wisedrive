@@ -1,15 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl'; // Added useLocale
+import { useState, useEffect } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
+// Icons & UI
 import { AppButton } from '@/components/AppButton';
 import { DropdownButton } from '@/components/DropdownButton';
-
-import { CircleCheck, HeartHandshake } from 'lucide-react';
-
+import { CircleCheck, HeartHandshake, Calendar } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -18,20 +18,50 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet';
 
-import { NAV_LINKS } from '@/constants';
-
+// Hooks
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
-import Image from 'next/image';
+import { NAV_LINKS, ENTERPRISE_LINKS } from '@/constants';
 
 export default function Navbar() {
   const t = useTranslations('Navigation');
-  const locale = useLocale(); // Get current locale
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const scrollTo = useSmoothScroll();
 
-  // Map locale codes to display labels
+  // FIX: Handle hash safely and subscribe to changes
+  const [hash, setHash] = useState('');
+
+  useEffect(() => {
+    // 1. Define the update function
+    const handleHashChange = () => {
+      setHash(window.location.hash);
+    };
+
+    // 2. Set initial hash (wrapped in setTimeout to avoid "synchronous" linter error)
+    // This moves the update to the end of the event loop, preventing the cascade warning.
+    const timeoutId = setTimeout(() => {
+      handleHashChange();
+    }, 0);
+
+    // 3. Listen for hash changes (e.g., user clicks a link)
+    window.addEventListener('hashchange', handleHashChange);
+
+    // 4. Cleanup
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [pathname]); // Re-run if the page path changes
+
+  // Check if we are on the enterprise page
+  const isEnterprisePage = pathname?.includes('/enterprise-solutions');
+
+  // --- 2. SELECT WHICH LINKS TO RENDER ---
+  const currentLinks = isEnterprisePage ? ENTERPRISE_LINKS : NAV_LINKS;
+
+  // Language Setup
   const localeLabels: Record<string, string> = {
     en: 'EN',
     my: 'BM',
@@ -58,7 +88,7 @@ export default function Navbar() {
         'bg-white',
       )}
     >
-      {/* 1. LOGO (Always Visible) */}
+      {/* 1. LOGO (Always Visible - Always goes to Home) */}
       <Link
         href="/"
         onClick={(e) => scrollTo(e, '/')}
@@ -73,53 +103,69 @@ export default function Navbar() {
         />
       </Link>
 
-      {/* 2. DESKTOP MENU (Hidden on Mobile/Tablet) */}
+      {/* 2. DESKTOP MENU */}
       <div
         className={cn('hidden', 'lg:flex flex-row', 'items-center', 'gap-8')}
       >
-        {NAV_LINKS.map((link) => {
-          const isActive = pathname === link.href;
+        {/* Dynamic Mapping based on currentLinks */}
+        {currentLinks.map((link) => {
+          // Logic: Check if it's the active path
+          const isActive =
+            pathname === link.href || pathname + hash === link.href;
+
+          // Logic: Is this a "Section" link (contains #)?
+          const isHashLink = link.href.includes('#');
+
+          // RESULT: Only bold if it is Active AND NOT a hash link
+          const isBold = isActive && !isHashLink;
+
           return (
             <Link
               key={link.key}
               href={link.href}
               onClick={(e) => scrollTo(e, link.href, () => setIsOpen(false))}
-              className={`text-h6 ${isActive ? 'font-bold' : 'font-normal'}`}
+              className={`text-h6 ${isBold ? 'font-bold' : 'font-normal'}`}
             >
               {t(link.label)}
             </Link>
           );
         })}
+
         <div className="flex flex-row gap-4">
           <AppButton
             variant="default"
             size="sm"
-            leftIcon={<CircleCheck className="size-4" />}
+            leftIcon={
+              !isEnterprisePage ? (
+                <CircleCheck className="size-4" />
+              ) : (
+                <Calendar className="size-4" />
+              )
+            }
           >
             {t('inspect_with_confidence_button')}
           </AppButton>
-          <AppButton
-            variant="tertiary"
-            size="sm"
-            leftIcon={<HeartHandshake className="size-4" />}
-          >
-            {t('partner_with_us_button')}
-          </AppButton>
-
-          {/* UPDATED DROPDOWN BUTTON */}
+          {!isEnterprisePage && (
+            <AppButton
+              variant="tertiary"
+              size="sm"
+              leftIcon={<HeartHandshake className="size-4" />}
+            >
+              {t('partner_with_us_button')}
+            </AppButton>
+          )}
           <DropdownButton
             variant="tertiary"
             size="sm"
             items={languageItems}
             menuAlign="right"
           >
-            {/* Dynamic Label based on current locale */}
             {localeLabels[locale] || 'EN'}
           </DropdownButton>
         </div>
       </div>
 
-      {/* 3. MOBILE MENU (Visible only on Mobile/Tablet) */}
+      {/* 3. MOBILE MENU */}
       <div className="flex lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen} modal={false}>
           <SheetTrigger asChild>
@@ -156,19 +202,26 @@ export default function Navbar() {
             </SheetDescription>
 
             <div className={cn('flex flex-col', 'gap-3 mt-10', 'text-start')}>
-              {NAV_LINKS.map((link) => {
+              {/* Dynamic Mapping based on currentLinks */}
+              {currentLinks.map((link) => {
                 const isActive = pathname === link.href;
+                const isHashLink = link.href.includes('#');
+
+                // Only bold if active AND not a hash link
+                const isBold = isActive && !isHashLink;
+
                 return (
                   <Link
                     key={link.key}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-h6 ${isActive ? 'font-bold' : 'font-normal'}`}
+                    className={`text-h6 ${isBold ? 'font-bold' : 'font-normal'}`}
                   >
                     {t(link.label)}
                   </Link>
                 );
               })}
+
               <AppButton
                 variant="default"
                 size="sm"
@@ -186,7 +239,6 @@ export default function Navbar() {
                 {t('partner_with_us_button')}
               </AppButton>
 
-              {/* UPDATED DROPDOWN BUTTON */}
               <DropdownButton
                 variant="tertiary"
                 size="sm"
@@ -194,7 +246,6 @@ export default function Navbar() {
                 menuAlign="right"
                 className="w-fit self-end"
               >
-                {/* Dynamic Label based on current locale */}
                 {localeLabels[locale] || 'EN'}
               </DropdownButton>
             </div>
