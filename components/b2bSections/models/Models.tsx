@@ -69,7 +69,7 @@ export const Models = () => {
         {/* BACKGROUND LAYER */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="/model_card/bg-image.webp"
+            src="/model_card/bg-image-newer.webp"
             alt="Background Image"
             width={1920}
             height={1080}

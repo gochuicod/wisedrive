@@ -43,7 +43,7 @@ export default function Hero() {
           <div
             className="
               absolute inset-0 w-full h-full
-              bg-[url('/b2b_hero/hero-b2b.webp')]
+              bg-[url('/b2b_hero/hero-b2b-new.webp')]
               bg-contain bg-bottom bg-no-repeat
 
               /* Subtle zoom for small screens */

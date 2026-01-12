@@ -66,7 +66,7 @@ export const TechStack = () => {
           {/* Column 2 */}
           <div className="flex-1 relative overflow-visible w-full h-fit ">
             <Image
-              src="/techstack/tech-stack.webp"
+              src="/techstack/tech-stack-img.webp"
               alt="Tech Stack Visualization"
               width={1920}
               height={1080}

@@ -203,25 +203,25 @@
         "title": "Bank & Pembiaya",
         "tag": "KELEBIHAN WISEDRIVE",
         "description": "Amankan nisbah Nilai Pinjaman-kepada-Nilai (LTV) anda dengan data teknikal yang keras. Kami mengesahkan perbatuan sebenar dan keadaan mekanikal cagaran sebelum kelulusan. Dengan mengesan potensi kegagalan mekanikal lebih awal, kami mengurangkan risiko aset menjadi Pinjaman Berprestasi Buruk (NPL) kerana susutan nilai mendadak atau pengabaian oleh peminjam.",
-        "image": "/infrastructure/banks.webp"
+        "image": "/infrastructure/banks-new.webp"
       },
       "card_2": {
         "title": "Syarikat Insurans",
         "tag": "KELEBIHAN WISEDRIVE",
         "description": "Buat jejak waktu digital untuk keadaan aset. Audit pra-permulaan kami mendokumentasikan setiap calar, lekuk, dan serpihan kaca sebelum pengeluaran polisi. Ini menetapkan garis dasar yang tidak dapat disangkal yang secara automatik menyaring tuntutan kerosakan yang sudah ada sebelumnya dan secara signifikan menurunkan nisbah kerugian anda pada polisi kenderaan terpakai.",
-        "image": "/infrastructure/insurance-img.webp"
+        "image": "/infrastructure/insurance-new.webp"
       },
       "card_3": {
         "title": "Rangkaian Pengedar & OEM",
         "tag": "KELEBIHAN WISEDRIVE",
         "description": "Kami bertindak sebagai tembok api teknikal anda. Laporan mekanikal terperinci kami mendedahkan sejarah kemalangan tersembunyi dan gangguan enjin sebelum anda menukar. Untuk OEM, protokol \"Wisedrive Bersertifikat\" kami memberikan standardisasi yang diperlukan untuk melancarkan dan menskalakan program Kereta Terpakai Bersertifikat (CPO) di seluruh rangkaian pengedar yang bercecaran.",
-        "image": "/infrastructure/dealership-img.webp"
+        "image": "/infrastructure/dealership-new.webp"
       },
       "card_4": {
         "title": "Pasaran & Platform",
         "tag": "KELEBIHAN WISEDRIVE",
         "description": "Kami menjembatani jurang kepercayaan dalam transaksi jarak jauh. Dengan bertindak sebagai penggerak ketiga yang neutral dengan laporan digital yang diseragamkan, kami memungkinkan transaksi bernilai tinggi untuk berlangsung sepenuhnya dalam talian. Ini meningkatkan Nilai Barang Dagangan Kasar (GMV) dengan memberikan pembeli jarak jauh keyakinan teknikal untuk membeli tanpa melihat secara fizikal.",
-        "image": "/infrastructure/marketplace-img.webp"
+        "image": "/infrastructure/marketplace-new.webp"
       }
     },
     "button_labels": {
@@ -372,7 +372,7 @@
     "heading": "Mari Reka Penyelesaian Risiko Aset Anda.",
     "subheading": "Setiap aliran kerja perusahaan melibatkan parameter risiko yang berbeza. Beritahu kami keperluan anda, dan kami akan menunjukkan bagaimana lapisan data kami berintegrasi untuk melindungi keuntungan anda.",
     "image": {
-      "src": "/contact/contact.webp",
+      "src": "/contact/contact-us-img-new.webp",
       "alt": "Gambar Hubungi"
     },
     "form": {

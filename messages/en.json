@@ -203,25 +203,25 @@
         "title": "Banks & Financiers",
         "tag": "THE WISEDRIVE ADVANTAGE",
         "description": "Secure your Loan-to-Value (LTV) ratios with hard technical data. We verify the true mileage and mechanical condition of collateral before approval. By detecting potential mechanical failures early, we reduce the risk of assets becoming Non-Performing Loans (NPLs) due to sudden depreciation or abandonment by the borrower.",
-        "image": "/infrastructure/banks.webp"
+        "image": "/infrastructure/banks-new.webp"
       },
       "card_2": {
         "title": "Insurance Companies",
         "tag": "THE WISEDRIVE ADVANTAGE",
         "description": "Create a digital timestamp for asset condition. Our pre-inception audit documents every scratch, dent, and glass chip before policy issuance. This establishes an indisputable baseline that automatically filters out pre-existing damage claims and significantly lowers your loss ratio on used vehicle policies.",
-        "image": "/infrastructure/insurance-img.webp"
+        "image": "/infrastructure/insurance-new.webp"
       },
       "card_3": {
         "title": "Dealership Networks & OEMs",
         "tag": "THE WISEDRIVE ADVANTAGE",
         "description": "We act as your technical firewall. Our detailed mechanical reports expose hidden accident history and engine faults before you trade in. For OEMs, our \"Wisedrive Certified\" protocol provides the standardization required to launch and scale a Certified Pre-Owned (CPO) program across a fragmented dealer network.",
-        "image": "/infrastructure/dealership-img.webp"
+        "image": "/infrastructure/dealership-new.webp"
       },
       "card_4": {
         "title": "Marketplaces & Platforms",
         "tag": "THE WISEDRIVE ADVANTAGE",
         "description": "We bridge the trust gap in remote transactions. By acting as a neutral, third-party validator with standardized digital reports, we enable high-value transactions to occur entirely online. This increases Gross Merchandise Value (GMV) by giving remote buyers the technical confidence to purchase without a physical viewing.",
-        "image": "/infrastructure/marketplace-img.webp"
+        "image": "/infrastructure/marketplace-new.webp"
       }
     },
     "button_labels": {
@@ -372,7 +372,7 @@
     "heading": "Let's Engineer Your Asset Risk Solution.",
     "subheading": "Every enterprise workflow involves different risk parameters. Tell us your requirements, and we will demonstrate how our data layer integrates to protect your bottom line.",
     "image": {
-      "src": "/contact/contact.webp",
+      "src": "/contact/contact-us-img-new.webp",
       "alt": "Contact Image"
     },
     "form": {

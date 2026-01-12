@@ -137,14 +137,14 @@ export const getModelsData = (t: any) => [
     title: t('cards.card_1.heading'),
     // Use t.raw() because your data contains HTML tags like <strong>
     subtitle: t.raw('cards.card_1.subheading'),
-    image: '/model_card/model-card-1.webp',
+    image: '/model_card/model-card-1-new.webp',
     content: t('cards.card_1.description'),
   },
   {
     id: 2,
     title: t('cards.card_2.heading'),
     subtitle: t.raw('cards.card_2.subheading'),
-    image: '/model_card/model-card-2.webp',
+    image: '/model_card/model-card-2-new.webp',
     content: t('cards.card_2.description'),
   },
 ];
