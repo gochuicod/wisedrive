@@ -193,7 +193,6 @@ const ComponentShowcase = () => {
           {/* 1. Large Variation */}
           <div className="flex flex-col items-center gap-4">
             <IconBox
-              size="lg"
               title="Verified Cars"
               description="Every car undergoes a strict 200-point inspection process."
               icon={
@@ -213,7 +212,6 @@ const ComponentShowcase = () => {
           {/* 2. Medium Variation */}
           <div className="flex flex-col items-center gap-4">
             <IconBox
-              size="md"
               title="Secure"
               description="Transactions are fully insured and protected."
               icon={
@@ -233,7 +231,6 @@ const ComponentShowcase = () => {
           {/* 3. Small Variation */}
           <div className="flex flex-col items-center gap-4 ">
             <IconBox
-              size="sm"
               title="Fast"
               description="Quick processing and instant approval."
               icon={
