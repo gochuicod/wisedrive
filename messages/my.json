@@ -108,7 +108,7 @@
     "heading_highlighted_word": "ai",
     "slides": {
       "slide_1": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_1.webp",
+        "image": "/why_choose_us/why-choose-us-1.webp",
         "image_alt_text": "Sound AI",
         "panel_heading": "Sound AI",
         "panel_text": "Mengesan kerosakan dalaman enjin dan kehausan yang tidak dapat didengar oleh telinga manusia, mencegah kerosakan di masa hadapan",
@@ -116,7 +116,7 @@
         "button_link": "/why_choose_us/slide_2"
       },
       "slide_2": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_2.webp",
+        "image": "/why_choose_us/why-choose-us-2.webp",
         "image_alt_text": "Visual AI",
         "panel_heading": "Visual AI",
         "panel_text": "Mengesan ketidakpadanan cat, karat tersembunyi, dan pembaikan akibat kemalangan yang mungkin anda sendiri terlepas pandang",
@@ -124,7 +124,7 @@
         "button_link": "/why_choose_us/slide_2"
       },
       "slide_3": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_3.webp",
+        "image": "/why_choose_us/why-choose-us-3.webp",
         "image_alt_text": "Price Prediction AI",
         "panel_heading": "Price Prediction AI",
         "panel_text": "Mengira nilai pasaran sebenar kereta berdasarkan keadaan sebenarnya supaya anda tidak membayar lebih.",
@@ -132,7 +132,7 @@
         "button_link": "/why_choose_us/slide_2"
       },
       "slide_4": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_4.webp",
+        "image": "/why_choose_us/why-choose-us-4.webp",
         "image_alt_text": "Verified by an independent expert",
         "panel_heading": "Disahkan oleh pakar bebas",
         "panel_text": "Memberikan keputusan jelas sama ada untuk 'Berunding' atau 'Tarik Diri', satu kejelasan mutlak untuk keputusan terbesar anda.",

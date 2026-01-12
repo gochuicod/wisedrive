@@ -108,7 +108,7 @@
     "heading_highlighted_word": "ai",
     "slides": {
       "slide_1": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_1.webp",
+        "image": "/why_choose_us/why-choose-us-1.webp",
         "image_alt_text": "Sound AI",
         "panel_heading": "Sound AI",
         "panel_text": "Detects internal engine faults and wear that are inaudible to the human ear, preventing future breakdowns",
@@ -116,7 +116,7 @@
         "button_link": "/why_choose_us/slide_2"
       },
       "slide_2": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_2.webp",
+        "image": "/why_choose_us/why-choose-us-2.webp",
         "image_alt_text": "Visual AI",
         "panel_heading": "Visual AI",
         "panel_text": "Spots paint mismatches, hidden rust, and accident repairs that even you yourself might miss",
@@ -124,7 +124,7 @@
         "button_link": "/why_choose_us/slide_2"
       },
       "slide_3": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_3.webp",
+        "image": "/why_choose_us/why-choose-us-3.webp",
         "image_alt_text": "Price Prediction AI",
         "panel_heading": "Price Prediction AI",
         "panel_text": "Calculates the car's true market value based on its actual condition so you never overpay.",
@@ -132,7 +132,7 @@
         "button_link": "/why_choose_us/slide_2"
       },
       "slide_4": {
-        "image": "/why_choose_us/why_choose_us_carousel_image_4.webp",
+        "image": "/why_choose_us/why-choose-us-4.webp",
         "image_alt_text": "Verified by an independent expert",
         "panel_heading": "Verified by an independent expert",
         "panel_text": "Delivers a clear 'Negotiate' or 'Walk Away' verdict, a total clarity for your biggest decision.",
