@@ -19,7 +19,7 @@ interface PopUpProps {
 export const PopUp: React.FC<PopUpProps> = ({
   onClose,
   onCtaClick,
-  imageSrc = "/icons/componentIcons/car-icon.svg",
+  imageSrc = "/icons/componentIcons/popup-icon.webp",
   ctaLink = "/enterprise-solutions",
   className = "",
 }) => {
