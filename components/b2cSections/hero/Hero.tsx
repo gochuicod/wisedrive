@@ -27,7 +27,7 @@ export default function Hero() {
       >
         {/* Hero Image */}
         <Image
-          src="/b2cHero/b2c_hero_bg_image.webp"
+          src="/b2cHero/b2c-hero-new.webp"
           alt="wisedrive hero image"
           width={1920}
           height={1080}
