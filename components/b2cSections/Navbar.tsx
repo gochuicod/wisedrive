@@ -133,6 +133,7 @@ export default function Navbar() {
 
         <div className="flex flex-row gap-4">
           <AppButton
+            href="https://wisedrive.com/my/"
             variant="default"
             size="sm"
             leftIcon={
