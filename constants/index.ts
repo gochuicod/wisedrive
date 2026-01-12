@@ -35,27 +35,27 @@ export const ENTERPRISE_LINKS = [
 
 export const FOOTER_LINKS = {
   products: [
-    { href: '/#inspections', key: 'car_inspections' },
-    { href: '/#luxury', key: 'luxury_inspection' },
-    { href: '/#service', key: 'car_service' },
-    { href: '/#repairs', key: 'car_repairs' },
+    { href: '#inspections', key: 'car_inspections' },
+    { href: '#luxury', key: 'luxury_inspection' },
+    { href: '#service', key: 'car_service' },
+    { href: '#repairs', key: 'car_repairs' },
   ],
   company: [
-    { href: '/about', key: 'about_us' },
-    { href: '/#how_it_works', key: 'how_it_works' },
-    { href: '/contact', key: 'contact_us' },
+    { href: '#about', key: 'about_us' },
+    { href: '#our-brands', key: 'how_it_works' },
+    { href: '/enterprise-solutions#contact-us', key: 'contact_us' },
   ],
   resources: [
-    { href: '/sample-report', key: 'sample_report' },
-    { href: '/faqs', key: 'faqs' },
-    { href: '/coverage', key: 'coverage_areas' },
-    { href: '/reviews', key: 'customer_reviews' },
+    { href: '#sample-report', key: 'sample_report' },
+    { href: '#faqs', key: 'faqs' },
+    { href: '#coverage', key: 'coverage_areas' },
+    { href: '#reviews', key: 'customer_reviews' },
   ],
   policies: [
-    { href: '/terms-inspection', key: 'inspection_terms' },
-    { href: '/refund-policy', key: 'refund_policy' },
-    { href: '/terms', key: 'terms_conditions' },
-    { href: '/privacy', key: 'privacy_policy' },
+    { href: '#terms-inspection', key: 'inspection_terms' },
+    { href: '#refund-policy', key: 'refund_policy' },
+    { href: '#terms', key: 'terms_conditions' },
+    { href: '#privacy', key: 'privacy_policy' },
   ],
 };
 

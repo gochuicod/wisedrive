@@ -31,6 +31,7 @@ export const useHomeCTAs = () => {
       subheading: t('consultation.subheading'),
       button1Text: t('consultation.btn1'),
       button1Icon: <MessageSquareMore className="size-6" />,
+      button1Href: 'https://wa.me/60122559610',
     },
     secure: {
       ...HOME_CTA_CONFIG.secure,

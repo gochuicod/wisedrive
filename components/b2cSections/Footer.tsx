@@ -6,12 +6,21 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FOOTER_LINKS } from '@/constants';
 import Link from 'next/link';
+
 import { usePathname } from 'next/navigation';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import { useLocale } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('Footer');
   const pathname = usePathname();
   const isEnterprisePage = pathname?.includes('/enterprise-solutions');
+  const locale = useLocale();
+  const scrollTo = useSmoothScroll();
+
+  const withLocale = (href: string) => `/${locale}${href}`;
+  const resolveHref = (href: string) =>
+    href.startsWith('#') ? href : `/${locale}${href}`;
 
   return (
     <div
@@ -120,7 +129,8 @@ export default function Footer() {
                   {links.map((link) => (
                     <li key={link.key}>
                       <Link
-                        href={link.href}
+                        href={resolveHref(link.href)}
+                        onClick={(e) => scrollTo(e, resolveHref(link.href))}
                         className={cn(
                           'text-wdBlue',
                           'text-sm',
