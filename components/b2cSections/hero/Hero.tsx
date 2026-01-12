@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { AppButton } from '@/components/AppButton';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ChevronsDown, Calendar } from 'lucide-react';
 import Counter from '@/components/Counter';
 import Image from 'next/image';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
@@ -95,7 +95,7 @@ export default function Hero() {
                 href="#our-brands"
                 variant="glass"
                 size="md"
-                rightIcon={<ArrowRight className="size-5" />}
+                rightIcon={<ChevronsDown className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
                 onClick={(e) => scrollTo(e, '#our-brands')}
               >

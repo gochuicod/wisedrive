@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { AppButton } from '@/components/AppButton';
-import { ArrowDown, Calendar } from 'lucide-react';
+import { ChevronsDown, Calendar } from 'lucide-react';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 export default function Hero() {
@@ -121,7 +121,7 @@ export default function Hero() {
                 href="/enterprise-solutions#tech-stack"
                 variant="tertiary"
                 size={isMobile ? 'sm' : 'md'}
-                rightIcon={<ArrowDown className="size-5" />}
+                rightIcon={<ChevronsDown className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
                 onClick={(e) => scrollTo(e, '/enterprise-solutions#tech-stack')}
               >
