@@ -12,7 +12,7 @@ export const Steps = () => {
 
   return (
     <section
-      className="w-full flex flex-col px-tight lg:py-tight py-relaxed mx-auto items-center justify-center bg-cover bg-center"
+      className="w-full flex flex-col px-2 py-relaxed lg:py-tight mx-auto items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage: 'url(/stepsSection/wisedrive-steps-section.webp)',
       }}
@@ -55,7 +55,7 @@ export const Steps = () => {
             <StepCard
               key={key}
               heading={t(`steps.${key}.heading`)}
-              className="md:w-full w-[40%]" // Standardized width class
+              className="md:w-full w-[40%]" 
             >
               <p>{t(`steps.${key}.description`)}</p>
             </StepCard>
