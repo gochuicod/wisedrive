@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Oswald, Poppins } from 'next/font/google';
+import type { Metadata } from 'next';
 import '@/app/globals.css';
 
 import Navbar from '@/components/b2cSections/Navbar';
@@ -9,6 +10,7 @@ import { StickyBanner } from '@/components/StickyBanner';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -22,6 +24,13 @@ const poppins = Poppins({
   variable: '--font-body',
   display: 'swap',
 });
+
+export const metadata: Metadata = {
+  title: 'WiseDrive',
+  icons: {
+    icon: '/favicon.ico', //replace icon here
+  },
+};
 
 export default async function LocaleLayout({
   children,
