@@ -385,24 +385,32 @@
           "label": "Syarikat",
           "placeholder": "Nama Syarikat"
         },
+        "email": {
+          "label": "E-mel",
+          "placeholder": "Masukkan alamat e-mel anda"
+        },
+        "phone": {
+          "label": "Nombor Telefon",
+          "placeholder": "Masukkan nombor telefon anda"
+        },
         "businessType": {
           "label": "Jenis Perniagaan",
           "options": [
             {
-              "label": "Penilaian Risiko",
-              "value": "risk"
+              "label": "Bank",
+              "value": "Bank"
             },
             {
-              "label": "Integrasi Data",
-              "value": "data"
+              "label": "Penanggung Insurans",
+              "value": "Insurer"
             },
             {
-              "label": "Perlindungan Aset",
-              "value": "asset"
+              "label": "OEM",
+              "value": "OEM"
             },
             {
               "label": "Lain-lain",
-              "value": "other"
+              "value": "Other"
             }
           ]
         }
@@ -412,7 +420,7 @@
       },
       "messages": {
         "success": "Mesej berjaya dihantar!",
-        "error": "Terdapat masalah. Sila cuba lagi."
+        "error": "Terdapat masalah."
       }
     }
   },

@@ -23,7 +23,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="flex flex-col items-start w-full">
         {label && (
-          <label className="mb-1 font-['Poppins'] text-body font-bold text-[#4D525C]">
+          <label className="mb-1 text-body font-bold text-[#4D525C]">
             {label}
           </label>
         )}

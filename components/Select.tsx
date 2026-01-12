@@ -23,7 +23,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       <div className="flex flex-col items-start w-full">
         {/* Label */}
         {label && (
-          <label className="mb-1 font-['Poppins'] text-sm font-bold text-[#4D525C]">
+          <label className="mb-1 text-body font-bold text-[#4D525C]">
             {label}
           </label>
         )}

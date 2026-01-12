@@ -385,24 +385,32 @@
           "label": "Company",
           "placeholder": "Company Name"
         },
+        "email": {
+          "label": "Email",
+          "placeholder": "Input your email address"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "Input your phone number"
+        },
         "businessType": {
           "label": "Business Type",
           "options": [
             {
-              "label": "Risk Assessment",
-              "value": "risk"
+              "label": "Bank",
+              "value": "Bank"
             },
             {
-              "label": "Data Integration",
-              "value": "data"
+              "label": "Insurer",
+              "value": "Insurer"
             },
             {
-              "label": "Asset Protection",
-              "value": "asset"
+              "label": "OEM",
+              "value": "OEM"
             },
             {
               "label": "Other",
-              "value": "other"
+              "value": "Other"
             }
           ]
         }

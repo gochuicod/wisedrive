@@ -12,6 +12,7 @@ import {
   contactSchema,
   ContactFormData,
 } from '@/lib/validators/contact.schema';
+import { email } from 'zod';
 
 const ContactForm = () => {
   const t = useTranslations('Contact.form');
@@ -25,6 +26,14 @@ const ContactForm = () => {
     company: {
       label: t('fields.company.label'),
       placeholder: t('fields.company.placeholder'),
+    },
+    email: {
+      label: t('fields.email.label'),
+      placeholder: t('fields.email.placeholder'),
+    },
+    phone: {
+      label: t('fields.phone.label'),
+      placeholder: t('fields.phone.placeholder'),
     },
     businessType: {
       label: t('fields.businessType.label'),
@@ -59,37 +68,54 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-end gap-8 w-full"
+      className="flex flex-col items-end gap-2 w-full"
     >
-      {/* Row 1 */}
-      <div className="flex flex-col md:flex-row gap-4 w-full">
-        <Input
-          label={formFields.name.label}
-          placeholder={formFields.name.placeholder}
-          {...register('name')}
-          error={errors.name?.message}
-        />
-        <Input
-          label={formFields.company.label}
-          placeholder={formFields.company.placeholder}
-          {...register('company')}
-          error={errors.company?.message}
-        />
-      </div>
+      <div className="flex flex-col items-end gap-2 w-full">
+        {/* Row 1 */}
+        <div className="flex flex-col md:flex-row gap-4 w-full">
+          <Input
+            label={formFields.name.label}
+            placeholder={formFields.name.placeholder}
+            {...register('name')}
+            error={errors.name?.message}
+          />
+          <Input
+            label={formFields.email.label}
+            placeholder={formFields.email.placeholder}
+            {...register('email')}
+            error={errors.email?.message}
+          />
+        </div>
 
-      {/* Business Type */}
-      <Select
-        label={formFields.businessType.label}
-        options={formFields.businessType.options}
-        {...register('businessType')}
-        error={errors.businessType?.message}
-      />
+        {/* Row 2 */}
+        <div className="flex flex-col md:flex-row gap-4 w-full">
+          <Input
+            label={formFields.company.label}
+            placeholder={formFields.company.placeholder}
+            {...register('company')}
+            error={errors.company?.message}
+          />
+          <Select
+            label={formFields.businessType.label}
+            options={formFields.businessType.options}
+            {...register('businessType')}
+            error={errors.businessType?.message}
+          />
+        </div>
+
+          <Input
+            label={formFields.phone.label}
+            placeholder={formFields.phone.placeholder}
+            {...register('phone')}
+            error={errors.phone?.message}
+          />
+      </div>  
 
       <AppButton
         type="submit"
         leftIcon={<Users size={20} />}
         disabled={isSubmitting}
-        className="w-full md:w-fit"
+        className="w-full md:w-fit md:mt-8 mt-4"
       >
         {t('submitButton.label')}
       </AppButton>

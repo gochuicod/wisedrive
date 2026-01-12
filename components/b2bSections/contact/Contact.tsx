@@ -29,19 +29,21 @@ export const Contact = () => {
             alt={contactData.image.alt}
             width={1440}
             height={1080}
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-contain "
           />
         </div>
 
         {/* Column 2 */}
-        <div className="flex-1 flex flex-col bg-gradient-to-r from-white to-[#E4F7FF]/60 rounded-2xl p-8 md:py-16 md:px-12 justify-center items-center text-center gap-2">
-          <HighlightedHeading
-            text={contactData.heading}
-            className="font-heading text-center"
-          />
-          <p className="font-poppins text-[16px] text-[#1E2939] leading-[24px] text-center">
-            {contactData.subheading}
-          </p>
+        <div className="flex-1 flex flex-col bg-gradient-to-r from-white to-[#E4F7FF]/60 rounded-2xl p-8 md:py-16 md:px-12 justify-center items-center text-center gap-8">
+          <div className="flex flex-col max-w-[544px] gap-2 items-center justify-center">
+              <HighlightedHeading
+                text={contactData.heading}
+                className="font-heading text-h4 text-center lg:max-w-[400px] md:max-w-[450px] max-w-[300px]"
+              />
+              <p className="text-body">
+                {contactData.subheading}
+              </p>
+            </div>
           <ContactForm />
         </div>
       </div>
