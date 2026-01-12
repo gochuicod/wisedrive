@@ -90,7 +90,7 @@ export default function Inspection() {
                 {t('book_your_inspection_button')}
               </AppButton>
               <AppButton
-                href="+60 12 255 9610"
+                href="https://wa.me/60122559610"
                 variant="tertiary"
                 size="sm"
                 leftIcon={<MessageSquare className="size-4" />}
