@@ -12,6 +12,11 @@
     "inspect_with_confidence_button": "Periksa dengan yakin",
     "partner_with_us_button": "Jadi Rakan Kongsi Kami"
   },
+  "StickyBanner": {
+    "text": "Adakah anda seorang Pengedar, Penanggung Insurans, atau Pembiaya? Lihat bagaimana Wisedrive melindungi portfolio anda.",
+    "ctaLabel": "Pergi ke Solusi Perusahaan",
+    "ctaLink": "#enterprise-solutions"
+  },
   "PartnershipModels": {
     "heading": "Model Perkongsian",
     "subheading": "Model kerjasama bertaraf perusahaan yang direka untuk berskala besar.",

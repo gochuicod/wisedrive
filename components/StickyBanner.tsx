@@ -1,21 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import { ArrowRight, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface StickyBannerProps {
-  text?: string;
-  ctaLabel?: string;
-  ctaLink?: string;
   className?: string;
 }
 
 export const StickyBanner: React.FC<StickyBannerProps> = ({
-  text = "Are you a Dealer, Insurer, or Financier? See how Wisedrive secures your portfolio.",
-  ctaLabel = "Go to Enterprise Solutions",
-  ctaLink = "#",
   className = "",
 }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const t = useTranslations("StickyBanner");
 
   if (!isVisible) return null;
 
@@ -45,12 +42,12 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
         
         {/* Main Text */}
         <span className="font-poppins text-[14px] leading-[17px] font-normal text-white">
-          {text}
+          {t("text")}
         </span>
 
         {/* CTA Button */}
         <a
-          href={ctaLink}
+          href={t("ctaLink")}
           className={`
             /* Box Model */
             box-border h-[32px] px-4 py-2 gap-2
@@ -68,10 +65,13 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
             hover:bg-white hover:text-[#0D2059] transition-colors group
           `}
         >
-          <span>{ctaLabel}</span>
+          <span>{t("ctaLabel")}</span>
           
           {/* Right Arrow Icon */}
-          <ArrowRightIcon className="stroke-white group-hover:stroke-[#0D2059] transition-colors" />
+          <ArrowRight 
+            size={16} 
+            className="stroke-white group-hover:stroke-[#0D2059] transition-colors ml-2" 
+          />
         </a>
       </div>
 
@@ -91,62 +91,8 @@ export const StickyBanner: React.FC<StickyBannerProps> = ({
           rounded hover:bg-white/10 transition-colors
         `}
       >
-        <CloseIcon />
+        <X size={17} className="text-white" />
       </button>
     </div>
   );
 };
-
-// --- Icons ---
-
-const ArrowRightIcon = ({ className }: { className?: string }) => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <path
-      d="M3.33334 8H12.6667"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M8 3.33334L12.6667 8.00001L8 12.6667"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const CloseIcon = ({ className }: { className?: string }) => (
-  <svg
-    width="17"
-    height="17"
-    viewBox="0 0 17 17"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <path
-      d="M12.75 4.25L4.25 12.75"
-      stroke="white"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M4.25 4.25L12.75 12.75"
-      stroke="white"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);

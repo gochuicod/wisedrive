@@ -12,6 +12,11 @@
     "inspect_with_confidence_button": "Inspect with confidence",
     "partner_with_us_button": "Partner with us"
   },
+  "StickyBanner": {
+    "text": "Are you a Dealer, Insurer, or Financier? See how Wisedrive secures your portfolio.",
+    "ctaLabel": "Go to Enterprise Solutions",
+    "ctaLink": "#enterprise-solutions"
+  },
   "PartnershipModels": {
     "heading": "Partnership Models",
     "subheading": "Enterprise-grade engagement models designed for scale.",
