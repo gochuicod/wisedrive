@@ -352,6 +352,54 @@
       }
     }
   },
+  "Contact": {
+    "heading": "Mari Reka Penyelesaian Risiko Aset Anda.",
+    "subheading": "Setiap aliran kerja perusahaan melibatkan parameter risiko yang berbeza. Beritahu kami keperluan anda, dan kami akan menunjukkan bagaimana lapisan data kami berintegrasi untuk melindungi keuntungan anda.",
+    "image": {
+      "src": "/contact/contact.webp",
+      "alt": "Gambar Hubungi"
+    },
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Nama",
+          "placeholder": "Masukkan nama penuh anda"
+        },
+        "company": {
+          "label": "Syarikat",
+          "placeholder": "Nama Syarikat"
+        },
+        "businessType": {
+          "label": "Jenis Perniagaan",
+          "options": [
+            {
+              "label": "Penilaian Risiko",
+              "value": "risk"
+            },
+            {
+              "label": "Integrasi Data",
+              "value": "data"
+            },
+            {
+              "label": "Perlindungan Aset",
+              "value": "asset"
+            },
+            {
+              "label": "Lain-lain",
+              "value": "other"
+            }
+          ]
+        }
+      },
+      "submitButton": {
+        "label": "Hubungi Jualan Enterprise"
+      },
+      "messages": {
+        "success": "Mesej berjaya dihantar!",
+        "error": "Terdapat masalah. Sila cuba lagi."
+      }
+    }
+  },
   "OurBrands": {
     "badge_text": "Jenama Kami",
     "heading": "Kepakaran Merentas Setiap Jenama",
