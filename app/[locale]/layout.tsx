@@ -5,6 +5,7 @@ import '@/app/globals.css';
 
 import Navbar from '@/components/b2cSections/Navbar';
 import Footer from '@/components/b2cSections/Footer';
+import { StickyBanner } from '@/components/StickyBanner';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -40,6 +41,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages} locale={locale}>
           <SpeedInsights />
           <Analytics />
+          <StickyBanner />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
