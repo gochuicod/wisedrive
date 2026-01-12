@@ -10,6 +10,29 @@ export const NAV_LINKS = [
   { href: '/#faqs', key: 'faqs', label: 'faqs' },
 ];
 
+export const ENTERPRISE_LINKS = [
+  {
+    href: '/enterprise-solutions#tech-stack',
+    key: 'tech_stack',
+    label: 'our_tech_stack',
+  },
+  {
+    href: '/enterprise-solutions#audience',
+    key: 'audience',
+    label: 'our_audience',
+  },
+  {
+    href: '/enterprise-solutions#partnership-models',
+    key: 'partnership_models',
+    label: 'partnership_models',
+  },
+  {
+    href: '/enterprise-solutions#contact-us',
+    key: 'contact_us',
+    label: 'contact_us',
+  },
+];
+
 export const FOOTER_LINKS = {
   products: [
     { href: '/#inspections', key: 'car_inspections' },
@@ -101,3 +124,55 @@ export const HOME_CTA_CONFIG = {
     invertedGradient: true,
   },
 } as const;
+
+export const modelsData = [
+  {
+    id: 1,
+    title: 'Volume License / Enterprise Subscription',
+    subtitle:
+      '<strong>Best for:</strong> Banks, Insurers, OEMs, and Large Dealer Groups',
+    image: '/model_card/model-card-1.webp',
+    content:
+      'A contracted monthly arrangement designed for high-volume stability. Includes volume-tiered pricing for inspections, dedicated account management, and SLA-backed turnaround times.',
+  },
+  {
+    id: 2,
+    title: 'API & White Label Integration',
+    subtitle:
+      '<strong>Best for:</strong> Superapps, Fintechs, and Major Marketplaces',
+    image: '/model_card/model-card-2.webp',
+    content:
+      'A flexible integration model offering API access and white-label solutions. Ideal for businesses seeking to embed our services seamlessly into their platforms with customizable branding and user experience.',
+  },
+];
+
+export const cards = [
+  {
+    title: 'Banks & Financiers',
+    tag: 'THE WISEDRIVE ADVANTAGE',
+    description:
+      'Secure your Loan-to-Value (LTV) ratios with hard technical data. We verify the true mileage and mechanical condition of collateral before approval. By detecting potential mechanical failures early, we reduce the risk of assets becoming Non-Performing Loans (NPLs) due to sudden depreciation or abandonment by the borrower.',
+    image: '/infrastructure/infrastructure1.webp',
+  },
+  {
+    title: 'Insurance Companies',
+    tag: 'THE WISEDRIVE ADVANTAGE',
+    description:
+      'Reduce claim fraud and optimize premium calculations with verified vehicle data. Our technology detects odometer tampering and hidden mechanical issues before claims are filed, protecting your bottom line.',
+    image: '/infrastructure/infrastructure2.webp',
+  },
+  {
+    title: 'Dealership Networks & OEMs',
+    tag: 'THE WISEDRIVE ADVANTAGE',
+    description:
+      'Enhance used vehicle inventory management and warranty claims processing. Verify true vehicle condition and maintenance history to improve customer satisfaction and reduce warranty costs.',
+    image: '/infrastructure/infrastructure3.webp',
+  },
+  {
+    title: 'Marketplaces & Platforms',
+    tag: 'THE WISEDRIVE ADVANTAGE',
+    description:
+      'Build trust with buyers through transparent vehicle reports. Our technical data verification increases conversion rates and reduces post-purchase disputes on your platform.',
+    image: '/infrastructure/infrastructure4.webp',
+  },
+];
