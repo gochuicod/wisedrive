@@ -1,10 +1,13 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Oswald, Poppins } from 'next/font/google';
+import '@/app/globals.css';
+
 import Navbar from '@/components/b2cSections/Navbar';
 import Footer from '@/components/b2cSections/Footer';
-import '@/app/globals.css';
+
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -36,6 +39,7 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <SpeedInsights />
+          <Analytics />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
