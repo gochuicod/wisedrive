@@ -4,11 +4,19 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { ModelCard } from '@/components/ModelCard';
-import { modelsData } from '@/constants';
+// Import the new function instead of the static array
+import { getModelsData } from '@/constants';
+
+import { useTranslations } from 'next-intl';
 
 export const Models = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [screenSize, setScreenSize] = useState('lg');
+
+  const t = useTranslations('PartnershipModels');
+
+  // Generate the data by passing the translator
+  const modelsData = getModelsData(t);
 
   // Detect screen size
   React.useEffect(() => {
@@ -73,13 +81,8 @@ export const Models = () => {
         <div className="relative z-10 w-full flex flex-col gap-6 pb-8">
           {/* Heading */}
           <div className="max-w-[592px] flex flex-col gap-2">
-            <HighlightedHeading
-              text="Partnership Models"
-              className="font-heading"
-            />
-            <p className="text-body">
-              Enterprise-grade engagement models designed for scale.
-            </p>
+            <HighlightedHeading text={t('heading')} className="font-heading" />
+            <p className="text-body">{t('subheading')}</p>
           </div>
 
           {/* Cards Container */}
@@ -98,7 +101,6 @@ export const Models = () => {
           {/* Mobile Carousel Controls */}
           {screenSize === 'mobile' && (
             <div className="flex items-center justify-center gap-4 mt-4">
-              {/* Previous Button */}
               <button
                 onClick={handlePrev}
                 className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
@@ -121,7 +123,6 @@ export const Models = () => {
                 </svg>
               </button>
 
-              {/* Carousel Indicators */}
               <div className="flex gap-2 justify-center">
                 {Array.from({ length: totalGroups }).map((_, index) => (
                   <button
@@ -137,7 +138,6 @@ export const Models = () => {
                 ))}
               </div>
 
-              {/* Next Button */}
               <button
                 onClick={handleNext}
                 className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"

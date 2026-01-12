@@ -125,24 +125,21 @@ export const HOME_CTA_CONFIG = {
   },
 } as const;
 
-export const modelsData = [
+export const getModelsData = (t: any) => [
   {
     id: 1,
-    title: 'Volume License / Enterprise Subscription',
-    subtitle:
-      '<strong>Best for:</strong> Banks, Insurers, OEMs, and Large Dealer Groups',
+    title: t('cards.card_1.heading'),
+    // Use t.raw() because your data contains HTML tags like <strong>
+    subtitle: t.raw('cards.card_1.subheading'),
     image: '/model_card/model-card-1.webp',
-    content:
-      'A contracted monthly arrangement designed for high-volume stability. Includes volume-tiered pricing for inspections, dedicated account management, and SLA-backed turnaround times.',
+    content: t('cards.card_1.description'),
   },
   {
     id: 2,
-    title: 'API & White Label Integration',
-    subtitle:
-      '<strong>Best for:</strong> Superapps, Fintechs, and Major Marketplaces',
+    title: t('cards.card_2.heading'),
+    subtitle: t.raw('cards.card_2.subheading'),
     image: '/model_card/model-card-2.webp',
-    content:
-      'A flexible integration model offering API access and white-label solutions. Ideal for businesses seeking to embed our services seamlessly into their platforms with customizable branding and user experience.',
+    content: t('cards.card_2.description'),
   },
 ];
 
