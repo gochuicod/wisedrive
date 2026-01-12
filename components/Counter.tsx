@@ -37,7 +37,7 @@ export default function Counter({
     // Small delay to ensure component is mounted before animation starts
     const timer = setTimeout(() => {
       setDisplayAmount(amount);
-    }, 100);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [amount]);

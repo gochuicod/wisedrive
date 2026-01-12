@@ -54,6 +54,7 @@ export default function Hero() {
             'z-0',
             '[mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]',
             'md:scale-100 scale-[200%]',
+            'animate-in fade-in duration-500',
           )}
         />
 
@@ -67,6 +68,7 @@ export default function Hero() {
             'flex flex-col justify-between items-center',
             'text-white',
             'p-tight',
+            'animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300',
           )}
         >
           {/* Content Wrapper */}
