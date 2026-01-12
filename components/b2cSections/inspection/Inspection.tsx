@@ -32,7 +32,7 @@ export default function Inspection() {
             'w-full',
             'md:aspect-[4/1] aspect-[5/1]',
             'text-white',
-            "bg-[url('/inspection/bg_image.webp')] bg-no-repeat bg-cover bg-center",
+            "bg-[url('/inspection/bg-base.webp')] bg-no-repeat bg-cover bg-center",
             'rounded-3xl',
             'relative overflow-visible',
           )}
@@ -40,7 +40,7 @@ export default function Inspection() {
           <Image
             width={1920}
             height={1080}
-            src="/inspection/bg_image_offset.webp"
+            src="/inspection/feature-car.webp"
             alt="inspection car image"
             className={cn(
               'absolute',
