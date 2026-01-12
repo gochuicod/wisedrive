@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { Badge } from '@/components/Badge';
 import { HighlightedHeading } from '@/components/HighlightedHeading';
+import { Marquee } from '@/components/ui/marquee';
 
 export default function OurBrands() {
   const t = useTranslations('OurBrands');
@@ -29,10 +30,10 @@ export default function OurBrands() {
         className="md:text-h4 font-heading font-bold text-center"
       />
       <p className={cn('text-body', 'text-center')}>{t('description')}</p>
-      <div className="flex lg:flex-row flex-wrap justify-center items-center md:gap-4 gap-2 mt-8">
+      <Marquee pauseOnHover className="w-full mt-8 max-w-[1248px]">
         {OUR_BRANDS_CARS.map((car) => {
           return (
-            <div key={car.key} className="flex flex-col items-center">
+            <div key={car.key} className="flex flex-col items-center px-4">
               <Image
                 src={car.image}
                 alt={car.key}
@@ -43,7 +44,7 @@ export default function OurBrands() {
             </div>
           );
         })}
-      </div>
+      </Marquee>
     </div>
   );
 }
