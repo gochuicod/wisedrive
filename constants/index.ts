@@ -69,35 +69,35 @@ export const SOCIALS = {
 export const OUR_BRANDS_CARS = [
   {
     key: 'bmw',
-    image: '/brands/bmw.webp',
+    image: '/brands/bmw-new.webp',
   },
   {
     key: 'honda',
-    image: '/brands/honda.webp',
+    image: '/brands/honda-new.webp',
   },
   {
     key: 'mazda',
-    image: '/brands/mazda.webp',
+    image: '/brands/mazda-new.webp',
   },
   {
     key: 'mercedez',
-    image: '/brands/mercedez.webp',
+    image: '/brands/mercedez-new.webp',
   },
   {
     key: 'nissan',
-    image: '/brands/nissan.webp',
+    image: '/brands/nissan-new.webp',
   },
   {
     key: 'perodua',
-    image: '/brands/perodua.webp',
+    image: '/brands/perodua-new.webp',
   },
   {
     key: 'proton',
-    image: '/brands/proton.webp',
+    image: '/brands/proton-new.webp',
   },
   {
     key: 'toyota',
-    image: '/brands/toyota.webp',
+    image: '/brands/toyota-new.webp',
   },
 ];
 
