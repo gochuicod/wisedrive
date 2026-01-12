@@ -28,7 +28,6 @@ export default function OurBrands() {
       <Badge>{t('badge_text')}</Badge>
       <HighlightedHeading
         text={t('heading')}
-        highlight={t('heading_highlighted_word')}
         className="md:text-h4 font-heading font-bold text-center"
       />
       <p className={cn('text-body', 'text-center')}>{t('description')}</p>
