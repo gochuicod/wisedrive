@@ -20,7 +20,7 @@ export const PopUp: React.FC<PopUpProps> = ({
   onClose,
   onCtaClick,
   imageSrc = "/icons/componentIcons/car-icon.svg",
-  ctaLink = "#",
+  ctaLink = "/enterprise-solutions",
   className = "",
 }) => {
   const t = useTranslations("PopUp");
@@ -128,6 +128,8 @@ export const PopUp: React.FC<PopUpProps> = ({
           variant="default"
           size="sm"
           rightIcon={<ArrowUpRight size={16} />}
+          href={ctaLink}
+
         >
           {ctaLabel}
         </AppButton>

@@ -15,7 +15,7 @@
   "StickyBanner": {
     "text": "Are you a Dealer, Insurer, or Financier? See how Wisedrive secures your portfolio.",
     "ctaLabel": "Go to Enterprise Solutions",
-    "ctaLink": "#enterprise-solutions"
+    "ctaLink": "/enterprise-solutions"
   },
   "PopUp": {
     "title": "Scale your portfolio with data you can trust",
