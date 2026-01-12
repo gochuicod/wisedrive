@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect, useMemo } from "react";
 import { Coins, Aperture, Workflow, Store } from "lucide-react";
@@ -44,8 +44,8 @@ export const Infrastructure = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Get data from translations
@@ -87,8 +87,8 @@ export const Infrastructure = () => {
             {buttons.map((button, index) => (
               <AppButton
                 key={index}
-                variant={activeTab === index ? 'default' : 'tertiary'}
-                size={isMobile ? 'sm' : 'lg'}
+                variant={activeTab === index ? "default" : "tertiary"}
+                size={isMobile ? "sm" : "lg"}
                 onClick={() => setActiveTab(index)}
                 leftIcon={button.icon}
               >
