@@ -1,3 +1,8 @@
+'use client';
+
+import NumberFlow from '@number-flow/react';
+import { useEffect, useState } from 'react';
+
 type CounterSize = 'sm' | 'md' | 'lg';
 type CounterColor =
   | 'primary'
@@ -23,10 +28,19 @@ export default function Counter({
   digitColor = 'accent',
   currencyColor = 'accent',
 }: CounterProps) {
+  const [displayAmount, setDisplayAmount] = useState(0);
+
   /* ----------------------------------------
-   * Formatting
+   * Animation on mount and when amount changes
    * -------------------------------------- */
-  const digits = amount.toLocaleString('en-US').split('');
+  useEffect(() => {
+    // Small delay to ensure component is mounted before animation starts
+    const timer = setTimeout(() => {
+      setDisplayAmount(amount);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [amount]);
 
   /* ----------------------------------------
    * Size configuration
@@ -99,6 +113,7 @@ export default function Counter({
     ${colorMap[digitColor]}
     font-body font-bold
     text-center
+    inline-block
   `;
 
   /* ----------------------------------------
@@ -109,16 +124,19 @@ export default function Counter({
       {/* Currency */}
       <span className={currencyClasses}>{currency}</span>
 
-      {/* Digits */}
-      <div className="flex">
-        {digits.map((char, index) => {
-          return (
-            <span key={index} className={digitClasses}>
-              {char}
-            </span>
-          );
-        })}
-      </div>
+      {/* Digits with NumberFlow Animation */}
+      <NumberFlow
+        value={displayAmount}
+        locales="en-US"
+        format={{ 
+          useGrouping: true,
+          minimumIntegerDigits: 6,
+        }}
+        className={digitClasses}
+        style={{
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      />
     </div>
   );
 }
