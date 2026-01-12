@@ -39,6 +39,10 @@ const ContactForm = () => {
       label: t('fields.businessType.label'),
       options: t.raw('fields.businessType.options') as Array<{ label: string; value: string }>,
     },
+    message: {
+      label: t('fields.message.label'),
+      placeholder: t('fields.message.placeholder'),
+    },
   };
 
   const {
@@ -108,6 +112,15 @@ const ContactForm = () => {
             placeholder={formFields.phone.placeholder}
             {...register('phone')}
             error={errors.phone?.message}
+          />
+
+          <Input
+            variant="textarea"
+            rows={5}
+            label={formFields.message.label}
+            placeholder={formFields.message.placeholder}
+            {...register('message')}
+            error={errors.message?.message}
           />
       </div>  
 

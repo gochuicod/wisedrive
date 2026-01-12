@@ -413,6 +413,10 @@
               "value": "Other"
             }
           ]
+        },
+        "message": {
+          "label": "Mesej",
+          "placeholder": "Tulis mesej anda di sini"
         }
       },
       "submitButton": {
