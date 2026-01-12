@@ -153,6 +153,32 @@
     "heading_highlighted_word": "Teknologi AI",
     "description": "Pemeriksaan kami diperkasakan oleh kepakaran pemeriksa profesional kami yang disokong oleh teknologi AI yang dibina daripada lebih satu juta titik data. Bersama-sama, Wisedrive memberikan anda laporan yang boleh dipercayai sepenuhnya"
   },
+  "TechStack": {
+    "title": "Teknologi Wisedrive: Cara Kami Mengesahkan Kualiti Aset",
+    "subheading": "Lebih daripada sekadar pemeriksaan visual. Kami menggunakan teknologi proprietari untuk mendedahkan realiti mekanikal dan kewangan setiap aset.",
+    "dropdowns": [
+      {
+        "id": "ecu-obd",
+        "title": "Diagnostik ECU & OBD-II Mendalam",
+        "description": "Kami bukan sekadar mendengar bunyi enjin — kami menganalisis komputer kenderaan. Pengimbas kami menilai data masa nyata untuk mengesan kod ralat tersembunyi, gelinciran transmisi, dan rekod ralat sejarah yang tidak dapat dikesan melalui pemeriksaan visual biasa."
+      },
+      {
+        "id": "bodywork-analysis",
+        "title": "Analisis Badan Kenderaan Secara Saintifik (Mikron Cat)",
+        "description": "Menggunakan alat pengukur ketebalan salutan digital, kami memetakan kedalaman cat pada lebih daripada 15 panel. Ketidakseimbangan menunjukkan kemalangan terdahulu, pembaikan dempul, dan pengecatan semula yang tidak dapat dilihat dengan mata kasar."
+      },
+      {
+        "id": "ai-protocol",
+        "title": "Protokol 150-Titik Dipacu AI",
+        "description": "Pemeriksa kami mengikuti aliran kerja berstruktur melalui aplikasi yang menghapuskan subjektiviti manusia. Setiap pemeriksaan memerlukan bukti fotografi dan input data, menghasilkan \"Skor Wisedrive\" yang membolehkan anda membandingkan kualiti aset antara cawangan atau wilayah dengan pantas."
+      },
+      {
+        "id": "fraud-detection",
+        "title": "Pengesanan Penipuan Berasaskan Algoritma",
+        "description": "Kami membandingkan keadaan kenderaan semasa dengan pangkalan data perbatuan dan rekod servis sejarah. Sistem kami mengesan pemalsuan odometer dan manipulasi VIN dengan serta-merta, mengelakkan anda daripada membiayai atau menginsuranskan nilai palsu."
+      }
+    ]
+  },
   "Infrastructure": {
     "heading": "Infrastruktur untuk Ekosistem Automotif",
     "description": "Amankan aset anda dan sederhanakan operasi dengan infrastruktur data yang disesuaikan dengan sektor anda.",

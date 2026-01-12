@@ -1,8 +1,34 @@
 import Image from 'next/image';
 import { DropDown } from '@/components/DropDown';
 import { HighlightedHeading } from '@/components/HighlightedHeading';
+import { useTranslations } from 'next-intl';
+import { useMemo } from 'react';
+
+// Transform dropdowns data from i18n
+const transformDropdownsData = (dropdowns: Array<{ id: string; title: string; description: string }>) => {
+  return dropdowns.map((dropdown) => ({
+    id: dropdown.id,
+    title: dropdown.title,
+    description: dropdown.description,
+  }));
+};
 
 export const TechStack = () => {
+  const t = useTranslations('TechStack');
+
+  // Get data from translations
+  const techStackData = useMemo(() => {
+    return {
+      title: t('title'),
+      subheading: t('subheading'),
+    };
+  }, [t]);
+
+  const dropdowns = useMemo(() => {
+    const rawDropdowns = t.raw('dropdowns') as Array<{ id: string; title: string; description: string }>;
+    return transformDropdownsData(rawDropdowns);
+  }, [t]);
+
   return (
     <section
       className="w-full flex px-tight py-relaxed mx-auto items-center justify-center overflow-clip"
@@ -15,12 +41,11 @@ export const TechStack = () => {
           {/* Left Wrapper - Badge & Heading */}
           <div className="flex-1 flex flex-col items-center gap-2">
             <HighlightedHeading
-              text="The Wisedrive Tech Stack: How We Validate Assets"
+              text={techStackData.title}
               className="font-heading text-center"
             />
             <p className="font-poppins text-[16px] text-[#1E2939] leading-[19px] text-center">
-              Beyond simple visual checks. We use proprietary technology to
-              uncover the mechanical and financial reality of every asset.
+              {techStackData.subheading}
             </p>
           </div>
         </div>
@@ -29,32 +54,13 @@ export const TechStack = () => {
         <div className="w-full flex lg:min-h-[600px] md:min-h-[500px] flex-col-reverse md:flex-row gap-6 py-6 items-center pt-0 pb-20 md:px-10 px-0">
           {/* Column 1 */}
           <div className="flex-1 h-fit border-none rounded-2xl flex flex-col gap-2 items-end justify-center md:pt-0 pt-[200px]">
-            <DropDown title="Deep ECU & OBD-II Diagnostics" variant="gradient">
-              <p>
-                We don't just listen to the engine; we interrogate the onboard
-                computer. Our scanners analyze live data streams for hidden
-                fault codes, transmission slippage, and historical error logs
-                that standard visual inspections miss.
-              </p>
-            </DropDown>
-
-            <DropDown
-              title="How long does the inspection take?"
-              variant="gradient"
-            >
-              <p>Placeholder content for this FAQ item.</p>
-            </DropDown>
-
-            <DropDown
-              title="What areas of the home are inspected?"
-              variant="gradient"
-            >
-              <p>Placeholder content for this FAQ item.</p>
-            </DropDown>
-
-            <DropDown title="Do I get a detailed report?" variant="gradient">
-              <p>Placeholder content for this FAQ item.</p>
-            </DropDown>
+            {dropdowns.map((dropdown) => (
+              <DropDown key={dropdown.id} title={dropdown.title} variant="gradient">
+                <p>
+                  {dropdown.description}
+                </p>
+              </DropDown>
+            ))}
           </div>
 
           {/* Column 2 */}

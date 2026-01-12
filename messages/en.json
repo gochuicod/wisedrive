@@ -153,6 +153,32 @@
     "heading_highlighted_word": "AI technology",
     "description": "Our inspection is powered by the expertise of our professional inspectors backed by AI technology built from over one million data points. Together, Wisedrive gives you a report you can completely trust"
   },
+  "TechStack": {
+    "title": "The Wisedrive Tech Stack: How We Validate Assets",
+    "subheading": "Beyond simple visual checks. We use proprietary technology to uncover the mechanical and financial reality of every asset.",
+    "dropdowns": [
+      {
+        "id": "ecu-obd",
+        "title": "Deep ECU & OBD-II Diagnostics",
+        "description": "We don't just listen to the engine; we interrogate the onboard computer. Our scanners analyze live data streams for hidden fault codes, transmission slippage, and historical error logs that standard visual inspections miss."
+      },
+      {
+        "id": "bodywork-analysis",
+        "title": "Scientific Bodywork Analysis (Paint Microns)",
+        "description": "Using digital coating thickness gauges, we map the paint depth across 15+ panels. Inconsistencies reveal previous accidents, bondo repairs, and resprays that are invisible to the naked eye."
+      },
+      {
+        "id": "ai-protocol",
+        "title": "150-Point AI-Augmented Protocol",
+        "description": "Our inspectors follow a rigid, app-guided workflow that prevents human subjectivity. Every checkpoint requires photographic evidence and data input, creating a standardized \"Wisedrive Score\" that allows you to compare asset quality across branches or regions instantly."
+      },
+      {
+        "id": "fraud-detection",
+        "title": "Algorithmic Fraud Detection",
+        "description": "We cross-reference current vehicle condition against historical mileage databases and service records. Our system flags odometer rollbacks and VIN tampering immediately, preventing you from financing or insuring a phantom value."
+      }
+    ]
+  },
   "Infrastructure": {
     "heading": "Infrastructure for the Automotive Ecosystem",
     "description": "Secure your assets and streamline operations with data infrastructure tailored to your sector.",
