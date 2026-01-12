@@ -4,9 +4,11 @@ import { AppButton } from '@/components/AppButton';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Counter from '@/components/Counter';
 import Image from 'next/image';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 export default function Hero() {
   const t = useTranslations('B2CHero');
+  const scrollTo = useSmoothScroll();
 
   return (
     <section className={cn('w-full px-tight my-4')}>
@@ -90,10 +92,12 @@ export default function Hero() {
                 {t('book_your_inspection_button')}
               </AppButton>
               <AppButton
+                href="#our-brands"
                 variant="glass"
                 size="md"
                 rightIcon={<ArrowRight className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+                onClick={(e) => scrollTo(e, '#our-brands')}
               >
                 {t('how_it_works_button')}
               </AppButton>

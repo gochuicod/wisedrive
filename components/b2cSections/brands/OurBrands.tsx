@@ -20,20 +20,15 @@ export default function OurBrands() {
         'items-center',
         'gap-px',
       )}
+      id="our-brands"
     >
-      <Badge>
-        {t('badge_text')}
-      </Badge>
+      <Badge>{t('badge_text')}</Badge>
       <HighlightedHeading
-        text={t("heading")}
-        highlight={t("heading_highlighted_word")}
+        text={t('heading')}
+        highlight={t('heading_highlighted_word')}
         className="md:text-h4 font-heading font-bold text-center"
       />
-      <p
-        className={cn('text-body', 'text-center')}
-      >
-        {t('description')}
-      </p>
+      <p className={cn('text-body', 'text-center')}>{t('description')}</p>
       <div className="flex lg:flex-row flex-wrap justify-center items-center md:gap-4 gap-2 mt-8">
         {OUR_BRANDS_CARS.map((car) => {
           return (

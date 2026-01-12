@@ -5,11 +5,7 @@ export const useSmoothScroll = () => {
   const pathname = usePathname(); // Get current path (normalized, e.g., "/" even if on "/en")
 
   const scrollTo = useCallback(
-    (
-      e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-      href: string,
-      callback?: () => void,
-    ) => {
+    (e: React.MouseEvent<HTMLElement>, href: string, callback?: () => void) => {
       // 1. Run specific logic (like closing mobile menu)
       if (callback) callback();
 

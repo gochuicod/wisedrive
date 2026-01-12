@@ -5,10 +5,12 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { AppButton } from '@/components/AppButton';
 import { ArrowDown, Calendar } from 'lucide-react';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 export default function Hero() {
   const t = useTranslations('B2BHero');
   const [isMobile, setIsMobile] = useState(false);
+  const scrollTo = useSmoothScroll();
 
   useEffect(() => {
     const handleResize = () => {
@@ -106,18 +108,22 @@ export default function Hero() {
             {/* Right Buttons */}
             <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:w-auto md:w-full w-fit shrink-0 lg:justify-end justify-center">
               <AppButton
+                href="/enterprise-solutions#contact-us"
                 variant="default"
                 size={isMobile ? 'sm' : 'md'}
                 leftIcon={<Calendar className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+                onClick={(e) => scrollTo(e, '/enterprise-solutions#contact-us')}
               >
                 {t('partner_with_button')}
               </AppButton>
               <AppButton
+                href="/enterprise-solutions#tech-stack"
                 variant="tertiary"
                 size={isMobile ? 'sm' : 'md'}
                 rightIcon={<ArrowDown className="size-5" />}
                 className="w-full sm:w-auto justify-center lg:text-body-lg text-body-md"
+                onClick={(e) => scrollTo(e, '/enterprise-solutions#tech-stack')}
               >
                 {t('view_enterprise_solution_button')}
               </AppButton>
