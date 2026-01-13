@@ -1,7 +1,6 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Instagram, Linkedin, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FOOTER_LINKS } from '@/constants';
@@ -60,16 +59,60 @@ export default function Footer() {
           >
             {/* Socials */}
             <div className={cn('flex flex-row', 'gap-4')}>
-              <Instagram color="white" className="size-6" />
-              <Linkedin color="white" className="size-6" />
-              <Twitter color="white" className="size-6" />
-              {/* WhatsApp Icon */}
-              <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                alt="WhatsApp Icon"
-                width={24}
-                height={24}
-              />
+              {/* Instagram */}
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/icons/componentIcons/instagram.svg"
+                  alt="Instagram"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              {/* LinkedIn */}
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/icons/componentIcons/linkedin.svg"
+                  alt="LinkedIn"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              {/* Twitter */}
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/icons/componentIcons/twitter.svg"
+                  alt="Twitter"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              {/* Facebook */}
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/icons/componentIcons/fb.svg"
+                  alt="Facebook"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              {/* Tiktok */}
+              <a href="https://www.tiktok.com/@wisedrive.malaysia" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/icons/componentIcons/tiktok.svg"
+                  alt="Tiktok"
+                  width={24}
+                  height={24}
+                />
+              </a>              
+              {/* WhatsApp */}
+              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Image
+                  src="/icons/componentIcons/whatsapp.svg"
+                  alt="WhatsApp"
+                  width={24}
+                  height={24}
+                />
+              </a>
             </div>
             {/* Address */}
             <span
@@ -108,7 +151,7 @@ export default function Footer() {
                 className={cn(
                   'flex flex-col',
                   'gap-2',
-                  'lg:w-[288px] w-[162px]',
+                  'lg:w-[288px] w-full',
                   'lg:min-h-[158px] min-h-[95px]',
                 )}
               >
