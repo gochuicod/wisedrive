@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     // User Confirmation Email
     const userResponse = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['darelle@infigroup.co'], // Send to your verified email for now
+      to: [data.email], // Send to your verified email for now
       subject: 'We received your inquiry',
       html: `
         <p>Hi ${data.name},</p>
@@ -50,6 +50,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Contact form error:', error);
-    return NextResponse.json({ error: 'Failed to send email', details: String(error) }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Failed to send email', details: String(error) },
+      { status: 400 },
+    );
   }
 }
