@@ -31,7 +31,9 @@ export default function OurBrands() {
         className="md:text-h4 font-heading font-bold text-center"
       />
       <p className={cn('text-body', 'text-center')}>{t('description')}</p>
-      <Marquee pauseOnHover className="w-full mt-8 max-w-[1248px]">
+      
+      {/* Desktop: Marquee */}
+      <Marquee className="hidden md:flex w-full mt-8 max-w-[1248px]">
         {OUR_BRANDS_CARS.map((car) => {
           return (
             <div key={car.key} className="flex flex-col items-center px-4">
@@ -46,6 +48,23 @@ export default function OurBrands() {
           );
         })}
       </Marquee>
+
+      {/* Mobile: Grid layout */}
+      <div className="flex md:hidden flex-wrap justify-center items-center gap-0 mt-8 w-full">
+        {OUR_BRANDS_CARS.map((car) => {
+          return (
+            <div key={car.key} className="flex flex-col items-center justify-center w-[100px] h-[60px] bg-white rounded">
+              <Image
+                src={car.image}
+                alt={car.key}
+                width={111}
+                height={64}
+                className="w-24 h-14"
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
     </Parallax>
   );
