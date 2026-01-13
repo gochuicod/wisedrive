@@ -5,14 +5,14 @@ import { BaseGoogleRatingCard } from "@/styles/googlecardrating";
 export interface GoogleRatingCardProps extends React.HTMLAttributes<HTMLDivElement> {
   rating: string;
   buttonLabel: string;
-  onButtonClick?: () => void;
+  // onButtonClick?: () => void;
 }
 
 // --- Component ---
 export const GoogleRatingCard: React.FC<GoogleRatingCardProps> = ({
   rating,
   buttonLabel,
-  onButtonClick,
+  // onButtonClick,
   className,
   ...props
 }) => {
@@ -20,7 +20,7 @@ export const GoogleRatingCard: React.FC<GoogleRatingCardProps> = ({
     <BaseGoogleRatingCard
       rating={rating}
       buttonText={buttonLabel}
-      onButtonClick={onButtonClick}
+      // onButtonClick={onButtonClick}
       className={className}
       {...props}
     />

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { AppButton } from "@/components/AppButton";
+// import { AppButton } from "@/components/AppButton";
 
 // --- Styling Types ---
 interface BaseGoogleRatingCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -77,7 +77,7 @@ export const BaseGoogleRatingCard: React.FC<BaseGoogleRatingCardProps> = ({
         </div>
       </div>
 
-      {/* Action Button */}
+      {/* Action Button
       <AppButton 
         variant="tertiary" 
         size="sm"
@@ -85,7 +85,7 @@ export const BaseGoogleRatingCard: React.FC<BaseGoogleRatingCardProps> = ({
         className="w-full"
       >
         {buttonText}
-      </AppButton>
+      </AppButton> */}
     </div>
   );
 };
