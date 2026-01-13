@@ -18,7 +18,6 @@ export async function POST(req: Request) {
     const adminResponse = await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
       to: ['darelle@infigroup.co'],
-      reply_to: data.email,
       subject: 'New Enterprise Contact Request',
       html: `
         <h2>New Contact Request</h2>
@@ -36,7 +35,7 @@ export async function POST(req: Request) {
     // User Confirmation Email
     const userResponse = await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
-      to: [data.email], // Send to your verified email for now
+      to: [data.email],
       subject: 'We received your inquiry',
       html: `
         <p>Hi ${data.name},</p>
