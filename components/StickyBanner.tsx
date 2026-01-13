@@ -8,16 +8,18 @@ import { AppButton } from "@/components/AppButton";
 
 interface StickyBannerProps {
   className?: string;
+  isHidden?: boolean;
 }
 
 export const StickyBanner: React.FC<StickyBannerProps> = ({
   className = "",
+  isHidden = false,
 }) => {
   const t = useTranslations("StickyBanner");
   const bannerData = getStickyBannerData(t);
   const [isVisible, setIsVisible] = useState(true);
 
-  if (!isVisible) return null;
+  if (isHidden || !isVisible) return null;
 
   return (
     <div
