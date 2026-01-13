@@ -229,8 +229,7 @@ export default function Navbar() {
               })}
 
               <AppButton
-                href="/#inspection_plan"
-                onClick={(e) => scrollTo(e, '/#inspection_plan', () => setIsOpen(false))}
+                href="https://wisedrive.com/my/"
                 variant="default"
                 size="sm"
                 leftIcon={<CircleCheck className="size-4" />}

@@ -36,12 +36,13 @@ export async function POST(req: Request) {
     const userResponse = await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
       to: [data.email],
-      subject: 'We received your inquiry',
+      subject: 'Regarding your Wisedrive Enterprise Inquiry',
       html: `
         <p>Hi ${data.name},</p>
-        <p>Thanks for reaching out! Our team will contact you shortly.</p>
-        <p><strong>Business Type:</strong> ${data.businessType}</p>
-        <p><strong>From:</strong> ${data.email}</p>
+        <p>Thank you for your interest in Wisedrive's B2B solutions. We've received your details regarding ${data.company} and our team is already looking into how we can best support your ${data.businessType} operations.</p>
+        <p>At Wisedrive, we believe in scaling through data you can trust. We'll be in touch within one business day to discuss how our AI-driven inspections and "Certified" badges can help you move inventory faster and secure your assets.</p>
+        <p>Need immediate info? Reply to this email with your specific challenges, and we'll make sure to have a tailored proposal ready for our call.</p>
+        <p>Best,<br>The Wisedrive Team</p>
       `,
     });
 
