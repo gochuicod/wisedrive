@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     // Admin Email
     const adminResponse = await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
-      to: ['darelle@infigroup.co'],
+      to: ['nurhafiz.zubir@wisedrive.com'],
       subject: 'New Enterprise Contact Request',
       html: `
         <h2>New Contact Request</h2>
@@ -36,6 +36,7 @@ export async function POST(req: Request) {
     const userResponse = await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
       to: [data.email],
+      cc: ['nurhafiz.zubir@wisedrive.com'],
       subject: 'Regarding your Wisedrive Enterprise Inquiry',
       html: `
         <p>Hi ${data.name},</p>
