@@ -229,6 +229,8 @@ export default function Navbar() {
               })}
 
               <AppButton
+                href="/#inspection_plan"
+                onClick={(e) => scrollTo(e, '/#inspection_plan', () => setIsOpen(false))}
                 variant="default"
                 size="sm"
                 leftIcon={<CircleCheck className="size-4" />}
@@ -237,6 +239,8 @@ export default function Navbar() {
                 {t('inspect_with_confidence_button')}
               </AppButton>
               <AppButton
+                href="/enterprise-solutions"
+                onClick={(e) => scrollTo(e, '/enterprise-solutions', () => setIsOpen(false))}
                 variant="tertiary"
                 size="sm"
                 leftIcon={<HeartHandshake className="size-4" />}
