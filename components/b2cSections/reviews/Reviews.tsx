@@ -37,7 +37,7 @@ export const Reviews = () => {
             <GoogleRatingCard
               rating="4.8"
               buttonLabel="See Reviews"
-              onButtonClick={() => alert('See Reviews clicked')}
+              // onButtonClick={() => alert('See Reviews clicked')}
             />
           </div>
         </div>

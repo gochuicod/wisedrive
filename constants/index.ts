@@ -34,12 +34,12 @@ export const ENTERPRISE_LINKS = [
 ];
 
 export const FOOTER_LINKS = {
-  products: [
-    { href: '#inspections', key: 'car_inspections' },
-    { href: '#luxury', key: 'luxury_inspection' },
-    { href: '#service', key: 'car_service' },
-    { href: '#repairs', key: 'car_repairs' },
-  ],
+  // products: [
+  //   { href: '#inspections', key: 'car_inspections' },
+  //   { href: '#luxury', key: 'luxury_inspection' },
+  //   { href: '#service', key: 'car_service' },
+  //   { href: '#repairs', key: 'car_repairs' },
+  // ],
   company: [
     { href: '#about', key: 'about_us' },
     { href: '#our-brands', key: 'how_it_works' },
@@ -48,7 +48,7 @@ export const FOOTER_LINKS = {
   resources: [
     { href: 'https://www.wisedrive.com/sample-report?fbclid=IwY2xjawPEGNZleHRuA2FlbQIxMABicmlkETFoM3RnRGp3c0tzWERqVXBVc3J0YwZhcHBfaWQPNTE0NzcxNTY5MjI4MDYxAAEewlEBYRS0NjrvAJZGhiWSTLGjXQY__YcOtT-NjPWTZU8pNWRMiajXgA8Kajc_aem_rxCefHFkquLt4YG3NHvtNA', key: 'sample_report' },
     { href: '#faqs', key: 'faqs' },
-    { href: '#coverage', key: 'coverage_areas' },
+    // { href: '#coverage', key: 'coverage_areas' },
     { href: '#reviews', key: 'customer_reviews' },
   ],
   policies: [

@@ -405,7 +405,7 @@ const ComponentShowcase = () => {
           <GoogleRatingCard 
             rating="4.8"
             buttonLabel="See Reviews"
-            onButtonClick={() => alert('Opening Reviews...')}
+            // onButtonClick={() => alert('Opening Reviews...')}
           />
         </div>
       </div>
