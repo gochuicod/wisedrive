@@ -52,10 +52,10 @@ export const FOOTER_LINKS = {
     { href: '#reviews', key: 'customer_reviews' },
   ],
   policies: [
-    { href: '#terms-inspection', key: 'inspection_terms' },
-    { href: '#refund-policy', key: 'refund_policy' },
-    { href: '#terms', key: 'terms_conditions' },
-    { href: '#privacy', key: 'privacy_policy' },
+    { href: '/inspection-terms-and-conditions', key: 'inspection_terms' },
+    { href: '/cancellation-and-refund-policy', key: 'refund_policy' },
+    { href: '/terms-and-conditions', key: 'terms_conditions' },
+    { href: '/privacy-policy', key: 'privacy_policy' },
   ],
 };
 
