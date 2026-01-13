@@ -28,7 +28,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'WiseDrive',
   icons: {
-    icon: '/wd-logo-latest.png',
+    icon: '/favicon.png',
   },
 };
 
