@@ -60,7 +60,7 @@ export default function Footer() {
             {/* Socials */}
             <div className={cn('flex flex-row', 'gap-4')}>
               {/* Instagram */}
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <a href="https://www.instagram.com/wisedrivemalaysia/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/icons/componentIcons/instagram.svg"
                   alt="Instagram"
@@ -68,26 +68,8 @@ export default function Footer() {
                   height={24}
                 />
               </a>
-              {/* LinkedIn */}
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/icons/componentIcons/linkedin.svg"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              {/* Twitter */}
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                <Image
-                  src="/icons/componentIcons/twitter.svg"
-                  alt="Twitter"
-                  width={24}
-                  height={24}
-                />
-              </a>
               {/* Facebook */}
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <a href="https://www.facebook.com/p/Wisedrive-Technologies-M-Sdn-Bhd-61571089227235/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/icons/componentIcons/fb.svg"
                   alt="Facebook"
@@ -105,7 +87,7 @@ export default function Footer() {
                 />
               </a>              
               {/* WhatsApp */}
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <a href="https://wa.me/60122559610" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/icons/componentIcons/whatsapp.svg"
                   alt="WhatsApp"
