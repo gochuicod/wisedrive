@@ -97,6 +97,7 @@ export default function Inspection() {
                   className='w-full'
                   size="sm"
                   leftIcon={<Link className="size-4" />}
+                  target="_blank"
                 >
                   {t('sample_report_button')}
                 </AppButton>

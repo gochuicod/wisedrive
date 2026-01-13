@@ -42,7 +42,7 @@ export default function Footer() {
         >
           {/* White logo on left side */}
           <Image
-            src="/logo_wisedrive_white.webp"
+            src="/wd_logo_white.webp"
             alt="Wisedrive logo white"
             width={200}
             height={60}
@@ -126,25 +126,47 @@ export default function Footer() {
 
                 {/* List of Links */}
                 <ul className={cn('flex flex-col', 'gap-2')}>
-                  {links.map((link) => (
-                    <li key={link.key}>
-                      <Link
-                        href={resolveHref(link.href)}
-                        onClick={(e) => scrollTo(e, resolveHref(link.href))}
-                        className={cn(
-                          'text-wdBlue',
-                          'text-sm',
-                          'hover:text-white',
-                          'transition-colors',
-                          'cursor-pointer',
-                          'font-normal',
+                  {links.map((link) => {
+                    const isExternal = link.href.startsWith('http');
+                    return (
+                      <li key={link.key}>
+                        {isExternal ? (
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                              'text-wdBlue',
+                              'text-sm',
+                              'hover:text-white',
+                              'transition-colors',
+                              'cursor-pointer',
+                              'font-normal',
+                            )}
+                          >
+                            {/* Use the key from constants to look up the translation */}
+                            {t(link.key)}
+                          </a>
+                        ) : (
+                          <Link
+                            href={resolveHref(link.href)}
+                            onClick={(e) => scrollTo(e, resolveHref(link.href))}
+                            className={cn(
+                              'text-wdBlue',
+                              'text-sm',
+                              'hover:text-white',
+                              'transition-colors',
+                              'cursor-pointer',
+                              'font-normal',
+                            )}
+                          >
+                            {/* Use the key from constants to look up the translation */}
+                            {t(link.key)}
+                          </Link>
                         )}
-                      >
-                        {/* Use the key from constants to look up the translation */}
-                        {t(link.key)}
-                      </Link>
-                    </li>
-                  ))}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

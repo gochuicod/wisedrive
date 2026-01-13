@@ -46,7 +46,7 @@ export const FOOTER_LINKS = {
     { href: '/enterprise-solutions#contact-us', key: 'contact_us' },
   ],
   resources: [
-    { href: '#sample-report', key: 'sample_report' },
+    { href: 'https://www.wisedrive.com/sample-report?fbclid=IwY2xjawPEGNZleHRuA2FlbQIxMABicmlkETFoM3RnRGp3c0tzWERqVXBVc3J0YwZhcHBfaWQPNTE0NzcxNTY5MjI4MDYxAAEewlEBYRS0NjrvAJZGhiWSTLGjXQY__YcOtT-NjPWTZU8pNWRMiajXgA8Kajc_aem_rxCefHFkquLt4YG3NHvtNA', key: 'sample_report' },
     { href: '#faqs', key: 'faqs' },
     { href: '#coverage', key: 'coverage_areas' },
     { href: '#reviews', key: 'customer_reviews' },

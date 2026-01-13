@@ -8,6 +8,7 @@ export interface AppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEle
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   href?: string;
+  target?: string;
 }
 
 export const AppButton: React.FC<AppButtonProps> = ({
@@ -18,6 +19,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
   variant,
   size,
   href,
+  target,
   type = 'button', // 👈 DEFAULT HERE
   ...props
 }) => {
@@ -27,6 +29,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
       variant={variant}
       size={size}
       href={href}
+      target={target}
       type={type}
       {...props}
     >
