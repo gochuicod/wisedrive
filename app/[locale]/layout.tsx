@@ -27,13 +27,13 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'WiseDrive - AI-Powered Car Inspections',
-  description: 'Get certified car inspections with AI-driven diagnostics you can trust. Fast, reliable, and transparent.',
+  description: 'Avoid hidden repair costs. Get a professional AI engine health check and extended warranty to protect your investment. Buy with data, not just a gut feeling.',
   icons: {
     icon: '/favicon.png',
   },
   openGraph: {
     title: 'WiseDrive - AI-Powered Car Inspections',
-    description: 'Get certified car inspections with AI-driven diagnostics you can trust. Fast, reliable, and transparent.',
+    description: 'Avoid hidden repair costs. Get a professional AI engine health check and extended warranty to protect your investment. Buy with data, not just a gut feeling.',
     url: 'https://wisedrive.my',
     siteName: 'WiseDrive',
     images: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'WiseDrive - AI-Powered Car Inspections',
-    description: 'Get certified car inspections with AI-driven diagnostics you can trust.',
+    description: 'Avoid hidden repair costs. Get a professional AI engine health check and extended warranty to protect your investment. Buy with data, not just a gut feeling.',
     images: ['/twitter-card/b2c-twitter-card.png'],
   },
 };

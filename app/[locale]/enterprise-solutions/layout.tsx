@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'WiseDrive - Enterprise Solutions',
-  description: 'Secure your automotive portfolio with AI-augmented inspections and fraud detection.',
+  description: 'Eliminate uncertainty in asset valuation. Secure your portfolio with real-time AI inspections, ECU data analysis, and seamless enterprise workflow integration.',
   openGraph: {
     title: 'WiseDrive - Enterprise Solutions',
-    description: 'Secure your automotive portfolio with AI-augmented inspections and fraud detection.',
+    description: 'Eliminate uncertainty in asset valuation. Secure your portfolio with real-time AI inspections, ECU data analysis, and seamless enterprise workflow integration.',
     url: 'https://wisedrive.my/enterprise-solutions',
     siteName: 'WiseDrive',
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'WiseDrive - Enterprise Solutions',
-    description: 'Secure your automotive portfolio with AI-augmented inspections and fraud detection.',
+    description: 'Eliminate uncertainty in asset valuation. Secure your portfolio with real-time AI inspections, ECU data analysis, and seamless enterprise workflow integration.',
     images: ['/twitter-card/b2b-twitter-card.png'],
   },
 };
