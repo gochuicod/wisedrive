@@ -26,9 +26,31 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'WiseDrive',
+  title: 'WiseDrive - AI-Powered Car Inspections',
+  description: 'Get certified car inspections with AI-driven diagnostics you can trust. Fast, reliable, and transparent.',
   icons: {
     icon: '/favicon.png',
+  },
+  openGraph: {
+    title: 'WiseDrive - AI-Powered Car Inspections',
+    description: 'Get certified car inspections with AI-driven diagnostics you can trust. Fast, reliable, and transparent.',
+    url: 'https://wisedrive.my',
+    siteName: 'WiseDrive',
+    images: [
+      {
+        url: '/opengraph/b2c-opengraph.png',
+        width: 1200,
+        height: 630,
+        alt: 'WiseDrive - AI-Powered Car Inspections',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WiseDrive - AI-Powered Car Inspections',
+    description: 'Get certified car inspections with AI-driven diagnostics you can trust.',
+    images: ['/twitter-card/b2c-twitter-card.png'],
   },
 };
 
