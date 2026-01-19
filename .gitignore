@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -40,3 +41,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+=======
+# GitDocAI internal files
+*.gitdocai.lock
+*.ai.metadata.json
+.ai.metadata.json
+>>>>>>> 33e1e334fcd1f53f915517d2af918f01b5002405
