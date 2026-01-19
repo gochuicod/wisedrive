@@ -71,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 📝 Development Guidelines
 To maintain a clean history and codebase, please adhere to the following rules.
 
-1. Commit ConventionWe follow the Conventional Commits specification.
+1. Commit Convention We follow the Conventional Commits specification.
 
 Format: type(scope): description
 
