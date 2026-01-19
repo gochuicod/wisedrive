@@ -1,0 +1,4 @@
+# GitDocAI internal files
+*.gitdocai.lock
+*.ai.metadata.json
+.ai.metadata.json
