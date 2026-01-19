@@ -1,0 +1,94 @@
+# Commit Convention Types
+
+In any collaborative software development environment, maintaining a clean and understandable commit history is crucial. This documentation outlines the Commit Convention Types used in our project, based on the Conventional Commits specification. By adhering to these conventions, teams can ensure that their codebase remains well-organized and easy to navigate.
+
+## Introduction to Commit Conventions
+
+Commit conventions are a set of guidelines that standardize the way commit messages are structured. These conventions help developers understand the purpose of a commit at a glance and facilitate more effective collaboration across teams. Our project follows the Conventional Commits specification, which defines a specific format for commit messages.
+
+<Info>Following a standardized commit message format helps in automating the release process and generating changelogs.</Info>
+
+## Commit Message Format
+
+The general format for commit messages is as follows:
+
+```
+type(scope): description
+```
+
+### Components of the Format
+
+- **Type**: A required field that specifies the nature of the commit.
+- **Scope**: An optional field that provides additional context about the area of the codebase affected.
+- **Description**: A brief description of the changes made.
+
+## Allowed Commit Types
+
+Below is a comprehensive list of the allowed commit types in our project, along with examples for each.
+
+<Tabs>
+  <Tab title="Feature and Fix">
+
+  | Type | Meaning | Example |
+  | :--- | :--- | :--- |
+  | **feat** | A new feature | `feat(ui): add dark mode toggle` |
+  | **fix** | A bug fix | `fix(auth): resolve login redirect loop` |
+
+  <Tip>Use `feat` for new user-facing features and `fix` for bug resolutions.</Tip>
+
+  </Tab>
+  <Tab title="Code Maintenance">
+
+  | Type | Meaning | Example |
+  | :--- | :--- | :--- |
+  | **chore** | Maintenance/Config | `chore(deps): upgrade next-intl` |
+  | **style** | UI/CSS changes (no logic) | `style(home): adjust hero padding` |
+  | **refactor** | Code change (no feature/fix) | `refactor(utils): simplify date format` |
+  | **test** | Adding or fixing tests | `test(auth): add unit tests for login` |
+
+  <Info>These types are used for non-functional changes and maintenance tasks.</Info>
+
+  </Tab>
+  <Tab title="Performance and Build">
+
+  | Type | Meaning | Example |
+  | :--- | :--- | :--- |
+  | **perf** | Performance improvements | `perf(image): optimize logo loading` |
+  | **build** | Build system/dependency updates | `build(npm): update lockfile` |
+
+  <Warning>Ensure performance changes are measurable and beneficial.</Warning>
+
+  </Tab>
+  <Tab title="Documentation and CI/CD">
+
+  | Type | Meaning | Example |
+  | :--- | :--- | :--- |
+  | **docs** | Documentation only | `docs: update readme rules` |
+  | **ci** | CI/CD changes | `ci: update vercel build settings` |
+
+  <Note>Documentation updates are crucial for maintaining project clarity.</Note>
+
+  </Tab>
+  <Tab title="Miscellaneous">
+
+  | Type | Meaning | Example |
+  | :--- | :--- | :--- |
+  | **revert** | Reverting a previous commit | `revert: restore previous navbar layout` |
+  | **types** | TypeScript-only changes | `types(auth): tighten user session types` |
+  | **i18n** | Translation / localization changes | `i18n(home): add Thai hero translations` |
+  | **ui** | Component-level UI changes | `ui(form): add reusable form field wrapper` |
+  | **security** | Security-related changes | `security(auth): prevent session fixation` |
+  | **config** | Project configuration changes | `config(tailwind): extend color palette` |
+  | **deps** | Dependency updates | `deps(next): upgrade to 15.1.0` |
+  | **dx** | Developer experience improvements | `dx(dev): add lint-staged hooks` |
+
+  <Danger>Security changes should always be reviewed carefully to prevent vulnerabilities.</Danger>
+
+  </Tab>
+</Tabs>
+
+## Conclusion
+
+Adhering to a consistent commit message convention is essential for maintaining a clean project history and facilitating collaboration. By using the defined commit types and format, developers can ensure that their contributions are easily understandable and traceable.
+
+<Tip>For more information on the Conventional Commits specification, please refer to external resources or consult team documentation.</Tip>
