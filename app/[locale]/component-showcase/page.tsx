@@ -303,7 +303,6 @@ const ComponentShowcase = () => {
               <DropDown
                 size="lg"
                 title="What is the inspection process?"
-                defaultOpen={true}
               >
                 Our engineers conduct a comprehensive 200-point inspection
                 covering the engine, suspension, interior, and exterior to ensure
@@ -318,7 +317,7 @@ const ComponentShowcase = () => {
               Size: MD (358px)
             </span>
             <div className="w-full max-w-[358px]">
-              <DropDown size="md" title="Is there a warranty?" defaultOpen={true}>
+              <DropDown size="md" title="Is there a warranty?">
                 Yes, all our cars come with a standard 6-month warranty that
                 covers major mechanical and electrical components, ensuring you
                 have peace of mind with your purchase.

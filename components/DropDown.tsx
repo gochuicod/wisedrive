@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { BaseDropDown, DropDownSize, DropDownVariant } from '@/styles/dropdown';
 
 // --- Definition Types ---
@@ -9,7 +9,8 @@ export interface DropDownProps extends Omit<React.HTMLAttributes<HTMLDivElement>
   variant?: DropDownVariant;
   title: string;
   children: React.ReactNode;
-  defaultOpen?: boolean;
+  isOpen?: boolean;
+  onOpenChange?: () => void;
 }
 
 // --- App Component ---
@@ -18,13 +19,16 @@ export const DropDown: React.FC<DropDownProps> = ({
   variant,
   title,
   children,
-  defaultOpen = false,
+  isOpen = false,
+  onOpenChange,
   className,
   ...props
 }) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
-  const handleToggle = () => setIsOpen((prev) => !prev);
+  const handleToggle = () => {
+    if (onOpenChange) {
+      onOpenChange();
+    }
+  };
 
   return (
     <BaseDropDown

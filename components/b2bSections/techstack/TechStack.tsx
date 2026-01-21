@@ -1,8 +1,9 @@
+'use client';
 import Image from 'next/image';
 import { DropDown } from '@/components/DropDown';
 import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { useTranslations } from 'next-intl';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Parallax } from '@/components/Parallax';
 
 // Transform dropdowns data from i18n
@@ -16,6 +17,7 @@ const transformDropdownsData = (dropdowns: Array<{ id: string; title: string; de
 
 export const TechStack = () => {
   const t = useTranslations('TechStack');
+  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
 
   // Get data from translations
   const techStackData = useMemo(() => {
@@ -29,6 +31,10 @@ export const TechStack = () => {
     const rawDropdowns = t.raw('dropdowns') as Array<{ id: string; title: string; description: string }>;
     return transformDropdownsData(rawDropdowns);
   }, [t]);
+
+  const handleDropdownToggle = (id: string) => {
+    setOpenDropdownId((prevId) => (prevId === id ? null : id));
+  };
 
   return (
     <Parallax speed={0.03}>
@@ -57,7 +63,13 @@ export const TechStack = () => {
             {/* Column 1 */}
             <div className="flex-1 h-fit border-none rounded-2xl flex flex-col gap-2 items-end justify-center md:pt-0 pt-[200px]">
               {dropdowns.map((dropdown) => (
-                <DropDown key={dropdown.id} title={dropdown.title} variant="gradient">
+                <DropDown
+                  key={dropdown.id}
+                  title={dropdown.title}
+                  variant="gradient"
+                  isOpen={openDropdownId === dropdown.id}
+                  onOpenChange={() => handleDropdownToggle(dropdown.id)}
+                >
                   <p>
                     {dropdown.description}
                   </p>
