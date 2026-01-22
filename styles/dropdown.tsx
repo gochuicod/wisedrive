@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronDown } from 'lucide-react';
 
 // --- Styling Types ---
 export type DropDownSize = 'sm' | 'md' | 'lg';
@@ -66,27 +67,9 @@ const sizes: Record<
 };
 
 // --- Helper Icon ---
-// We use a single Chevron and rotate it.
-// 0deg = Down (Inactive/Closed) matches 'keyboard_arrow_down'
-// 180deg = Up (Active/Open) matches 'keyboard_arrow_up'
-const ChevronDownIcon = ({ className }: { className?: string }) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M6 9L12 15L18 9"
-      stroke="#193CB8"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+// We use ChevronDown from lucide-react and rotate it.
+// 0deg = Down (Inactive/Closed)
+// 180deg = Up (Active/Open)
 
 // --- Base Component ---
 export const BaseDropDown: React.FC<BaseDropDownProps> = ({
@@ -107,22 +90,18 @@ export const BaseDropDown: React.FC<BaseDropDownProps> = ({
     : (isOpen ? activeStyle : inactiveStyle);
   const containerClasses = `${containerBase} ${styles.root} ${variantClasses} ${className}`;
 
-  // Title Logic: Bold (700) when Open, Regular (400) when Closed
-  const titleWeight = isOpen ? 'font-bold' : 'font-normal';
-  const titleClasses = `font-body text-[#1E2939] ${styles.titleSize} ${titleWeight} flex-grow transition-all`;
-
   return (
     <div className={containerClasses} onClick={onOpenChange} {...props}>
       {/* Header Row */}
       <div className={headerBase}>
-        <span className={titleClasses}>{title}</span>
+        <span className={`font-body text-[#1E2939] ${styles.titleSize} flex-grow ease-in-out duration-100 ${isOpen ? 'font-semibold' : 'font-normal'}`}>{title}</span>
 
         {/* Toggle Icon */}
         {/* Rotate 180 when open (Up), 0 when closed (Down) */}
         <div
           className={`${arrowBtnBase} ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         >
-          <ChevronDownIcon className="w-[21.33px] h-[21.33px]" />
+          <ChevronDown className="w-[21.33px] h-[21.33px] text-[#193CB8]" />
         </div>
       </div>
 
