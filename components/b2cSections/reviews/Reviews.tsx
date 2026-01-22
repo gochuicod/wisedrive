@@ -14,16 +14,16 @@ export const Reviews = () => {
   return (
     <Parallax speed={0.04}>
       <section
-        className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-visible"
+        className="w-full flex md:px-relaxed md:py-relaxed px-tight py-relaxed mx-auto items-center justify-center overflow-visible bg-[#F9FAFB]"
         id="reviews"
       >
       {/* Outer container */}
-      <div className="w-full max-w-[1248px] flex flex-col items-center gap-10 px-4 overflow-visible">
+      <div className="w-full max-w-[1034px] flex flex-col items-center gap-10 md:px-4 px-0 overflow-visible">
         {/* Heading */}
         <div className="w-full flex flex-col md:flex-row gap-8">
           {/* Left Wrapper - Badge & Heading */}
           <div className="flex flex-col md:items-start items-center gap-2 flex-grow">
-            <Badge size="lg">Our Reviews</Badge>
+            <Badge size="lg">{t('badge_text')}</Badge>
             <HighlightedHeading
               text={t('heading')}
               highlight={t('heading_highlighted_word')}

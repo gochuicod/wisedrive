@@ -236,7 +236,7 @@
     "badge_text": "FAQs",
     "heading": "Got Questions about our inspection?",
     "heading_highlighted_word": "inspection?",
-    "subtitle": "Find answers to your questions about our inspections and warranty services.",
+    "subtitle": "Find answers to your questions about our AI-powered inspections and how we protect you from costly, hidden repairs.",
     "q1": {
       "question": "What services does Wisedrive offer for used car inspections?",
       "answer": "Wisedrive offers comprehensive used car inspections covering critical components such as the engine, transmission, brakes, and electrical systems."
@@ -317,6 +317,7 @@
     }
   },
 "Reviews": {
+    "badge_text": "Our Reviews",
     "heading": "Drive Away Happy",
     "heading_highlighted_word": "Happy",
     "description": "Join thousands of satisfied customers who bought their vehicle with total peace of mind.",

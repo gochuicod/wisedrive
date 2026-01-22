@@ -18,7 +18,7 @@ const containerBase = `
   box-border
   flex flex-col justify-between items-center 
   p-4 gap-4 
-  w-full max-w-[288px] 
+  w-full max-w-[280px] 
   bg-white 
   border border-[#99A1AF] rounded-2xl 
   shadow-sm

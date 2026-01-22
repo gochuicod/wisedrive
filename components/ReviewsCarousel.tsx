@@ -63,9 +63,9 @@ export const ReviewsCarousel = () => {
         setApi={setApi}
         className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_0)]"
       >
-        <CarouselContent className="w-full -ml-0 gap-6">
+        <CarouselContent className="w-full md:-ml-6 gap-4">
           {reviewsData.map((review, index) => (
-            <CarouselItem key={review.id} className={`basis-[288px] pl-6 flex-none ${index === reviewsData.length - 1 ? 'mr-6' : ''}`}>
+            <CarouselItem key={review.id} className={`basis-[288px] md:pl-6 pl-4 flex-none ${index === reviewsData.length - 1 ? 'mr-4' : ''}`}>
               <ReviewCard
                 variant={index % 2 === 0 ? 'v1' : 'v2'}
                 reviewText={review.reviewText}

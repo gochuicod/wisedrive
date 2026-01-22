@@ -64,7 +64,7 @@ export const Models = () => {
   return (
     <Parallax speed={0.02}>
       <section
-        className="w-full flex justify-center px-relaxed py-relaxed bg-white"
+        className="w-full flex justify-center md:px-relaxed px-tight py-relaxed bg-white"
         id="partnership-models"
       >
         <div className="relative isolate w-full max-w-[1248px] md:h-[744px] flex items-end">

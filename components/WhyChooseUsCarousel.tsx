@@ -93,7 +93,7 @@ export default function WhyChooseUsCarousel({
         'lg:mt-[104px] mt-[64px]',
         'lg:mb-auto mb-[164px]',
         'flex lg:flex-row flex-col-reverse',
-        'lg:px-0 px-relaxed relative',
+        'lg:px-0 md:px-relaxed px-tight relative',
       )}
     >
       {/* LEFT SIDE: SWIPER (Image + Floating Panel) */}
