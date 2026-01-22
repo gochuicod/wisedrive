@@ -14,11 +14,11 @@ export const Reviews = () => {
   return (
     <Parallax speed={0.04}>
       <section
-        className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-clip"
+        className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-visible"
         id="reviews"
       >
       {/* Outer container */}
-      <div className="w-full max-w-[1248px] flex flex-col items-center gap-10 px-4">
+      <div className="w-full max-w-[1248px] flex flex-col items-center gap-10 px-4 overflow-visible">
         {/* Heading */}
         <div className="w-full flex flex-col md:flex-row gap-8">
           {/* Left Wrapper - Badge & Heading */}
@@ -43,7 +43,7 @@ export const Reviews = () => {
         </div>
 
         {/* Content */}
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-center overflow-visible">
           <ReviewsCarousel />
         </div>
       </div>
