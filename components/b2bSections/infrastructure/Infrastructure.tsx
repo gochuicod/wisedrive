@@ -68,7 +68,7 @@ export const Infrastructure = () => {
   return (
     <Parallax speed={0.04}>
       <section
-        className="w-full flex px-relaxed py-relaxed mx-auto items-center justify-center overflow-hidden"
+        className="w-full flex md:px-relaxed md:py-relaxed py-relaxed px-tight mx-auto items-center justify-center overflow-hidden"
         id="audience"
       >
         {/* Outer container */}

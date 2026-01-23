@@ -1,8 +1,14 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { ReviewCard } from '@/components/ReviewCard';
 import { useTranslations } from 'next-intl';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
+import type { CarouselApi } from '@/components/ui/carousel';
 
 // Transform review data from i18n
 const transformReviewsData = (reviews: Record<string, { customer_name: string; content: string }>) => {
@@ -20,8 +26,9 @@ const transformReviewsData = (reviews: Record<string, { customer_name: string; c
 
 export const ReviewsCarousel = () => {
   const t = useTranslations();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [screenSize, setScreenSize] = useState('lg'); // 'mobile', 'tablet', 'lg'
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
 
   // Get review data from translations
   const reviewsData = useMemo(() => {
@@ -29,62 +36,36 @@ export const ReviewsCarousel = () => {
     return transformReviewsData(reviewsObj);
   }, [t]);
 
-  // Detect screen size and set cards to display
   React.useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 768) {
-        setScreenSize('mobile');
-      } else if (width < 1024) {
-        setScreenSize('tablet');
-      } else {
-        setScreenSize('lg');
-      }
-    };
+    if (!api) {
+      return;
+    }
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    // Set count based on the actual number of review items
+    setCount(reviewsData.length);
+    setCurrent(api.selectedScrollSnap());
 
-  // Determine cards per view based on screen size
-  const cardsPerView = screenSize === 'mobile' ? 1 : screenSize === 'tablet' ? 2 : 4;
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => {
-      const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
-      const nextIndex = prev + cardsPerView;
-      return nextIndex > maxIndex ? 0 : nextIndex;
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
     });
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => {
-      const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
-      return prev === 0 ? maxIndex : prev - cardsPerView;
-    });
-  };
-
-  // Calculate number of groups
-  const totalGroups = Math.ceil(reviewsData.length / cardsPerView);
-  const currentGroup = Math.floor(currentIndex / cardsPerView);
-
-  // Display 4 cards at a time (or adjust based on your layout needs)
-  const visibleCards = [
-    reviewsData[currentIndex],
-    reviewsData[(currentIndex + 1) % reviewsData.length],
-    reviewsData[(currentIndex + 2) % reviewsData.length],
-    reviewsData[(currentIndex + 3) % reviewsData.length],
-  ];
+  }, [api, reviewsData.length]);
 
   return (
     <div className="w-full flex flex-col items-center gap-8">
       {/* Carousel Container */}
-      <div className="w-full flex items-center justify-start gap-4 md:gap-6 mr-20 md:mr-0 overflow-x-visible">
-        {/* Cards Container */}
-        <div className="flex gap-4 md:gap-6 justify-center flex-nowrap md:max-w-7xl px-4 md:px-0">
-          {visibleCards.map((review, index) => (
-            <div key={review.id} className="flex-shrink-0">
+      <Carousel
+        opts={{
+          align: 'start',
+          loop: true,
+          dragFree: true,
+          skipSnaps: false,
+        }}
+        setApi={setApi}
+        className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_0)]"
+      >
+        <CarouselContent className="w-full md:-ml-6 gap-4">
+          {reviewsData.map((review, index) => (
+            <CarouselItem key={review.id} className={`basis-[288px] md:pl-6 pl-4 flex-none ${index === reviewsData.length - 1 ? 'mr-4' : ''}`}>
               <ReviewCard
                 variant={index % 2 === 0 ? 'v1' : 'v2'}
                 reviewText={review.reviewText}
@@ -92,16 +73,16 @@ export const ReviewsCarousel = () => {
                 reviewDate={review.reviewDate}
                 rating={review.rating}
               />
-            </div>
+            </CarouselItem>
           ))}
-        </div>
-      </div>
+        </CarouselContent>
+      </Carousel>
 
-      {/* Controls Container - Arrow + Pagination + Arrow */}
+      {/* Controls Container - Left Button + Pagination + Right Button */}
       <div className="flex items-center justify-center gap-4 md:gap-6">
         {/* Previous Button */}
         <button
-          onClick={handlePrev}
+          onClick={() => api?.scrollPrev()}
           className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
           aria-label="Previous"
         >
@@ -112,23 +93,23 @@ export const ReviewsCarousel = () => {
 
         {/* Carousel Indicators */}
         <div className="flex gap-1 md:gap-2 justify-center">
-          {Array.from({ length: totalGroups }).map((_, index) => (
+          {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index * cardsPerView)}
+              onClick={() => api?.scrollTo(index)}
               className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-colors ${
-                index === currentGroup 
-                  ? 'bg-[var(--color-primary)]' 
+                index === current
+                  ? 'bg-[var(--color-primary)]'
                   : 'border border-[var(--color-primary)] bg-transparent'
               }`}
-              aria-label={`Go to group ${index + 1}`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
 
         {/* Next Button */}
         <button
-          onClick={handleNext}
+          onClick={() => api?.scrollNext()}
           className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
           aria-label="Next"
         >

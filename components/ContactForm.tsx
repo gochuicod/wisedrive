@@ -10,6 +10,7 @@ import { Check } from 'lucide-react';
 import Input from './Input';
 import Select from './Select';
 import { AppButton } from './AppButton';
+import { FormsModal } from './FormsModal';
 import {
   contactSchema,
   ContactFormData,
@@ -18,7 +19,13 @@ import { email } from 'zod';
 
 const ContactForm = () => {
   const t = useTranslations('Contact.form');
-  const [successMessage, setSuccessMessage] = useState(false);
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: 'success' | 'error';
+  }>({
+    isOpen: false,
+    type: 'success',
+  });
 
 
   // Get form field data from translations
@@ -67,10 +74,11 @@ const ContactForm = () => {
 
     if (res.ok) {
       reset();
-      setSuccessMessage(true);
-      setTimeout(() => setSuccessMessage(false), 5000);
+      setModalState({ isOpen: true, type: 'success' });
+      // setTimeout(() => setModalState({ isOpen: false, type: 'success' }), 5000);
     } else {
-      alert(t('messages.error'));
+      setModalState({ isOpen: true, type: 'error' });
+      // setTimeout(() => setModalState({ isOpen: false, type: 'error' }), 5000);
     }
   };
 
@@ -131,13 +139,18 @@ const ContactForm = () => {
 
       <AppButton
         type="submit"
-        leftIcon={successMessage ? <Check size={20} /> : <Users size={20} />}
+        leftIcon={<Users size={20} />}
         disabled={isSubmitting}
-        variant={successMessage ? 'success' : 'default'}
         className='mt-6'
       >
-        {successMessage ? t('messages.success') : t('submitButton.label')}
+        {t('submitButton.label')}
       </AppButton>
+
+      <FormsModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ ...modalState, isOpen: false })}
+        type={modalState.type}
+      />
     </form>
   );
 };

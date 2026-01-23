@@ -18,7 +18,7 @@ const containerBase = `
   box-border
   flex flex-col justify-between items-center 
   p-4 gap-4 
-  w-[288px] min-w-[288px] 
+  w-full max-w-[280px] 
   bg-white 
   border border-[#99A1AF] rounded-2xl 
   shadow-sm
@@ -26,13 +26,13 @@ const containerBase = `
 `;
 
 const heights: Record<ReviewCardVariant, string> = {
-  v1: "h-[354px]", // Tall
-  v2: "h-[314px]", // Short
+  v1: "",
+  v2: "",
 };
 
 // Internal Layout
-const clientInfoWrapper = "flex flex-row items-center gap-2 w-full h-[52px] shrink-0";
-const avatarWrapper = "relative w-[46.4px] h-[46.4px] rounded-full overflow-hidden flex-none bg-gray-100";
+const clientInfoWrapper = "flex flex-row items-center gap-2 w-full h-[52px] shrink-0 z-10 overflow-visible";
+const avatarWrapper = "relative w-[40px] h-[40px] rounded-full overflow-hidden flex-none bg-gray-100";
 const clientDetails = "flex flex-col justify-center items-start pl-2";
 const clientName = "font-body font-bold text-[20px] leading-[24px] text-[#1E2939]";
 const clientDate = "font-body font-normal text-[16px] leading-[19px] text-[#1E2939]";
@@ -55,8 +55,8 @@ const NoPhotoIcon = () => (
   <Image
     src="/icons/componentIcons/no-photo.svg" // Ensure this path is correct
     alt="No Photo"
-    width={40}
-    height={40}
+    width={46}
+    height={46}
     className="w-full h-full"
   />
 );

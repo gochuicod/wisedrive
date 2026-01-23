@@ -25,7 +25,7 @@ export const FAQSection = () => {
         id="about"
       >
       {/* Outer container */}
-      <div className="w-full lg:max-w-[1248px] md:max-w-[720px] flex flex-col items-center justify-center gap-6 px-4">
+      <div className="w-full lg:max-w-[1248px] md:max-w-[720px] flex flex-col items-center justify-center gap-6">
         {/* Heading */}
         <div className="w-full flex flex-col lg:flex-row gap-8 items-center ">
           {/* Left Wrapper - Badge & Heading */}

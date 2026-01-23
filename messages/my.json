@@ -236,7 +236,7 @@
     "badge_text": "Soalan Lazim",
     "heading": "Ada soalan mengenai pemeriksaan kami?",
     "heading_highlighted_word": "pemeriksaan kami?",
-    "subtitle": "Cari jawapan kepada soalan anda mengenai pemeriksaan kami dan perkhidmatan waranti.",
+    "subtitle": "Dapatkan jawapan kepada soalan anda mengenai pemeriksaan berkuasa AI kami dan bagaimana kami melindungi anda daripada pembaikan tersembunyi yang mahal.",
     "q1": {
       "question": "Apakah perkhidmatan yang ditawarkan Wisedrive untuk pemeriksaan kereta terpakai?",
       "answer": "Wisedrive menawarkan pemeriksaan kereta terpakai yang komprehensif meliputi komponen kritikal seperti enjin, transmisi, brek, dan sistem elektrik."
@@ -317,45 +317,46 @@
     }
   },
 "Reviews": {
-    "heading": "Drive Away Happy",
-    "heading_highlighted_word": "Happy",
-    "description": "Join thousands of satisfied customers who bought their vehicle with total peace of mind.",
+    "badge_text": "Ulasan Kami",
+    "heading": "Pandu Pulang dengan Gembira",
+    "heading_highlighted_word": "Gembira",
+    "description": "Sertai ribuan pelanggan berpuas hati yang telah membeli kenderaan mereka dengan ketenangan minda sepenuhnya.",
     "reviews": {
       "review_1": {
         "customer_name": "Eng Chan",
-        "content": "The inspector from Wisedrive was friendly, professional, and very detailed. The report covered everything I needed to know, and the customer service was excellent. I felt reassured knowing I had all the information before buying."
+        "content": "Pemeriksa dari Wisedrive mesra, profesional, dan sangat terperinci. Laporan merangkumi segala yang saya perlu tahu, dan perkhidmatan pelanggan sangat baik. Saya berasa yakin kerana mempunyai semua maklumat sebelum membeli."
       },
       "review_2": {
         "customer_name": "Saravanan",
-        "content": "Wisedrive is a must-have service if you're buying a used car. Their inspection report was detailed and easy to understand. The inspector went above and beyond to check every detail. I'm so glad I used them before making my purchase."
+        "content": "Wisedrive adalah perkhidmatan yang mesti ada jika anda membeli kereta terpakai. Laporan pemeriksaan mereka terperinci dan mudah difahami. Pemeriksa melangkaui jangkaan untuk memeriksa setiap butiran. Saya sangat gembira menggunakan mereka sebelum membuat pembelian."
       },
       "review_3": {
         "customer_name": "Muzry J.",
-        "content": "I've used Wisedrive twice now, and both times they've delivered exceptional service. The inspectors are knowledgeable and don't rush through the process. The detailed reports helped me make informed decisions. Definitely a must-use service for used car buyers."
+        "content": "Saya telah menggunakan Wisedrive dua kali sekarang, dan kedua-dua kali mereka memberikan perkhidmatan yang luar biasa. Pemeriksa mereka berpengetahuan dan tidak tergesa-gesa dalam proses. Laporan terperinci membantu saya membuat keputusan yang tepat. Pasti perkhidmatan yang mesti digunakan untuk pembeli kereta terpakai."
       },
       "review_4": {
         "customer_name": "Rosmah Alif",
-        "content": "Wisedrive's inspection service is fantastic! They provided a detailed report that helped me negotiate a better price. The inspector was knowledgeable and answered all my questions. I'll definitely use them again for future car purchases."
+        "content": "Perkhidmatan pemeriksaan Wisedrive sangat hebat! Mereka menyediakan laporan terperinci yang membantu saya berunding harga yang lebih baik. Pemeriksa berpengetahuan dan menjawab semua soalan saya. Saya pasti akan menggunakan mereka lagi untuk pembelian kereta akan datang."
       },
       "review_5": {
         "customer_name": "Bryan Lim",
-        "content": "Wisedrive saved me from buying a bad car! The car looked great on the outside, but the inspector found several mechanical issues. Their service is worth every penny if you want to save yourself from fraud when buying a used car."
+        "content": "Wisedrive menyelamatkan saya daripada membeli kereta yang rosak! Kereta kelihatan hebat dari luar, tetapi pemeriksa menemui beberapa masalah mekanikal. Perkhidmatan mereka berbaloi setiap sen jika anda ingin menyelamatkan diri daripada penipuan semasa membeli kereta terpakai."
       },
       "review_6": {
         "customer_name": "Suzannah Ibrahim",
-        "content": "Honestly, I was a bit sceptical at first but decided to give Wisedrive a try, because seriously, who can afford a brand new car in this economy right? I WhatsApped them and the response was super fast. Got my appointment within the same week and the inspection only took a short while. The best part, they actually come to you! I did mine while having coffee nearby. The report came out fast and saved me almost RM5k worth of potential repair costs. If not for this check, I wouldn’t have known! Highly recommend to anyone planning to buy a second-hand car or just want peace of mind before committing. The AI system really works. 👍🏻 happy customer"
+        "content": "Sejujurnya, saya agak ragu-ragu pada mulanya tetapi memutuskan untuk mencuba Wisedrive, kerana serius, siapa yang mampu membeli kereta baru dalam ekonomi ini, betul? Saya WhatsApp mereka dan responnya sangat pantas. Mendapatkan janji temu dalam minggu yang sama dan pemeriksaan hanya mengambil masa yang singkat. Bahagian terbaik, mereka datang kepada anda! Saya melakukan pemeriksaan sambil minum kopi berdekatan. Laporan keluar dengan cepat dan menjimatkan saya hampir RM5k kos pembaikan yang berpotensi. Jika tidak kerana pemeriksaan ini, saya tidak akan tahu! Sangat disyorkan kepada sesiapa yang merancang untuk membeli kereta terpakai atau hanya mahukan ketenangan fikiran sebelum membuat komitmen. Sistem AI benar-benar berfungsi. 👍🏻 pelanggan yang gembira"
       },
       "review_7": {
         "customer_name": "Aisyah Yacob",
-        "content": "Wisedrive Tech ⭐️⭐️⭐️⭐️⭐️ Recommended! Really good, positive pre-purchase-of-car experience with Wisedrive Tech."
+        "content": "Wisedrive Tech ⭐️⭐️⭐️⭐️⭐️ Disyorkan! Pengalaman pra-pembelian kereta yang sangat baik dan positif dengan Wisedrive Tech."
       },
       "review_8": {
         "customer_name": "Arun Mambully",
-        "content": "Much needed trustworthy service. Supportive team."
+        "content": "Perkhidmatan yang sangat diperlukan dan boleh dipercayai. Pasukan yang menyokong."
       },
       "review_9": {
         "customer_name": "Mohd Adli Mohd Noor",
-        "content": "Very good services…each item inspect detail by WiseDrive team..all report complete with notes and pictures…tqvm"
+        "content": "Perkhidmatan yang sangat baik…setiap item diperiksa dengan terperinci oleh pasukan WiseDrive..semua laporan lengkap dengan nota dan gambar…terima kasih banyak"
       }
     }
   },
