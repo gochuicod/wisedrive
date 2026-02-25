@@ -372,7 +372,7 @@
         "date": "Jan 14, 2026",
         "read-time": 15,
         "category": "Article",
-        "thumbnail-path": ""
+        "thumbnail-path": "/blogs/blog1/01.png"
       },
       "blog_2": {
         "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
@@ -380,7 +380,7 @@
         "date": "Jan 14, 2026",
         "read-time": 15,
         "category": "Article",
-        "thumbnail-path": ""
+        "thumbnail-path": "/blogs/blog2/02.png"
       },
       "blog_3": {
         "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
@@ -388,7 +388,15 @@
         "date": "Jan 14, 2026",
         "read-time": 15,
         "category": "Article",
-        "thumbnail-path": ""
+        "thumbnail-path": "/blogs/blog3/03.png"
+      },
+      "blog_4": {
+        "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
+        "description": "",
+        "date": "Jan 14, 2026",
+        "read-time": 15,
+        "category": "Article",
+        "thumbnail-path": "/blogs/blog3/03.png"
       }
     }
   },

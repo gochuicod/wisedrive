@@ -52,9 +52,9 @@ const thumbnailMobileWrapper = `
 const categoryBadge = `
   absolute top-3 left-3 z-10
   px-3 py-1
-  bg-[var(--color-primary)] text-white
+  bg-primary-400 text-white
   text-xs font-semibold uppercase tracking-wide
-  rounded-md
+  rounded-2xl
 `;
 
 const metaRow = `
@@ -207,7 +207,7 @@ export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
         {...props}
       >
         {/* Thumbnail */}
-        <div className={thumbnailWrapper}>
+        <div className={`${thumbnailWrapper} relative`}>
           {thumbnail ? (
             <Image
               src={thumbnail}
@@ -218,6 +218,13 @@ export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
           ) : (
             <PlaceholderImage />
           )}
+          <div
+            className="absolute inset-0 z-[1]"
+            style={{
+              background:
+                'linear-gradient(0deg, rgba(15, 1, 211, 0.4) 0%, rgba(255, 255, 255, 0) 38%), linear-gradient(180deg, rgba(15, 1, 211, 0.4) 0%, rgba(255, 255, 255, 0) 35%)',
+            }}
+          ></div>
           {category && <span className={categoryBadge}>{category}</span>}
         </div>
 
