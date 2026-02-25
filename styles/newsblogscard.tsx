@@ -2,123 +2,283 @@ import React from 'react';
 import Image from 'next/image';
 
 // --- Styling Types ---
-export type ReviewCardVariant = 'v1' | 'v2';
-
-interface BaseReviewCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: ReviewCardVariant;
-  reviewText: string;
-  rating?: number; // 1-5
-  reviewerName: string;
-  reviewDate: string;
-  reviewerImage?: string;
+export interface BaseNewsBlogCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  thumbnail?: string;
+  category?: string;
+  date?: string;
+  readTime?: number;
+  title: string;
+  description?: string;
 }
 
 // --- Style Definitions ---
-const containerBase = `
-  box-border
-  flex flex-col justify-between items-center 
-  p-4 gap-4 
-  w-full max-w-[280px] 
-  bg-white 
-  border border-[#99A1AF] rounded-2xl 
+
+// Desktop / Tablet vertical card
+const cardContainer = `
+  group
+  flex flex-col
+  w-full max-w-[288px]
+  bg-white
+  border border-[#E5E7EB] rounded-2xl
   shadow-sm
+  overflow-hidden
   transition-all duration-300 ease-in-out
+  hover:shadow-md
 `;
 
-const heights: Record<ReviewCardVariant, string> = {
-  v1: '',
-  v2: '',
-};
+// Mobile horizontal compact card
+const cardContainerMobile = `
+  group
+  flex flex-row
+  w-full
+  bg-white
+  border border-[#E5E7EB] rounded-2xl
+  shadow-sm
+  overflow-hidden
+  transition-all duration-300 ease-in-out
+  hover:shadow-md
+  p-3 gap-3
+  items-center
+`;
 
-// Internal Layout
-const clientInfoWrapper =
-  'flex flex-row items-center gap-2 w-full h-[52px] shrink-0 z-10 overflow-visible';
-const avatarWrapper =
-  'relative w-[40px] h-[40px] rounded-full overflow-hidden flex-none bg-gray-100';
-const clientDetails = 'flex flex-col justify-center items-start pl-2';
-const clientName =
-  'font-body font-bold text-[20px] leading-[24px] text-[#1E2939]';
-const clientDate =
-  'font-body font-normal text-[16px] leading-[19px] text-[#1E2939]';
+const thumbnailWrapper = `
+  relative w-full aspect-[4/3] overflow-hidden
+`;
 
-const textWrapper =
-  'flex flex-col items-center justify-center flex-grow w-full';
-const reviewParagraph =
-  'font-body font-normal text-[13.26px] leading-[20px] text-center text-[#1E2939] line-clamp-6';
+const thumbnailMobileWrapper = `
+  relative w-[80px] h-[80px] rounded-xl overflow-hidden flex-shrink-0
+`;
 
-// --- Assets ---
-const StarIcon = () => (
-  <Image
-    src="/icons/componentIcons/star.svg" // Ensure this path is correct or use inline SVG
-    alt="Star Icon"
-    width={15}
-    height={15}
-    className="w-[15px] h-[15px]"
-  />
+const categoryBadge = `
+  absolute top-3 left-3 z-10
+  px-3 py-1
+  bg-[var(--color-primary)] text-white
+  text-xs font-semibold uppercase tracking-wide
+  rounded-md
+`;
+
+const metaRow = `
+  flex items-center gap-3
+  text-xs text-[#6B7280]
+  font-body
+`;
+
+const cardBody = `
+  flex flex-col gap-1.5 p-4
+`;
+
+const titleStyle = `
+  font-body font-bold text-[15px] leading-[20px]
+  text-[#1E2939]
+  line-clamp-2
+`;
+
+const descriptionStyle = `
+  font-body font-normal text-[13px] leading-[18px]
+  text-[#6B7280]
+  line-clamp-2
+`;
+
+const readMoreStyle = `
+  inline-flex items-center gap-1
+  text-[var(--color-primary)] text-sm font-semibold
+  hover:underline transition-colors
+  mt-1
+`;
+
+// --- Icons ---
+const CalendarIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="3"
+      y="4"
+      width="18"
+      height="18"
+      rx="2"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+    <path
+      d="M16 2V6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M8 2V6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path d="M3 10H21" stroke="currentColor" strokeWidth="2" />
+  </svg>
 );
 
-const NoPhotoIcon = () => (
-  <Image
-    src="/icons/componentIcons/no-photo.svg" // Ensure this path is correct
-    alt="No Photo"
-    width={46}
-    height={46}
-    className="w-full h-full"
-  />
+const ClockIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+    <path
+      d="M12 6V12L16 14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const ArrowIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5 12H19M19 12L13 6M19 12L13 18"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const PlaceholderImage = () => (
+  <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="text-gray-400"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+      <path
+        d="M21 15L16 10L5 21"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
 );
 
 // --- Base Component ---
-export const BaseReviewCard: React.FC<BaseReviewCardProps> = ({
-  variant = 'v1',
-  reviewText,
-  rating = 5,
-  reviewerName,
-  reviewDate,
-  reviewerImage,
+export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
+  thumbnail,
+  category,
+  date,
+  readTime,
+  title,
+  description,
   className = '',
   ...props
 }) => {
   return (
-    <div
-      className={`${containerBase} ${heights[variant]} ${className}`}
-      {...props}
-    >
-      {/* 1. Client Info (Top) */}
-      <div className={clientInfoWrapper}>
-        <div className={avatarWrapper}>
-          {reviewerImage ? (
+    <>
+      {/* Desktop / Tablet Card (hidden on small screens) */}
+      <div
+        className={`${cardContainer} hidden sm:flex ${className}`}
+        {...props}
+      >
+        {/* Thumbnail */}
+        <div className={thumbnailWrapper}>
+          {thumbnail ? (
             <Image
-              src={reviewerImage}
-              alt={reviewerName}
-              fill // Use fill for responsive avatar
-              className="object-cover"
+              src={thumbnail}
+              alt={title}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           ) : (
-            <NoPhotoIcon />
+            <PlaceholderImage />
+          )}
+          {category && <span className={categoryBadge}>{category}</span>}
+        </div>
+
+        {/* Body */}
+        <div className={cardBody}>
+          {/* Meta */}
+          <div className={metaRow}>
+            {date && (
+              <span className="inline-flex items-center gap-1">
+                <CalendarIcon />
+                {date}
+              </span>
+            )}
+            {readTime && (
+              <span className="inline-flex items-center gap-1">
+                <ClockIcon />
+                {readTime} min read
+              </span>
+            )}
+          </div>
+
+          {/* Title */}
+          <h3 className={titleStyle}>{title}</h3>
+
+          {/* Description */}
+          {description && <p className={descriptionStyle}>{description}</p>}
+
+          {/* Read More */}
+          <a href="#" className={readMoreStyle}>
+            Read More <ArrowIcon />
+          </a>
+        </div>
+      </div>
+
+      {/* Mobile Card (visible only on small screens) */}
+      <div
+        className={`${cardContainerMobile} flex sm:hidden ${className}`}
+        {...props}
+      >
+        {/* Thumbnail */}
+        <div className={thumbnailMobileWrapper}>
+          {thumbnail ? (
+            <Image src={thumbnail} alt={title} fill className="object-cover" />
+          ) : (
+            <PlaceholderImage />
           )}
         </div>
 
-        <div className={clientDetails}>
-          <span className={clientName}>{reviewerName}</span>
-          <span className={clientDate}>{reviewDate}</span>
+        {/* Text content */}
+        <div className="flex flex-col gap-1 flex-1 min-w-0">
+          <h3 className={`${titleStyle} text-[14px]`}>{title}</h3>
+          <div className={metaRow}>
+            {date && (
+              <span className="inline-flex items-center gap-1">
+                <CalendarIcon />
+                {date}
+              </span>
+            )}
+          </div>
         </div>
       </div>
-
-      {/* 2. Review Text (Middle - Flex Grow) */}
-      <div className={textWrapper}>
-        <p className={reviewParagraph}>{reviewText}</p>
-      </div>
-
-      {/* 3. Stars (Bottom) */}
-      <div className="flex flex-row gap-[3px] w-fit shrink-0 pb-2">
-        {[...Array(5)].map((_, i) => (
-          <div key={i}>
-            {/* Logic: You can add ternary here if you need empty stars, 
-                 but Figma shows 5 filled stars usually */}
-            <StarIcon />
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };

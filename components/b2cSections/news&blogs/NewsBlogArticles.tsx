@@ -2,19 +2,18 @@
 
 import { HighlightedHeading } from '@/components/HighlightedHeading';
 import { Badge } from '@/components/Badge';
-import { GoogleRatingCard } from '@/components/GoogleRatingCard';
 import { Parallax } from '@/components/Parallax';
 import { useTranslations } from 'next-intl';
 import NewsBlogsCarousel from '@/components/NewsBlogsCarousel';
 
 export const NewsBlogArticles = () => {
-  const t = useTranslations('Reviews');
+  const t = useTranslations('NewsBlogs');
 
   return (
     <Parallax speed={0.04}>
       <section
-        className="w-full flex md:px-relaxed md:py-relaxed px-tight py-relaxed mx-auto items-center justify-center overflow-visible bg-[#F9FAFB]"
-        id="reviews"
+        className="w-full flex md:px-relaxed md:py-relaxed px-tight py-relaxed mx-auto items-center justify-center overflow-visible"
+        id="news-blogs"
       >
         {/* Outer container */}
         <div className="w-full max-w-[1034px] flex flex-col items-center gap-10 md:px-4 px-0 overflow-visible">
@@ -28,16 +27,11 @@ export const NewsBlogArticles = () => {
                 highlight={t('heading_highlighted_word')}
                 className="text-h4 font-heading font-bold text-center"
               />
-              <p className="md:text-left text-center">{t('description')}</p>
             </div>
 
-            {/* Right Wrapper - Subtitle */}
+            {/* Right Wrapper - Description */}
             <div className="flex items-center justify-center md:justify-end flex-grow">
-              <GoogleRatingCard
-                rating="4.8"
-                buttonLabel="See Reviews"
-                // onButtonClick={() => alert('See Reviews clicked')}
-              />
+              <p className="md:text-left text-center">{t('description')}</p>
             </div>
           </div>
 

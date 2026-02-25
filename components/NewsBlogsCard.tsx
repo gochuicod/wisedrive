@@ -1,37 +1,39 @@
 import React from 'react';
-import { BaseReviewCard, ReviewCardVariant } from '@/styles/reviewcard';
+import { BaseNewsBlogCard } from '@/styles/newsblogscard';
 
 // --- Definition Types ---
-export interface ReviewCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: ReviewCardVariant;
-  reviewText: string;
-  reviewerName: string;
-  reviewDate: string;
-  reviewerImage?: string;
-  rating?: number;
+export interface NewsBlogCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  thumbnail?: string;
+  category?: string;
+  date?: string;
+  readTime?: number;
+  title: string;
+  description?: string;
 }
 
 // --- Component ---
-export const ReviewCard: React.FC<ReviewCardProps> = ({
-  variant,
-  reviewText,
-  reviewerName,
-  reviewDate,
-  reviewerImage,
-  rating,
+export const NewsBlogsCard: React.FC<NewsBlogCardProps> = ({
+  thumbnail,
+  category,
+  date,
+  readTime,
+  title,
+  description,
   className,
   ...props
 }) => {
   return (
-    <BaseReviewCard
-      variant={variant}
-      reviewText={reviewText}
-      reviewerName={reviewerName}
-      reviewDate={reviewDate}
-      reviewerImage={reviewerImage}
-      rating={rating}
+    <BaseNewsBlogCard
+      thumbnail={thumbnail}
+      category={category}
+      date={date}
+      readTime={readTime}
+      title={title}
+      description={description}
       className={className}
       {...props}
     />
   );
 };
+
+export default NewsBlogsCard;

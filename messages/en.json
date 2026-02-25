@@ -316,7 +316,7 @@
       }
     }
   },
-"Reviews": {
+  "Reviews": {
     "badge_text": "Our Reviews",
     "heading": "Drive Away Happy",
     "heading_highlighted_word": "Happy",
@@ -357,6 +357,38 @@
       "review_9": {
         "customer_name": "Mohd Adli Mohd Noor",
         "content": "Very good services…each item inspect detail by WiseDrive team..all report complete with notes and pictures…tqvm"
+      }
+    }
+  },
+  "NewsBlogs": {
+    "badge_text": "Latest Insights",
+    "heading": "News & Blog Articles",
+    "heading_highlighted_word": "Blog Articles",
+    "description": "Stay informed with expert tips on used car buying, AI-driven inspection insights, and the latest automotive industry updates.",
+    "blogs": {
+      "blog_1": {
+        "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
+        "description": "",
+        "date": "Jan 14, 2026",
+        "read-time": 15,
+        "category": "Article",
+        "thumbnail-path": ""
+      },
+      "blog_2": {
+        "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
+        "description": "",
+        "date": "Jan 14, 2026",
+        "read-time": 15,
+        "category": "Article",
+        "thumbnail-path": ""
+      },
+      "blog_3": {
+        "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
+        "description": "",
+        "date": "Jan 14, 2026",
+        "read-time": 15,
+        "category": "Article",
+        "thumbnail-path": ""
       }
     }
   },
@@ -524,7 +556,11 @@
       "section_title": "4. Payment and Cancellation",
       "point_1": "Payment must be made at the time of booking the Inspection.",
       "point_2": "We reserve the right to refuse to conduct an Inspection or issue a Report for any vehicle: that cannot be reasonably accessed by the Inspector; or that appears to the Inspector as:",
-      "point_2_items": ["not standard production (for example, but not limited to, a kit car)", "has been modified or not used frequently (for example, showing signs of excessive corrosion on moving parts due to being left too long and could cause the Vehicle to be unsafe to drive without repairs)", "unsafe to drive or is in an unroadworthy condition"],
+      "point_2_items": [
+        "not standard production (for example, but not limited to, a kit car)",
+        "has been modified or not used frequently (for example, showing signs of excessive corrosion on moving parts due to being left too long and could cause the Vehicle to be unsafe to drive without repairs)",
+        "unsafe to drive or is in an unroadworthy condition"
+      ],
       "point_3": "Where the Customer fails to ensure proper arrangements for the Inspection to be carried out, as required, or has provided incorrect or incomplete information that prevents Us from carrying out the Inspection, you acknowledge that in such circumstances We are entitled to treat the Agreement as terminated and retain the Payment in full.",
       "point_4": "If you wish Us to carry out another Inspection, you need to make an additional payment at the time of the new booking.",
       "point_5": "You are entitled to cancel the Inspection and receive a full refund of the Payment if the cancellation is made at least 24 hours before the scheduled Inspection. After the Inspection has been carried out, no refund of the payment will be given.",
@@ -659,11 +695,7 @@
     "road_test": {
       "section_title": "Road Test Requirements",
       "point_1": "To enable our Inspector to perform a Road Test on the Vehicle, you must ensure that the vehicle contains sufficient quantities of: (a) Water; (b) Oil; (c) Petrol",
-      "point_1_items": [
-        "Water",
-        "Oil",
-        "Petrol"
-      ],
+      "point_1_items": ["Water", "Oil", "Petrol"],
       "point_2": "Road tests are carried out within the area surrounding the Inspection. If: The Vehicle is in an unsafe condition to be driven or contains insufficient quantities of oil, water and/or petrol; The Customer cannot confirm that the Vehicle has a valid fitness certificate and therefore a road test cannot be carried out during the Inspection; Payment for the Inspection must still be paid in full and an additional charge will be levied for any subsequent road test you request Us to carry out",
       "point_3": "The performance of a road test does not mean our Inspector has sighted a valid fitness certificate",
       "point_4": "Obtaining necessary permissions and access to the Vehicle is the responsibility of the Customer",

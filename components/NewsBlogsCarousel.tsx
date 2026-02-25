@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import 
 import { useTranslations } from 'next-intl';
 import {
   Carousel,
@@ -9,33 +8,38 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 import type { CarouselApi } from '@/components/ui/carousel';
+import { NewsBlogsCard } from '@/components/NewsBlogsCard';
 
-// Transform review data from i18n
-const transformReviewsData = (
-  reviews: Record<string, { customer_name: string; content: string }>,
-) => {
-  return Object.entries(reviews).map((entry, index) => {
-    const [key, review] = entry;
-    return {
-      id: index + 1,
-      reviewText: review.content,
-      reviewerName: review.customer_name,
-      reviewDate: '',
-      rating: 5,
-    };
-  });
+interface BlogEntry {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  'read-time': number;
+  category: string;
+  'thumbnail-path': string;
+}
+
+// Transform blog data from i18n object to array
+const transformBlogsData = (
+  blogs: Record<string, Omit<BlogEntry, 'id'>>,
+): BlogEntry[] => {
+  return Object.entries(blogs).map(([key, blog]) => ({
+    id: key,
+    ...blog,
+  }));
 };
 
 export const NewsBlogsCarousel = () => {
-  const t = useTranslations();
+  const t = useTranslations('NewsBlogs');
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  // Get review data from translations
-  const reviewsData = useMemo(() => {
-    const reviewsObj = t.raw('Reviews.reviews');
-    return transformReviewsData(reviewsObj);
+  // Get blog data from translations
+  const blogsData = useMemo(() => {
+    const blogsObj = t.raw('blogs') as Record<string, Omit<BlogEntry, 'id'>>;
+    return transformBlogsData(blogsObj);
   }, [t]);
 
   React.useEffect(() => {
@@ -43,14 +47,13 @@ export const NewsBlogsCarousel = () => {
       return;
     }
 
-    // Set count based on the actual number of review items
-    setCount(reviewsData.length);
+    setCount(blogsData.length);
     setCurrent(api.selectedScrollSnap());
 
     api.on('select', () => {
       setCurrent(api.selectedScrollSnap());
     });
-  }, [api, reviewsData.length]);
+  }, [api, blogsData.length]);
 
   return (
     <div className="w-full flex flex-col items-center gap-8">
@@ -66,18 +69,19 @@ export const NewsBlogsCarousel = () => {
         className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_0)]"
       >
         <CarouselContent className="w-full md:-ml-6 gap-4">
-          {reviewsData.map((review, index) => (
+          {blogsData.map((blog, index) => (
             <CarouselItem
-              key={review.id}
-              className={`basis-[288px] md:pl-6 pl-4 flex-none ${index === reviewsData.length - 1 ? 'mr-4' : ''}`}
+              key={blog.id}
+              className={`basis-auto md:pl-6 pl-4 flex-none ${index === blogsData.length - 1 ? 'mr-4' : ''}`}
             >
-              {/* <ReviewCard
-                variant={index % 2 === 0 ? 'v1' : 'v2'}
-                reviewText={review.reviewText}
-                reviewerName={review.reviewerName}
-                reviewDate={review.reviewDate}
-                rating={review.rating}
-              /> */}
+              <NewsBlogsCard
+                thumbnail={blog['thumbnail-path'] || undefined}
+                category={blog.category}
+                date={blog.date}
+                readTime={blog['read-time']}
+                title={blog.title}
+                description={blog.description}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
