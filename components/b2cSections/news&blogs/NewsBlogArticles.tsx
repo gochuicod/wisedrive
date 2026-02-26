@@ -57,7 +57,7 @@ export const NewsBlogArticles = () => {
             </div>
 
             {/* Right Wrapper - Description */}
-            <div className="flex items-center justify-center md:justify-end flex-grow max-w-[50%]">
+            <div className="flex items-center justify-center md:justify-end flex-grow md:max-w-[50%] w-full">
               <p className="md:text-left text-center">{t('description')}</p>
             </div>
           </div>

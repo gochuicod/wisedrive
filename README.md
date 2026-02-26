@@ -1,6 +1,6 @@
 # Next.js Scalable Boilerplate (i18n + Shadcn UI)
 
-This is a modern [Next.js](https://nextjs.org) project optimized for scalability, internationalization, and component-driven development. It features a strict folder structure and commit convention to ensure long-term maintainability.
+This is a modern [Next.js](https://nextjs.org) project optimized for scalability, internationalization, and component-driven development. It features a strict folder structure and commit convention to ensure long-term maintainability of the software.
 
 ## 🛠 Tech Stack
 
