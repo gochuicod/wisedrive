@@ -370,33 +370,73 @@
         "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
         "description": "",
         "date": "Jan 14, 2026",
-        "read-time": 15,
+        "read-time": 5,
         "category": "Article",
-        "thumbnail-path": "/blogs/blog1/01.png"
+        "thumbnail-path": "/blogs/blog1/01.png",
+        "url": "https://www.carz.com.my/2026/01/wisedrive-ai-powered-used-car-inspection-ecosystem-launched"
       },
       "blog_2": {
-        "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
+        "title": "Pemeriksaan Kereta Terpakai Berasaskan AI Kini Di Malaysia",
         "description": "",
         "date": "Jan 14, 2026",
-        "read-time": 15,
+        "read-time": 3,
         "category": "Article",
-        "thumbnail-path": "/blogs/blog2/02.png"
+        "thumbnail-path": "/blogs/blog2/01.png",
+        "url": "https://themalaysiapost.com/pemeriksaan-kereta-terpakai/"
       },
       "blog_3": {
-        "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
+        "title": "WISEDRIVE Debuts as Malaysia’s First AI-Powered End-to-End Solution for the Used Car Market",
         "description": "",
-        "date": "Jan 14, 2026",
-        "read-time": 15,
+        "date": "Jan 15, 2026",
+        "read-time": 3,
         "category": "Article",
-        "thumbnail-path": "/blogs/blog3/03.png"
+        "thumbnail-path": "/blogs/blog3/01.png",
+        "url": "https://keyauto.my/news/wisedrive-officially-in-malaysia"
       },
       "blog_4": {
+        "title": "WiseDrive AI vehicle inspection tech for used cars",
+        "description": "",
+        "date": "Jan 15, 2026",
+        "read-time": 3,
+        "category": "Article",
+        "thumbnail-path": "/blogs/blog4/01.png",
+        "url": "https://www.carsifu.my/news/wisedrive-ai-vehicle-inspection-tech-for-used-cars"
+      },
+      "blog_5": {
+        "title": "WISEDRIVE Debuts as Malaysia’s First AI-Powered End-to-End Solution for the Used Car Market",
+        "description": "",
+        "date": "Jan 14, 2026",
+        "read-time": 3,
+        "category": "Article",
+        "thumbnail-path": "/blogs/blog5/01.png",
+        "url": "https://carsick.my/2026/01/wisedrive-debuts-as-malaysias-first-ai-powered-end-to-end-solution-for-the-used-car-market/"
+      },
+      "blog_6": {
         "title": "Wisedrive AI-powered Used Car Inspection Ecosystem Launched",
         "description": "",
         "date": "Jan 14, 2026",
-        "read-time": 15,
+        "read-time": 3,
         "category": "Article",
-        "thumbnail-path": "/blogs/blog3/03.png"
+        "thumbnail-path": "/blogs/blog6/01.png",
+        "url": "https://newswav.com/article/wisedrive-ai-powered-used-car-inspection-ecosystem-launched-A2601_gPXlAG"
+      },
+      "blog_7": {
+        "title": "Wisedrive masuki Malaysia, perkenal pemeriksaan kereta terpakai berasaskan AI",
+        "description": "",
+        "date": "Jan 15, 2026",
+        "read-time": 4,
+        "category": "Article",
+        "thumbnail-path": "/blogs/blog7/01.png",
+        "url": "https://luminews.my/ms/news/3920368"
+      },
+      "blog_8": {
+        "title": "Wisedrive masuki Malaysia, perkenal pemeriksaan kereta terpakai berasaskan AI",
+        "description": "",
+        "date": "Jan 15, 2026",
+        "read-time": 4,
+        "category": "Article",
+        "thumbnail-path": "/blogs/blog8/01.png",
+        "url": "https://bm.soyacincau.com/2026/01/15/wisedrive-masuki-malaysia-perkenal-pemeriksaan-kereta-terpakai-berasaskan-ai/"
       }
     }
   },

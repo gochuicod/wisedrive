@@ -18,6 +18,7 @@ interface BlogEntry {
   'read-time': number;
   category: string;
   'thumbnail-path': string;
+  url?: string;
 }
 
 // Transform blog data from i18n object to array
@@ -81,6 +82,7 @@ export const NewsBlogsCarousel = () => {
                 readTime={blog['read-time']}
                 title={blog.title}
                 description={blog.description}
+                url={blog.url}
               />
             </CarouselItem>
           ))}

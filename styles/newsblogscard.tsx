@@ -2,13 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 
 // --- Styling Types ---
-export interface BaseNewsBlogCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface BaseNewsBlogCardProps extends React.HTMLAttributes<HTMLElement> {
   thumbnail?: string;
   category?: string;
   date?: string;
   readTime?: number;
   title: string;
   description?: string;
+  url?: string;
 }
 
 // --- Style Definitions ---
@@ -23,7 +24,7 @@ const cardContainer = `
   shadow-sm
   overflow-hidden
   transition-all duration-300 ease-in-out
-  hover:shadow-md
+  hover:shadow-lg
 `;
 
 // Mobile horizontal compact card
@@ -36,7 +37,7 @@ const cardContainerMobile = `
   shadow-sm
   overflow-hidden
   transition-all duration-300 ease-in-out
-  hover:shadow-md
+  hover:shadow-lg
   p-3 gap-3
   items-center
 `;
@@ -82,7 +83,8 @@ const descriptionStyle = `
 const readMoreStyle = `
   inline-flex items-center gap-1
   text-[var(--color-primary)] text-sm font-semibold
-  hover:underline transition-colors
+  transition-all duration-200
+  group-hover/readmore:translate-x-1
   mt-1
 `;
 
@@ -196,16 +198,14 @@ export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
   readTime,
   title,
   description,
+  url,
   className = '',
   ...props
 }) => {
-  return (
+  const CardContent = (
     <>
       {/* Desktop / Tablet Card (hidden on small screens) */}
-      <div
-        className={`${cardContainer} hidden sm:flex ${className}`}
-        {...props}
-      >
+      <div className={`${cardContainer} hidden sm:flex group/card`}>
         {/* Thumbnail */}
         <div className={`${thumbnailWrapper} relative`}>
           {thumbnail ? (
@@ -213,7 +213,7 @@ export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
               src={thumbnail}
               alt={title}
               fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover/card:scale-105"
             />
           ) : (
             <PlaceholderImage />
@@ -252,29 +252,34 @@ export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
           {/* Description */}
           {description && <p className={descriptionStyle}>{description}</p>}
 
-          {/* Read More */}
-          <a href="#" className={readMoreStyle}>
-            Read More <ArrowIcon />
-          </a>
+          {/* Read More button styled div */}
+          <div className={readMoreStyle}>
+            <span>Read More</span>
+            <span className="transition-transform duration-300 group-hover/card:translate-x-1 ml-1">
+              <ArrowIcon />
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Mobile Card (visible only on small screens) */}
-      <div
-        className={`${cardContainerMobile} flex sm:hidden ${className}`}
-        {...props}
-      >
+      <div className={`${cardContainerMobile} flex sm:hidden group/card`}>
         {/* Thumbnail */}
         <div className={thumbnailMobileWrapper}>
           {thumbnail ? (
-            <Image src={thumbnail} alt={title} fill className="object-cover" />
+            <Image
+              src={thumbnail}
+              alt={title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover/card:scale-110"
+            />
           ) : (
             <PlaceholderImage />
           )}
         </div>
 
         {/* Text content */}
-        <div className="flex flex-col gap-1 flex-1 min-w-0">
+        <div className="flex flex-col gap-1.5 flex-1 min-w-0">
           <h3 className={`${titleStyle} text-[14px]`}>{title}</h3>
           <div className={metaRow}>
             {date && (
@@ -284,8 +289,32 @@ export const BaseNewsBlogCard: React.FC<BaseNewsBlogCardProps> = ({
               </span>
             )}
           </div>
+          {/* Light indicator for mobile */}
+          <div className="text-[12px] font-semibold text-primary-600 flex items-center gap-1">
+            Read More <ArrowIcon />
+          </div>
         </div>
       </div>
     </>
+  );
+
+  if (url) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`block no-underline ${className}`}
+        {...props}
+      >
+        {CardContent}
+      </a>
+    );
+  }
+
+  return (
+    <div className={`${className}`} {...props}>
+      {CardContent}
+    </div>
   );
 };

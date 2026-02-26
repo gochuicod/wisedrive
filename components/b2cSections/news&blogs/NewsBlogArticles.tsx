@@ -16,6 +16,7 @@ interface BlogEntry {
   'read-time': number;
   category: string;
   'thumbnail-path': string;
+  url?: string;
 }
 
 const INITIAL_VISIBLE = 3;
@@ -77,6 +78,7 @@ export const NewsBlogArticles = () => {
                 readTime={blog['read-time']}
                 title={blog.title}
                 description={blog.description}
+                url={blog.url}
               />
             ))}
             {hasMore && (
