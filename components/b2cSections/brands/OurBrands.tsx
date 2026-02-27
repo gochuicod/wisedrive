@@ -15,8 +15,11 @@ export default function OurBrands() {
     <Parallax speed={0.03}>
       <div
       className={cn(
-        'px-relaxed',
+        'md:px-relaxed',
+        'md:py-relaxed',
+        'px-tight',
         'py-relaxed',
+        'mx-auto',
         'flex',
         'flex-col',
         'justify-center',

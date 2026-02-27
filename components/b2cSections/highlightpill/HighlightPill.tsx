@@ -106,7 +106,7 @@ export const FAQSection = () => {
         ref={sectionRef}
         className="w-full flex px-tight py-relaxed mx-auto items-center justify-center"
       >
-        <div className="w-full max-w-[1248px] flex flex-col items-center gap-10 px-4">
+        <div className="w-full max-w-[1034px] flex flex-col items-center gap-10 px-4">
           {/* Heading */}
           <div className="flex flex-col items-center gap-1 flex-grow">
             <HighlightedHeading

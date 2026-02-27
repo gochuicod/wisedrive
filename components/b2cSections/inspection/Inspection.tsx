@@ -19,7 +19,7 @@ export default function Inspection() {
         className={cn(
           'flex flex-col',
           'rounded-3xl',
-          'max-w-[1035px]',
+          'max-w-[1034px]',
           'max-h-[617px]',
           'bg-gray-100',
           'mx-auto',

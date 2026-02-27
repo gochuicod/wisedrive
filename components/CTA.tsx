@@ -70,9 +70,9 @@ const CTA = (props: CTAProps) => {
     'bg-gradient-to-r from-[#13398F]/30 via-[#13398F]/60 to-[#003ECC]/80';
 
   return (
-    <section className="flex flex-col items-center w-full py-relaxed max-w-[1248px] gap-8 mx-auto lg:px-0 px-relaxed">
+    <section className="flex flex-col items-center w-full md:py-relaxed md:px-relaxed px-tight py-relaxed max-w-[1034px] gap-8 mx-auto lg:px-0">
       <div
-        className="relative w-full min-h-[192px] lg:w-4/5 flex flex-col items-center justify-center p-8 gap-6 rounded-2xl overflow-hidden bg-cover bg-center"
+        className="relative min-h-[192px] w-full flex flex-col items-center justify-center p-8 gap-6 rounded-2xl overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: 'url(/cta/wd-cta-1-bg.webp)' }}
       >
         <div
