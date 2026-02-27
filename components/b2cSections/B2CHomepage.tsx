@@ -14,6 +14,7 @@ import WhyChooseUs from '@/components/b2cSections/why_choose_us/WhyChooseUs';
 import CTA from '@/components/CTA';
 import { useHomeCTAs } from '@/hooks/useHomeCTAs';
 import { FixedPopUp } from '@/components/FixedPopUp';
+import NewsBlogArticles from './news&blogs/NewsBlogArticles';
 
 export default function B2CHomepage() {
   const ctas = useHomeCTAs();
@@ -33,6 +34,8 @@ export default function B2CHomepage() {
       <CTA {...ctas.consultation} />
       <FAQSection />
       <Reviews />
+      {/* insert blogs and articles page */}
+      <NewsBlogArticles />
       <CTA {...ctas.secure} />
       <FixedPopUp />
     </div>
