@@ -16,11 +16,11 @@ interface BaseReviewCardProps extends React.HTMLAttributes<HTMLDivElement> {
 // --- Style Definitions ---
 const containerBase = `
   box-border
-  flex flex-col justify-between items-center 
-  p-4 gap-4 
-  w-full max-w-[280px] 
-  bg-white 
-  border border-[#99A1AF] rounded-2xl 
+  flex flex-col justify-between items-center
+  p-4 gap-4
+  w-full max-w-[320px]
+  bg-white
+  border border-[#99A1AF] rounded-2xl
   shadow-sm
   transition-all duration-300 ease-in-out
 `;

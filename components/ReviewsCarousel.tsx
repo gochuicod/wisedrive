@@ -11,14 +11,16 @@ import {
 import type { CarouselApi } from '@/components/ui/carousel';
 
 // Transform review data from i18n
-const transformReviewsData = (reviews: Record<string, { customer_name: string; content: string }>) => {
+const transformReviewsData = (
+  reviews: Record<string, { customer_name: string; content: string }>,
+) => {
   return Object.entries(reviews).map((entry, index) => {
     const [key, review] = entry;
     return {
       id: index + 1,
       reviewText: review.content,
       reviewerName: review.customer_name,
-      reviewDate: "",
+      reviewDate: '',
       rating: 5,
     };
   });
@@ -55,17 +57,20 @@ export const ReviewsCarousel = () => {
       {/* Carousel Container */}
       <Carousel
         opts={{
-          align: 'start',
+          align: 'center',
           loop: true,
-          dragFree: true,
           skipSnaps: false,
+          duration: 25,
         }}
         setApi={setApi}
-        className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_0)]"
+        className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_-100vw)]"
       >
-        <CarouselContent className="w-full md:-ml-6 gap-4">
+        <CarouselContent className="-ml-6">
           {reviewsData.map((review, index) => (
-            <CarouselItem key={review.id} className={`basis-[288px] md:pl-6 pl-4 flex-none ${index === reviewsData.length - 1 ? 'mr-4' : ''}`}>
+            <CarouselItem
+              key={review.id}
+              className="basis-[344px] pl-6 flex-shrink-0"
+            >
               <ReviewCard
                 variant={index % 2 === 0 ? 'v1' : 'v2'}
                 reviewText={review.reviewText}
@@ -86,8 +91,21 @@ export const ReviewsCarousel = () => {
           className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
           aria-label="Previous"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-6 md:h-6">
-            <path d="M15 18L9 12L15 6" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="md:w-6 md:h-6"
+          >
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="var(--color-primary)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
 
@@ -113,8 +131,20 @@ export const ReviewsCarousel = () => {
           className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0"
           aria-label="Next"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-6 md:h-6">
-            <path d="M9 18L15 12L9 6" stroke="var(--color-primary)" strokeWidth="2" strokeLinejoin="round" />
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="md:w-6 md:h-6"
+          >
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="var(--color-primary)"
+              strokeWidth="2"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
       </div>
