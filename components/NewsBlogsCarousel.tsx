@@ -61,19 +61,19 @@ export const NewsBlogsCarousel = () => {
       {/* Carousel Container */}
       <Carousel
         opts={{
-          align: 'start',
+          align: 'center',
           loop: true,
-          dragFree: true,
           skipSnaps: false,
+          duration: 25,
         }}
         setApi={setApi}
-        className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_0)]"
+        className="w-full relative [&>div]:overflow-visible [clip-path:inset(0_-100vw_0_-100vw)]"
       >
-        <CarouselContent className="w-full md:-ml-6 gap-4">
-          {blogsData.map((blog, index) => (
+        <CarouselContent className="-ml-6">
+          {blogsData.map((blog) => (
             <CarouselItem
               key={blog.id}
-              className={`basis-auto md:pl-6 pl-4 flex-none ${index === blogsData.length - 1 ? 'mr-4' : ''}`}
+              className="basis-[364px] pl-6 flex-shrink-0"
             >
               <NewsBlogsCard
                 thumbnail={blog['thumbnail-path'] || undefined}

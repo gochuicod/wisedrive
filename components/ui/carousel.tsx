@@ -119,7 +119,7 @@ const CarouselContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex gap-8", className)}
+    className={cn("flex", className)}
     {...props}
   />
 ))

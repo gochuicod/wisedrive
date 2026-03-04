@@ -18,7 +18,7 @@ export interface BaseNewsBlogCardProps extends React.HTMLAttributes<HTMLElement>
 const cardContainer = `
   group
   flex flex-col
-  w-full max-w-[288px]
+  w-full max-w-[340px]
   bg-white
   border border-[#E5E7EB] rounded-2xl
   shadow-sm
