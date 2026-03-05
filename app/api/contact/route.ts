@@ -11,11 +11,8 @@ export async function POST(req: Request) {
     // Server-side validation
     const data = contactSchema.parse(body);
 
-    console.log('Sending emails for:', data.name, data.email);
-    console.log('API Key exists:', !!process.env.RESEND_API_KEY);
-
     // Admin Email
-    const adminResponse = await resend.emails.send({
+    await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
       to: ['nurhafiz.zubir@wisedrive.com'],
       subject: 'New Enterprise Contact Request',
@@ -30,10 +27,8 @@ export async function POST(req: Request) {
       `,
     });
 
-    console.log('Admin email response:', adminResponse);
-
     // User Confirmation Email
-    const userResponse = await resend.emails.send({
+    await resend.emails.send({
       from: 'Contact <no-reply@wisedrive.my>',
       to: [data.email],
       cc: ['nurhafiz.zubir@wisedrive.com'],
@@ -47,11 +42,8 @@ export async function POST(req: Request) {
       `,
     });
 
-    console.log('User email response:', userResponse);
-
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Contact form error:', error);
     return NextResponse.json(
       { error: 'Failed to send email', details: String(error) },
       { status: 400 },

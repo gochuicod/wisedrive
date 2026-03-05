@@ -83,7 +83,7 @@ export default function Inspection() {
               )}
             >
               <AppButton
-                href="https://wisedrive.com/my/"
+                href="https://wisedrive.com/#services"
                 variant="default"
                 size="sm"
                 leftIcon={<Calendar className="size-4" />}
@@ -92,12 +92,12 @@ export default function Inspection() {
               </AppButton>
               <div className="flex gap-2">
                 <AppButton
-                  href="https://www.wisedrive.com/sample-report?fbclid=IwY2xjawPEGNZleHRuA2FlbQIxMABicmlkETFoM3RnRGp3c0tzWERqVXBVc3J0YwZhcHBfaWQPNTE0NzcxNTY5MjI4MDYxAAEewlEBYRS0NjrvAJZGhiWSTLGjXQY__YcOtT-NjPWTZU8pNWRMiajXgA8Kajc_aem_rxCefHFkquLt4YG3NHvtNA"
+                  href="/sample_report/WYB4267_Report.pdf"
                   variant="tertiary"
                   className='w-full'
                   size="sm"
                   leftIcon={<Link className="size-4" />}
-                  target="_blank"
+                  download="WYB4267_Report.pdf"
                 >
                   {t('sample_report_button')}
                 </AppButton>

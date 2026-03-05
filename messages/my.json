@@ -360,6 +360,86 @@
       }
     }
   },
+  "NewsBlogs": {
+    "badge_text": "Pandangan Terkini",
+    "heading": "Berita & Artikel Blog",
+    "heading_highlighted_word": "Artikel Blog",
+    "description": "Dapatkan maklumat terkini dengan tips pakar tentang pembelian kereta terpakai, pandangan pemeriksaan berasaskan AI, dan kemas kini industri automotif terbaru.",
+    "blogs": {
+      "blog_1": {
+        "title": "Ekosistem Pemeriksaan Kereta Terpakai Berkuasa AI Wisedrive Dilancarkan",
+        "description": "",
+        "date": "14 Jan, 2026",
+        "read-time": 5,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog1/01.png",
+        "url": "https://www.carz.com.my/2026/01/wisedrive-ai-powered-used-car-inspection-ecosystem-launched"
+      },
+      "blog_2": {
+        "title": "Pemeriksaan Kereta Terpakai Berasaskan AI Kini Di Malaysia",
+        "description": "",
+        "date": "14 Jan, 2026",
+        "read-time": 3,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog2/01.png",
+        "url": "https://themalaysiapost.com/pemeriksaan-kereta-terpakai/"
+      },
+      "blog_3": {
+        "title": "WISEDRIVE Muncul sebagai Penyelesaian Hujung ke Hujung Berkuasa AI Pertama Malaysia untuk Pasaran Kereta Terpakai",
+        "description": "",
+        "date": "15 Jan, 2026",
+        "read-time": 3,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog3/01.png",
+        "url": "https://keyauto.my/news/wisedrive-officially-in-malaysia"
+      },
+      "blog_4": {
+        "title": "Teknologi Pemeriksaan Kenderaan AI WiseDrive untuk Kereta Terpakai",
+        "description": "",
+        "date": "15 Jan, 2026",
+        "read-time": 3,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog4/01.png",
+        "url": "https://www.carsifu.my/news/wisedrive-ai-vehicle-inspection-tech-for-used-cars"
+      },
+      "blog_5": {
+        "title": "WISEDRIVE Muncul sebagai Penyelesaian Hujung ke Hujung Berkuasa AI Pertama Malaysia untuk Pasaran Kereta Terpakai",
+        "description": "",
+        "date": "14 Jan, 2026",
+        "read-time": 3,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog5/01.png",
+        "url": "https://carsick.my/2026/01/wisedrive-debuts-as-malaysias-first-ai-powered-end-to-end-solution-for-the-used-car-market/"
+      },
+      "blog_6": {
+        "title": "Ekosistem Pemeriksaan Kereta Terpakai Berkuasa AI Wisedrive Dilancarkan",
+        "description": "",
+        "date": "14 Jan, 2026",
+        "read-time": 3,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog6/01.png",
+        "url": "https://newswav.com/article/wisedrive-ai-powered-used-car-inspection-ecosystem-launched-A2601_gPXlAG"
+      },
+      "blog_7": {
+        "title": "Wisedrive masuki Malaysia, perkenal pemeriksaan kereta terpakai berasaskan AI",
+        "description": "",
+        "date": "15 Jan, 2026",
+        "read-time": 4,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog7/01.png",
+        "url": "https://luminews.my/ms/news/3920368"
+      },
+      "blog_8": {
+        "title": "Wisedrive masuki Malaysia, perkenal pemeriksaan kereta terpakai berasaskan AI",
+        "description": "",
+        "date": "15 Jan, 2026",
+        "read-time": 4,
+        "category": "Artikel",
+        "thumbnail-path": "/blogs/blog8/01.png",
+        "url": "https://bm.soyacincau.com/2026/01/15/wisedrive-masuki-malaysia-perkenal-pemeriksaan-kereta-terpakai-berasaskan-ai/"
+      }
+    }
+  },
   "Steps": {
     "heading": "Beli kereta anda dengan keyakinan penuh",
     "heading_highlighted_word": "keyakinan",
