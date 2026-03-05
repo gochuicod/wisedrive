@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "extract:copywriting": "node ./scripts/extract-copywriting.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
