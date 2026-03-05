@@ -7,18 +7,35 @@ const WORKSPACE_ROOT = process.cwd();
 const MESSAGE_DIR = 'messages';
 const CODE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx']);
 
+// ---------------------------------------------------------------------------
+// Target locales for the client CSV.
+// "en" and "my" are backed by existing message files; "th" and "id" are left
+// as empty placeholders for the client to fill in.
+// ---------------------------------------------------------------------------
+const OUTPUT_LOCALES = ['en', 'my', 'th', 'id'];
+const LOCALE_LABELS = { en: 'English', my: 'Malay', th: 'Thai (to translate)', id: 'Indonesian (to translate)' };
+
 function csvEscape(value) {
   const s = value == null ? '' : String(value);
   if (/[\n\r",]/.test(s)) return `"${s.replaceAll('"', '""')}"`;
   return s;
 }
 
-function toTwoColumnCsv(rows) {
-  const lines = ['route,text'];
+function toClientCsv(rows) {
+  // \uFEFF = UTF-8 BOM — required for Excel on Windows to correctly read multi-byte characters
+  // (Malay diacritics, em dashes, etc.) without garbling.
+  const BOM = '\uFEFF';
+  const header = ['route', 'key', ...OUTPUT_LOCALES.map((l) => LOCALE_LABELS[l] ?? l)].map(csvEscape).join(',');
+  const lines = [header];
   for (const r of rows) {
-    lines.push([csvEscape(r.route), csvEscape(r.text)].join(','));
+    const cells = [
+      csvEscape(r.route),
+      csvEscape(r.key),
+      ...OUTPUT_LOCALES.map((l) => csvEscape(r[l] ?? '')),
+    ];
+    lines.push(cells.join(','));
   }
-  return lines.join('\n') + '\n';
+  return BOM + lines.join('\n') + '\n';
 }
 
 function isProbablyNonCopy(text) {
@@ -433,11 +450,16 @@ async function main() {
   const pages = await listPageEntryFiles();
   const messagesByLocale = await loadMessagesByLocale();
 
-  const locales = [...messagesByLocale.keys()];
-  const defaultLocale = locales.includes('en') ? 'en' : locales[0] || 'en';
+  // ---------------------------------------------------------------------------
+  // Two global de-dup maps:
+  //   i18nRows  : key  → { key, routes: Set, en, my, th, id }
+  //   literalRows: normalised English text → { key: '(literal)', routes: Set, en, my:'', th:'', id:'' }
+  // ---------------------------------------------------------------------------
+  /** @type {Map<string, { key:string, routes:Set<string>, en:string, my:string, th:string, id:string }>} */
+  const i18nRows = new Map();
 
-  /** @type {Map<string, Set<string>>} */
-  const textByRoute = new Map();
+  /** @type {Map<string, { key:string, routes:Set<string>, en:string, my:string, th:string, id:string }>} */
+  const literalRows = new Map();
 
   for (const page of pages) {
     const layouts = await listLayoutChainForPage(page.abs);
@@ -466,92 +488,96 @@ async function main() {
       for (const k of extracted.i18nKeys) i18nKeys.add(k);
     }
 
-    // Resolve i18n keys to actual strings (default locale only for the main CSV)
-    const messages = messagesByLocale.get(defaultLocale);
-    if (messages) {
-      for (const k of i18nKeys) {
-        const value = getByPath(messages, k);
-        for (const s of stringsFromValue(value)) {
-          const normalized = normalizeWhitespace(s);
-          if (!isProbablyNonCopy(normalized)) literals.add(normalized);
+    // ---- I18n key rows -------------------------------------------------------
+    for (const k of i18nKeys) {
+      if (!i18nRows.has(k)) {
+        // Look up each locale's translation for this key.
+        const localeValues = {};
+        for (const locale of OUTPUT_LOCALES) {
+          const messages = messagesByLocale.get(locale);
+          if (!messages) { localeValues[locale] = ''; continue; }
+          const value = getByPath(messages, k);
+          // For keys that resolve to arrays (e.g. feature lists), join with " | "
+          const strings = stringsFromValue(value).map(normalizeWhitespace).filter((s) => !isProbablyNonCopy(s));
+          localeValues[locale] = strings.join(' | ');
         }
+
+        // Only include this key if it has at least one non-empty translation.
+        const hasContent = OUTPUT_LOCALES.some((l) => localeValues[l]);
+        if (!hasContent) continue;
+
+        i18nRows.set(k, {
+          key: k,
+          routes: new Set([page.route]),
+          en: localeValues['en'] ?? '',
+          my: localeValues['my'] ?? '',
+          th: localeValues['th'] ?? '',
+          id: localeValues['id'] ?? '',
+        });
+      } else {
+        i18nRows.get(k).routes.add(page.route);
       }
     }
 
-    if (!textByRoute.has(page.route)) textByRoute.set(page.route, new Set());
-    const bucket = textByRoute.get(page.route);
-    for (const t of literals) bucket.add(t);
+    // ---- Hardcoded literal rows -----------------------------------------------
+    for (const lit of literals) {
+      if (!literalRows.has(lit)) {
+        literalRows.set(lit, {
+          key: '(literal)',
+          routes: new Set([page.route]),
+          en: lit,
+          my: '',
+          th: '',
+          id: '',
+        });
+      } else {
+        literalRows.get(lit).routes.add(page.route);
+      }
+    }
   }
 
-  // Produce route,text rows (default locale)
+  // ---------------------------------------------------------------------------
+  // Build final rows list.
+  // Each row: { route, key, en, my, th, id }
+  // "route" is the sorted, comma-joined list of pages where the text appears.
+  // ---------------------------------------------------------------------------
+
+  /** @type {{ route:string, key:string, en:string, my:string, th:string, id:string }[]} */
   const outRows = [];
-  for (const [route, texts] of textByRoute.entries()) {
-    for (const text of texts) outRows.push({ route, text });
-  }
-  outRows.sort((a, b) => (a.route !== b.route ? a.route.localeCompare(b.route) : a.text.localeCompare(b.text)));
 
-  const outPath = path.join(WORKSPACE_ROOT, 'copywriting.csv');
-  await fs.writeFile(outPath, toTwoColumnCsv(outRows), 'utf8');
-
-  // Also emit per-locale files (same 2 columns), if multiple locales exist
-  for (const locale of locales) {
-    const messages = messagesByLocale.get(locale);
-    if (!messages) continue;
-
-    const localeRows = [];
-    for (const page of pages) {
-      const layouts = await listLayoutChainForPage(page.abs);
-      const entrypoints = [page.abs, ...layouts];
-      const graph = await collectDependencyGraph(entrypoints);
-
-      /** @type {Set<string>} */
-      const literals = new Set();
-      /** @type {Set<string>} */
-      const i18nKeys = new Set();
-
-      for (const absFile of graph) {
-        const relFile = path.relative(WORKSPACE_ROOT, absFile);
-        const ext = path.extname(relFile).toLowerCase();
-        if (!CODE_EXTENSIONS.has(ext)) continue;
-        let content;
-        try {
-          content = await fs.readFile(absFile, 'utf8');
-        } catch {
-          continue;
-        }
-        const sourceFile = createSourceFile(relFile, content);
-        const extracted = extractFromModule(sourceFile);
-        for (const lit of extracted.literals) literals.add(lit);
-        for (const k of extracted.i18nKeys) i18nKeys.add(k);
-      }
-
-      for (const k of i18nKeys) {
-        const value = getByPath(messages, k);
-        for (const s of stringsFromValue(value)) {
-          const normalized = normalizeWhitespace(s);
-          if (!isProbablyNonCopy(normalized)) literals.add(normalized);
-        }
-      }
-
-      for (const text of literals) localeRows.push({ route: page.route, text });
-    }
-
-    // De-dupe route+text
-    const seen = new Set();
-    const deduped = [];
-    for (const r of localeRows) {
-      const k = `${r.route}|${r.text}`;
-      if (seen.has(k)) continue;
-      seen.add(k);
-      deduped.push(r);
-    }
-    deduped.sort((a, b) => (a.route !== b.route ? a.route.localeCompare(b.route) : a.text.localeCompare(b.text)));
-    const localeOut = path.join(WORKSPACE_ROOT, `copywriting.${locale}.csv`);
-    await fs.writeFile(localeOut, toTwoColumnCsv(deduped), 'utf8');
+  for (const row of i18nRows.values()) {
+    const sortedRoutes = [...row.routes].sort().join(', ');
+    outRows.push({ route: sortedRoutes, key: row.key, en: row.en, my: row.my, th: row.th, id: row.id });
   }
 
+  for (const row of literalRows.values()) {
+    const sortedRoutes = [...row.routes].sort().join(', ');
+    outRows.push({ route: sortedRoutes, key: row.key, en: row.en, my: row.my, th: row.th, id: row.id });
+  }
+
+  // Sort: i18n keys first (alphabetically by key), then literals (alphabetically by en text).
+  outRows.sort((a, b) => {
+    const aIsLiteral = a.key === '(literal)';
+    const bIsLiteral = b.key === '(literal)';
+    if (aIsLiteral !== bIsLiteral) return aIsLiteral ? 1 : -1;
+    const keyCompare = a.key.localeCompare(b.key);
+    if (keyCompare !== 0) return keyCompare;
+    return a.en.localeCompare(b.en);
+  });
+
+  const outPath = path.join(WORKSPACE_ROOT, 'copywriting-client.csv');
+  await fs.writeFile(outPath, toClientCsv(outRows), 'utf8');
+
+  const i18nCount = i18nRows.size;
+  const literalCount = literalRows.size;
   // eslint-disable-next-line no-console
-  console.log(`Wrote copywriting.csv (locale: ${defaultLocale})`);
+  console.log(
+    `Wrote copywriting-client.csv — ${i18nCount} i18n key rows + ${literalCount} hardcoded literal rows = ${outRows.length} total rows`,
+  );
+  // eslint-disable-next-line no-console
+  console.log(`Columns: route | key | ${OUTPUT_LOCALES.map((l) => LOCALE_LABELS[l] ?? l).join(' | ')}`);
+  // eslint-disable-next-line no-console
+  console.log(`Note: "Thai (to translate)" and "Indonesian (to translate)" columns are empty — forward to your client to fill in.`);
 }
 
 await main();
