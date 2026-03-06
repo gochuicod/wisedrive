@@ -9,7 +9,11 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "extract:copywriting": "node ./scripts/extract-copywriting.mjs"
+    "extract:copywriting": "node ./scripts/extract-copywriting.mjs",
+    "copy:extract": "python copywriting-tool/extractor.py --config copywriting-tool/copywriting.config.yml",
+    "copy:csv": "python copywriting-tool/extractor.py --config copywriting-tool/copywriting.config.yml --format csv",
+    "copy:xlsx": "python copywriting-tool/extractor.py --config copywriting-tool/copywriting.config.yml --format xlsx",
+    "copy:export": "python copywriting-tool/extractor.py --config copywriting-tool/copywriting.config.yml --output ./exports"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
