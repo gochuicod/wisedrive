@@ -22,7 +22,7 @@ export const useHomeCTAs = () => {
       button1Href: 'https://wisedrive.com/#services',
       button2Text: t('confidence.btn2'),
       button2Icon: <MessageSquareMore className="size-6" />,
-      button2Href: 'https://wa.me/60122559610',
+      button2Href: 'https://wa.me/60126152559',
     },
     consultation: {
       ...HOME_CTA_CONFIG.consultation,
@@ -31,7 +31,7 @@ export const useHomeCTAs = () => {
       subheading: t('consultation.subheading'),
       button1Text: t('consultation.btn1'),
       button1Icon: <MessageSquareMore className="size-6" />,
-      button1Href: 'https://wa.me/60122559610',
+      button1Href: 'https://wa.me/60126152559',
     },
     secure: {
       ...HOME_CTA_CONFIG.secure,

@@ -102,7 +102,7 @@ export default function Inspection() {
                   {t('sample_report_button')}
                 </AppButton>
                 <AppButton
-                  href="https://wa.me/60122559610"
+                  href="https://wa.me/60126152559"
                   variant="tertiary"
                   className='w-full'
                   size="sm"

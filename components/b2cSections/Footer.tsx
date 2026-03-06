@@ -87,7 +87,7 @@ export default function Footer() {
                 />
               </a>              
               {/* WhatsApp */}
-              <a href="https://wa.me/60122559610" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <a href="https://wa.me/60126152559" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                 <Image
                   src="/icons/componentIcons/whatsapp.svg"
                   alt="WhatsApp"
